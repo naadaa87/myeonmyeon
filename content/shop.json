@@ -1,0 +1,11 @@
+{
+  "_안내": "라면몰 진열대. items의 키는 /go/{키} 주소가 돼요. r은 도감 라면 주소(s), q는 쿠팡 검색어, u는 파트너스 링크(비우면 관리 화면에서 붙여 넣은 링크나 검색 결과로 이동). shelves의 auto는 랭킹을 보고 자동으로 채워요.",
+  "shelves": [
+    { "id": "monthly", "title": "이달의 랭킹 TOP 10", "desc": "지난달 마지막 날 종합 랭킹 순서 그대로 진열해요.", "auto": "rank" },
+    { "id": "hot", "title": "맵기 도전 진열대", "desc": "편집부가 ‘아주 매운 편’으로 분류한 라면이에요. 매운 음식에 약하다면 무리하지 마세요.", "auto": "hot" },
+    { "id": "summer", "title": "비빔면·막국수", "desc": "봄부터 여름까지 찾는 사람이 늘어나는 비빔면과 막국수예요.", "items": ["paldo-bibimmyeon", "baehongdong-bibimmyeon", "jin-bibimmyeon", "gogiri-deulgireum-makguksu", "baehongdong-makguksu", "jin-milmyeon", "dungji-naengmyeon", "themisik-bibimmyeon"] },
+    { "id": "jjajang", "title": "짜장라면", "desc": "주말 점심의 단골, 짜장라면을 모았어요.", "items": ["chapagetti", "jjawang", "jin-jjajang", "jjajjaroni", "jjareureu"] },
+    { "id": "cup", "title": "컵라면 서랍", "desc": "물만 부으면 되는 컵라면이에요.", "items": ["yukgaejang-sabalmyun", "shin-ramyun-big-bowl", "king-lid", "dosirak", "tempura-udon", "cup-noodle", "king-lid-rabokki"] }
+  ],
+  "items": {}
+}

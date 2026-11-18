@@ -1,0 +1,13 @@
+{
+  "name": "myeonmyeon",
+  "version": "1.0.0",
+  "private": true,
+  "description": "면면 | 라면 도감, 랭킹, 커뮤니티",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

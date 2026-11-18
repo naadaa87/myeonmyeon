@@ -1,0 +1,14 @@
+{
+  "_안내": "사이트 기본 설정. siteUrl은 실제 주소로 바꿔 주세요 (Cloudflare Pages 주소나 연결한 도메인). operator(운영자 이름)와 contactEmail은 공개 전에 꼭 채워 주세요. 개인정보처리방침과 바닥글에 들어가요.",
+  "siteName": "면면",
+  "tagline": "라면 도감, 랭킹, 커뮤니티",
+  "siteUrl": "https://myeonmyeon.pages.dev",
+  "githubRepo": "naadaa87/myeonmyeon",
+  "githubBranch": "main",
+  "contactEmail": "",
+  "operator": "",
+  "privacyOfficer": "",
+  "privacyEmail": "",
+  "naverSiteVerification": "",
+  "googleSiteVerification": ""
+}

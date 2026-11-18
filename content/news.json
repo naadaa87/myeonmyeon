@@ -1,0 +1,15 @@
+{
+  "_안내": "신상 레이더 소식. date는 YYYY-MM-DD 또는 YYYY-MM, ramen은 도감 주소(s) 목록. 기사 링크(url)와 매체 이름(src)을 함께 적어 주세요.",
+  "news": [
+    {"date": "2026-11-06", "title": "구미라면축제 한정 ‘구미라면축제면’ 등장", "body": "구미산 밀을 100% 쓴 한정판 라면 20만 봉을 2026 구미라면축제와 농심몰에서 팔았어요.", "ramen": ["gumi-ramen-festival"], "src": "이코노미스트", "url": "https://economist.co.kr/article/view/ecn202611070012"},
+    {"date": "2026-07-08", "title": "삼양식품 우지 짜장라면 ‘짜르르’ 출시", "body": "소기름(우지)으로 튀긴 면에 액상 짜장소스를 더한 프리미엄 짜장라면이에요. 출시 100일 만에 1,000만 개가 팔렸다고 삼양식품은 밝혔어요.", "ramen": ["jjareureu"], "src": "위키트리", "url": "https://www.wikitree.co.kr/articles/1144068"},
+    {"date": "2026-06-04", "title": "CU 차별화 라면 브랜드 ‘치트키’ 첫선", "body": "모디슈머를 겨냥한 CU의 차별화 라면 브랜드예요. 첫 상품은 멸균 우유 한 팩이 들어간 볶음면 ‘치트키 리얼 크림 불닭맛’이에요.", "ramen": [], "src": "뉴시스", "url": "https://mobile.newsis.com/view/NISX20260604_0003655676"},
+    {"date": "2026-05-18", "title": "‘신라면 로제’ 한국·일본 먼저 출시", "body": "신라면 40주년을 맞은 농심이 모디슈머 신제품 ‘신라면 로제’를 한국과 일본에 먼저 내놨어요.", "ramen": [], "src": "인더뉴스", "url": "https://inthenews.co.kr/news/article.html?no=86799"},
+    {"date": "2026-03-19", "title": "봄 비빔면 대전: 배홍동막국수, 진밀면, 팔도비빔면 더 블루", "body": "농심, 오뚜기, 팔도가 여름 시즌을 앞두고 비빔면·막국수 신제품을 내놨어요.", "ramen": ["baehongdong-makguksu", "jin-milmyeon", "paldo-bibimmyeon-blue"], "src": "비즈워치", "url": "https://news.bizwatch.co.kr/article/consumer/2026/03/19/0019"},
+    {"date": "2026-02-02", "title": "신라면 골드, 출시 한 달 만에 1,000만 봉", "body": "닭고기 육수에 신라면의 매운맛을 더한 신라면 골드가 한 달 만에 1,000만 봉 넘게 팔렸다고 농심이 밝혔어요.", "ramen": ["shin-ramyun-gold"], "src": "스마트투데이", "url": "https://www.smarttoday.co.kr/ko-kr/articles/102606"},
+    {"date": "2026-01-02", "title": "신라면 40주년 기념 ‘신라면 골드’ 출시", "body": "해외 라면 시장에서 인기 있는 닭고기 육수에 신라면의 매운맛을 더한 제품이에요.", "ramen": ["shin-ramyun-gold"], "src": "스마트투데이", "url": "https://www.smarttoday.co.kr/ko-kr/articles/99507"},
+    {"date": "2025-11-05", "title": "신라면 툼바, 일본 닛케이 트렌디 ‘히트상품 베스트 30’에", "body": "한국 라면으로는 처음으로 일본 닛케이 트렌디의 ‘2025년 히트상품 베스트 30’에 뽑혔다고 농심이 밝혔어요.", "ramen": ["shin-ramyun-toomba"], "src": "파이낸셜뉴스", "url": "https://www.fnnews.com/news/202511050859569809"},
+    {"date": "2025-11", "title": "‘신라면 김치볶음면’ 출시", "body": "농심이 2026년 해외 시장의 주력 제품으로 내세운 볶음면이에요.", "ramen": ["shin-ramyun-kimchi-bokkeum"], "src": "데일리안", "url": "https://www.dailian.co.kr/news/view/1643755"},
+    {"date": "2025-06-26", "title": "GS25 오모리 시리즈 볶음면 ‘오모리김치즈볶음면’", "body": "2014년 말에 나와 누적 1억 개가 팔린 GS25 오모리 시리즈의 여덟 번째 스핀오프 제품이에요.", "ramen": ["gs25-omori-kimcheese-bokkeum", "gs25-omori-kimchi-jjigae"], "src": "스마트투데이", "url": "https://www.smarttoday.co.kr/ko-kr/articles/84175"}
+  ]
+}
