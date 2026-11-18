@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { ROOT, OUT, STATIC, BUILD, cfg, SITE, abs, SITE_NAME, RAMEN, BY, MAKERS, cho, ramenSearchText, releaseKey, today, readJSON, esc } from './lib.mjs';
 import { homePage, dogamPage, ramenPage, recordPage, rankPage, rankRulesPage, newPage, shopPage } from './pages-main.mjs';
+import { storyHubPage, storyPage, timelinePage, STORIES } from './pages-story.mjs';
 import { labHubPage, labPages, clubPages, levelsPage, clubRulesPage, mePage, aboutPage, termsPage, privacyPage, contactPage, adminPage, notFoundPage, offlinePage } from './pages-more.mjs';
 import * as CD from '../server/catalog-data.js';
 import { LEVELS, RULES, BADGES, levelOf, glyph, emblemSVG, badgeSVG } from '../server/growth-data.js';
@@ -36,6 +37,9 @@ fs.mkdirSync(OUT, { recursive: true });
 page('', homePage());
 page('ramen', dogamPage());
 for (const r of RAMEN) page(`ramen/${r.s}`, ramenPage(r));
+page('story', storyHubPage());
+for (const s of STORIES) page(`story/${s.s}`, storyPage(s));
+page('story/timeline', timelinePage());
 page('record', recordPage());
 page('rank', rankPage());
 page('rank/rules', rankRulesPage());
@@ -114,6 +118,7 @@ write('manifest.webmanifest', JSON.stringify({
 // 검색 엔진
 const urls = [
   ['/', '1.0'], ['/ramen/', '0.9'], ['/rank/', '0.9'], ['/rank/rules/', '0.5'], ['/new/', '0.7'], ['/shop/', '0.6'],
+  ['/story/', '0.8'], ['/story/timeline/', '0.7'], ...STORIES.map((s) => [`/story/${s.s}/`, '0.7']),
   ['/lab/', '0.6'], ['/lab/map/', '0.6'], ['/lab/compare/', '0.6'], ['/lab/worldcup/', '0.6'], ['/lab/timer/', '0.6'], ['/lab/water/', '0.5'],
   ['/club/', '0.6'], ['/club/board/', '0.6'], ['/club/feed/', '0.5'], ['/club/events/', '0.5'], ['/club/people/', '0.4'], ['/club/levels/', '0.4'], ['/club/rules/', '0.3'],
   ['/about/', '0.4'], ['/contact/', '0.3'], ['/terms/', '0.2'], ['/privacy/', '0.2'],

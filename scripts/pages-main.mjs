@@ -1,9 +1,10 @@
 // 페이지: 처음 화면, 라면 도감, 라면 한 개, 한 그릇 기록, 랭킹, 평가 기준, 신상 레이더, 라면몰
 import {
   esc, cfg, SITE_NAME, abs, RAMEN, BY, SORTED, NEWEST, MAKERS, layout, icon, WAVE, img, pageBanner, crumbs, crumbLd, secHead, moreLink,
-  ramenCard, ramenGrid, hotChip, statusChip, formText, styleText, yearText, releaseKey, buyLink, DISCLOSURE, josa, readJSON, cho,
+  ramenCard, ramenGrid, hotChip, statusChip, formText, styleText, yearText, releaseKey, buyLink, DISCLOSURE, josa, readJSON, cho, DOGAM_CHECKED,
 } from './lib.mjs';
 import { STYLES, FORMS, STATUS, HOTS, GROUPS, AXES, RANK_RULE } from '../server/catalog-data.js';
+import { storyHomeCards } from './pages-story.mjs';
 
 const NEWS = readJSON('content/news.json').news;
 const SHOP = readJSON('content/shop.json');
@@ -86,6 +87,11 @@ ${secHead('신상 레이더', moreLink('/new/', '소식 모두 보기'), 'h-new'
 <ul class="news-list news-home">${NEWS.slice(0, 4).map(newsItem).join('')}</ul>
 </section>
 
+<section class="sec" aria-labelledby="h-story">
+${secHead('라면 이야기', moreLink('/story/', '읽을거리 모두 보기'), 'h-story')}
+<div class="sgrid sgrid-home">${storyHomeCards(3)}</div>
+</section>
+
 <section class="sec" aria-labelledby="h-shop">
 ${secHead('라면몰', moreLink('/shop/', '라면몰 가기'), 'h-shop')}
 <p class="disclosure">${esc(DISCLOSURE)}</p>
@@ -138,8 +144,10 @@ ${groupTiles()}
 </form>
 <p class="filter-count" data-count aria-live="polite">${RAMEN.length}가지</p>
 <div class="rgrid" data-list>${SORTED.map((r, i) => ramenCard(r, { eager: i < 4 })).join('')}</div>
+<p class="more-wrap"><button type="button" class="btn btn-line" data-more hidden>더 보기</button></p>
 <div class="empty" data-empty hidden><p>조건에 맞는 라면이 없어요.</p><p><button type="button" class="btn btn-sub" data-reset>조건 지우기</button> <button type="button" class="btn btn-line" data-report="">새 라면 제보하기</button></p></div>
 <p class="note">맵기 표시(${icon('i-flame')})는 이름과 제조사 설명을 보고 편집부가 나눈 거예요. 실제로 먹어 본 사람들이 느낀 맵기는 라면 페이지의 맛 지도에서 볼 수 있어요.</p>
+<p class="note">수록 기준: 농심·오뚜기·삼양식품·팔도·하림·풀무원의 공식 홈페이지와 공식 쇼핑몰 제품 목록, 편의점 단독 라면은 회사 발표와 기사로 확인한 것만 실었어요(${esc(DOGAM_CHECKED)} 확인). 같은 맛이라도 봉지·컵·큰컵은 맛과 양이 달라 따로 실었어요. 빠진 라면이 있으면 <button type="button" class="link-btn" data-report="">제보</button>해 주세요.</p>
 </div>`;
   const jsonld = [crumbLd([['/', SITE_NAME], ['/ramen/', '라면 도감']]), { '@context': 'https://schema.org', '@type': 'ItemList', name: `${SITE_NAME} 라면 도감`, numberOfItems: RAMEN.length, itemListElement: SORTED.map((r, i) => ({ '@type': 'ListItem', position: i + 1, url: abs(`/ramen/${r.s}/`), name: r.n })) }];
   return layout({ title: `라면 도감 - 국내 라면 ${RAMEN.length}가지 | ${SITE_NAME}`, description: `신라면, 진라면, 불닭볶음면, 짜파게티부터 신상 라면까지 ${RAMEN.length}가지. 국물면, 비빔면, 짜장면, 볶음면, 컵라면으로 나눠 보고 초성으로 찾아요.`, path: '/ramen/', body, scripts: ['dogam.js'], jsonld });
@@ -152,6 +160,7 @@ function similar(r) {
   return same.slice(0, 4);
 }
 const collatorCmp = (a, b) => a.n.localeCompare(b.n, 'ko');
+const NOODLES = { dry: '건면 (기름에 튀기지 않고 말린 면)', fresh: '생면', cooked: '숙면 (익혀서 살균 포장한 면)', rice: '쌀국수 면', glass: '당면' };
 
 export function ramenPage(r) {
   const g = r.groups[0];
@@ -162,6 +171,7 @@ export function ramenPage(r) {
     ['회사', `<a href="/ramen/?m=${r.m}">${esc(r.maker)}</a>`],
     ['형태', r.f ? FORMS[r.f] : '<span class="muted">확인 중</span>'],
     ['조리 방식', STYLES[r.c]],
+    r.noodle ? ['면', NOODLES[r.noodle] || ''] : null,
     ['맵기 분류', r.hot == null ? '<span class="muted">미분류</span>' : `${HOTS[r.hot]} <small class="muted">(편집부)</small>`],
     r.y ? ['출시', yearText(r.y)] : null,
     ['판매', `${STATUS[r.st]}${r.ch ? ` · ${esc(r.ch)}` : ''}`],

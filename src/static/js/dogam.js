@@ -13,6 +13,8 @@
   (MM.D.GROUPS || []).forEach(function (g) { GN[g.id] = g.name; });
   ['q', 'm', 'f', 'hot', 'st', 'sort'].forEach(function (k) { if (form[k]) form[k].value = state[k]; });
   var order = cards.slice();
+  var STEP = 36, limit = STEP;
+  var more = $('[data-more]', root);
 
   function paintTiles() {
     $$('.gtile', root).forEach(function (a) {
@@ -24,7 +26,7 @@
   function apply(push) {
     var q = state.q.trim().toLowerCase();
     var saved = MM.getSaved();
-    var shown = 0;
+    var shown = 0, visible = 0;
     var sorted = order.slice();
     if (state.sort === 'new') sorted.sort(function (a, b) { return Number(b.dataset.y) - Number(a.dataset.y); });
     else if (state.sort === 'n') sorted.sort(function (a, b) { return Number(b.dataset.n || 0) - Number(a.dataset.n || 0); });
@@ -34,10 +36,15 @@
       var ok = (!state.g || (' ' + d.g + ' ').indexOf(' ' + state.g + ' ') > -1) &&
         (!state.m || d.m === state.m) && (!state.f || d.f === state.f) && (!state.hot || d.hot === state.hot) && (!state.st || d.st === state.st) &&
         (state.sort !== 'saved' || saved.indexOf(d.s) > -1) && (!q || MM.matches(q, d.q));
-      c.hidden = !ok;
       if (ok) shown++;
+      c.hidden = !ok || shown > limit;
+      if (!c.hidden) visible++;
       list.appendChild(c);
     });
+    if (more) {
+      more.hidden = shown <= limit;
+      more.textContent = Math.min(STEP, shown - visible) + '가지 더 보기 (' + visible + '/' + shown + ')';
+    }
     count.textContent = (state.g ? GN[state.g] + ' ' : '') + shown + '가지' + (shown < cards.length ? ' (전체 ' + cards.length + '가지 가운데)' : '');
     empty.hidden = shown > 0;
     paintTiles();
@@ -53,6 +60,7 @@
     var t = e.target;
     if (!t.name) return;
     state[t.name] = t.value;
+    limit = STEP;
     clearTimeout(timer);
     timer = setTimeout(function () {
       apply();
@@ -63,14 +71,17 @@
     a.addEventListener('click', function (e) {
       e.preventDefault();
       state.g = a.dataset.g || '';
+      limit = STEP;
       apply();
     });
   });
   $('[data-reset]', root).addEventListener('click', function () {
     state = { g: '', q: '', m: '', f: '', hot: '', st: '', sort: 'name' };
+    limit = STEP;
     ['q', 'm', 'f', 'hot', 'st', 'sort'].forEach(function (k) { form[k].value = state[k]; });
     apply();
   });
+  if (more) more.addEventListener('click', function () { limit += STEP; apply(false); });
   // 숫자를 받은 뒤 다시 정렬 (기록 많은 순, 별점 순)
   MM.paintCards(list).then(function () { apply(false); });
   apply(false);

@@ -49,6 +49,7 @@ export const yearText = (y) => {
 // ---------- 라면 원고 ----------
 const RAW = readJSON('content/ramen.json');
 export const MAKERS = RAW.makers;
+export const DOGAM_CHECKED = (() => { const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(RAW.checked || ''); return m ? `${m[1]}년 ${Number(m[2])}월 ${Number(m[3])}일` : ''; })();
 export const problems = [];
 const slugs = new Set();
 export const RAMEN = RAW.ramen.map((r, i) => {
@@ -142,7 +143,7 @@ export const brandMark = (cls = '') => `<span class="brand-mark ${cls}"><span cl
 // ---------- 그림 ----------
 const IMG_SIZE = {
   'home-wide': [1920, 800], 'home-mobile': [960, 1200], 'banner-atlas': [1920, 800], 'banner-lab': [1920, 800], 'banner-club': [1920, 800],
-  'banner-atlas-m': [780, 630], 'banner-lab-m': [780, 630], 'banner-club-m': [780, 630],
+  'banner-atlas-m': [780, 630], 'banner-lab-m': [780, 630], 'banner-club-m': [780, 630], 'banner-story': [1920, 800], 'banner-story-m': [780, 630],
 };
 export const imgSize = (name) => IMG_SIZE[name] || (/^(broth|black|stir|mixed|cup)/.test(name) ? [800, 800] : [1200, 800]);
 export const img = (name, alt = '', cls = '', eager = false, sizes = '') => {
@@ -158,6 +159,7 @@ export const pageBanner = (name, title, lead, alt, kicker = SITE_NAME) => `<sect
 // ---------- 머리, 바닥, 아래 탭 ----------
 export const NAV = [
   ['/ramen/', '라면 도감'],
+  ['/story/', '라면 이야기'],
   ['/rank/', '랭킹'],
   ['/lab/', '취향실험실'],
   ['/club/', '후루룩클럽'],
@@ -196,7 +198,7 @@ function footer() {
 <p class="foot-lead">먹어 본 사람의 기록으로 만드는 라면 도감이에요. 순위는 팔지 않아요.</p>
 </div>
 <nav class="foot-nav" aria-label="바닥 메뉴">
-<div><b>둘러보기</b><a href="/ramen/">라면 도감</a><a href="/rank/">랭킹</a><a href="/new/">신상 레이더</a><a href="/shop/">라면몰</a></div>
+<div><b>둘러보기</b><a href="/ramen/">라면 도감</a><a href="/story/">라면 이야기</a><a href="/rank/">랭킹</a><a href="/new/">신상 레이더</a><a href="/shop/">라면몰</a></div>
 <div><b>함께하기</b><a href="/record/">한 그릇 기록</a><a href="/lab/">취향실험실</a><a href="/club/">후루룩클럽</a><a href="/me/">내 도감</a></div>
 <div><b>${esc(SITE_NAME)}</b><a href="/about/">${esc(SITE_NAME)} 소개</a><a href="/rank/rules/">평가 기준</a><a href="/contact/">문의하기</a><button type="button" class="link-btn" data-report="">틀린 정보 알려 주기</button></div>
 </nav>
