@@ -5,8 +5,9 @@ import { deleteClub, deleteEvent, deletePost, deleteUser, hashPassword } from '.
 import { removeComment, removeBowl } from './community.js';
 import { demoData } from './demo.js';
 import { kpi, coupangResults } from './kpi.js';
+import { deleteRecipe, removeReview, setImagesHidden } from './recipes.js';
 
-const TABLE = { post: 'posts', event: 'events', club: 'clubs', comment: 'comments', bowl: 'bowls' };
+const TABLE = { post: 'posts', event: 'events', club: 'clubs', comment: 'comments', bowl: 'bowls', recipe: 'recipes', rreview: 'recipe_reviews' };
 
 export async function admin(request, env, parts) {
   const url = new URL(request.url);
@@ -105,27 +106,30 @@ export async function admin(request, env, parts) {
   if (section === 'community') {
     if (id === 'flags' && m === 'GET') {
       const { results } = await db.prepare(`SELECT f.target, f.target_id, COUNT(*) AS n, MAX(f.created_at) AS last_at, GROUP_CONCAT(f.reason, ' / ') AS reasons,
-          CASE f.target WHEN 'post' THEN (SELECT title FROM posts WHERE id = f.target_id) WHEN 'event' THEN (SELECT title FROM events WHERE id = f.target_id) WHEN 'club' THEN (SELECT name FROM clubs WHERE id = f.target_id) WHEN 'bowl' THEN (SELECT slug || ' · ' || substr(body, 1, 70) FROM bowls WHERE id = f.target_id) ELSE (SELECT substr(body, 1, 80) FROM comments WHERE id = f.target_id) END AS label,
-          CASE f.target WHEN 'post' THEN (SELECT hidden FROM posts WHERE id = f.target_id) WHEN 'event' THEN (SELECT hidden FROM events WHERE id = f.target_id) WHEN 'club' THEN (SELECT hidden FROM clubs WHERE id = f.target_id) WHEN 'bowl' THEN (SELECT hidden FROM bowls WHERE id = f.target_id) ELSE (SELECT hidden FROM comments WHERE id = f.target_id) END AS hidden,
-          CASE f.target WHEN 'comment' THEN (SELECT target || ':' || target_id FROM comments WHERE id = f.target_id) WHEN 'bowl' THEN (SELECT 'ramen:' || slug FROM bowls WHERE id = f.target_id) ELSE '' END AS parent
+          CASE f.target WHEN 'recipe' THEN (SELECT '[레시피] ' || title FROM recipes WHERE id = f.target_id) WHEN 'rreview' THEN (SELECT '[레시피 후기] ' || substr(body, 1, 70) FROM recipe_reviews WHERE id = f.target_id) WHEN 'post' THEN (SELECT title FROM posts WHERE id = f.target_id) WHEN 'event' THEN (SELECT title FROM events WHERE id = f.target_id) WHEN 'club' THEN (SELECT name FROM clubs WHERE id = f.target_id) WHEN 'bowl' THEN (SELECT slug || ' · ' || substr(body, 1, 70) FROM bowls WHERE id = f.target_id) ELSE (SELECT substr(body, 1, 80) FROM comments WHERE id = f.target_id) END AS label,
+          CASE f.target WHEN 'recipe' THEN (SELECT hidden FROM recipes WHERE id = f.target_id) WHEN 'rreview' THEN (SELECT hidden FROM recipe_reviews WHERE id = f.target_id) WHEN 'post' THEN (SELECT hidden FROM posts WHERE id = f.target_id) WHEN 'event' THEN (SELECT hidden FROM events WHERE id = f.target_id) WHEN 'club' THEN (SELECT hidden FROM clubs WHERE id = f.target_id) WHEN 'bowl' THEN (SELECT hidden FROM bowls WHERE id = f.target_id) ELSE (SELECT hidden FROM comments WHERE id = f.target_id) END AS hidden,
+          CASE f.target WHEN 'rreview' THEN (SELECT 'recipe:' || recipe_id FROM recipe_reviews WHERE id = f.target_id) WHEN 'comment' THEN (SELECT target || ':' || target_id FROM comments WHERE id = f.target_id) WHEN 'bowl' THEN (SELECT 'ramen:' || slug FROM bowls WHERE id = f.target_id) ELSE '' END AS parent
         FROM flags f WHERE f.status = 'new' GROUP BY f.target, f.target_id ORDER BY n DESC, last_at DESC LIMIT 100`).all();
       return json({ ok: true, flags: results });
     }
     if (id === 'recent' && m === 'GET') {
-      const [posts, events, clubs, users, bowls] = await db.batch([
+      const [posts, events, clubs, users, bowls, recipes, imgs] = await db.batch([
         db.prepare("SELECT p.id, p.title, p.cat, p.created_at, p.hidden, p.pinned, u.nick, u.id AS uid FROM posts p JOIN users u ON u.id = p.user_id ORDER BY p.id DESC LIMIT 30"),
         db.prepare('SELECT e.id, e.title, e.kind, e.starts_at, e.hidden, u.nick, u.id AS uid FROM events e JOIN users u ON u.id = e.user_id ORDER BY e.id DESC LIMIT 30'),
         db.prepare('SELECT c.id, c.name AS title, c.region, c.created_at, c.hidden, u.nick, u.id AS uid FROM clubs c JOIN users u ON u.id = c.owner_id ORDER BY c.id DESC LIMIT 30'),
         db.prepare("SELECT id, login, nick, status, created_at, last_at, xp, stars, demo FROM users WHERE status NOT IN ('deleted', 'system') ORDER BY id DESC LIMIT 50"),
         db.prepare('SELECT r.id, r.slug, r.rating, substr(r.body, 1, 80) AS body, r.hidden, r.demo, r.created_at, u.nick FROM bowls r JOIN users u ON u.id = r.user_id ORDER BY r.id DESC LIMIT 40'),
+        db.prepare("SELECT r.id, r.title, r.photos, r.likes, r.reviews, r.comments, r.created_at, r.hidden, u.nick, u.id AS uid FROM recipes r JOIN users u ON u.id = r.user_id ORDER BY r.id DESC LIMIT 30"),
+        db.prepare("SELECT COUNT(*) AS n, COALESCE(SUM(bytes), 0) AS bytes, SUM(CASE WHEN store = 'r2' THEN 1 ELSE 0 END) AS r2 FROM images"),
       ]);
       const cnt = await db.prepare("SELECT COUNT(*) AS n FROM users WHERE status = 'ok'").first();
-      return json({ ok: true, posts: posts.results, events: events.results, clubs: clubs.results, users: users.results, bowls: bowls.results, userCount: cnt.n });
+      return json({ ok: true, posts: posts.results, events: events.results, clubs: clubs.results, users: users.results, bowls: bowls.results, recipes: recipes.results, images: { ...imgs.results[0], r2bound: !!env.PHOTOS }, userCount: cnt.n });
     }
     if (id === 'hide' && m === 'POST') {
       const b = await readBody(request, 500) || {};
       if (!TABLE[b.target] || !/^\d+$/.test(String(b.id))) return fail('대상을 알 수 없어요.');
       await db.prepare(`UPDATE ${TABLE[b.target]} SET hidden = ? WHERE id = ?`).bind(b.hidden ? 1 : 0, Number(b.id)).run();
+      await setImagesHidden(env, b.target, Number(b.id), !!b.hidden);
       await db.prepare("UPDATE flags SET status = 'done' WHERE target = ? AND target_id = ?").bind(b.target, Number(b.id)).run();
       return json({ ok: true });
     }
@@ -143,6 +147,8 @@ export async function admin(request, env, parts) {
       else if (b.target === 'club') await deleteClub(env, n);
       else if (b.target === 'comment') await removeComment(env, n, null, true);
       else if (b.target === 'bowl') await removeBowl(env, n);
+      else if (b.target === 'recipe') await deleteRecipe(env, n);
+      else if (b.target === 'rreview') await removeReview(env, n, null, true);
       else return fail('대상을 알 수 없어요.');
       await db.prepare("UPDATE flags SET status = 'done' WHERE target = ? AND target_id = ?").bind(b.target, n).run();
       return json({ ok: true });

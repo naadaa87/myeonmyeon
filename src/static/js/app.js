@@ -440,16 +440,49 @@
     return '<svg class="radar" viewBox="0 0 ' + size + ' ' + size + '" role="img" aria-label="맛 지도: ' + series.map(function (s) { return AX.map(function (a, i) { return a.name + ' ' + (s.v[i] == null ? '기록 없음' : s.v[i]); }).join(', '); }).join(' / ') + '">' + g + '</svg>';
   }
 
+  // ---------- 레시피 카드 (레시피 자랑, 처음 화면, 라면 페이지, 클럽 홈에서 함께 써요) ----------
+  var recipeImg = function (id, small) { return '/api/img/' + id + (small ? '/s' : ''); };
+  function recipeCard(r) {
+    var first = (r.ramen || [])[0], rr = first ? BY[first] : null;
+    var pic = r.cover ? recipeImg(r.cover, true) : rr ? imgOf(rr) : '/assets/img/club-recipe.webp';
+    var avg = r.reviews ? Math.round(r.rsum / r.reviews * 10) / 10 : 0;
+    var names = (r.ramen || []).map(function (s) { return BY[s] ? BY[s].n : ''; }).filter(Boolean);
+    return '<a class="rcp-card" href="/recipes/' + r.id + '"><span class="rcp-pic' + (r.cover ? '' : ' rcp-nopic') + '"><img src="' + pic + '" alt="" loading="lazy" width="400" height="300">' +
+      (r.mins ? '<span class="rcp-time">' + ico('i-timer') + r.mins + '분</span>' : '') + (r.hidden ? '<span class="rcp-hid">가려짐</span>' : '') + '</span>' +
+      '<span class="rcp-body"><b class="rcp-t">' + esc(r.title) + '</b>' +
+      (names.length ? '<span class="rcp-ramen">' + esc(names[0]) + (names.length > 1 ? ' 외 ' + (names.length - 1) + '가지' : '') + '</span>' : '') +
+      '<span class="rcp-meta"><span class="rcp-who">' + (r.gone ? '탈퇴한 회원' : esc(r.nick)) + '</span>' +
+      '<span>' + ico('i-heart') + (r.likes || 0) + '</span><span>' + ico('i-chat') + (r.comments || 0) + '</span>' + (r.reviews ? '<span class="rcp-rev">' + ico('i-star') + avg.toFixed(1) + ' · ' + r.reviews + '명</span>' : '') + '</span></span></a>';
+  }
+  // <div data-recipe-strip data-q="sort=hot&per=4"> 를 찾아 채워요
+  function recipeStrips() {
+    $$('[data-recipe-strip]').forEach(function (el) {
+      Promise.all([api('recipes?' + (el.dataset.q || 'per=4')), loadRamen()]).then(function (r) {
+        var j = r[0];
+        var list = (j.recipes || []).filter(function (x) { return String(x.id) !== el.dataset.skip; });
+        if (el.dataset.max) list = list.slice(0, Number(el.dataset.max));
+        if (!j.ok || !list.length) {
+          if (el.dataset.hideEmpty) { var sec = el.closest('[data-recipe-sec]'); if (sec) sec.hidden = true; return; }
+          el.classList.add('rcp-empty-wrap');
+          el.innerHTML = '<div class="rcp-empty"><p>' + esc(el.dataset.empty || '아직 올라온 레시피가 없어요.') + '</p><a class="btn btn-main btn-sm" href="/recipes/write/' + (el.dataset.ramen ? '?ramen=' + el.dataset.ramen : '') + '">' + ico('i-pen') + '첫 레시피 자랑하기</a></div>';
+          return;
+        }
+        el.innerHTML = list.map(recipeCard).join('');
+      });
+    });
+  }
+
   window.MM = {
     $: $, $$: $$, esc: esc, ico: ico, store: store, toast: toast, copyText: copyText, share: share, api: api, track: track,
     ago: ago, kstToday: kstToday, josa: josa, lvChip: lvChip, who: who, starsSVG: starsSVG, scoreHTML: scoreHTML,
     getMe: getMe, setMe: setMe, gain: gain, gainLater: gainLater, toastLater: toastLater, cho: cho, matches: matches,
     loadRamen: loadRamen, loadStats: loadStats, BY: BY, imgOf: imgOf, cardHTML: cardHTML, paintCards: paintCards, statLine: statLine,
-    radar: radar, getSaved: function () { return saved.slice(); }, setSaved: setSaved, paintSaved: paintSaved, syncSaved: syncSaved, D: MMD, G: MMG
+    radar: radar, recipeCard: recipeCard, recipeImg: recipeImg, getSaved: function () { return saved.slice(); }, setSaved: setSaved, paintSaved: paintSaved, syncSaved: syncSaved, D: MMD, G: MMG
   };
 
-  // 카드 숫자 채우기, 로그인 확인 (모든 페이지)
+  // 카드 숫자 채우기, 레시피 줄 채우기, 로그인 확인 (모든 페이지)
   paintCards();
+  recipeStrips();
   getMe().then(function (me) {
     if (!me) return;
     var done = false;

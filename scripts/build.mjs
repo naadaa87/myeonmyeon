@@ -6,6 +6,7 @@ import path from 'node:path';
 import { ROOT, OUT, STATIC, BUILD, cfg, SITE, abs, SITE_NAME, RAMEN, BY, MAKERS, cho, ramenSearchText, releaseKey, today, readJSON, esc } from './lib.mjs';
 import { homePage, dogamPage, ramenPage, recordPage, rankPage, rankRulesPage, newPage, shopPage } from './pages-main.mjs';
 import { storyHubPage, storyPage, timelinePage, STORIES } from './pages-story.mjs';
+import { recipeListPage, recipeWritePage, recipeViewPage } from './pages-recipes.mjs';
 import { labHubPage, labPages, clubPages, levelsPage, clubRulesPage, mePage, aboutPage, termsPage, privacyPage, contactPage, adminPage, notFoundPage, offlinePage } from './pages-more.mjs';
 import * as CD from '../server/catalog-data.js';
 import { LEVELS, RULES, BADGES, levelOf, glyph, emblemSVG, badgeSVG } from '../server/growth-data.js';
@@ -48,6 +49,9 @@ page('shop', shopPage());
 page('lab', labHubPage());
 for (const [dir, html] of labPages()) page(dir, html);
 for (const [dir, html] of clubPages()) page(dir, html);
+page('recipes', recipeListPage());
+page('recipes/write', recipeWritePage());
+page('recipes/view', recipeViewPage());
 page('club/levels', levelsPage());
 page('club/rules', clubRulesPage());
 page('me', mePage());
@@ -120,7 +124,7 @@ const urls = [
   ['/', '1.0'], ['/ramen/', '0.9'], ['/rank/', '0.9'], ['/rank/rules/', '0.5'], ['/new/', '0.7'], ['/shop/', '0.6'],
   ['/story/', '0.8'], ['/story/timeline/', '0.7'], ...STORIES.map((s) => [`/story/${s.s}/`, '0.7']),
   ['/lab/', '0.6'], ['/lab/map/', '0.6'], ['/lab/compare/', '0.6'], ['/lab/worldcup/', '0.6'], ['/lab/timer/', '0.6'], ['/lab/water/', '0.5'],
-  ['/club/', '0.6'], ['/club/board/', '0.6'], ['/club/feed/', '0.5'], ['/club/events/', '0.5'], ['/club/people/', '0.4'], ['/club/levels/', '0.4'], ['/club/rules/', '0.3'],
+  ['/club/', '0.6'], ['/club/board/', '0.6'], ['/recipes/', '0.7'], ['/club/feed/', '0.5'], ['/club/events/', '0.5'], ['/club/people/', '0.4'], ['/club/levels/', '0.4'], ['/club/rules/', '0.3'],
   ['/about/', '0.4'], ['/contact/', '0.3'], ['/terms/', '0.2'], ['/privacy/', '0.2'],
   ...RAMEN.map((r) => [`/ramen/${r.s}/`, '0.8']),
 ];
@@ -131,6 +135,7 @@ ${urls.map(([u, p]) => `<url><loc>${abs(u)}</loc><lastmod>${today}</lastmod><pri
 `);
 write('robots.txt', `User-agent: *
 Allow: /
+Allow: /api/img/
 Disallow: /admin/
 Disallow: /api/
 Disallow: /go/

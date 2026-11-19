@@ -75,11 +75,17 @@ ${ramenGrid(newest)}
 <section class="sec" aria-labelledby="h-club">
 ${secHead('커뮤니티', moreLink('/club/', '후루룩클럽 가기'), 'h-club')}
 <div class="club-strip">
-<a class="club-card" href="/club/board/?cat=recipe">${img('club-recipe', '냄비에 끓인 라면에 치즈를 올리는 장면')}<span><b>조합·레시피</b>남이 먹는 방법이 궁금할 때</span></a>
+<a class="club-card" href="/recipes/">${img('club-recipe', '냄비에 끓인 라면에 치즈를 올리는 장면')}<span><b>레시피 자랑</b>사진으로 보는 남의 라면</span></a>
 <a class="club-card" href="/club/events/">${img('club-tasting', '친구들이 둘러앉아 라면을 나눠 먹는 시식 모임')}<span><b>시식회·번개</b>같이 먹으면 더 맛있어요</span></a>
 <a class="club-card" href="/club/board/?cat=poll">${img('club-vote', '라면 두 그릇 앞에 빨간 표와 노란 표가 놓인 취향 투표')}<span><b>취향 투표</b>꼬들면이냐 퍼진면이냐</span></a>
 </div>
 <div class="home-feed" data-home-feed><p class="muted loading">새 소식을 불러오는 중이에요</p></div>
+</section>
+
+<section class="sec" aria-labelledby="h-recipes">
+${secHead('레시피 자랑', moreLink('/recipes/', '레시피 모두 보기'), 'h-recipes')}
+<p class="sec-lead">회원들이 직접 끓여 올린 라면이에요. 따라 해 보고 후기를 남겨 주세요.</p>
+<div class="rcp-grid rcp-grid-sm" data-recipe-strip data-q="sort=hot&amp;per=4" data-empty="아직 올라온 레시피가 없어요. 나만 아는 라면 조합이 있다면 사진으로 자랑해 주세요."><p class="muted loading">레시피를 불러오는 중이에요</p></div>
 </section>
 
 <section class="sec" aria-labelledby="h-new">
@@ -127,6 +133,7 @@ ${buyLink(r.s, from, '쿠팡에서 보기', 'btn btn-buy btn-sm')}
 }
 
 // ---------- 라면 도감 ----------
+const RETAILERS = ['gs25', 'cu', 'seven', 'emart24', 'emart', 'homeplus', 'lottemart'];
 export function dogamPage() {
   const makers = Object.entries(MAKERS).filter(([k]) => RAMEN.some((r) => r.m === k));
   const body = `${pageBanner('banner-atlas', '라면 도감', `국내 라면 ${RAMEN.length}가지를 종류별로 모았어요. 초성으로도 찾을 수 있어요.`, '달걀과 대파를 올린 매운 국물 라면', '면면도감')}
@@ -135,7 +142,7 @@ ${groupTiles()}
 <form class="filter-bar" data-filter role="search" onsubmit="return false">
 <label class="search-box">${icon('i-search')}<input type="search" name="q" placeholder="라면 이름, 회사, 초성 (예: ㅈㅍㄱㅌ)" aria-label="라면 찾기" autocomplete="off"></label>
 <div class="filter-row">
-<label class="sel"><span class="sr">회사</span><select name="m"><option value="">회사 전체</option>${makers.map(([k, v]) => `<option value="${k}">${esc(v)}</option>`).join('')}</select></label>
+<label class="sel"><span class="sr">회사</span><select name="m"><option value="">회사 전체</option><optgroup label="라면 회사">${makers.filter(([k]) => !RETAILERS.includes(k)).map(([k, v]) => `<option value="${k}">${esc(v)}</option>`).join('')}</optgroup><optgroup label="편의점·마트 자체 라면">${makers.filter(([k]) => RETAILERS.includes(k)).map(([k, v]) => `<option value="${k}">${esc(v)}</option>`).join('')}</optgroup></select></label>
 <label class="sel"><span class="sr">형태</span><select name="f"><option value="">형태 전체</option>${Object.entries(FORMS).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}</select></label>
 <label class="sel"><span class="sr">맵기</span><select name="hot"><option value="">맵기 전체</option>${Object.entries(HOTS).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}</select></label>
 <label class="sel"><span class="sr">판매</span><select name="st"><option value="">판매 상태 전체</option>${Object.entries(STATUS).filter(([k]) => RAMEN.some((r) => r.st === k)).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}</select></label>
@@ -147,7 +154,7 @@ ${groupTiles()}
 <p class="more-wrap"><button type="button" class="btn btn-line" data-more hidden>더 보기</button></p>
 <div class="empty" data-empty hidden><p>조건에 맞는 라면이 없어요.</p><p><button type="button" class="btn btn-sub" data-reset>조건 지우기</button> <button type="button" class="btn btn-line" data-report="">새 라면 제보하기</button></p></div>
 <p class="note">맵기 표시(${icon('i-flame')})는 이름과 제조사 설명을 보고 편집부가 나눈 거예요. 실제로 먹어 본 사람들이 느낀 맵기는 라면 페이지의 맛 지도에서 볼 수 있어요.</p>
-<p class="note">수록 기준: 농심·오뚜기·삼양식품·팔도·하림·풀무원의 공식 홈페이지와 공식 쇼핑몰 제품 목록, 편의점 단독 라면은 회사 발표와 기사로 확인한 것만 실었어요(${esc(DOGAM_CHECKED)} 확인). 같은 맛이라도 봉지·컵·큰컵은 맛과 양이 달라 따로 실었어요. 빠진 라면이 있으면 <button type="button" class="link-btn" data-report="">제보</button>해 주세요.</p>
+<p class="note">수록 기준: 농심·오뚜기·삼양식품·팔도·하림·풀무원은 공식 홈페이지와 공식 쇼핑몰 제품 목록을 따랐어요. 편의점(GS25·CU·세븐일레븐·이마트24)과 대형마트(이마트·홈플러스·롯데마트)의 자체 라면과 단독 라면은 각 회사 상품 안내와 발표, 기사로 확인한 것만 실었어요(${esc(DOGAM_CHECKED)} 확인). 편의점 한정판은 금방 바뀌니 매장에 없을 수 있어요. 같은 맛이라도 봉지·컵·큰컵은 맛과 양이 달라 따로 실었어요. 빠진 라면이 있으면 <button type="button" class="link-btn" data-report="">제보</button>해 주세요. <a href="/ramen/?st=exclusive">편의점·마트 라면만 모아 보기</a></p>
 </div>`;
   const jsonld = [crumbLd([['/', SITE_NAME], ['/ramen/', '라면 도감']]), { '@context': 'https://schema.org', '@type': 'ItemList', name: `${SITE_NAME} 라면 도감`, numberOfItems: RAMEN.length, itemListElement: SORTED.map((r, i) => ({ '@type': 'ListItem', position: i + 1, url: abs(`/ramen/${r.s}/`), name: r.n })) }];
   return layout({ title: `라면 도감 - 국내 라면 ${RAMEN.length}가지 | ${SITE_NAME}`, description: `신라면, 진라면, 불닭볶음면, 짜파게티부터 신상 라면까지 ${RAMEN.length}가지. 국물면, 비빔면, 짜장면, 볶음면, 컵라면으로 나눠 보고 초성으로 찾아요.`, path: '/ramen/', body, scripts: ['dogam.js'], jsonld });
@@ -208,6 +215,11 @@ ${secHead('맛 지도', `<a class="more-link" href="/lab/compare/?r=${r.s}">다�
 <section class="sec" aria-labelledby="h-how">
 ${secHead('이렇게 먹었어요', '', 'h-how')}
 <div class="how" data-how><p class="muted">불러오는 중이에요</p></div>
+</section>
+
+<section class="sec" id="recipes" aria-labelledby="h-recipes">
+${secHead('이 라면으로 만든 레시피', `<a class="more-link" href="/recipes/?ramen=${r.s}">모두 보기${icon('i-chev')}</a>`, 'h-recipes')}
+<div class="rcp-grid rcp-grid-sm rcp-grid-2" data-recipe-strip data-q="ramen=${r.s}&amp;sort=hot&amp;per=4" data-ramen="${r.s}" data-empty="이 라면으로 만든 레시피가 아직 없어요. 나만의 방법이 있다면 처음으로 올려 주세요."><p class="muted">불러오는 중이에요</p></div>
 </section>
 
 <section class="sec" id="bowls" aria-labelledby="h-bowls">

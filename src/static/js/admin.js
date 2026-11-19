@@ -847,11 +847,12 @@
   });
 
   // ---------- 커뮤니티 관리 ----------
-  var TARGET = { post: '글', event: '모임', club: '모임', comment: '댓글', bowl: '한 그릇 기록' };
+  var TARGET = { post: '글', event: '모임', club: '모임', comment: '댓글', bowl: '한 그릇 기록', recipe: '레시피', rreview: '레시피 후기' };
   var linkOf = function (t, id, parent) {
     if (t === 'post') return '/club/post/?id=' + id;
     if (t === 'event') return '/club/event/?id=' + id;
     if (t === 'club') return '/club/';
+    if (t === 'recipe') return '/recipes/' + id;
     var pp = String(parent || '').split(':');
     if (pp[0] === 'ramen') return '/ramen/' + pp[1] + '/#bowls';
     return pp[0] ? linkOf(pp[0], pp[1]) : '#';
@@ -886,6 +887,8 @@
           '<label class="check"><input type="checkbox" name="pinned" checked><span>맨 위에 고정하기</span></label>' +
           '<p class="form-msg" role="status"></p><button class="btn btn-main" type="submit">올리기</button></form>') +
         card('최근 글', table(c.posts, function (x) { return [esc(CATN[x.cat] || x.cat), '<a href="/club/post/?id=' + x.id + '" target="_blank">' + esc(x.title) + '</a>' + (x.pinned ? ' <span class="badge">고정</span>' : '') + (x.hidden ? ' <span class="badge">가려짐</span>' : ''), esc(x.nick), act('post', x.id, x.hidden) + '<span class="row-btns" data-pin="' + x.id + '"><button type="button" class="btn btn-ghost btn-sm" data-pinv="' + (x.pinned ? 0 : 1) + '">' + (x.pinned ? '고정 풀기' : '고정') + '</button></span>']; })) +
+        card('최근 레시피 자랑', table(c.recipes, function (x) { return ['<a href="/recipes/' + x.id + '" target="_blank">' + esc(x.title) + '</a>' + (x.hidden ? ' <span class="badge">가려짐</span>' : ''), '사진 ' + (x.photos ? x.photos.split(',').length : 0) + ' · 좋아요 ' + x.likes + ' · 후기 ' + x.reviews, esc(x.nick), act('recipe', x.id, x.hidden)]; }) +
+          (c.images ? '<p class="muted small">레시피 사진 ' + N(c.images.n) + '장 · ' + (c.images.bytes / 1048576).toFixed(1) + 'MB 저장 중. ' + (c.images.r2bound ? '사진은 R2(PHOTOS)에 저장하고 있어요.' : '지금은 사진을 D1에 저장해요. D1 무료 한도는 데이터베이스 하나에 500MB라, 사진이 많아지면 README의 ‘사진 저장소(R2) 연결’ 순서대로 R2를 붙여 주세요.') + '</p>' : '')) +
         card('최근 한 그릇 기록', table(c.bowls, function (x) { return [esc(gameName(x.slug)) + ' · ★' + (x.rating / 2).toFixed(1) + (x.demo ? ' <span class="badge draft">시험</span>' : ''), '<a href="/ramen/' + x.slug + '/#bowls" target="_blank">' + esc(x.body || '(메모 없음)') + '</a>' + (x.hidden ? ' <span class="badge">가려짐</span>' : ''), esc(x.nick), act('bowl', x.id, x.hidden)]; })) +
         card('최근 시식회·번개', table(c.events, function (x) { return [x.kind === 'tasting' ? '시식회' : '번개', '<a href="/club/event/?id=' + x.id + '" target="_blank">' + esc(x.title) + '</a>' + (x.hidden ? ' <span class="badge">가려짐</span>' : ''), esc(x.nick), act('event', x.id, x.hidden)]; })) +
         card('최근 가입한 회원', table(c.users, function (u) { return [esc(u.login), esc(u.nick) + (u.demo ? ' <span class="badge draft">시험</span>' : '') + (u.status === 'banned' ? ' <span class="badge">제한</span>' : ''), esc(fmtTime(u.created_at)), userAct(u)]; }) +

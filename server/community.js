@@ -3,6 +3,7 @@ import { json, fail, readBody, clip, oneLine, nowIso, kstStamp, kstDay, tooMany,
 import { deleteClub, deleteEvent, deletePost } from './auth.js';
 import { grow, revoke, addStars, note, checkBadges } from './growth.js';
 import { userCols, mergeGains, removeBowl } from './ramen.js';
+import { setImagesHidden } from './recipes.js';
 
 const PER = 20;
 const pageOf = (url) => Math.min(Math.max(Number(url.searchParams.get('page')) || 1, 1), 500);
@@ -418,13 +419,14 @@ async function joinEvent(env, request, id, me, join) {
 }
 
 // ---------- 댓글 ----------
-async function listComments(env, target, id, me, adopted) {
+export async function listComments(env, target, id, me, adopted) {
   const { results } = await env.DB.prepare(`SELECT c.id, c.body, c.created_at, c.hidden, c.user_id, ${authorCols} FROM comments c JOIN users u ON u.id = c.user_id WHERE c.target = ? AND c.target_id = ? ORDER BY c.id LIMIT 300`).bind(target, id).all();
   return results.map((c) => ({ id: c.id, nick: c.nick, xp: c.xp, fb: c.fb, gone: c.gone, sys: c.sys, created_at: c.created_at, mine: !!me && me.id === c.user_id, hidden: !!c.hidden, adopted: !!adopted && c.id === adopted, body: c.hidden ? '' : c.body }));
 }
-const TARGETS = { post: 'posts', event: 'events', club: 'clubs' };
-const OWNER_COL = { posts: 'user_id', events: 'user_id', clubs: 'owner_id' };
-const TITLE_COL = { posts: 'title', events: 'title', clubs: 'name' };
+const TARGETS = { post: 'posts', event: 'events', club: 'clubs', recipe: 'recipes' };
+const OWNER_COL = { posts: 'user_id', events: 'user_id', clubs: 'owner_id', recipes: 'user_id' };
+const TITLE_COL = { posts: 'title', events: 'title', clubs: 'name', recipes: 'title' };
+const COUNTED = { post: 'posts', recipe: 'recipes' }; // 댓글 수를 따로 세는 곳
 async function addComment(env, request, me) {
   const b = await readBody(request, 4000);
   if (!b) return fail('보낸 내용을 읽지 못했어요.');
@@ -443,10 +445,10 @@ async function addComment(env, request, me) {
   const lim = await writeLimit(env, me, 'comment', 15, 10);
   if (lim) return lim;
   const r = await env.DB.prepare('INSERT INTO comments (target, target_id, user_id, body, created_at) VALUES (?, ?, ?, ?, ?)').bind(target, id, me.id, body, nowIso()).run();
-  if (target === 'post') await env.DB.prepare('UPDATE posts SET comments = comments + 1 WHERE id = ?').bind(id).run();
+  if (COUNTED[target]) await env.DB.prepare(`UPDATE ${COUNTED[target]} SET comments = comments + 1 WHERE id = ?`).bind(id).run();
   if (t.owner !== me.id) {
-    const where = target === 'post' ? 'post' : target === 'event' ? 'event' : 'club';
-    await note(env, t.owner, 'comment', `${me.nick}님이 ‘${t.title}’에 댓글을 남겼어요: ${body.slice(0, 40)}`, (where === 'club' ? '/club/' : `/club/${where}/?id=${id}`));
+    const link = target === 'recipe' ? `/recipes/${id}#comments` : target === 'club' ? '/club/' : `/club/${target}/?id=${id}`;
+    await note(env, t.owner, 'comment', `${me.nick}님이 ‘${t.title}’에 댓글을 남겼어요: ${body.slice(0, 40)}`, link);
   }
   const gain = await grow(env, request, me.id, 'comment', r.meta.last_row_id, []);
   return json({ ok: true, id: r.meta.last_row_id, gain });
@@ -460,13 +462,13 @@ async function removeComment(env, id, me, isAdmin) {
     if (p && p.adopted === id) return fail('채택된 답변은 지울 수 없어요.');
   }
   await env.DB.prepare('DELETE FROM comments WHERE id = ?').bind(id).run();
-  if (c.target === 'post') await env.DB.prepare('UPDATE posts SET comments = comments - 1 WHERE id = ?').bind(c.target_id).run();
+  if (COUNTED[c.target]) await env.DB.prepare(`UPDATE ${COUNTED[c.target]} SET comments = MAX(0, comments - 1) WHERE id = ?`).bind(c.target_id).run();
   await revoke(env, c.user_id, 'comment', id);
   return json({ ok: true });
 }
 
 // ---------- 신고 ----------
-const FLAG_TABLE = { post: 'posts', event: 'events', club: 'clubs', comment: 'comments', bowl: 'bowls' };
+const FLAG_TABLE = { post: 'posts', event: 'events', club: 'clubs', comment: 'comments', bowl: 'bowls', recipe: 'recipes', rreview: 'recipe_reviews' };
 async function addFlag(env, request, me) {
   const b = await readBody(request, 2000);
   if (!b) return fail('보낸 내용을 읽지 못했어요.');
@@ -478,7 +480,10 @@ async function addFlag(env, request, me) {
   if (lim) return lim;
   await env.DB.prepare('INSERT OR IGNORE INTO flags (target, target_id, user_id, reason, created_at) VALUES (?, ?, ?, ?, ?)').bind(target, id, me.id, reason, nowIso()).run();
   const n = await env.DB.prepare("SELECT COUNT(*) AS n FROM flags WHERE target = ? AND target_id = ? AND status = 'new'").bind(target, id).first();
-  if (n.n >= AUTO_HIDE) await env.DB.prepare(`UPDATE ${FLAG_TABLE[target]} SET hidden = 1 WHERE id = ?`).bind(id).run();
+  if (n.n >= AUTO_HIDE) {
+    await env.DB.prepare(`UPDATE ${FLAG_TABLE[target]} SET hidden = 1 WHERE id = ?`).bind(id).run();
+    await setImagesHidden(env, target, id, true);
+  }
   return json({ ok: true });
 }
 
@@ -488,7 +493,7 @@ async function home(env, me) {
   const month = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 7);
   const monthStart = new Date(`${month}-01T00:00:00+09:00`).toISOString();
   const db = env.DB;
-  const [events, clubs, posts, counts, polls, bowls, top] = await db.batch([
+  const [events, clubs, posts, counts, polls, bowls, top, recipes] = await db.batch([
     db.prepare(`SELECT e.id, e.club_id, e.kind, e.title, e.region, e.place, e.starts_at, e.max_people, e.attendee_count, c.name AS club_name FROM events e LEFT JOIN clubs c ON c.id = e.club_id WHERE e.hidden = 0 AND e.canceled = 0 AND e.starts_at >= ? ORDER BY e.starts_at LIMIT 6`).bind(now),
     db.prepare('SELECT id, name, region, area, substr(intro, 1, 90) AS intro, member_count, games FROM clubs WHERE hidden = 0 ORDER BY member_count DESC, id DESC LIMIT 6'),
     db.prepare(`SELECT p.id, p.cat, p.title, p.created_at, p.comments, p.likes, p.pinned, p.adopted, ${authorCols} FROM posts p JOIN users u ON u.id = p.user_id WHERE p.hidden = 0 ORDER BY p.pinned DESC, p.id DESC LIMIT 8`),
@@ -496,11 +501,13 @@ async function home(env, me) {
     db.prepare("SELECT p.id, p.title, p.poll_ends, p.pinned, (SELECT SUM(votes) FROM poll_options o WHERE o.post_id = p.id) AS total FROM posts p WHERE p.hidden = 0 AND p.cat = 'poll' AND (p.poll_ends = '' OR p.poll_ends >= ?) ORDER BY p.pinned DESC, p.id DESC LIMIT 3").bind(kstDay()),
     db.prepare(`SELECT r.id, r.slug, r.rating, r.again, substr(r.body, 1, 120) AS body, r.demo, r.updated_at AS created_at, ${authorCols} FROM bowls r JOIN users u ON u.id = r.user_id WHERE r.hidden = 0 AND r.body != '' ORDER BY r.updated_at DESC LIMIT 6`),
     db.prepare("SELECT u.nick, u.xp, u.badge AS fb, SUM(p.pts) AS s FROM points p JOIN users u ON u.id = p.user_id WHERE p.created_at >= ? AND u.status = 'ok' GROUP BY p.user_id ORDER BY s DESC LIMIT 5").bind(monthStart),
+    db.prepare(`SELECT r.id, r.title, r.ramen, r.photos, r.mins, r.likes, r.comments, r.reviews, r.rsum, r.created_at, ${authorCols} FROM recipes r JOIN users u ON u.id = r.user_id WHERE r.hidden = 0 ORDER BY r.id DESC LIMIT 4`),
   ]);
   // 맨 위 투표 하나는 보기까지 함께 보내요 (처음 화면에서 바로 투표할 수 있게)
   const first = polls.results[0];
   const poll = first ? { id: first.id, title: first.title, ...(await pollOf(env, first.id, me, first.poll_ends)) } : null;
-  return json({ ok: true, events: events.results, clubs: clubs.results, posts: posts.results, counts: counts.results[0], polls: polls.results, poll, bowls: bowls.results, top: top.results });
+  const rc = recipes.results.map((r) => ({ ...r, cover: String(r.photos || '').split(',').filter(Boolean)[0] || '', ramen: r.ramen ? r.ramen.split(',') : [], photos: undefined }));
+  return json({ ok: true, events: events.results, clubs: clubs.results, posts: posts.results, counts: counts.results[0], polls: polls.results, poll, bowls: bowls.results, top: top.results, recipes: rc });
 }
 async function mine(env, me) {
   const now = kstStamp();

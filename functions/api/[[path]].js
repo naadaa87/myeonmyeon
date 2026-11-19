@@ -4,6 +4,7 @@
 // - 회원: /api/me, /api/auth/(signup|login|logout|profile|password|delete)
 // - 라면: /api/home, /api/ramen/stats, /api/ramen/:slug (기록·표시), /api/bowls, /api/rank, /api/worldcup
 // - 후루룩클럽: /api/community/home, /api/posts, /api/events, /api/comments, /api/flag, /api/my
+// - 레시피 자랑: /api/recipes (목록·쓰기), /api/recipes/:id (보기·고치기·좋아요·저장·후기), /api/recipes/upload (사진), /api/img/:id (사진 보기)
 // - 참여·성장: /api/checkin, /api/growth, /api/sync, /api/users/:nick, /api/notes
 // - 운영 관리: POST /api/admin-login 으로 받은 토큰을 x-admin-token 헤더에 넣어 /api/admin/... 호출
 //
@@ -12,6 +13,7 @@
 // - 비밀 값: ADMIN_PASSWORD (필수)
 // - 선택: COUPANG_ACCESS_KEY, COUPANG_SECRET_KEY (쿠팡 파트너스 링크 자동 만들기)
 // - 선택: INQUIRY_WEBHOOK_URL (새 문의 알림), AUTH_PEPPER, PBKDF2_ITER
+// - 선택: R2 버킷 바인딩 PHOTOS (레시피 사진 저장소. 없으면 D1에 저장해요)
 // 표는 처음 쓸 때 자동으로 만들어져요.
 
 import { json, fail, readBody, clip, kstDay, sameOrigin, ensureSchema, assetJSON, ipHashOf } from '../../server/util.js';
@@ -23,6 +25,8 @@ import { ramenRoutes } from '../../server/ramen.js';
 import { levelInfo } from '../../server/growth.js';
 import { collect, isBot } from '../../server/kpi.js';
 import { adminLogin, adminAuthed } from '../../server/adminauth.js';
+import { recipes, serveImage } from '../../server/recipes.js';
+import { listComments } from '../../server/community.js';
 
 const KINDS = ['wrong', 'newramen', 'sale', 'typo', 'other'];
 const EVENTS = ['view', 'share', 'timer', 'compare', 'worldcup', 'map'];
@@ -79,6 +83,7 @@ export async function onRequest(context) {
     // 다른 사이트에서 몰래 보내는 요청은 받지 않아요 (운영 관리는 비밀번호 헤더로 따로 확인)
     if (write && route !== 'admin' && route !== 'admin-login' && route !== 'event' && !sameOrigin(request)) return fail('이 사이트에서 보낸 요청만 받아요.', 403);
     await ensureSchema(env.DB);
+    if (route === 'img' && request.method === 'GET') return await serveImage(env, String(parts[1] || ''), parts[2] === 's');
 
     if (route === 'report' && request.method === 'POST') return await postReport(request, env);
     if (route === 'event' && request.method === 'POST') return await postEvent(request, env);
@@ -99,6 +104,7 @@ export async function onRequest(context) {
       return json({ ok: true, demo: !!demo, user: { ...publicUser(me), level: levelInfo(me.xp), unread: n ? n.n : 0, checked: me.last_checkin === today, streak: me.streak } });
     }
     if (route === 'auth') return await auth(request, env, parts.slice(1), me);
+    if (route === 'recipes') return await recipes(request, env, parts.slice(1), me, listComments);
     if (COMMUNITY.has(route)) return await community(request, env, route, parts.slice(1), me);
     if (RAMEN.has(route)) return await ramenRoutes(request, env, route, parts.slice(1), me);
     return fail('없는 주소예요.', 404);

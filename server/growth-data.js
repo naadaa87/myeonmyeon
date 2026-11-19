@@ -36,6 +36,9 @@ export const RULES = {
   join: [3, 3, '시식회·번개 참여 신청'],
   manner: [1, 10, '함께한 사람 매너 평가하기'],
   tip: [10, 3, '신상·정보 제보가 반영됨'],
+  recipe: [10, 2, '레시피 자랑 올리기'],
+  rreview: [4, 5, '레시피를 따라 해 보고 후기 남기기 (레시피마다 한 번)'],
+  followed: [3, 20, '누군가 내 레시피를 따라 해 보고 후기를 남김'],
 };
 
 // 배지: key, 이름, 받는 조건, 아이콘, 색
@@ -52,7 +55,9 @@ export const BADGES = [
   { key: 'taste10', name: '맛 지도 제작자', desc: '맛 지도를 10번 채웠어요', icon: 'map', color: '#7A5AC8' },
   { key: 'checkin7', name: '일주일 개근', desc: '7일 연속 출석했어요', icon: 'cal', color: '#E9902F' },
   { key: 'checkin30', name: '단골손님', desc: '출석을 30번 했어요', icon: 'cal', color: '#8C3A2B' },
-  { key: 'recipe3', name: '조합 공유왕', desc: '조합·레시피 글을 3개 올렸어요', icon: 'flask', color: '#3E8E7E' },
+  { key: 'cook1', name: '첫 레시피', desc: '레시피 자랑을 처음 올렸어요', icon: 'spoon', color: '#E06A2C' },
+  { key: 'recipe3', name: '조합 공유왕', desc: '레시피 자랑과 조합 글을 합쳐 3개 올렸어요', icon: 'flask', color: '#3E8E7E' },
+  { key: 'followed5', name: '따라 하고 싶은 레시피', desc: '내 레시피를 따라 해 본 후기가 5개 모였어요', icon: 'people', color: '#D93A26' },
   { key: 'solver1', name: '친절한 답변', desc: '답변이 처음 채택됐어요', icon: 'check', color: '#3E8E7E' },
   { key: 'vote1', name: '한 표', desc: '투표에 처음 참여했어요', icon: 'vote', color: '#F2B33D' },
   { key: 'worldcup1', name: '월드컵 우승 결정', desc: '라면 월드컵을 끝까지 했어요', icon: 'trophy', color: '#C99A1E' },

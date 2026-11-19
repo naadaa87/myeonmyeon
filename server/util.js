@@ -140,6 +140,18 @@ export async function ensureSchema(db) {
     T('CREATE INDEX IF NOT EXISTS idx_clk_ts ON clk (ts)'),
     T(`CREATE TABLE IF NOT EXISTS ev (id INTEGER PRIMARY KEY AUTOINCREMENT, ts TEXT NOT NULL, day TEXT NOT NULL, vid TEXT NOT NULL DEFAULT '', sid TEXT NOT NULL DEFAULT '', t TEXT NOT NULL, k TEXT NOT NULL DEFAULT '', n INTEGER NOT NULL DEFAULT 0)`),
     T('CREATE INDEX IF NOT EXISTS idx_ev_day ON ev (day, t)'),
+    // 레시피 자랑 (server/recipes.js)
+    T(`CREATE TABLE IF NOT EXISTS recipes (id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER NOT NULL, title TEXT NOT NULL, intro TEXT NOT NULL DEFAULT '', tip TEXT NOT NULL DEFAULT '', items TEXT NOT NULL DEFAULT '[]', steps TEXT NOT NULL DEFAULT '[]', mins INTEGER NOT NULL DEFAULT 0, level TEXT NOT NULL DEFAULT '', serves INTEGER NOT NULL DEFAULT 1, ramen TEXT NOT NULL DEFAULT '', photos TEXT NOT NULL DEFAULT '', views INTEGER NOT NULL DEFAULT 0, likes INTEGER NOT NULL DEFAULT 0, saves INTEGER NOT NULL DEFAULT 0, shares INTEGER NOT NULL DEFAULT 0, comments INTEGER NOT NULL DEFAULT 0, reviews INTEGER NOT NULL DEFAULT 0, rsum INTEGER NOT NULL DEFAULT 0, created_at TEXT NOT NULL, updated_at TEXT NOT NULL, hidden INTEGER NOT NULL DEFAULT 0)`),
+    T('CREATE INDEX IF NOT EXISTS idx_recipes_list ON recipes (hidden, id)'),
+    T('CREATE INDEX IF NOT EXISTS idx_recipes_user ON recipes (user_id)'),
+    T(`CREATE TABLE IF NOT EXISTS recipe_likes (recipe_id INTEGER NOT NULL, user_id INTEGER NOT NULL, PRIMARY KEY (recipe_id, user_id))`),
+    T(`CREATE TABLE IF NOT EXISTS recipe_saves (recipe_id INTEGER NOT NULL, user_id INTEGER NOT NULL, created_at TEXT NOT NULL, PRIMARY KEY (recipe_id, user_id))`),
+    T('CREATE INDEX IF NOT EXISTS idx_recipe_saves_user ON recipe_saves (user_id)'),
+    T(`CREATE TABLE IF NOT EXISTS recipe_reviews (id INTEGER PRIMARY KEY AUTOINCREMENT, recipe_id INTEGER NOT NULL, user_id INTEGER NOT NULL, rating INTEGER NOT NULL, body TEXT NOT NULL DEFAULT '', photo TEXT NOT NULL DEFAULT '', created_at TEXT NOT NULL, updated_at TEXT NOT NULL, hidden INTEGER NOT NULL DEFAULT 0, UNIQUE (recipe_id, user_id))`),
+    T('CREATE INDEX IF NOT EXISTS idx_recipe_reviews_user ON recipe_reviews (user_id)'),
+    T(`CREATE TABLE IF NOT EXISTS images (id TEXT PRIMARY KEY, user_id INTEGER NOT NULL, ref TEXT NOT NULL DEFAULT '', mime TEXT NOT NULL, tmime TEXT NOT NULL, w INTEGER NOT NULL DEFAULT 0, h INTEGER NOT NULL DEFAULT 0, bytes INTEGER NOT NULL DEFAULT 0, store TEXT NOT NULL DEFAULT 'd1', data BLOB, thumb BLOB, created_at TEXT NOT NULL, hidden INTEGER NOT NULL DEFAULT 0)`),
+    T('CREATE INDEX IF NOT EXISTS idx_images_ref ON images (ref, created_at)'),
+    T('CREATE INDEX IF NOT EXISTS idx_images_user ON images (user_id)'),
     T(`CREATE TABLE IF NOT EXISTS cp_daily (day TEXT PRIMARY KEY, clicks INTEGER NOT NULL DEFAULT 0, orders INTEGER NOT NULL DEFAULT 0, gmv INTEGER NOT NULL DEFAULT 0, commission INTEGER NOT NULL DEFAULT 0, cancels INTEGER NOT NULL DEFAULT 0, memo TEXT NOT NULL DEFAULT '', updated_at TEXT NOT NULL)`),
   ]);
   try { await db.prepare('CREATE INDEX IF NOT EXISTS idx_users_xp ON users (status, xp)').run(); } catch (e) { /* 넘어가요 */ }

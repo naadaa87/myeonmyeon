@@ -79,7 +79,9 @@ export async function checkBadges(env, request, uid, keys) {
       else if (k === 'fire3') ok = rs.filter((r) => r.hot === 2).length >= 3;
       else ok = rs.filter((r) => r.hot === 0).length >= 5;
     } else if (k === 'taste10') ok = (await count("SELECT COUNT(*) AS n FROM points WHERE user_id = ? AND act = 'taste'", uid)) >= 10;
-    else if (k === 'recipe3') ok = (await count("SELECT COUNT(*) AS n FROM posts WHERE user_id = ? AND cat = 'recipe' AND hidden = 0", uid)) >= 3;
+    else if (k === 'recipe3') ok = (await count("SELECT (SELECT COUNT(*) FROM posts WHERE user_id = ? AND cat = 'recipe' AND hidden = 0) + (SELECT COUNT(*) FROM recipes WHERE user_id = ? AND hidden = 0) AS n", uid, uid)) >= 3;
+    else if (k === 'cook1') ok = (await count('SELECT COUNT(*) AS n FROM recipes WHERE user_id = ?', uid)) >= 1;
+    else if (k === 'followed5') ok = (await count('SELECT SUM(reviews) AS n FROM recipes WHERE user_id = ? AND hidden = 0', uid) || 0) >= 5;
     else if (k === 'worldcup1') ok = (await count("SELECT COUNT(*) AS n FROM points WHERE user_id = ? AND act = 'worldcup'", uid)) >= 1;
     else if (k === 'solver1') ok = (await count("SELECT COUNT(*) AS n FROM points WHERE user_id = ? AND act = 'adopted'", uid)) >= 1;
     else if (k === 'vote1') ok = (await count('SELECT COUNT(*) AS n FROM poll_votes WHERE user_id = ?', uid)) >= 1;

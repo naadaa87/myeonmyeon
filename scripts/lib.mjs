@@ -163,6 +163,7 @@ export const NAV = [
   ['/rank/', '랭킹'],
   ['/lab/', '취향실험실'],
   ['/club/', '후루룩클럽'],
+  ['/recipes/', '레시피 자랑'],
   ['/new/', '신상 레이더'],
   ['/shop/', '라면몰'],
 ];
@@ -199,7 +200,7 @@ function footer() {
 </div>
 <nav class="foot-nav" aria-label="바닥 메뉴">
 <div><b>둘러보기</b><a href="/ramen/">라면 도감</a><a href="/story/">라면 이야기</a><a href="/rank/">랭킹</a><a href="/new/">신상 레이더</a><a href="/shop/">라면몰</a></div>
-<div><b>함께하기</b><a href="/record/">한 그릇 기록</a><a href="/lab/">취향실험실</a><a href="/club/">후루룩클럽</a><a href="/me/">내 도감</a></div>
+<div><b>함께하기</b><a href="/record/">한 그릇 기록</a><a href="/lab/">취향실험실</a><a href="/club/">후루룩클럽</a><a href="/recipes/">레시피 자랑</a><a href="/me/">내 도감</a></div>
 <div><b>${esc(SITE_NAME)}</b><a href="/about/">${esc(SITE_NAME)} 소개</a><a href="/rank/rules/">평가 기준</a><a href="/contact/">문의하기</a><button type="button" class="link-btn" data-report="">틀린 정보 알려 주기</button></div>
 </nav>
 <nav class="foot-legal" aria-label="약관과 정책">

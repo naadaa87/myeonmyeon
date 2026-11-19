@@ -1,6 +1,7 @@
 // 회원: 가입, 로그인, 로그아웃, 내 정보
 import { json, fail, readBody, clip, oneLine, nowIso, randomToken, sha256Hex, b64u, unb64u, ipHashOf, tooMany, logAction, REGIONS } from './util.js';
 import { grow } from './growth.js';
+import { deleteUserRecipes } from './recipes.js';
 
 const COOKIE = 'mm_sid';
 const DAYS = 30;
@@ -174,9 +175,10 @@ export async function auth(request, env, parts, me) {
   return fail('없는 주소예요.', 404);
 }
 
-// 탈퇴: 개인 정보를 지우고, 남긴 글과 한 그릇 기록은 ‘탈퇴한 회원’으로 남겨요. 직접 만든 모임과 일정은 지워요.
+// 탈퇴: 개인 정보를 지우고, 남긴 글과 한 그릇 기록은 ‘탈퇴한 회원’으로 남겨요. 직접 만든 모임과 일정, 레시피 자랑과 사진은 지워요.
 export async function deleteUser(env, id) {
   const db = env.DB;
+  await deleteUserRecipes(env, id);
   const { results: clubs } = await db.prepare('SELECT id FROM clubs WHERE owner_id = ?').bind(id).all();
   for (const c of clubs) await deleteClub(env, c.id);
   const { results: evs } = await db.prepare('SELECT id FROM events WHERE user_id = ?').bind(id).all();
