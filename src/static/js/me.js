@@ -107,11 +107,26 @@
       return '<div class="dist-row"><span>' + esc(gr.name) + '</span><span class="bar"><i style="width:' + (all.length ? n / all.length * 100 : 0) + '%"></i></span><span>' + n + ' / ' + all.length + '</span></div>';
     }).join('');
     var makers = Object.keys(D.MAKERS).map(function (m) {
-      var all = ramen.filter(function (r) { return r.m === m; });
+      var all = ramen.filter(function (r) { return r.m === m && r.co === 'kr'; });
       var n = all.filter(function (r) { return mine[r.s]; }).length;
       return all.length ? '<div class="dist-row"><span>' + esc(D.MAKERS[m]) + '</span><span class="bar"><i style="width:' + n / all.length * 100 + '%"></i></span><span>' + n + ' / ' + all.length + '</span></div>' : '';
     }).join('');
-    box.innerHTML = '<section class="card"><h2>' + ico('i-book') + '도감 ' + got + ' / ' + ramen.length + '칸</h2><div class="cm-grid"><div class="coll-sum"><p class="small muted">종류별</p>' + groups + '</div><div class="coll-sum"><p class="small muted">회사별</p>' + makers + '</div></div>' +
+    // 세계 라면 여권: 기록한 라면의 나라마다 도장을 찍어요
+    var cos = {};
+    ramen.forEach(function (r) {
+      var c = cos[r.co] || (cos[r.co] = { name: r.co === 'kr' ? '한국' : r.cn, all: 0, n: 0 });
+      c.all++;
+      if (mine[r.s]) c.n++;
+    });
+    var keys = Object.keys(cos).sort(function (a, b) { return (a === 'kr' ? -1 : b === 'kr' ? 1 : 0) || cos[b].all - cos[a].all; });
+    var stamped = keys.filter(function (k) { return cos[k].n; }).length;
+    var passport = '<section class="card passport"><h2>' + ico('i-pin') + '세계 라면 여권 <small>' + stamped + ' / ' + keys.length + '개 나라</small></h2>' +
+      '<p class="small muted">기록한 라면의 나라마다 도장이 찍혀요. 흐린 도장을 누르면 그 나라 라면을 볼 수 있어요.</p><div class="stamps">' +
+      keys.map(function (k, i) {
+        var c = cos[k];
+        return '<a class="stamp' + (c.n ? ' on' : '') + '" style="--tilt:' + ((i * 37) % 13 - 6) + 'deg" href="' + (k === 'kr' ? '/ramen/?co=kr' : '/world/' + k + '/') + '"><b>' + esc(c.name) + '</b><span>' + (c.n ? c.n + '그릇' : c.all + '가지') + '</span></a>';
+      }).join('') + '</div></section>';
+    box.innerHTML = passport + '<section class="card"><h2>' + ico('i-book') + '도감 ' + got + ' / ' + ramen.length + '칸</h2><div class="cm-grid"><div class="coll-sum"><p class="small muted">종류별</p>' + groups + '</div><div class="coll-sum"><p class="small muted">한국 라면 회사별</p>' + makers + '</div></div>' +
       '<div class="coll">' + ramen.slice().sort(function (a, b) { return (mine[b.s] ? 1 : 0) - (mine[a.s] ? 1 : 0) || a.n.localeCompare(b.n, 'ko'); }).map(function (r) {
         var b = mine[r.s];
         return '<a href="' + (b ? '/ramen/' + r.s + '/' : '/record/?r=' + r.s) + '"' + (b ? ' class="got" data-r="★' + (b.r / 2).toFixed(1) + '"' : '') + '><img src="' + MM.imgOf(r) + '" alt="" width="96" height="96" loading="lazy">' + esc(r.n) + '</a>';

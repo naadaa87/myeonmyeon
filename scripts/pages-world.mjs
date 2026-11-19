@@ -98,6 +98,7 @@ ${bars(prow, { max: 81, unit: '개', note: W.percapNote })}
 <section class="sec" aria-labelledby="h-nations">
 ${secHead('나라별로 보기', moreLink('/ramen/?co=xx', '도감에서 필터로 고르기'), 'h-nations')}
 <div class="wgrid">${LIST.map(countryCard).join('')}</div>
+<p class="note">${icon('i-pin')}먹어 본 라면을 기록하면 <a href="/me/#coll">내 도감의 세계 라면 여권</a>에 나라마다 도장이 찍혀요.</p>
 </section>
 
 <section class="sec" aria-labelledby="h-regions">
@@ -145,6 +146,7 @@ ${crumbs(items)}
 <dl class="story-facts">${facts.map(([a, b]) => `<div><dt>${esc(a)}</dt><dd>${esc(b)}</dd></div>`).join('')}</dl>
 <dl class="wmeta">${c.makers ? `<div><dt>주요 회사</dt><dd>${esc(c.makers)}</dd></div>` : ''}${c.flavors ? `<div><dt>많이 먹는 맛</dt><dd>${esc(c.flavors)}</dd></div>` : ''}</dl>
 <div class="story-body world-body">${c.body.map((p) => `<p>${rich(p)}</p>`).join('')}</div>
+${c.eat ? `<aside class="weat"><h2>${icon('i-bowl')}이렇게 먹어요</h2><p>${esc(c.eat)}</p></aside>` : ''}
 </article>
 <section class="sec" aria-labelledby="h-list">
 ${secHead(`도감 속 ${c.name} 라면`, moreLink(`/ramen/?co=${c.code}`, '맵기·맛으로 골라 보기'), 'h-list')}

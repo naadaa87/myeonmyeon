@@ -1,5 +1,6 @@
 // 페이지: 취향실험실, 후루룩클럽, 내 도감, 소개·약관·문의, 운영 관리, 404
-import { esc, cfg, SITE_NAME, OPERATOR, RAMEN, layout, icon, WAVE, img, pageBanner, crumbs, crumbLd, secHead, moreLink, today } from './lib.mjs';
+import { esc, cfg, SITE_NAME, OPERATOR, RAMEN, layout, icon, WAVE, img, pageBanner, crumbs, crumbLd, secHead, moreLink, today, readJSON, COUNTRIES, hotChip } from './lib.mjs';
+import { HOTS, STYLES } from '../server/catalog-data.js';
 import { promisesHTML } from './pages-main.mjs';
 import { LEVELS, RULES, BADGES, levelOf, glyph, emblemSVG, badgeSVG } from '../server/growth-data.js';
 import { POST_CATS } from '../server/util.js';
@@ -11,6 +12,9 @@ const LAB = [
   ['worldcup', '라면 월드컵', '둘 중 하나를 고르다 보면 나의 최애 라면이 남아요.', 'club-vote', '라면 두 그릇 앞의 빨간 표와 노란 표', 'i-trophy'],
   ['timer', '조리 타이머', '면 익힘을 초 단위로. 계란 넣을 때도 알려 줘요.', 'lab-texture', '젓가락으로 들어 올린 가는 면과 굵은 면', 'i-timer'],
   ['water', '물 양 계산기', '두 봉지, 세 봉지 끓일 때 물을 얼마나 넣을지 계산해요.', 'club-recipe', '냄비에서 끓고 있는 라면', 'i-drop'],
+  ['heat', '맵기 사다리', '라면 회사가 밝힌 스코빌 지수로 매운 순서를 줄 세웠어요. 신라면의 몇 배인지도 함께 봐요.', 'broth-spicy', '빨간 국물 라면 한 그릇', 'i-flame'],
+  ['pick', '오늘의 라면 뽑기', '나라, 맵기, 종류를 고르고 뽑기를 누르면 오늘 먹을 라면 하나를 골라 드려요.', 'mixed-bibim', '비빔면 한 그릇', 'i-dice'],
+  ['quiz', '라면 퀴즈', '세계 라면 상식 10문제. 문제마다 답과 짧은 이야기가 따라 나와요.', 'archive-card', '라면 사진 카드를 꽂아 둔 나무 서랍', 'i-help'],
 ];
 const labTabs = (cur) => `<nav class="sub-tabs" aria-label="취향실험실 메뉴"><a href="/lab/"${cur === '' ? ' aria-current="page"' : ''}>실험실 홈</a>${LAB.map(([k, t]) => `<a href="/lab/${k}/"${cur === k ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</nav>`;
 
@@ -21,7 +25,7 @@ ${labTabs('')}
 <div class="lab-cards">${LAB.map(([k, t, d, im, alt, ic]) => `<a class="lab-card" href="/lab/${k}/">${img(im, alt)}<div><h2>${icon(ic)}${t}</h2><p>${d}</p></div></a>`).join('')}</div>
 <p class="note">맛 지도와 비교는 회원들이 남긴 한 그릇 기록으로 그려요. 기록이 세 개 넘게 모인 라면부터 지도에 나타나요.</p>
 </div>`;
-  return layout({ title: `취향실험실 - 맛 지도, 라면 비교, 라면 월드컵 | ${SITE_NAME}`, description: '라면 맛 지도, 라면 비교, 라면 월드컵, 조리 타이머, 물 양 계산기. 내 입맛에 맞는 라면을 찾아요.', path: '/lab/', body });
+  return layout({ title: `취향실험실 - 맛 지도, 라면 비교, 맵기 사다리, 라면 퀴즈 | ${SITE_NAME}`, description: '라면 맛 지도, 라면 비교, 라면 월드컵, 맵기 사다리, 오늘의 라면 뽑기, 라면 퀴즈, 조리 타이머, 물 양 계산기. 내 입맛에 맞는 라면을 찾아요.', path: '/lab/', body });
 }
 
 function labPage(key, title, lead, inner, desc, script = 'lab.js') {
@@ -35,7 +39,7 @@ ${img(t[3], t[4], 'page-head-img', true)}
 </section>
 <div class="lab" data-lab="${key}">${inner}</div>
 </div>`;
-  return layout({ title: `${title} | ${SITE_NAME} 취향실험실`, description: desc, path: `/lab/${key}/`, body, scripts: [script], jsonld: crumbLd([['/', SITE_NAME], ['/lab/', '취향실험실'], [`/lab/${key}/`, title]]) });
+  return layout({ title: `${title} | ${SITE_NAME} 취향실험실`, description: desc, path: `/lab/${key}/`, body, scripts: script ? [script] : [], jsonld: crumbLd([['/', SITE_NAME], ['/lab/', '취향실험실'], [`/lab/${key}/`, title]]) });
 }
 
 export const labPages = () => [
@@ -44,7 +48,75 @@ export const labPages = () => [
   ['lab/worldcup', labPage('worldcup', '라면 월드컵', '두 그릇 가운데 더 끌리는 쪽을 고르세요. 끝까지 고르면 모두의 결과와 비교해 드려요.', '<p class="muted">준비하는 중이에요</p>', '16강, 32강 라면 월드컵으로 나의 최애 라면을 찾고 모두의 우승 기록과 비교해요.')],
   ['lab/timer', labPage('timer', '조리 타이머', '봉지에 적힌 시간을 맞추고 시작을 누르세요. 화면을 켜 둔 채로 쓰면 가장 정확해요.', timerHTML(), '라면 조리 타이머. 3분, 4분, 4분 30초 같은 시간을 맞추고, 계란 넣을 때와 불 끌 때를 알려 줘요.')],
   ['lab/water', labPage('water', '물 양 계산기', '봉지 뒷면에 적힌 한 봉지 물 양을 넣으면 여러 봉지를 끓일 때 필요한 물을 계산해요.', waterHTML(), '라면 여러 봉지를 끓일 때 필요한 물 양을 ml, 종이컵, 계량컵으로 계산해요.')],
+  ['lab/heat', labPage('heat', '맵기 사다리', '라면 회사가 밝혀 기사에 실린 스코빌 지수(SHU)로 매운 순서를 줄 세웠어요. 막대 오른쪽 숫자는 신라면(3,400 SHU)의 몇 배인지예요.', heatHTML(), '신라면, 불닭볶음면, 핵불닭, 틈새라면, 킹뚜껑까지 라면 회사가 밝힌 스코빌 지수로 줄 세운 맵기 사다리.', '')],
+  ['lab/pick', labPage('pick', '오늘의 라면 뽑기', '고르기 어려운 날엔 뽑기에 맡겨 보세요. 조건을 정하면 그 안에서 하나를 골라 드려요.', pickHTML(), '나라, 맵기, 종류를 고르면 오늘 먹을 라면 하나를 골라 주는 라면 뽑기.', 'fun.js')],
+  ['lab/quiz', labPage('quiz', '라면 퀴즈', '문제는 매번 섞여서 나와요. 다 풀면 점수와 함께 더 읽을거리를 보여 드려요.', quizHTML(), '세계 첫 라면부터 나라별 라면 문화까지, 라면 상식 퀴즈 10문제.', 'fun.js')],
 ];
+
+// 맵기 사다리: 회사가 밝힌 스코빌 지수만 줄 세워요
+const SHIN = 3400;
+function heatHTML() {
+  const list = RAMEN.filter((r) => r.shu).sort((a, b) => b.shu.v - a.shu.v || a.n.localeCompare(b.n, 'ko'));
+  const max = list[0].shu.v;
+  const rows = list.map((r, i) => {
+    const x = r.shu.v / SHIN;
+    return `<li class="hrow${r.s === 'shin-ramyun' ? ' hrow-base' : ''}">
+<span class="hrow-n">${i + 1}</span>
+<span class="hrow-name"><a href="/ramen/${r.s}/">${esc(r.n)}</a><small>${esc(r.maker)}</small></span>
+<span class="hrow-bar"><i style="width:${Math.max(3, r.shu.v / max * 100).toFixed(1)}%"></i></span>
+<span class="hrow-v"><b>${r.shu.v.toLocaleString('ko-KR')}</b> SHU<small>${r.s === 'shin-ramyun' ? '기준' : `신라면 × ${x >= 10 ? Math.round(x) : x.toFixed(1)}`}</small></span>
+</li>`;
+  }).join('');
+  const SRC = [
+    ['아시아경제(다음), 핵불닭보다 킹뚜껑…K-라면 매운맛 지도 (2024.7.28)', 'https://v.daum.net/v/20240728083011850'],
+    ['비즈워치, 신라면=순한 맛 (2023.8.17)', 'https://news.bizwatch.co.kr/article/consumer/2023/08/17/0026'],
+    ['디에디트, 어디까지 매워지는 거예요? 매운 라면 리뷰 4 (2023.9.7)', 'https://the-edit.co.kr/55927'],
+    ['일간스포츠, 오뚜기 더핫 열라면 7500SHU (2025.8)', 'https://isplus.com/article/view/isp202508200001'],
+  ];
+  return `<ol class="heat-list">${rows}</ol>
+<p class="small muted">값은 라면 회사가 밝혀 기사에 실린 것만 적었어요. 같은 제품도 기사마다 숫자가 조금씩 달라, 여러 제품이 함께 실린 한 기사(아시아경제, 2024.7)를 기준으로 맞추고 그 뒤에 나온 제품만 따로 적었어요. 회사가 값을 밝히지 않은 라면은 빠져 있어요. 용사라면은 가장 매운 단계를 골랐을 때 값이에요.</p>
+<section class="sec heat-story" aria-labelledby="h-heat-story">
+${secHead('매운맛 이야기', '', 'h-heat-story')}
+<div class="heat-cards">
+<div class="heat-card"><h3>신라면도 점점 매워졌어요</h3><p>신라면의 스코빌 지수는 처음에 1,300 정도였어요. 매운 라면이 늘던 2012년 2,000대로 올렸고, 2015년 지금의 3,400 SHU가 됐다고 해요. 2023년에는 그 두 배가 넘는 <a href="/ramen/shin-ramyun-the-red/">신라면 더 레드</a>(7,500 SHU)가 나왔어요.</p></div>
+<div class="heat-card"><h3>숫자가 전부는 아니에요</h3><p>스코빌 지수는 매운 성분을 설탕물에 몇 배 희석해야 매운맛이 사라지는지로 재요. 그래서 국물에 풀리는 라면과 소스가 면에 바로 묻는 볶음면은 숫자가 같아도 느끼는 맵기가 달라요. 신라면 더 레드는 불닭볶음면보다 숫자가 높지만 국물에 희석돼 체감은 비슷하다는 후기도 있어요.</p></div>
+<div class="heat-card"><h3>맵기 표시는 아직 제각각</h3><p>농림축산식품부는 2018년부터 라면 매운맛을 네 단계로 표시하도록 권했지만, 실제로 표시한 제품은 드물어요. 삼양식품은 불닭에 자체 단계(BFL)를, 맵탱에는 매운맛을 다섯 갈래로 나눈 ‘스파이시 펜타곤’을 붙여요.</p></div>
+<div class="heat-card"><h3>덴마크 리콜 소동</h3><p>2024년 덴마크 정부가 핵불닭볶음면 등을 너무 맵다며 리콜했다가, 스코빌 지수를 잰 방식에 오류가 있었다는 한국 정부와 삼양식품의 지적을 받아들여 리콜을 풀었어요.</p></div>
+</div>
+</section>
+<p class="row-btns"><a class="btn btn-line" href="/ramen/?hot=2">${icon('i-flame')}아주 매운 라면 모두 보기</a> <a class="btn btn-line" href="/lab/map/">맛 지도에서 체감 맵기 보기</a></p>
+<section class="story-src" aria-labelledby="h-heat-src"><h2 id="h-heat-src">참고한 자료</h2><ol>${SRC.map(([t, u]) => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a></li>`).join('')}</ol></section>`;
+}
+
+// 오늘의 라면 뽑기: 조건은 화면에서 골라요
+function pickHTML() {
+  const chip = (k, v, label, on) => `<button type="button" class="fchip" data-pk="${k}" data-v="${v}" aria-pressed="${on ? 'true' : 'false'}">${esc(label)}</button>`;
+  return `<div class="rpick" data-pick>
+<div class="rpick-opts">
+<div class="fgroup"><p class="fgroup-h">나라</p><div class="fchips">${chip('co', '', '어디든', true)}${chip('co', 'kr', '한국')}${chip('co', 'xx', '해외')}</div></div>
+<div class="fgroup"><p class="fgroup-h">맵기</p><div class="fchips">${chip('hot', '', '상관없어요', true)}${Object.entries(HOTS).map(([k, v]) => chip('hot', k, v)).join('')}</div></div>
+<div class="fgroup"><p class="fgroup-h">종류</p><div class="fchips">${chip('c', '', '아무거나', true)}${chip('c', 'soup', '국물')}${chip('c', 'dry', '볶음·비빔')}${chip('c', 'jj', '짜장·짬뽕')}${chip('c', 'udon', '우동·칼국수')}</div></div>
+<label class="check"><input type="checkbox" data-pick-new><span>판매 중인 라면만</span></label>
+</div>
+<div class="rpick-stage" aria-live="polite">
+<div class="rpick-slot" data-slot><span>오늘은 어떤 라면?</span></div>
+<p class="rpick-pool small muted" data-pool></p>
+<p class="row-btns"><button type="button" class="btn btn-main btn-lg" data-go>${icon('i-dice')}뽑기</button></p>
+<div data-result></div>
+</div>
+</div>`;
+}
+
+// 라면 퀴즈: 문제는 content/quiz.json
+const QUIZ = readJSON('content/quiz.json').questions;
+QUIZ.forEach((x, i) => {
+  if (!(x.o && x.o.length === 4 && x.a >= 0 && x.a < 4 && x.why && x.link)) { console.error(`[라면 퀴즈] ${i + 1}번 문제를 확인해 주세요.`); process.exit(1); }
+});
+function quizHTML() {
+  return `<div class="quiz" data-quiz><p class="muted">퀴즈를 준비하는 중이에요</p></div>
+<script type="application/json" id="quiz-data">${JSON.stringify(QUIZ).replace(/</g, '\\u003c')}</script>
+<p class="note">문제는 면면 도감, 라면 이야기, 세계 라면 지도에 실은 사실로 냈어요. 틀린 곳이 보이면 <button type="button" class="link-btn" data-report="">알려 주세요</button>.</p>`;
+}
 
 function timerHTML() {
   return `<div class="timer" data-timer>

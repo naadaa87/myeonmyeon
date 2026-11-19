@@ -100,6 +100,18 @@ ${secHead('세계 라면 지도', moreLink('/world/', '나라별로 보기'), 'h
 ${ramenGrid(['nissin-cup-noodle', 'indomie-mi-goreng', 'mama-tomyum-shrimp', 'prima-wholegrain-laksa'].map((x) => BY[x]).filter(Boolean), { from: '' })}
 </section>
 
+<section class="sec" aria-labelledby="h-mania">
+${secHead('라면 매니아 코너', '', 'h-mania')}
+<div class="mania">${[
+    ['/lab/heat/', 'i-flame', '맵기 사다리', '신라면의 몇 배일까? 스코빌 지수로 줄 세운 매운 라면'],
+    ['/lab/pick/', 'i-dice', '오늘의 라면 뽑기', '고르기 어려운 날엔 조건만 정하고 뽑기에 맡겨요'],
+    ['/lab/quiz/', 'i-help', '라면 퀴즈', '세계 첫 라면부터 나라별 라면 문화까지 10문제'],
+    ['/story/words/', 'i-book', '라면 용어 사전', '유탕면, 조미유, 똠얌, 미 똠까지 낱말 풀이'],
+    ['/story/places/', 'i-pin', '라면 성지 여행', '컵누들 뮤지엄과 구미라면축제 가는 길'],
+    ['/me/#coll', 'i-map', '세계 라면 여권', '기록한 라면의 나라마다 도장을 모아요'],
+  ].map(([h, ic, t, d]) => `<a class="mania-tile" href="${h}"><span class="mania-ico">${icon(ic)}</span><b>${t}</b><span>${d}</span></a>`).join('')}</div>
+</section>
+
 <section class="sec" aria-labelledby="h-story">
 ${secHead('라면 이야기', moreLink('/story/', '읽을거리 모두 보기'), 'h-story')}
 <div class="sgrid sgrid-home">${storyHomeCards(3)}</div>

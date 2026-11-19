@@ -1292,3 +1292,101 @@ a.pill:hover { background: var(--paper-3); }
 .wmeta dt { font-weight: 800; color: var(--muted); }
 .wmeta dd { margin: 0; color: var(--ink); line-height: 1.6; }
 .story-more { margin: 18px 0 6px; }
+
+/* 매니아 코너 */
+.mania { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+@media (min-width: 900px) { .mania { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.mania-tile { display: grid; gap: 4px; padding: 16px; border: 1px solid var(--line); border-radius: var(--r); background: var(--card); color: inherit; text-decoration: none; transition: box-shadow .2s, transform .2s; }
+.mania-tile:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+.mania-ico { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: var(--red-soft); color: var(--red-d); margin-bottom: 4px; }
+.mania-ico .ico { width: 22px; height: 22px; }
+.mania-tile b { font-size: 16px; font-weight: 900; letter-spacing: -0.03em; }
+.mania-tile span:last-child { font-size: 13.5px; line-height: 1.55; color: var(--ink-2); word-break: keep-all; }
+
+/* 맵기 사다리 */
+.heat-list { list-style: none; padding: 0; margin: 0 0 12px; display: grid; gap: 6px; }
+.hrow { display: grid; grid-template-columns: 26px minmax(0, 1fr) auto; grid-template-areas: "n name v" "n bar bar"; gap: 4px 10px; align-items: center; padding: 10px 12px; border-radius: var(--r-s); background: var(--card); border: 1px solid var(--line); }
+.hrow-n { grid-area: n; font-weight: 900; color: var(--muted); font-size: 14px; align-self: start; padding-top: 2px; }
+.hrow-name { grid-area: name; display: grid; min-width: 0; }
+.hrow-name a { font-weight: 800; color: inherit; text-decoration: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hrow-name a:hover { text-decoration: underline; }
+.hrow-name small { font-size: 12.5px; color: var(--muted); }
+.hrow-bar { grid-area: bar; height: 10px; border-radius: 999px; background: var(--paper-2); overflow: hidden; }
+.hrow-bar i { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, #F2B33D, var(--red)); }
+.hrow-v { grid-area: v; text-align: right; font-size: 13px; color: var(--ink-2); }
+.hrow-v b { font-size: 16px; color: var(--ink); }
+.hrow-v small { display: block; font-size: 12px; font-weight: 700; color: var(--red-d); }
+.hrow-base { border-color: var(--ink); }
+.hrow-base .hrow-bar i { background: var(--ink); }
+@media (min-width: 760px) {
+  .hrow { grid-template-columns: 30px 230px minmax(0, 1fr) 150px; grid-template-areas: "n name bar v"; }
+  .hrow-n { align-self: center; padding: 0; }
+}
+.heat-cards { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
+@media (min-width: 760px) { .heat-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.heat-card { padding: 16px 18px; border-radius: var(--r); background: var(--paper-2); }
+.heat-card h3 { font-size: 16.5px; font-weight: 900; margin-bottom: 6px; }
+.heat-card p { font-size: 14.5px; line-height: 1.75; color: var(--ink-2); word-break: keep-all; }
+
+/* 오늘의 라면 뽑기 */
+.rpick { display: grid; gap: 18px; }
+@media (min-width: 900px) { .rpick { grid-template-columns: 340px minmax(0, 1fr); align-items: start; } }
+.rpick-opts { display: grid; gap: 14px; padding: 16px; border: 1.5px solid var(--line); border-radius: 18px; background: var(--card); }
+.rpick-stage { text-align: center; }
+.rpick-slot { min-height: 96px; display: grid; place-items: center; padding: 18px; border-radius: 18px; border: 2px dashed var(--line-2); background: #fff; font-size: 22px; font-weight: 900; letter-spacing: -0.03em; word-break: keep-all; }
+.rpick-slot .rpick-hit { color: var(--red-d); font-size: 26px; }
+.rpick-pool { margin: 8px 0 4px; }
+.rpick-card { max-width: 280px; margin: 8px auto 0; text-align: left; }
+
+/* 라면 퀴즈 */
+.quiz { max-width: 720px; margin: 0 auto; padding: 20px; border: 1.5px solid var(--line); border-radius: 20px; background: var(--card); }
+.quiz-top { display: flex; justify-content: space-between; font-size: 13.5px; font-weight: 800; color: var(--muted); }
+.quiz-bar { height: 6px; border-radius: 999px; background: var(--paper-2); margin: 8px 0 16px; overflow: hidden; }
+.quiz-bar i { display: block; height: 100%; background: var(--red); border-radius: 999px; }
+.quiz-q { font-size: 20px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.45; margin-bottom: 14px; word-break: keep-all; }
+.quiz-opts { display: grid; gap: 8px; }
+.quiz-opt { display: flex; gap: 10px; align-items: center; text-align: left; width: 100%; padding: 13px 14px; border-radius: 14px; border: 1.5px solid var(--line-2); background: #fff; font-size: 15.5px; font-weight: 700; color: var(--ink); cursor: pointer; }
+.quiz-opt b { display: grid; place-items: center; width: 26px; height: 26px; flex: none; border-radius: 8px; background: var(--paper-2); font-size: 13px; }
+.quiz-opt:not(:disabled):hover { border-color: var(--ink); }
+.quiz-opt.ok { border-color: #1F8A4C; background: #EAF6EE; }
+.quiz-opt.ok b { background: #1F8A4C; color: #fff; }
+.quiz-opt.no { border-color: var(--red); background: var(--red-soft); }
+.quiz-opt.no b { background: var(--red); color: #fff; }
+.quiz-opt:disabled { cursor: default; }
+.quiz-why { margin-top: 14px; padding: 14px 16px; border-radius: 14px; background: var(--paper-2); font-size: 15px; line-height: 1.7; }
+.quiz-why .row-btns { margin: 10px 0 0; }
+.quiz-end { text-align: center; }
+.quiz-score { font-size: 15px; color: var(--muted); }
+.quiz-score b { font-size: 52px; font-weight: 900; color: var(--red); letter-spacing: -0.04em; }
+.quiz-end h2 { font-size: 21px; font-weight: 900; margin: 4px 0 10px; }
+.quiz-end h3 { font-size: 15px; font-weight: 900; margin: 18px 0 8px; text-align: left; }
+.quiz-wrong { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; text-align: left; }
+.quiz-wrong li { padding: 10px 12px; border-radius: 12px; background: var(--paper-2); display: grid; gap: 2px; font-size: 14px; }
+.quiz-wrong a { font-weight: 800; color: inherit; }
+.quiz-wrong span { color: var(--ink-2); line-height: 1.6; }
+
+/* 라면 용어 사전 */
+.words-find { margin: 14px 0 6px; max-width: 520px; }
+.words { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; }
+@media (min-width: 760px) { .words { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.word { padding: 14px 16px; border: 1px solid var(--line); border-radius: var(--r-s); background: var(--card); }
+.word[hidden], .words-sec[hidden] { display: none; }
+.word dt { font-size: 16px; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 4px; }
+.word dt a { color: var(--red-d); text-decoration: none; }
+.word dt a:hover { text-decoration: underline; }
+.word dd { margin: 0; font-size: 14.5px; line-height: 1.7; color: var(--ink-2); word-break: keep-all; }
+
+/* 이렇게 먹어요 */
+.weat { margin: 18px 0 6px; padding: 16px 18px; border-left: 4px solid #F2B33D; border-radius: 0 14px 14px 0; background: #FFF8E8; max-width: 760px; }
+.weat h2 { font-size: 16px; font-weight: 900; display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+.weat p { font-size: 15px; line-height: 1.75; word-break: keep-all; }
+
+/* 세계 라면 여권 */
+.passport h2 small { font-size: 14px; color: var(--muted); font-weight: 700; margin-left: 6px; }
+.stamps { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 10px; margin-top: 12px; }
+.stamp { aspect-ratio: 1; border-radius: 50%; border: 2px dashed var(--line-2); display: grid; place-content: center; text-align: center; gap: 2px; color: var(--muted); text-decoration: none; transform: rotate(var(--tilt, 0deg)); transition: transform .2s; }
+.stamp b { font-size: 13.5px; font-weight: 900; }
+.stamp span { font-size: 11.5px; }
+.stamp.on { border: 3px double var(--red); color: var(--red-d); background: var(--red-soft); }
+.stamp:hover { transform: rotate(0deg) scale(1.04); }
+.rpick-stage .row-btns { justify-content: center; }

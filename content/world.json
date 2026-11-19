@@ -179,7 +179,8 @@
    "body": [
     "인스턴트 라면은 1958년 8월 25일 닛신식품의 [[ramen:nissin-chicken-ramen|치킨라멘]]에서 시작됐어요. 창업자 안도 모모후쿠는 집 뒤 작은 오두막에서 1년을 매달려 면을 기름에 튀겨 말리는 방법을 찾아냈어요. 1971년 9월 18일에는 세계 첫 컵라면인 [[ramen:nissin-cup-noodle|컵누들]]이 나왔어요.",
     "일본 라면은 국물 바탕에 따라 간장, 된장, 소금, 돼지뼈로 나뉘고, 우동과 메밀국수, 야키소바까지 컵과 봉지로 만들어요. 1966년에 나온 [[ramen:sapporo-ichiban-shoyu|삿포로이치방]]과 [[ramen:myojo-charumera|묘조 차르메라]]처럼 60년 동안 팔려 온 제품이 많아요.",
-    "2025년 일본의 라면 수요는 59억 5,000만 개로 세계 5위예요. 1인당으로는 2024년 47개를 먹어 말레이시아와 함께 공동 6위였어요."
+    "2025년 일본의 라면 수요는 59억 5,000만 개로 세계 5위예요. 1인당으로는 2024년 47개를 먹어 말레이시아와 함께 공동 6위였어요.",
+    "후쿠오카의 마루타이가 1959년 11월 내놓은 [[ramen:marutai-ramen|봉 라멘]]은 곧은 면을 튀기지 않고 말린 제품으로, 규슈에서는 집에서 끓이는 라면의 대명사예요. 2011년 11월 도요수산이 생면을 그대로 말린 [[ramen:maruchan-seimen-shoyu|마루짱 세이멘]]을 내놓아 1년 만에 2억 개를 팔자, 업계는 이를 ‘마루짱 쇼크’라 불렀고 닛신 [[ramen:nissin-raoh-shoyu|라오]] 같은 튀기지 않은 봉지면이 뒤따랐어요."
    ],
    "sources": [
     [
@@ -197,8 +198,25 @@
     [
      "GetNavi, サッポロ一番はなぜ神なのか",
      "https://getnavi.jp/gourmet/40344/"
+    ],
+    [
+     "東京ウォーカー, マルタイ『棒ラーメン』の歴史",
+     "https://www.walkerplus.com/article/1118455/"
+    ],
+    [
+     "PRESIDENT, 年間2億食販売の“マルちゃんショック”",
+     "https://president.jp/articles/-/15935"
+    ],
+    [
+     "日本食糧新聞, ケンミン焼ビーフン ギネス世界記録",
+     "https://news.nissyoku.co.jp/news/sato20200424043030770"
+    ],
+    [
+     "マネーポスト, カップヌードルの歴史と豆知識",
+     "https://www.moneypost.jp/824026/3/"
     ]
-   ]
+   ],
+   "eat": "야키소바 컵은 물을 부어 익힌 뒤 뚜껑의 구멍으로 물을 따라 내고 소스를 비벼요. 야키비훈은 삶지 않고 프라이팬에서 채소와 볶아요."
   },
   {
    "code": "cn",
@@ -254,7 +272,8 @@
    "body": [
     "대만 라면은 1967년 무렵 시작됐어요. 1971년 8월 3일 퉁이가 다진 돼지고기 기름 봉지를 넣은 [[ramen:tw-unif-rouzao|러우짜오몐]]을 내놓아 1위가 됐고, 1973년 웨이리의 [[ramen:tw-weilih-zhajiang|짜장몐]] 등과 함께 ‘라면 사천왕’으로 불렸어요.",
     "1980년대 퉁이는 요리 연구가 푸페이메이와 함께 만든 ‘만한대찬’으로 큰 고기 덩어리를 넣은 고급 라면을 열었고, 2015년에는 화댜오주로 맛을 낸 [[ramen:tw-ttl-huadiao-chicken|타이주 화댜오지몐]]이 갑자기 인기를 끌었어요.",
-    "대만 사람들은 2025년 9억 개쯤을 먹었어요. 2025년 상반기 까르푸 대만 판매 순위 1위는 여전히 러우짜오몐이었어요."
+    "대만 사람들은 2025년 9억 개쯤을 먹었어요. 2025년 상반기 까르푸 대만 판매 순위 1위는 여전히 러우짜오몐이었어요.",
+    "대만에는 끓이지 않고 과자처럼 먹는 라면도 있어요. 1970년 나온 웨이왕의 [[ramen:weiwang-prince-noodle|왕자면]]은 학생들이 생으로 먹자 아예 그렇게 먹도록 다시 만들었고, 퉁이의 [[ramen:unif-science-noodle|과학면]]은 1970년대 말 인기 애니메이션 ‘과학닌자대 갓챠맨’에서 이름을 따왔어요."
    ],
    "sources": [
     [
@@ -272,8 +291,17 @@
     [
      "民報, WINA 2025 台灣 第17名",
      "https://www.peoplenews.tw/?p=51470"
+    ],
+    [
+     "食力, 王子麵 世界第1款專用來乾吃的速食麵",
+     "https://www.foodnext.net/issue/paper/5593123872"
+    ],
+    [
+     "Science Noodles (Wikipedia)",
+     "https://wiki.krisyotam.com/content/wikipedia_en_all_nopic_2026-03/Science_Noodles"
     ]
-   ]
+   ],
+   "eat": "왕자면과 과학면은 봉지를 흔들어 부숴 과자처럼 먹고, 훠궈나 루웨이에 넣어 끓이기도 해요."
   },
   {
    "code": "hk",
@@ -322,7 +350,8 @@
    "body": [
     "인도네시아는 중국 다음으로 라면을 많이 먹는 나라예요. 2025년에는 145억 4,000만 개로 5년 만에 처음 줄었는데, 세계라면협회는 통화 가치 하락과 원재료값 상승으로 살 여력이 줄어든 탓으로 봤어요.",
     "인도미는 1972년 닭 육수 국물 라면으로 시작해 1982년 국물 없이 비벼 먹는 [[ramen:indomie-mi-goreng|미고렝]]을 내놓았어요. 인도푸드가 시장의 70%쯤을 차지하고, 2003년 나온 윙스푸드의 [[ramen:mie-sedaap-goreng|미 세답]]이 2위예요.",
-    "달콤한 간장(케찹 마니스)과 튀긴 양파가 기본 양념이고, 렌당·소토·아체 국수처럼 지역 요리를 옮긴 맛이 계속 늘고 있어요."
+    "달콤한 간장(케찹 마니스)과 튀긴 양파가 기본 양념이고, 렌당·소토·아체 국수처럼 지역 요리를 옮긴 맛이 계속 늘고 있어요.",
+    "인도네시아 첫 인스턴트 라면은 인도미가 아니라 1968년 나온 [[ramen:supermi-kaldu-ayam|수퍼미]]예요. 지금은 수퍼미, 사리미, 컵라면 [[ramen:pop-mie-ayam-bawang|팝미]]까지 모두 인도푸드가 만들어요."
    ],
    "sources": [
     [
@@ -340,8 +369,17 @@
     [
      "Wikipedia, Indomie",
      "https://en.wikipedia.org/wiki/Indomie"
+    ],
+    [
+     "Indofood, Noodles",
+     "https://www.indofood.com/product/noodles"
+    ],
+    [
+     "IDX Channel, Indomie Belum Lahir, Ini Pionir Mi Instan di Indonesia",
+     "https://www.idxchannel.com/milenomic/indomie-belum-lahir-ini-pionir-mi-instan-di-indonesia/all"
     ]
-   ]
+   ],
+   "eat": "미고렝은 삶은 면의 물을 버리고, 봉지 속 간장·기름·고추 소스·튀긴 양파를 넣어 비벼요."
   },
   {
    "code": "my",
@@ -355,7 +393,8 @@
    "short": "페낭의 화이트 커리와 매운 새우 국수를 옮긴 라면이 세계적으로 알려졌어요.",
    "body": [
     "말레이시아 사람은 2024년 한 사람이 47개를 먹어 일본과 함께 1인당 소비량 상위권에 들어요.",
-    "페낭의 화이트 커리, 호키엔 새우 국수처럼 노점 국수를 옮긴 고급 라면이 강해요. 2013년 5월 나온 [[ramen:mykuali-white-curry|마이쿠알리 페낭 화이트 커리]]는 라면 리뷰어 한스 리네시가 운영하는 ‘더 라멘 레이터’의 2014년 ‘역대 최고 라면 10’ 1위에 올랐고, 2025년 목록에도 5위로 이름을 올렸어요."
+    "페낭의 화이트 커리, 호키엔 새우 국수처럼 노점 국수를 옮긴 고급 라면이 강해요. 2013년 5월 나온 [[ramen:mykuali-white-curry|마이쿠알리 페낭 화이트 커리]]는 라면 리뷰어 한스 리네시가 운영하는 ‘더 라멘 레이터’의 2014년 ‘역대 최고 라면 10’ 1위에 올랐고, 2025년 목록에도 5위로 이름을 올렸어요.",
+    "말레이시아 아이들의 추억은 과자 라면 [[ramen:mamee-monster|마미 몬스터]]예요. 1974년 고무농장 일꾼들이 라면을 생으로 먹는 모습을 보고 잘 팔리지 않던 첫 라면을 과자로 바꿨고, 파란 괴물 캐릭터로 인기를 끌었어요."
    ],
    "sources": [
     [
@@ -369,8 +408,13 @@
     [
      "The Vibes, Malaysians sixth largest consumers (2025)",
      "https://www.thevibes.com/index.php/articles/culture/115399/malaysians-are-the-sixth-largest-consumers-of-instant-noodles-in-the-world"
+    ],
+    [
+     "The Edge Malaysia, Mamee Monster founder Pang Chin Hin passes away",
+     "https://theedgemalaysia.com/article/mamee-monster-snack-food-founder-pang-chin-hin-passes-away-96"
     ]
-   ]
+   ],
+   "eat": "마미 몬스터는 끓이지 않고 봉지째 과자처럼 먹어요."
   },
   {
    "code": "sg",
@@ -383,7 +427,8 @@
    "short": "코코넛 국물 국수 락사를 옮긴 고급 라면으로 유명해요.",
    "body": [
     "싱가포르의 프리마테이스트는 2011년 코코넛 국물 국수 ‘락사’를 옮긴 고급 라면 [[ramen:prima-laksa-lamian|락사 라미엔]]을 내놓았어요. 2013년 더 라멘 레이터의 ‘역대 최고 라면’에서 락사 라미엔이 1위, 커리 라미엔이 2위에 올랐어요.",
-    "통곡물 면을 쓴 [[ramen:prima-wholegrain-laksa|통곡물 락사 라미엔]]은 같은 목록에서 2025년까지 10년 연속 1위를 지켰어요. 끓이는 데 7분쯤 걸리고 값도 높은 편이지만, 식당 국수에 가까운 맛을 내세워요."
+    "통곡물 면을 쓴 [[ramen:prima-wholegrain-laksa|통곡물 락사 라미엔]]은 같은 목록에서 2025년까지 10년 연속 1위를 지켰어요. 끓이는 데 7분쯤 걸리고 값도 높은 편이지만, 식당 국수에 가까운 맛을 내세워요.",
+    "고급 라면 말고도 1986년 시작한 [[ramen:koka-original-chicken|코카]]가 있어요. 1987년부터 해외에 팔기 시작해 지금은 여러 나라에서 팔리고, 아일랜드에서는 팟누들 다음가는 라면 브랜드로 꼽혀요."
    ],
    "sources": [
     [
@@ -397,6 +442,14 @@
     [
      "FairPrice, Prima Taste La Mian Laksa",
      "https://omni.fairprice.com.sg/product/prima-taste-la-mian-laksa-4s-x-185g-13014957"
+    ],
+    [
+     "Koka (brand), Wikipedia",
+     "https://en.wikipedia.org/wiki/Koka_(brand)"
+    ],
+    [
+     "KOKA, Our Story",
+     "https://kokanoodles.com/?p=19630"
     ]
    ]
   },
@@ -414,7 +467,8 @@
    "body": [
     "태국은 2024년 한 사람이 57개를 먹어 1인당 소비량 세계 3위였어요. 2025년 전체 소비량은 42억 개쯤으로 세계 8위예요.",
     "대표 브랜드 ‘마마’는 1972년 대만 퉁이그룹과 태국 사하 그룹이 함께 세운 타이 프레지던트 푸드가 만들어요. 처음 내놓은 맛이 [[ramen:mama-tomyum-shrimp|새우 똠얌]]이에요.",
-    "태국에서는 라면을 그대로 먹기도 하지만, 라면으로 볶음(팟 마마)이나 새콤한 샐러드(얌 마마)를 만들어 먹기도 해요."
+    "태국에서는 라면을 그대로 먹기도 하지만, 라면으로 볶음(팟 마마)이나 새콤한 샐러드(얌 마마)를 만들어 먹기도 해요.",
+    "태국 시장은 마마가 절반 넘게 차지하고, [[ramen:waiwai-chicken|와이와이]]가 20%대 초반, 아지노모토 계열 [[ramen:yumyum-tomyum-shrimp|얌얌]]이 20% 안팎으로 뒤를 이어요."
    ],
    "sources": [
     [
@@ -432,8 +486,17 @@
     [
      "Seasia Stats, Top 10 instant noodle consumers 2025",
      "https://seasiastats.com/statistic/top-10-instant-noodle-consumers-in-the-world-in-2025-9uFFo"
+    ],
+    [
+     "Wai Wai (food brand), Wikipedia",
+     "https://bafybeiaysi4s6lnjev27ln5icwm6tueaw2vdykrtjkwiphwekaywqhcjze.ipfs.ipfs.hypha.coop/wiki/Wai_Wai_(food_brand)"
+    ],
+    [
+     "Bangkok Post, Yum Yum producer prioritises premium instant noodles",
+     "https://www.bangkokpost.com/business/2523514/yum-yum-producer-prioritises-premium-instant-noodles"
     ]
-   ]
+   ],
+   "eat": "국물로 먹는 것 말고도 라면을 볶거나(팟 마마) 새콤한 샐러드(얌 마마)로 만들어 먹어요."
   },
   {
    "code": "vn",
@@ -449,7 +512,8 @@
    "body": [
     "베트남은 2024년 한 사람이 81개를 먹어 1인당 소비량 세계 1위였어요. 2025년 전체 수요도 82억 3,000만 개로 1.2% 늘었고, 컵라면이 도시 밖으로 퍼지며 꾸준히 커지고 있어요.",
     "시장 1위는 일본 에이스콕의 베트남 법인으로, 한 해 33억 개쯤 팔아 점유율이 40% 안팎이에요. 2000년 시작한 [[ramen:haohao-tom-chua-cay|하오하오]]는 베트남에서 가장 많이 팔린 라면 브랜드로 공식 기록에 올랐어요.",
-    "마산 컨슈머의 [[ramen:omachi-bo-ham|오마치]]는 감자 전분을 넣은 면으로 고급 시장을 이끌어요."
+    "마산 컨슈머의 [[ramen:omachi-bo-ham|오마치]]는 감자 전분을 넣은 면으로 고급 시장을 이끌어요.",
+    "베트남에서 라면을 ‘미 똠(새우 국수)’이라 부르게 된 데는 1972년 시작한 [[ramen:miliket-two-shrimp|밀리켓]]의 두 마리 새우 포장이 큰 몫을 했어요. 1990년대에는 점유율이 90%에 이르렀지만 지금은 2% 안팎이고, 갈색 종이 포장은 그대로예요."
    ],
    "sources": [
     [
@@ -467,8 +531,17 @@
     [
      "VnEconomy, Omachi high-end segment",
      "https://epaper.vneconomy.vn/epaper/2021/04/vet316/files/basic-html/page35.html"
+    ],
+    [
+     "Brands Vietnam, Mì ăn liền Miliket: Chìm nổi một thương hiệu vua",
+     "https://www.brandsvietnam.com/12829-mi-an-lien-miliket-chim-noi-mot-thuong-hieu-vua"
+    ],
+    [
+     "Thương hiệu & Công luận, Colusa – Miliket",
+     "https://thuonghieucongluan.com.vn/2pdf/colusa-miliket-giam-mot-nua-co-tuc-tien-mat-don-luc-dau-tu-may-moc-va-mo-rong-thi-truong/269003"
     ]
-   ]
+   ],
+   "eat": "길거리 전골집에서는 국물에 라면 사리를 넣어 먹는 일이 흔해요."
   },
   {
    "code": "ph",
@@ -494,7 +567,8 @@
      "Wikipedia, Monde Nissin",
      "https://en.wikipedia.org/wiki/Monde_Nissin"
     ]
-   ]
+   ],
+   "eat": "판싯 칸톤은 삶은 뒤 물을 따라 내고 양념에 비벼 먹는 국물 없는 라면이에요."
   },
   {
    "code": "in",
@@ -537,7 +611,8 @@
    "short": "미리 양념한 면을 봉지째 부숴 과자처럼 먹는 와이와이가 국민 간식이에요.",
    "body": [
     "네팔은 2024년 한 사람이 54개를 먹어 1인당 소비량 세계 4위였어요. 하루 400만 봉지가 팔린다는 보도도 있어요.",
-    "1980년대 중반 초드하리 그룹이 태국 회사와 손잡고 [[ramen:waiwai-chicken|와이와이]]를 내놓으며 시장이 열렸어요. 와이와이는 면을 미리 익히고 양념해서 봉지째 부숴 먹을 수 있어요."
+    "1980년대 중반 초드하리 그룹이 태국 회사와 손잡고 [[ramen:waiwai-chicken|와이와이]]를 내놓으며 시장이 열렸어요. 와이와이는 면을 미리 익히고 양념해서 봉지째 부숴 먹을 수 있어요.",
+    "네팔 첫 인스턴트 라면은 포카라에서 만든 [[ramen:rara-chicken|라라]]예요. 1984년 와이와이가 나오기 전까지 시장 1위였고, 이름은 네팔에서 가장 큰 호수에서 따왔어요."
    ],
    "sources": [
     [
@@ -547,8 +622,17 @@
     [
      "The Ramen Rater, Wai Wai Instant Noodles",
      "https://www.theramenrater.com/2017/03/12/2360-wai-wai-instant-noodles-chicken"
+    ],
+    [
+     "Rara noodle (food brand), Wikipedia",
+     "https://en.wikipedia.org/wiki/Rara_noodle_(food_brand)"
+    ],
+    [
+     "The Ramen Rater, Interview With CG Foods (2026.2)",
+     "https://www.theramenrater.com/2026/02/23/meet-the-manufacturer-interview-with-cg-foods/"
     ]
-   ]
+   ],
+   "eat": "와이와이와 라라는 미리 익혀 양념한 면이라 봉지째 부숴 과자처럼 먹기도 해요."
   },
   {
    "code": "us",
@@ -593,7 +677,8 @@
    "flavors": "닭고기·버섯, 카레, 소고기·토마토",
    "short": "1977년 나온 컵라면 팟누들이 대표예요.",
    "body": [
-    "영국의 대표 컵라면은 1977년 나온 [[ramen:pot-noodle-chicken-mushroom|팟누들]]이에요. 지금은 유니레버가 웨일스 크럼린 공장에서 한 해 1억 7,500만 개쯤 만들어요."
+    "영국의 대표 컵라면은 1977년 나온 [[ramen:pot-noodle-chicken-mushroom|팟누들]]이에요. 지금은 유니레버가 웨일스 크럼린 공장에서 한 해 1억 7,500만 개쯤 만들어요.",
+    "봉지라면으로는 1979년 켈로그가 전국에 내놓은 [[ramen:super-noodles-chicken|슈퍼누들]]이 대표예요. 지금은 배철러스가 만들고, 국물 없이 졸여 먹어요."
    ],
    "sources": [
     [
@@ -603,8 +688,17 @@
     [
      "Daily Record, A potted history",
      "https://www.pressreader.com/uk/daily-record/20210916/282222308887286"
+    ],
+    [
+     "Forecourt Trader, Batchelors Super Noodles",
+     "https://forecourttrader.co.uk/products/batchelors-two-super-flavours/628407.article"
+    ],
+    [
+     "Super Noodles, Wikipedia",
+     "https://EN.wikipedia.com/wiki/Super_Noodles"
     ]
-   ]
+   ],
+   "eat": "슈퍼누들은 물이 거의 졸아들 때까지 끓여 국물 없이 먹고, 빵 사이에 끼워 ‘버티’로 먹기도 해요."
   },
   {
    "code": "br",
@@ -658,6 +752,170 @@
      "https://en.wikipedia.org/wiki/Indomie"
     ]
    ]
+  },
+  {
+   "code": "ru",
+   "name": "러시아",
+   "en": "Russia",
+   "region": "미주·유럽·아프리카",
+   "lead": "라면을 ‘도시락’이라 부르는 나라",
+   "makers": "팔도(도시락), 마레벤 푸드(롤톤)",
+   "short": "한국 팔도의 사각 컵라면 도시락이 라면을 부르는 말이 됐어요.",
+   "body": [
+    "러시아에는 1990년대 초 인스턴트 라면이 들어왔어요. 가장 많이 팔리는 브랜드는 한국 팔도의 [[ramen:doshirak-russia|도시락]]과 러시아 브랜드 [[ramen:rollton-chicken|롤톤]]이에요.",
+    "도시락은 부산항을 오가던 상인들이 들여가면서 퍼졌고, 팔도는 2002년 러시아 법인을 세웠어요. 러시아에서는 브랜드와 상관없이 컵라면을 ‘도시락’이라 부를 만큼 흔한 이름이 됐고, 팔도는 2019년 상표 등록을 두고 소송을 벌여 2021년 이겼어요."
+   ],
+   "sources": [
+    [
+     "Dosirac, Wikipedia",
+     "https://en.wikipedia.org/wiki/Dosirac"
+    ],
+    [
+     "Коммерсантъ, Лапша мира",
+     "https://www.kommersant.ru/gallery/4275156"
+    ],
+    [
+     "Korea JoongAng Daily, Russians go crazy for Paldo Doshirak ramyeon",
+     "https://www.koreajoongangdaily.com/business/russians-go-crazy-for-paldo-doshirak-ramyeon/11519273"
+    ]
+   ]
+  },
+  {
+   "code": "ua",
+   "name": "우크라이나",
+   "en": "Ukraine",
+   "region": "미주·유럽·아프리카",
+   "lead": "베트남 청년이 만든 국민 라면",
+   "makers": "네슬레(미비나)",
+   "short": "1995년 하르키우에서 태어난 미비나가 라면의 다른 이름이 됐어요.",
+   "body": [
+    "우크라이나의 [[ramen:mivina-chicken|미비나]]는 1995년 하르키우에서 베트남 출신 사업가 팜녓브엉이 세운 회사 테크노콤이 처음 만들었어요. 끓는 물만 부으면 되는 값싼 면이 1990년대 우크라이나에서 크게 퍼졌고, 미비나라는 이름이 비슷한 제품을 부르는 말이 됐어요.",
+    "2010년 네슬레가 테크노콤을 사들였고, 팜녓브엉은 그 뒤 베트남에서 빈그룹을 키워 베트남 최고 부자가 됐어요. 전쟁으로 2022년 하르키우 공장이 멈춘 뒤에는 볼린 지역 공장에서 만들어 여러 나라로 수출해요."
+   ],
+   "sources": [
+    [
+     "Telegraf, Мівіна з Харкова: історія української локшини",
+     "https://news.telegraf.com.ua/ukr/ukraina/2025-10-11/5922537-mivina-z-kharkova-istoriya-ukrainskoi-lokshini-shcho-prinesla-milyardi-vetnamtsyu-foto-video"
+    ],
+    [
+     "just-food, Nestle buys Technocom",
+     "https://www.just-food.com/?p=45079"
+    ],
+    [
+     "Komersant Ukrainian, Nestlé plans to enter the U.S. market with Mivina",
+     "https://komersant.ua/en/nestle-planuie-vijti-z-mivinoyu-na-rinok-ssha-ta-zbilshiti-investiczii-u-virobnicztvo/"
+    ]
+   ]
+  },
+  {
+   "code": "pl",
+   "name": "폴란드",
+   "en": "Poland",
+   "region": "미주·유럽·아프리카",
+   "lead": "라면을 ‘중국 수프’라 부르는 나라",
+   "makers": "비폰(탄비엣)",
+   "flavors": "닭, 카레, 김치, 퍼",
+   "short": "베트남 브랜드 비폰이 폴란드 ‘중국 수프’ 시장 1위예요.",
+   "body": [
+    "폴란드 사람들은 인스턴트 라면을 ‘주프카 친스카(중국 수프)’라고 불러요. 정작 이 시장 1위는 1963년 세워진 베트남 회사 비폰의 라면이에요.",
+    "베트남에서 만든 비폰 라면을 폴란드 회사 탄비엣이 들여와 팔고, 2020년 닐슨 집계로 폴란드 ‘중국 수프’ 부문 판매 1위였어요. [[ramen:vifon-kurczak-zloty|골든 치킨]] 같은 순한 닭고기 맛과 매운 카레, 김치, 베트남 쌀국수 퍼까지 맛이 다양해요."
+   ],
+   "sources": [
+    [
+     "Frisco.pl, Vifon Zupa łagodna kurczak (Nielsen 2020)",
+     "https://www.frisco.pl/pid,1317/n,vifon-zupa-lagodna-kurczak-pieczony/stn,product"
+    ],
+    [
+     "Morrisons, Vifon (Tan-Viet International)",
+     "https://groceries.morrisons.com/products/105176248"
+    ],
+    [
+     "Lazada Brand Wiki, VIFON",
+     "https://brandwiki.lazada.com.ph/vifon/"
+    ]
+   ]
+  },
+  {
+   "code": "mx",
+   "name": "멕시코",
+   "en": "Mexico",
+   "region": "미주·유럽·아프리카",
+   "lead": "라임을 짜 넣는 컵라면의 나라",
+   "makers": "도요수산(마루짱), 닛신식품",
+   "flavors": "새우, 라임, 하바네로, 칠레 피킨, 닭, 소고기",
+   "short": "새우 국물에 라임과 하바네로를 더한 컵라면이 대표 맛이에요.",
+   "body": [
+    "멕시코에서는 1980년대 후반 인스턴트 라면이 널리 퍼졌어요. 새우 맛이 특히 인기라 라임, 하바네로, 칠레 피킨 고추를 더한 [[ramen:maruchan-instant-lunch-camaron|마루짱]]과 [[ramen:nissin-cup-noodles-camaron-habanero|닛신 컵누들]]이 매대에 나란히 놓여요.",
+    "멕시코에서 ‘마루짱 하나’라고 하면 브랜드와 상관없이 컵라면을 뜻하기도 해요. 조리법 그대로 먹기보다 라임즙, 매운 소스, 치즈, 새우 같은 재료를 더해 자기 입맛대로 먹는 사람이 많아요."
+   ],
+   "sources": [
+    [
+     "El Financiero, ¿De qué están hechos los camarones de la sopa instantánea?",
+     "https://www.elfinanciero.com.mx/food-and-drink/2022/06/28/de-que-estan-hechos-los-camarones-de-la-sopa-instantanea/"
+    ],
+    [
+     "Xataka México, Hay un país que hizo de las sopas instantáneas parte de su cultura",
+     "https://www.xataka.com.mx/otros-1/hay-pais-que-hizo-sopas-instantaneas-parte-su-cultura-no-japon-mexico"
+    ],
+    [
+     "Walmart México, Maruchan Instant Lunch camarón limón y habanero",
+     "https://www.walmart.com.mx/ip/abarrotes/sopa-instantanea-maruchan-instant-lunch-con-camaron-limon-y-habanero-64-g/00004178900186"
+    ]
+   ],
+   "eat": "라임즙, 매운 소스, 치즈, 새우 같은 재료를 더해 자기 입맛대로 먹는 사람이 많아요."
+  },
+  {
+   "code": "pe",
+   "name": "페루",
+   "en": "Peru",
+   "region": "미주·유럽·아프리카",
+   "lead": "닭고기 수프의 나라가 고른 라면",
+   "makers": "아지노모토 페루",
+   "flavors": "닭, 소고기, 오리엔탈",
+   "short": "아지노모토 페루의 아지노멘이 대표 라면이에요.",
+   "body": [
+    "페루의 대표 라면은 아지노모토 페루 법인이 만드는 [[ramen:ajinomen-gallina|아지노멘]]이에요. 1980년대에 팔다 끊긴 이름을, 2002년 페루 안에 라면을 만드는 회사가 하나도 없던 때 다시 만들기 시작했어요.",
+    "페루에서는 닭고기 수프 같은 국물 요리와 면 요리가 흔해 닭고기 맛이 대표가 됐어요. 지금은 컵 제품과, 파스타처럼 먹는 ‘아지노멘 타야린’까지 나와요."
+   ],
+   "sources": [
+    [
+     "味の素株式会社, ペルーで即席麺「Aji-no-men」の製造・販売を開始 (2002.10)",
+     "https://www.ajinomoto.co.jp/company/jp/presscenter/press/detail/2002_10_24.html"
+    ],
+    [
+     "Perú Retail, Ajinomoto lanza Ajinomen Tallarín (2019)",
+     "https://www.peru-retail.com/peru-ajinomoto-nuevo-ajinomen-tallarin/"
+    ]
+   ]
+  },
+  {
+   "code": "au",
+   "name": "호주",
+   "en": "Australia",
+   "region": "미주·유럽·아프리카",
+   "lead": "국물째, 혹은 물을 따라 내고",
+   "makers": "네슬레(매기)",
+   "flavors": "닭, 꿀간장 닭, 카레, 베지마이트",
+   "short": "매기 2분 누들이 대표이고, 호주 잼 베지마이트 맛까지 나왔어요.",
+   "body": [
+    "호주와 뉴질랜드에서는 [[ramen:maggi-2min-chicken-au|매기 2분 누들]]이 대표 라면이에요. 호주산 밀가루로 만들고, 국물째 먹거나 물을 따라 내고 비벼 먹거나 취향대로 먹으라고 안내해요.",
+    "호주 사람들이 빵에 발라 먹는 효모 추출물 스프레드 [[ramen:maggi-2min-vegemite|베지마이트]]와 함께 만든 맛도 나왔어요. 말레이시아 과자 라면 마미 몬스터가 가장 많이 팔리는 해외 시장도 호주예요."
+   ],
+   "sources": [
+    [
+     "MAGGI Australia, 2 Minute Noodles Chicken Flavour",
+     "https://www.maggi.com.au/product/maggi-2-minute-noodles-chicken"
+    ],
+    [
+     "Food & Drink Business, Maggi and Vegemite unveil noodle collab",
+     "https://www.foodanddrinkbusiness.com.au/new-in-store/maggi-vegemite-unveil-noodle-collab"
+    ],
+    [
+     "KiniBiz, The start of the noodle company (Mamee)",
+     "https://kinibiz.com/story/issues/97478/the-start-of-the-noodle-company.html"
+    ]
+   ],
+   "eat": "국물째 먹어도 되고, 물을 따라 내고 비벼 먹어도 돼요."
   }
  ],
  "sources": [

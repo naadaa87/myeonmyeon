@@ -1,6 +1,6 @@
 // 페이지: 라면 이야기 (기원, 한국 라면사, 만드는 법, 종류, 세계, 연표)
 import {
-  esc, abs, SITE_NAME, BY, layout, icon, WAVE, img, pageBanner, crumbs, crumbLd, secHead, moreLink, ramenGrid, readJSON,
+  esc, abs, SITE_NAME, BY, RAMEN, layout, icon, WAVE, img, pageBanner, crumbs, crumbLd, secHead, moreLink, ramenGrid, readJSON,
 } from './lib.mjs';
 
 const RAW = readJSON('content/story.json');
@@ -72,6 +72,7 @@ export function storyHubPage() {
 <section class="sec" aria-labelledby="h-stories">
 ${secHead('읽을거리', '', 'h-stories')}
 <div class="sgrid">${STORIES.map((s, i) => storyCard(s, i < 2)).join('')}
+<article class="scard scard-tl"><a class="scard-link" href="/story/words/"><div class="scard-img">${img('archive-card', '')}</div><div class="scard-body"><p class="scard-cat">사전</p><h3>라면 용어 사전</h3><p>유탕면과 건면, 액상스프와 조미유, 스코빌과 BFL, 나라마다 라면을 부르는 이름까지 ${WORDS.groups.reduce((n, g) => n + g.items.length, 0)}개 낱말을 풀었어요.</p></div></a></article>
 <article class="scard scard-tl"><a class="scard-link" href="/story/timeline/"><div class="scard-img">${img('broth-spicy', '')}</div><div class="scard-body"><p class="scard-cat">연표</p><h3>한국 라면 연표</h3><p class="scard-short">1958년 치킨라멘부터 2026년 신라면 40주년까지, 흐름을 바꾼 ${TIMELINE.length}개 장면을 한 줄로 이었어요.</p><p class="scard-meta">${icon('i-cal')}1958~2026</p></div></a></article>
 </div>
 </section>
@@ -150,3 +151,47 @@ ${timelineList(TIMELINE)}
 }
 
 export const storyHomeCards = (n = 3) => STORIES.slice(0, n).map((s) => storyCard(s)).join('');
+
+// ---------- 라면 용어 사전 ----------
+const WORDS = readJSON('content/words.json');
+{
+  const bad = [];
+  const nds = new Set(RAMEN.map((r) => r.noodle || 'oil'));
+  for (const g of WORDS.groups) for (const [w, , link] of g.items) {
+    if (!link) continue;
+    const m = link.match(/^\/ramen\/([a-z0-9-]+)\/$/);
+    if (m && !BY[m[1]]) bad.push(`${w}: 도감에 ${m[1]}가 없어요.`);
+    const n = link.match(/[?&]nd=([a-z]+)/);
+    if (n && !nds.has(n[1])) bad.push(`${w}: 면 종류 ${n[1]} 라면이 도감에 없어요.`);
+  }
+  if (bad.length) { console.error('\n[라면 용어 사전 점검]\n' + bad.map((x) => ' - ' + x).join('\n')); process.exit(1); }
+}
+export function wordsPage() {
+  const path = '/story/words/';
+  const items = [['/', SITE_NAME], ['/story/', '라면 이야기'], [path, '라면 용어 사전']];
+  const total = WORDS.groups.reduce((n, g) => n + g.items.length, 0);
+  const body = `<div class="wrap">
+${crumbs(items)}
+<header class="story-head">
+<p class="kicker">${WAVE}라면 이야기 · 사전</p>
+<h1>라면 용어 사전</h1>
+<p class="story-lead">봉지 뒷면, 라면 리뷰, 해외 매대에서 마주치는 낱말 ${total}개를 쉬운 말로 풀었어요. 낱말을 누르면 관련 라면이나 도감 필터로 이어져요.</p>
+<p class="story-meta"><span>${esc(WORDS.updated.replace(/-/g, '.'))} 고침</span></p>
+</header>
+<nav class="wjump" aria-label="갈래 바로 가기">${WORDS.groups.map((g) => `<a class="pill" href="#w-${g.id}">${esc(g.h)}</a>`).join('')}</nav>
+<label class="search-box words-find">${icon('i-search')}<input type="search" placeholder="낱말 찾기 (예: 건면, 똠얌)" aria-label="낱말 찾기" data-words-q autocomplete="off"></label>
+${WORDS.groups.map((g) => `<section class="sec words-sec" id="w-${g.id}" aria-labelledby="h-w-${g.id}">
+${secHead(esc(g.h), '', `h-w-${g.id}`)}
+<dl class="words">${g.items.map(([w, d, link]) => `<div class="word" data-w="${esc((w + ' ' + d).toLowerCase())}"><dt>${link ? `<a href="${esc(link)}">${esc(w)}</a>` : esc(w)}</dt><dd>${esc(d)}</dd></div>`).join('')}</dl>
+</section>`).join('')}
+<p class="empty" data-words-empty hidden>찾는 낱말이 없어요. <button type="button" class="link-btn" data-report="">추가해 달라고 알려 주세요</button>.</p>
+<section class="story-src" aria-labelledby="h-src"><h2 id="h-src">참고한 자료</h2><ol>${WORDS.sources.map(([t, u]) => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a></li>`).join('')}</ol>
+<p class="small muted">나라별 라면 이야기의 자료는 <a href="/world/">세계 라면 지도</a> 나라 페이지마다 밝혀 두었어요.</p></section>
+</div>
+<script>(function(){var q=document.querySelector('[data-words-q]'),e=document.querySelector('[data-words-empty]');if(!q)return;q.addEventListener('input',function(){var v=q.value.trim().toLowerCase(),n=0;document.querySelectorAll('.word').forEach(function(w){var ok=!v||w.dataset.w.indexOf(v)>-1;w.hidden=!ok;if(ok)n++;});document.querySelectorAll('.words-sec').forEach(function(s){s.hidden=!s.querySelector('.word:not([hidden])');});e.hidden=n>0;});})();</script>`;
+  const jsonld = [crumbLd(items), {
+    '@context': 'https://schema.org', '@type': 'DefinedTermSet', name: `라면 용어 사전 | ${SITE_NAME}`, url: abs(path),
+    hasDefinedTerm: WORDS.groups.flatMap((g) => g.items.map(([w, d]) => ({ '@type': 'DefinedTerm', name: w, description: d }))),
+  }];
+  return layout({ title: `라면 용어 사전 - 유탕면부터 똠얌까지 ${total}개 낱말 | ${SITE_NAME}`, description: `유탕면, 건면, 액상스프, 조미유, 스코빌 지수, 미고렝, 똠얌, 락사까지 라면 낱말 ${total}개를 쉽게 풀었어요.`, path, body, jsonld });
+}
