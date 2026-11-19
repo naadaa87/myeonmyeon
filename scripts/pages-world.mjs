@@ -1,7 +1,8 @@
 // 페이지: 세계 라면 지도 (나라별 소비, 나라 이야기, 나라별 라면)
 import {
-  esc, abs, SITE_NAME, BY, RAMEN, SORTED, layout, icon, WAVE, crumbs, crumbLd, secHead, moreLink, ramenGrid, WORLD, COUNTRIES,
+  esc, abs, SITE_NAME, BY, RAMEN, SORTED, layout, icon, WAVE, crumbs, crumbLd, secHead, moreLink, ramenGrid, WORLD, COUNTRIES, readJSON, MAKERS, yearText,
 } from './lib.mjs';
+const MORE = readJSON('content/world-more.json');
 
 const W = WORLD.wina;
 const LIST = WORLD.countries;
@@ -14,6 +15,15 @@ for (const c of LIST) {
   for (const p of c.body || []) for (const m of p.matchAll(/\[\[ramen:([a-z0-9-]+)\|/g)) if (!BY[m[1]]) problems.push(`${c.code}: 라면 주소 ${m[1]}가 도감에 없어요.`);
   if (c.code !== 'kr' && !ofCountry(c.code).length) problems.push(`${c.code}: 도감에 이 나라 라면이 없어요.`);
   if (c.code !== 'kr' && !(c.sources || []).length) problems.push(`${c.code}: 참고 자료(sources)를 적어 주세요.`);
+}
+for (const [, co, , r] of MORE.timeline) {
+  if (co && !COUNTRIES[co]) problems.push(`연표: 나라 ${co}가 없어요.`);
+  if (r && !r.startsWith('/') && !BY[r]) problems.push(`연표: 라면 주소 ${r}가 도감에 없어요.`);
+}
+for (const f of MORE.families) for (const m of f.makers) if (!MAKERS[m]) problems.push(`가계도: 회사 ${m}가 없어요.`);
+for (const l of MORE.best.lists) for (const [, co, , r] of l.rows) {
+  if (!COUNTRIES[co]) problems.push(`TOP 10: 나라 ${co}가 없어요.`);
+  if (r && !BY[r]) problems.push(`TOP 10: 라면 주소 ${r}가 도감에 없어요.`);
 }
 if (problems.length) {
   console.error('\n[세계 라면 지도 원고 점검]\n' + problems.map((p) => ' - ' + p).join('\n') + '\n');
@@ -83,6 +93,7 @@ ${crumbs(items)}
 <div><dt>베트남 81개</dt><dd>1인당 소비 1위 (2024년). 한국은 79.2개로 2위</dd></div>
 <div><dt>${ABROAD.length}개 나라 ${n}가지</dt><dd>면면 도감에 실은 해외 라면</dd></div>
 </dl>
+${tileMap()}
 <nav class="wjump" aria-label="나라 바로 가기"><a class="pill" href="/ramen/?co=xx">${icon('i-grid')}해외 라면 모두 보기</a>${ABROAD.map((c) => `<a class="pill" href="/world/${c.code}/">${esc(c.name)}</a>`).join('')}</nav>
 
 <section class="sec" aria-labelledby="h-wina">
@@ -99,6 +110,15 @@ ${bars(prow, { max: 81, unit: '개', note: W.percapNote })}
 ${secHead('나라별로 보기', moreLink('/ramen/?co=xx', '도감에서 필터로 고르기'), 'h-nations')}
 <div class="wgrid">${LIST.map(countryCard).join('')}</div>
 <p class="note">${icon('i-pin')}먹어 본 라면을 기록하면 <a href="/me/#coll">내 도감의 세계 라면 여권</a>에 나라마다 도장이 찍혀요.</p>
+</section>
+
+<section class="sec" aria-labelledby="h-wmore">
+${secHead('세계 라면 더 읽기', '', 'h-wmore')}
+<div class="mania">${[
+    ['/world/best/', 'i-trophy', '세계가 뽑은 라면 TOP 10', '라면 후기 5,000편을 쓴 평론가가 해마다 고르는 역대 최고 라면'],
+    ['/world/timeline/', 'i-clock', '세계 라면 연표', `1958년 치킨라멘부터 오늘까지 ${MORE.timeline.length}개 장면`],
+    ['/world/brands/', 'i-grid', '라면 가계도', '닛신, 네슬레, 유니레버… 나라는 달라도 한 집안인 라면들'],
+  ].map(([h, ic, t, d]) => `<a class="mania-tile" href="${h}"><span class="mania-ico">${icon(ic)}</span><b>${t}</b><span>${d}</span></a>`).join('')}</div>
 </section>
 
 <section class="sec" aria-labelledby="h-regions">
@@ -169,3 +189,99 @@ ${ramenGrid(list, { from: '', eagerFirst: true })}
 }
 
 export const WORLD_PAGES = ABROAD;
+
+// ---------- 나라 타일 지도: 대략의 위치에 나라 칸을 놓아요 ----------
+const TILE = {
+  gb: [6, 1], pl: [7, 1], ru: [9, 1], ua: [8, 2], us: [2, 2], mx: [2, 3], pe: [3, 5], br: [4, 5], ng: [6, 4],
+  pk: [9, 3], np: [10, 3], in: [10, 4], bd: [11, 4], cn: [12, 2], kr: [13, 2], jp: [14, 2], hk: [12, 3], tw: [13, 3],
+  th: [11, 5], vn: [12, 5], ph: [14, 4], my: [11, 6], sg: [12, 6], id: [13, 6], au: [14, 7],
+};
+function tileMap() {
+  const miss = LIST.filter((c) => !TILE[c.code]).map((c) => c.code);
+  if (miss.length) { console.error(`[세계 라면 지도] 타일 위치가 없는 나라: ${miss.join(', ')}`); process.exit(1); }
+  const n = (code) => RAMEN.filter((r) => r.co === code).length;
+  const lv = (k) => (k >= 10 ? 4 : k >= 5 ? 3 : k >= 2 ? 2 : 1);
+  return `<figure class="tmap-wrap"><div class="tmap" role="list" aria-label="나라별 도감 수록 수">${LIST.map((c) => {
+    const k = n(c.code), [x, y] = TILE[c.code];
+    return `<a role="listitem" class="tile tile-${c.code === 'kr' ? 'kr' : lv(k)}" style="grid-column:${x};grid-row:${y}" href="${countryHref(c)}"><b>${esc(c.name)}</b><span>${k}</span></a>`;
+  }).join('')}</div><figcaption class="small muted">칸 위치는 실제 지도를 단순하게 옮긴 거예요. 숫자는 도감에 실은 그 나라 라면 수이고, 많을수록 색이 진해요.</figcaption></figure>`;
+}
+
+const ymd = (d) => { const [y, m, dd] = d.split('-'); return `${y}년${m ? ` ${+m}월` : ''}${dd ? ` ${+dd}일` : ''}`; };
+const cn = (co) => (co ? COUNTRIES[co].name : '세계');
+const srcList = (arr) => `<section class="story-src" aria-labelledby="h-src"><h2 id="h-src">참고한 자료</h2><ol>${arr.map(([t, u]) => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a></li>`).join('')}</ol>
+<p class="small muted">나라별 라면 이야기의 자료는 나라 페이지마다 따로 밝혀 두었어요. 고칠 곳이 보이면 <button type="button" class="link-btn" data-report="">알려 주세요</button>.</p></section>`;
+const head = (kick, h1, lead) => `<header class="story-head"><p class="kicker">${WAVE}${kick}</p><h1>${h1}</h1><p class="story-lead">${lead}</p></header>`;
+
+export function worldTimelinePage() {
+  const path = '/world/timeline/';
+  const items = [['/', SITE_NAME], ['/world/', '세계 라면 지도'], [path, '세계 라면 연표']];
+  const used = [...new Set(MORE.timeline.map((t) => t[1]).filter(Boolean))];
+  const decades = [...new Set(MORE.timeline.map((t) => `${t[0].slice(0, 3)}0`))];
+  const body = `<div class="wrap">
+${crumbs(items)}
+${head('세계 라면 지도 · 연표', '세계 라면 연표', `1958년 일본 오사카의 작은 오두막에서 시작된 인스턴트 라면이 어떻게 세계로 퍼졌는지 ${MORE.timeline.length}개 장면으로 정리했어요. 나라를 골라 그 나라 이야기만 볼 수도 있어요.`)}
+<div class="fchips tl-filter" role="group" aria-label="나라 고르기"><button type="button" class="fchip" data-tl="" aria-pressed="true">모든 나라</button>${used.map((co) => `<button type="button" class="fchip" data-tl="${co}" aria-pressed="false">${esc(cn(co))}</button>`).join('')}</div>
+<nav class="wjump" aria-label="연대 바로 가기">${decades.map((d) => `<a class="pill" href="#d${d}">${d}년대</a>`).join('')}</nav>
+<ol class="wtl">${decades.map((d) => `<li class="wtl-dec" id="d${d}"><h2>${d}년대</h2><ol>${MORE.timeline.filter((t) => t[0].startsWith(d.slice(0, 3))).map(([date, co, text, r]) => {
+    const href = !r ? '' : r.startsWith('/') ? r : `/ramen/${r}/`;
+    return `<li class="wtl-item" data-co="${co}"><span class="wtl-date">${ymd(date)}</span><span class="wtl-co">${esc(cn(co))}</span><p>${esc(text)}${href ? ` <a href="${href}">${r.startsWith('/') ? '더 보기' : esc(BY[r].n)}${icon('i-chev')}</a>` : ''}</p></li>`;
+  }).join('')}</ol></li>`).join('')}</ol>
+<p class="note">한국 라면의 더 자세한 연표는 <a href="/story/timeline/">한국 라면 연표</a>에 있어요. 날짜는 회사 발표와 기사로 확인한 만큼만 적었어요(연도만 확인된 것은 연도만).</p>
+${srcList(WORLD.sources)}
+</div>
+<script>(function(){var b=document.querySelectorAll('[data-tl]');b.forEach(function(x){x.addEventListener('click',function(){var v=x.dataset.tl;b.forEach(function(y){y.setAttribute('aria-pressed',String(y===x));});document.querySelectorAll('.wtl-item').forEach(function(i){i.hidden=!!v&&i.dataset.co!==v;});document.querySelectorAll('.wtl-dec').forEach(function(d){d.hidden=!d.querySelector('.wtl-item:not([hidden])');});});});})();</script>`;
+  return layout({ title: `세계 라면 연표 - 1958년 치킨라멘부터 | ${SITE_NAME}`, description: `치킨라멘(1958), 컵누들(1971), 인도미 미고렝(1982), 캉스푸(1992)까지 세계 라면 역사 ${MORE.timeline.length}개 장면.`, path, body, jsonld: [crumbLd(items)] });
+}
+
+export function worldBrandsPage() {
+  const path = '/world/brands/';
+  const items = [['/', SITE_NAME], ['/world/', '세계 라면 지도'], [path, '라면 가계도']];
+  const fam = MORE.families.map((f) => {
+    const list = RAMEN.filter((r) => f.makers.includes(r.m) || f.extra.includes(r.s));
+    const byCo = {};
+    list.forEach((r) => { (byCo[r.co] = byCo[r.co] || []).push(r); });
+    const cos = Object.keys(byCo).sort((a, b) => byCo[b].length - byCo[a].length);
+    return `<section class="fam" id="f-${f.makers[0]}">
+<h2>${esc(f.name)}${f.home ? `<small>${esc(cn(f.home))}</small>` : ''}<span class="fam-n">${cos.length}개 나라 · ${list.length}가지</span></h2>
+<p>${esc(f.note)}</p>
+<div class="fam-cos">${cos.map((co) => `<div class="fam-co"><b>${esc(cn(co))}</b><span>${byCo[co].map((r) => `<a href="/ramen/${r.s}/">${esc(r.n)}</a>`).join('')}</span></div>`).join('')}</div>
+</section>`;
+  }).join('');
+  const body = `<div class="wrap">
+${crumbs(items)}
+${head('세계 라면 지도 · 가계도', '라면 가계도', '나라도 이름도 다르지만 알고 보면 한 회사가 만드는 라면이 많아요. 홍콩 공자이몐과 브라질 미오조는 닛신 집안이고, 영국 팟누들과 파키스탄 크노르 누들은 유니레버 집안이에요. 도감에 실은 라면을 회사별로 묶었어요.')}
+<nav class="wjump" aria-label="회사 바로 가기">${MORE.families.map((f) => `<a class="pill" href="#f-${f.makers[0]}">${esc(f.name)}</a>`).join('')}</nav>
+<div class="fams">${fam}</div>
+<p class="note">회사 관계는 회사 발표와 기사로 확인한 것만 적었어요. 도감에 실은 라면만 보여 주므로 회사가 만드는 라면 전부는 아니에요.</p>
+${srcList(WORLD.sources)}
+</div>`;
+  return layout({ title: `라면 가계도 - 나라는 달라도 한 집안인 라면 | ${SITE_NAME}`, description: '닛신, 도요수산, 네슬레, 유니레버, 인도푸드, 퉁이 그룹, 아지노모토, 팔도가 나라마다 만드는 라면을 한눈에.', path, body, jsonld: [crumbLd(items)] });
+}
+
+export function worldBestPage() {
+  const path = '/world/best/';
+  const items = [['/', SITE_NAME], ['/world/', '세계 라면 지도'], [path, '세계가 뽑은 라면 TOP 10']];
+  const B = MORE.best;
+  const lists = B.lists.map((l, li) => `<section class="sec best" aria-labelledby="h-best-${li}">
+${secHead(esc(l.h), `<span class="small muted">${esc(l.date)}</span>`, `h-best-${li}`)}
+<ol class="best-list">${l.rows.map(([n, co, name, r]) => `<li class="best-row${n === '1' ? ' best-1' : ''}"><span class="best-n">${n}</span><span class="best-name">${r ? `<a href="/ramen/${r}/">${esc(name)}</a>` : esc(name)}<small>${esc(cn(co))}</small></span>${r ? `<a class="best-go" href="/ramen/${r}/" aria-label="${esc(name)} 도감 보기">${icon('i-chev')}</a>` : '<span class="best-go small muted">도감 준비 중</span>'}</li>`).join('')}</ol>
+</section>`).join('');
+  const inDogam = [...new Set(B.lists.flatMap((l) => l.rows.map((x) => x[3]).filter(Boolean)))].map((x) => BY[x]);
+  const body = `<div class="wrap">
+${crumbs(items)}
+${head('세계 라면 지도 · 평론가의 선택', '세계가 뽑은 라면 TOP 10', esc(B.about))}
+${lists}
+<section class="sec" aria-labelledby="h-best-notes">
+${secHead('해마다 바뀌는 순위', '', 'h-best-notes')}
+<ul class="heat-cards best-notes">${B.notes.map((t) => `<li class="heat-card"><p>${esc(t)}</p></li>`).join('')}</ul>
+</section>
+<section class="sec" aria-labelledby="h-best-dogam">
+${secHead('도감에서 만나기', moreLink('/ramen/?co=xx', '해외 라면 모두 보기'), 'h-best-dogam')}
+${ramenGrid(inDogam, { from: '' })}
+<p class="note">순위는 한 사람의 취향으로 고른 목록이에요. 면면 랭킹은 먹어 본 회원들의 기록으로 따로 계산해요. 국내 판매 여부와 값은 수입 사정에 따라 달라요.</p>
+</section>
+${srcList(B.sources)}
+</div>`;
+  return layout({ title: `세계가 뽑은 라면 TOP 10 - 더 라멘 레이터 역대 최고 라면 | ${SITE_NAME}`, description: '라면 후기 5,000편을 쓴 평론가 한스 리네시가 고른 역대 최고 라면 TOP 10. 프리마테이스트 락사, 잇푸도 가라카멘, 아샤 유성 비빔면까지.', path, body, jsonld: [crumbLd(items)] });
+}

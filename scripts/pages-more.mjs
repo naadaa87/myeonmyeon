@@ -14,6 +14,7 @@ const LAB = [
   ['water', '물 양 계산기', '두 봉지, 세 봉지 끓일 때 물을 얼마나 넣을지 계산해요.', 'club-recipe', '냄비에서 끓고 있는 라면', 'i-drop'],
   ['heat', '맵기 사다리', '라면 회사가 밝힌 스코빌 지수로 매운 순서를 줄 세웠어요. 신라면의 몇 배인지도 함께 봐요.', 'broth-spicy', '빨간 국물 라면 한 그릇', 'i-flame'],
   ['pick', '오늘의 라면 뽑기', '나라, 맵기, 종류를 고르고 뽑기를 누르면 오늘 먹을 라면 하나를 골라 드려요.', 'mixed-bibim', '비빔면 한 그릇', 'i-dice'],
+  ['match', '나에게 맞는 라면 찾기', '다섯 가지 질문에 답하면 도감 속 라면 가운데 입맛에 맞을 세 가지를 골라 드려요.', 'club-recipe', '냄비에서 끓고 있는 라면', 'i-heart'],
   ['quiz', '라면 퀴즈', '세계 라면 상식 10문제. 문제마다 답과 짧은 이야기가 따라 나와요.', 'archive-card', '라면 사진 카드를 꽂아 둔 나무 서랍', 'i-help'],
 ];
 const labTabs = (cur) => `<nav class="sub-tabs" aria-label="취향실험실 메뉴"><a href="/lab/"${cur === '' ? ' aria-current="page"' : ''}>실험실 홈</a>${LAB.map(([k, t]) => `<a href="/lab/${k}/"${cur === k ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</nav>`;
@@ -50,6 +51,7 @@ export const labPages = () => [
   ['lab/water', labPage('water', '물 양 계산기', '봉지 뒷면에 적힌 한 봉지 물 양을 넣으면 여러 봉지를 끓일 때 필요한 물을 계산해요.', waterHTML(), '라면 여러 봉지를 끓일 때 필요한 물 양을 ml, 종이컵, 계량컵으로 계산해요.')],
   ['lab/heat', labPage('heat', '맵기 사다리', '라면 회사가 밝혀 기사에 실린 스코빌 지수(SHU)로 매운 순서를 줄 세웠어요. 막대 오른쪽 숫자는 신라면(3,400 SHU)의 몇 배인지예요.', heatHTML(), '신라면, 불닭볶음면, 핵불닭, 틈새라면, 킹뚜껑까지 라면 회사가 밝힌 스코빌 지수로 줄 세운 맵기 사다리.', '')],
   ['lab/pick', labPage('pick', '오늘의 라면 뽑기', '고르기 어려운 날엔 뽑기에 맡겨 보세요. 조건을 정하면 그 안에서 하나를 골라 드려요.', pickHTML(), '나라, 맵기, 종류를 고르면 오늘 먹을 라면 하나를 골라 주는 라면 뽑기.', 'fun.js')],
+  ['lab/match', labPage('match', '나에게 맞는 라면 찾기', '맵기, 국물, 맛, 나라, 면까지 다섯 가지만 답해 주세요. 도감에 실린 라면 가운데 잘 맞을 세 가지를 골라 드려요.', matchHTML(), '맵기, 국물, 맛, 나라, 면 취향을 고르면 도감 속 라면 가운데 잘 맞을 라면 세 가지를 추천해요.', 'fun.js')],
   ['lab/quiz', labPage('quiz', '라면 퀴즈', '문제는 매번 섞여서 나와요. 다 풀면 점수와 함께 더 읽을거리를 보여 드려요.', quizHTML(), '세계 첫 라면부터 나라별 라면 문화까지, 라면 상식 퀴즈 10문제.', 'fun.js')],
 ];
 
@@ -105,6 +107,24 @@ function pickHTML() {
 <div data-result></div>
 </div>
 </div>`;
+}
+
+// 나에게 맞는 라면 찾기: 질문 다섯 개, 계산은 화면에서
+const MATCH_Q = [
+  ['hot', '매운맛은 어느 정도가 좋아요?', [['0', '순한 게 좋아요'], ['1', '적당히 매콤하게'], ['2', '아주 맵게'], ['', '상관없어요']]],
+  ['style', '국물은 어떻게 할까요?', [['soup', '국물이 있어야 해요'], ['dry', '국물 없이 비비거나 볶아서'], ['', '둘 다 좋아요']]],
+  ['taste', '오늘 당기는 맛은?', [['meat', '소고기·닭·돼지'], ['seafood', '해물'], ['kimchi', '김치·고추장'], ['soy', '짜장·간장'], ['cream', '크림·치즈·코코넛'], ['curry', '카레·향신료'], ['sour', '새콤한 똠얌'], ['', '아무거나']]],
+  ['co', '어느 나라 라면이 좋아요?', [['kr', '익숙한 한국 라면'], ['mix', '해외 라면도 궁금해요'], ['xx', '해외 라면으로만'], ['', '상관없어요']]],
+  ['nd', '면은 어떤 게 좋아요?', [['oil', '쫄깃한 보통 라면 면'], ['light', '튀기지 않은 면이나 쌀국수'], ['', '상관없어요']]],
+];
+function matchHTML() {
+  return `<div class="mtest" data-match>
+<div class="quiz-top"><span data-mstep>1 / ${MATCH_Q.length}</span><button type="button" class="link-btn small" data-mback hidden>이전 질문</button></div>
+<div class="quiz-bar"><i data-mbar style="width:0%"></i></div>
+${MATCH_Q.map(([k, q, opts], i) => `<fieldset class="mq" data-mq="${k}"${i ? ' hidden' : ''}><legend class="quiz-q">${esc(q)}</legend><div class="quiz-opts">${opts.map(([v, t]) => `<button type="button" class="quiz-opt" data-mv="${v}">${esc(t)}</button>`).join('')}</div></fieldset>`).join('')}
+<div data-mresult hidden></div>
+</div>
+<p class="note">추천은 도감에 적힌 맵기, 조리 방식, 맛 꼬리표, 나라, 면 종류로 계산해요. 실제로 먹어 본 사람들의 평가는 라면 페이지의 맛 지도와 별점에서 확인하세요.</p>`;
 }
 
 // 라면 퀴즈: 문제는 content/quiz.json

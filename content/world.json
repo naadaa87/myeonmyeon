@@ -1,6 +1,6 @@
 {
  "_안내": "세계 라면 지도 원고예요. countries의 code는 content/ramen.json의 co와 같아야 해요. 숫자는 세계라면협회(WINA) 발표와 기사로 확인한 것만 적고, 출처는 sources에 남겨 주세요. body의 [[ramen:주소|글자]]는 도감 링크가 돼요.",
- "updated": "2026-11-19",
+ "updated": "2026-11-20",
  "wina": {
   "year": 2025,
   "released": "2026년 8월 6일",
@@ -180,7 +180,8 @@
     "인스턴트 라면은 1958년 8월 25일 닛신식품의 [[ramen:nissin-chicken-ramen|치킨라멘]]에서 시작됐어요. 창업자 안도 모모후쿠는 집 뒤 작은 오두막에서 1년을 매달려 면을 기름에 튀겨 말리는 방법을 찾아냈어요. 1971년 9월 18일에는 세계 첫 컵라면인 [[ramen:nissin-cup-noodle|컵누들]]이 나왔어요.",
     "일본 라면은 국물 바탕에 따라 간장, 된장, 소금, 돼지뼈로 나뉘고, 우동과 메밀국수, 야키소바까지 컵과 봉지로 만들어요. 1966년에 나온 [[ramen:sapporo-ichiban-shoyu|삿포로이치방]]과 [[ramen:myojo-charumera|묘조 차르메라]]처럼 60년 동안 팔려 온 제품이 많아요.",
     "2025년 일본의 라면 수요는 59억 5,000만 개로 세계 5위예요. 1인당으로는 2024년 47개를 먹어 말레이시아와 함께 공동 6위였어요.",
-    "후쿠오카의 마루타이가 1959년 11월 내놓은 [[ramen:marutai-ramen|봉 라멘]]은 곧은 면을 튀기지 않고 말린 제품으로, 규슈에서는 집에서 끓이는 라면의 대명사예요. 2011년 11월 도요수산이 생면을 그대로 말린 [[ramen:maruchan-seimen-shoyu|마루짱 세이멘]]을 내놓아 1년 만에 2억 개를 팔자, 업계는 이를 ‘마루짱 쇼크’라 불렀고 닛신 [[ramen:nissin-raoh-shoyu|라오]] 같은 튀기지 않은 봉지면이 뒤따랐어요."
+    "후쿠오카의 마루타이가 1959년 11월 내놓은 [[ramen:marutai-ramen|봉 라멘]]은 곧은 면을 튀기지 않고 말린 제품으로, 규슈에서는 집에서 끓이는 라면의 대명사예요. 2011년 11월 도요수산이 생면을 그대로 말린 [[ramen:maruchan-seimen-shoyu|마루짱 세이멘]]을 내놓아 1년 만에 2억 개를 팔자, 업계는 이를 ‘마루짱 쇼크’라 불렀고 닛신 [[ramen:nissin-raoh-shoyu|라오]] 같은 튀기지 않은 봉지면이 뒤따랐어요.",
+    "1981년 10월 묘조식품의 [[ramen:myojo-chukazanmai-canton|중화삼매]]는 튀기지 않은 면에 이름난 중국요리점의 맛을 담아 ‘고급 봉지라면’ 바람을 일으켰어요. 1983년 나온 에이스콕의 [[ramen:acecook-wakame-ramen|와카메 라멘]]처럼 40년 넘게 맛을 거의 바꾸지 않고 팔리는 컵라면도 있어요."
    ],
    "sources": [
     [
@@ -214,6 +215,18 @@
     [
      "マネーポスト, カップヌードルの歴史と豆知識",
      "https://www.moneypost.jp/824026/3/"
+    ],
+    [
+     "現代ビジネス, 中華三昧 1981年10月27日発売",
+     "https://gendai.media/articles/-/140281"
+    ],
+    [
+     "明星食品, 中華三昧 重慶飯店 麻辣湯麺 新発売 (2025.8.7)",
+     "https://cdn.nissin.com/gr-documents/attachments/news_posts/13416/835a85cd867155c0/original/20250807-1.pdf"
+    ],
+    [
+     "東京ウォーカー, エースコック「わかめラーメン」開発秘話",
+     "https://www.walkerplus.com/article/1108567/"
     ]
    ],
    "eat": "야키소바 컵은 물을 부어 익힌 뒤 뚜껑의 구멍으로 물을 따라 내고 소스를 비벼요. 야키비훈은 삶지 않고 프라이팬에서 채소와 볶아요."
@@ -233,7 +246,8 @@
     "중국과 홍콩은 2025년 432억 7,000만 개를 먹어 세계 라면 소비의 35%쯤을 차지했어요. 1년 전보다 1.2% 줄었지만 2위 인도네시아의 세 배에 가까운 압도적인 1위예요.",
     "1992년 8월 21일 톈진에서 [[ramen:masterkong-hongshao-beef|캉스푸 훙사오 뉴러우몐]]이 나오며 시장이 크게 자랐어요. 2008년에는 퉁이가 새콤한 [[ramen:unipresident-laotan-suancai|라오탄 쏸차이 뉴러우몐]]을 전국에 내놓아 한동안 ‘쏸차이 라면’ 경쟁이 붙었어요.",
     "2023년 판매량 점유율은 캉스푸 45%, 퉁이 16%, 바이샹 12%, 진마이랑 10%였어요. 바이샹은 2003년 중국 첫 사골 국물 라면 [[ramen:baixiang-dagu|다구몐]]을 낸 회사예요.",
-    "라면 말고도 광시 류저우의 우렁이 쌀국수 [[ramen:haohuanluo-luosifen|뤄쓰펀]] 같은 봉지 면이 크게 늘었어요. 류저우 봉지 뤄쓰펀 매출은 2022년 182억 위안까지 올랐다가 2025년 163억 위안으로 줄었어요."
+    "라면 말고도 광시 류저우의 우렁이 쌀국수 [[ramen:haohuanluo-luosifen|뤄쓰펀]] 같은 봉지 면이 크게 늘었어요. 류저우 봉지 뤄쓰펀 매출은 2022년 182억 위안까지 올랐다가 2025년 163억 위안으로 줄었어요.",
+    "2016년 상하이에서 시작한 [[ramen:ramentalk-seafood-tomyum|라멘숴(拉面说)]]처럼, 반건조 생면에 고명을 갖춘 일본식 즉석 라멘을 인터넷으로 파는 새 브랜드도 늘었어요."
    ],
    "sources": [
     [
@@ -255,6 +269,14 @@
     [
      "界面新闻, 螺蛳粉 销售收入 (2026)",
      "https://m.jiemian.com/article/15340611.html"
+    ],
+    [
+     "界面新闻, 拉面说 半干生鲜面",
+     "https://www.jiemian.com/article/1795298.html"
+    ],
+    [
+     "36氪, 拉面说 (2016.8 上海)",
+     "https://pitchhub.36kr.com/project/1678454305846274"
     ]
    ]
   },
@@ -273,7 +295,8 @@
     "대만 라면은 1967년 무렵 시작됐어요. 1971년 8월 3일 퉁이가 다진 돼지고기 기름 봉지를 넣은 [[ramen:tw-unif-rouzao|러우짜오몐]]을 내놓아 1위가 됐고, 1973년 웨이리의 [[ramen:tw-weilih-zhajiang|짜장몐]] 등과 함께 ‘라면 사천왕’으로 불렸어요.",
     "1980년대 퉁이는 요리 연구가 푸페이메이와 함께 만든 ‘만한대찬’으로 큰 고기 덩어리를 넣은 고급 라면을 열었고, 2015년에는 화댜오주로 맛을 낸 [[ramen:tw-ttl-huadiao-chicken|타이주 화댜오지몐]]이 갑자기 인기를 끌었어요.",
     "대만 사람들은 2025년 9억 개쯤을 먹었어요. 2025년 상반기 까르푸 대만 판매 순위 1위는 여전히 러우짜오몐이었어요.",
-    "대만에는 끓이지 않고 과자처럼 먹는 라면도 있어요. 1970년 나온 웨이왕의 [[ramen:weiwang-prince-noodle|왕자면]]은 학생들이 생으로 먹자 아예 그렇게 먹도록 다시 만들었고, 퉁이의 [[ramen:unif-science-noodle|과학면]]은 1970년대 말 인기 애니메이션 ‘과학닌자대 갓챠맨’에서 이름을 따왔어요."
+    "대만에는 끓이지 않고 과자처럼 먹는 라면도 있어요. 1970년 나온 웨이왕의 [[ramen:weiwang-prince-noodle|왕자면]]은 학생들이 생으로 먹자 아예 그렇게 먹도록 다시 만들었고, 퉁이의 [[ramen:unif-science-noodle|과학면]]은 1970년대 말 인기 애니메이션 ‘과학닌자대 갓챠맨’에서 이름을 따왔어요.",
+    "2015년 무렵부터 대만에서는 튀기지 않은 면을 양념에 비벼 먹는 ‘간반몐(乾拌麵)’이 크게 유행했어요. 방송인 쩡궈청의 [[ramen:tseng-scallion-sichuan|쩡반몐]]이 바람을 일으켰고, [[ramen:asha-meteor-dandan|아샤 유성 비빔면]]과 [[ramen:moms-goose-oil-zhajiang|노마반몐]]은 세계 라면 평론가 한스 리네시의 TOP 10 단골이 됐어요."
    ],
    "sources": [
     [
@@ -299,6 +322,18 @@
     [
      "Science Noodles (Wikipedia)",
      "https://wiki.krisyotam.com/content/wikipedia_en_all_nopic_2026-03/Science_Noodles"
+    ],
+    [
+     "食力, 曾拌麵 年營收突破兩億",
+     "https://www.foodnext.net/issue/paper/5357479594"
+    ],
+    [
+     "NOWnews, 臺灣十大即食麵2026年版",
+     "https://www.nownews.com/news/6878326"
+    ],
+    [
+     "TVBS 食尚玩家, 2024 台灣十大泡麵",
+     "https://supertaste.tvbs.com.tw/hot/346416"
     ]
    ],
    "eat": "왕자면과 과학면은 봉지를 흔들어 부숴 과자처럼 먹고, 훠궈나 루웨이에 넣어 끓이기도 해요."
@@ -916,6 +951,62 @@
     ]
    ],
    "eat": "국물째 먹어도 되고, 물을 따라 내고 비벼 먹어도 돼요."
+  },
+  {
+   "code": "pk",
+   "name": "파키스탄",
+   "en": "Pakistan",
+   "region": "남아시아",
+   "lead": "크노르가 95%를 차지한 시장",
+   "makers": "유니레버(크노르)",
+   "flavors": "차트파타, 닭고기",
+   "short": "크노르 누들이 라면 시장의 95%를 차지해요.",
+   "body": [
+    "파키스탄에는 1992년 네슬레 매기가 처음 들어왔고, 이듬해인 1993년 유니레버가 [[ramen:knorr-chatt-patta|크노르 누들]]을 내놓았어요. 오랫동안 매기가 1위였지만, 지금은 크노르가 파키스탄 라면 시장의 95%를 차지하고 매기는 라면 판매를 접었어요.",
+    "새콤매콤한 ‘차트파타’와 [[ramen:knorr-chicken-pk|닭고기]] 맛이 가장 인기이고, 오랫동안 아이들 간식으로 팔렸어요. 요즘은 매운맛을 좋아하는 젊은 층을 겨냥한 제품도 나오고 있어요."
+   ],
+   "sources": [
+    [
+     "Unilever Pakistan, Knorr",
+     "https://www.unilever.pk/brands/foods/knorr/"
+    ],
+    [
+     "Profit (Pakistan Today), Maggi exits Pakistan",
+     "https://profit.pakistantoday.com.pk/?p=79726"
+    ],
+    [
+     "Aurora (Dawn), Knorr Blazin noodles",
+     "https://aurora.dawn.com/news/1144647"
+    ]
+   ]
+  },
+  {
+   "code": "bd",
+   "name": "방글라데시",
+   "en": "Bangladesh",
+   "region": "남아시아",
+   "lead": "매기와 미스터 누들의 1위 다툼",
+   "makers": "네슬레(매기), 프란(미스터 누들)",
+   "flavors": "마살라, 카레, 소고기, 토마토",
+   "short": "1990년대 말 시작된 시장에서 매기와 미스터 누들이 1위를 다퉈요.",
+   "body": [
+    "방글라데시 라면 시장은 1990년대 말부터 커졌어요. 네슬레 매기와 방글라데시 식품회사 프란의 [[ramen:pran-mr-noodles-curry|미스터 누들]]이 각각 30% 안팎의 점유율로 1위를 다퉈요.",
+    "도시로 사람이 몰리고 바쁘게 사는 사람이 늘면서 라면을 찾는 사람도 빠르게 늘었어요. 카레, 소고기, 매운 토마토처럼 향신료 맛이 많아요."
+   ],
+   "sources": [
+    [
+     "Jago News, Mr Noodles holds more than 30% of the market",
+     "https://www.jagonews24.com/en/biz-econ/news/96810"
+    ],
+    [
+     "The Business Standard, Noodles market growing rapidly",
+     "https://www.tbsnews.net/economy/bazaar/noodles-market-growing-rapidly-amid-urbanisation-pandemic-282208"
+    ],
+    [
+     "The Daily Star, Nation of noodle lovers",
+     "https://www.thedailystar.net/business/news/nation-noodle-lovers-1854271"
+    ]
+   ]
   }
  ],
  "sources": [

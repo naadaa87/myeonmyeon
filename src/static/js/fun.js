@@ -69,6 +69,82 @@
     MM.loadRamen().then(function (d) { all = d.ramen; paint(); });
   }
 
+  // ---------- 나에게 맞는 라면 찾기 ----------
+  var mt = $('[data-match]');
+  if (mt) {
+    var qs2 = $$('[data-mq]', mt), step = 0, ans = {}, data = [];
+    var TASTE = { meat: ['beef', 'chicken', 'pork'], seafood: ['seafood'], kimchi: ['kimchi', 'gochujang'], soy: ['jjajang', 'soy'], cream: ['cream'], curry: ['curry'], sour: ['sour'] };
+    var TL = { meat: '고기 국물', seafood: '해물 맛', kimchi: '김치·고추장 맛', soy: '짜장·간장 맛', cream: '크림·코코넛 맛', curry: '카레·향신료 맛', sour: '새콤한 맛' };
+    var DRY = ['fried', 'bibim', 'cold', 'jjajang'];
+    var showQ = function () {
+      qs2.forEach(function (q, i) { q.hidden = i !== step; });
+      $('[data-mstep]', mt).textContent = (step + 1) + ' / ' + qs2.length;
+      $('[data-mbar]', mt).style.width = (step / qs2.length * 100) + '%';
+      $('[data-mback]', mt).hidden = step === 0;
+    };
+    var score = function (r) {
+      var sc = 0, why = [];
+      if (r.st === 'off') return null;
+      if (ans.hot !== '') {
+        var h = r.hot == null ? -9 : r.hot - +ans.hot;
+        if (h === 0) { sc += 3; why.push(['순한 편', '적당히 매콤', '아주 매운 편'][+ans.hot]); } else if (Math.abs(h) === 1) sc += 1; else sc -= 2;
+      }
+      if (ans.style === 'soup') { if (DRY.indexOf(r.c) < 0) { sc += 3; why.push('국물 라면'); } else sc -= 3; }
+      if (ans.style === 'dry') { if (DRY.indexOf(r.c) > -1) { sc += 3; why.push('국물 없이 비비는 라면'); } else sc -= 3; }
+      if (ans.taste) {
+        var ta = r.ta || [];
+        if (TASTE[ans.taste].some(function (x) { return ta.indexOf(x) > -1; })) { sc += 4; why.push(TL[ans.taste]); }
+      }
+      if (ans.co === 'kr') { if (r.co === 'kr') sc += 2; else return null; }
+      if (ans.co === 'xx') { if (r.co !== 'kr') { sc += 2; why.push(r.cn + ' 라면'); } else return null; }
+      if (ans.co === 'mix' && r.co !== 'kr') { sc += 1.5; why.push(r.cn + ' 라면'); }
+      if (ans.nd === 'oil') { if (r.nd === 'oil') sc += 1.5; }
+      if (ans.nd === 'light') { if (['dry', 'rice', 'fresh', 'cooked', 'glass'].indexOf(r.nd) > -1) { sc += 2.5; why.push('튀기지 않은 면'); } else sc -= 1; }
+      return { r: r, sc: sc + Math.random() * 0.8, why: why };
+    };
+    var result = function () {
+      var list = data.map(score).filter(Boolean).sort(function (a, b) { return b.sc - a.sc; });
+      var pick = [], seen = {};
+      var lim = ans.co === 'mix' ? 2 : 3;
+      for (var i = 0; i < list.length && pick.length < lim; i++) { if (!seen[list[i].r.m]) { seen[list[i].r.m] = 1; pick.push(list[i]); } }
+      if (ans.co === 'mix') {
+        // 한국 라면과 해외 라면이 섞이도록 세 번째는 아직 없는 쪽에서 골라요
+        var hasKr = pick.some(function (x) { return x.r.co === 'kr'; }), hasXx = pick.some(function (x) { return x.r.co !== 'kr'; });
+        for (var j = 0; j < list.length && pick.length < 3; j++) {
+          var x = list[j];
+          if (seen[x.r.m]) continue;
+          if ((!hasKr && x.r.co === 'kr') || (!hasXx && x.r.co !== 'kr') || (hasKr && hasXx)) { seen[x.r.m] = 1; pick.push(x); }
+        }
+      }
+      var box = $('[data-mresult]', mt);
+      qs2.forEach(function (q) { q.hidden = true; });
+      $('[data-mbar]', mt).style.width = '100%';
+      $('[data-mstep]', mt).textContent = '결과';
+      $('[data-mback]', mt).hidden = true;
+      box.hidden = false;
+      box.innerHTML = '<h2 class="quiz-q">이런 라면은 어때요?</h2>' + (pick.length ? '<div class="mres">' + pick.map(function (x, k) {
+        return '<div class="mres-item"><p class="mres-why"><b>' + (k + 1) + '</b>' + (x.why.length ? x.why.map(esc).join(' · ') : '고른 조건과 가장 가까워요') + '</p>' + MM.cardHTML(x.r) + '</div>';
+      }).join('') + '</div>' : '<p class="muted">조건에 맞는 라면을 찾지 못했어요. 조건을 조금 넓혀 보세요.</p>') +
+        '<p class="row-btns"><button type="button" class="btn btn-main" data-mretry>' + ico('i-reset') + '다시 하기</button>' +
+        (pick.length ? '<button type="button" class="btn btn-line" data-mshare>' + ico('i-share') + '결과 공유</button>' : '') + '</p>';
+      MM.track('match', pick.length ? pick[0].r.s : '');
+      var sh = $('[data-mshare]', box);
+      if (sh) sh.addEventListener('click', function () { MM.share({ title: '나에게 맞는 라면', text: '면면이 골라 준 내 라면: ' + pick.map(function (x) { return x.r.n; }).join(', '), url: location.origin + '/lab/match/' }); });
+      $('[data-mretry]', box).addEventListener('click', function () { step = 0; ans = {}; box.hidden = true; box.innerHTML = ''; showQ(); });
+    };
+    mt.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-mv]');
+      if (b) {
+        ans[b.closest('[data-mq]').dataset.mq] = b.dataset.mv;
+        step++;
+        if (step < qs2.length) showQ(); else if (data.length) result(); else MM.loadRamen().then(function (d) { data = d.ramen; result(); });
+        return;
+      }
+      if (e.target.closest('[data-mback]') && step > 0) { step--; showQ(); }
+    });
+    MM.loadRamen().then(function (d) { data = d.ramen; });
+  }
+
   // ---------- 라면 퀴즈 ----------
   var quiz = $('[data-quiz]');
   if (quiz) {

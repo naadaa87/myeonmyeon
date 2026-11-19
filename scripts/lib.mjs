@@ -90,6 +90,7 @@ export const ramenSearchText = (r) => [r.n, r.on || '', r.maker, r.co !== 'kr' ?
 
 // ---------- 아이콘 (선 그림) ----------
 const ICONS = {
+  'i-clock': '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',
   'i-dice': '<rect x="3.5" y="3.5" width="17" height="17" rx="4"/><circle cx="8.5" cy="8.5" r="1.3" fill="currentColor"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.3" fill="currentColor"/>',
   'i-help': '<circle cx="12" cy="12" r="9"/><path d="M9.6 9.2a2.5 2.5 0 1 1 3.4 2.3c-.6.3-1 .8-1 1.5v.6"/><path d="M12 17h.01"/>',
   'i-search': '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/>',

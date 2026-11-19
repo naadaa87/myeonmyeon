@@ -109,6 +109,9 @@ ${secHead('라면 매니아 코너', '', 'h-mania')}
     ['/story/words/', 'i-book', '라면 용어 사전', '유탕면, 조미유, 똠얌, 미 똠까지 낱말 풀이'],
     ['/story/places/', 'i-pin', '라면 성지 여행', '컵누들 뮤지엄과 구미라면축제 가는 길'],
     ['/me/#coll', 'i-map', '세계 라면 여권', '기록한 라면의 나라마다 도장을 모아요'],
+    ['/lab/match/', 'i-heart', '나에게 맞는 라면 찾기', '질문 다섯 개로 입맛에 맞을 라면 세 가지'],
+    ['/world/best/', 'i-trophy', '세계가 뽑은 라면 TOP 10', '라면 후기 5,000편 평론가의 역대 최고 라면'],
+    ['/world/timeline/', 'i-clock', '세계 라면 연표', '1958년 치킨라멘부터 세계 곳곳의 첫 라면까지'],
   ].map(([h, ic, t, d]) => `<a class="mania-tile" href="${h}"><span class="mania-ico">${icon(ic)}</span><b>${t}</b><span>${d}</span></a>`).join('')}</div>
 </section>
 
@@ -225,7 +228,7 @@ export function ramenPage(r) {
     ['회사', `<a href="/ramen/?m=${r.m}">${esc(r.maker)}</a>`],
     ['형태', r.f ? FORMS[r.f] : '<span class="muted">확인 중</span>'],
     ['조리 방식', STYLES[r.c]],
-    r.noodle ? ['면', NOODLES[r.noodle] || ''] : null,
+    r.noodle && r.noodle !== 'unk' ? ['면', NOODLES[r.noodle] || ''] : null,
     ['맵기 분류', r.hot == null ? '<span class="muted">미분류</span>' : `${HOTS[r.hot]} <small class="muted">(편집부)</small>`],
     r.y ? ['출시', yearText(r.y)] : null,
     ['판매', `${STATUS[r.st]}${r.ch ? ` · ${esc(r.ch)}` : ''}`],
