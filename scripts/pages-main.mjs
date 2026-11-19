@@ -1,9 +1,9 @@
 // 페이지: 처음 화면, 라면 도감, 라면 한 개, 한 그릇 기록, 랭킹, 평가 기준, 신상 레이더, 라면몰
 import {
   esc, cfg, SITE_NAME, abs, RAMEN, BY, SORTED, NEWEST, MAKERS, layout, icon, WAVE, img, pageBanner, crumbs, crumbLd, secHead, moreLink,
-  ramenCard, ramenGrid, hotChip, statusChip, formText, styleText, yearText, releaseKey, buyLink, DISCLOSURE, josa, readJSON, cho, DOGAM_CHECKED,
+  ramenCard, ramenGrid, hotChip, statusChip, formText, styleText, yearText, releaseKey, buyLink, DISCLOSURE, josa, readJSON, cho, DOGAM_CHECKED, COUNTRIES, WORLD,
 } from './lib.mjs';
-import { STYLES, FORMS, STATUS, HOTS, GROUPS, AXES, RANK_RULE } from '../server/catalog-data.js';
+import { STYLES, FORMS, STATUS, HOTS, GROUPS, AXES, RANK_RULE, TASTES, NOODLE_TYPES } from '../server/catalog-data.js';
 import { storyHomeCards } from './pages-story.mjs';
 
 const NEWS = readJSON('content/news.json').news;
@@ -93,6 +93,13 @@ ${secHead('신상 레이더', moreLink('/new/', '소식 모두 보기'), 'h-new'
 <ul class="news-list news-home">${NEWS.slice(0, 4).map(newsItem).join('')}</ul>
 </section>
 
+<section class="sec" aria-labelledby="h-world">
+${secHead('세계 라면 지도', moreLink('/world/', '나라별로 보기'), 'h-world')}
+<p class="sec-lead">일본 컵누들, 인도네시아 미고렝, 태국 똠얌, 싱가포르 락사까지. 해외 ${new Set(RAMEN.filter((r) => r.co !== 'kr').map((r) => r.co)).size}개 나라 라면 ${RAMEN.filter((r) => r.co !== 'kr').length}가지를 나라·맵기·맛으로 골라 보세요.</p>
+<nav class="wjump" aria-label="나라별 라면">${WORLD.countries.filter((c) => c.code !== 'kr').map((c) => `<a class="pill" href="/world/${c.code}/">${esc(c.name)}</a>`).join('')}</nav>
+${ramenGrid(['nissin-cup-noodle', 'indomie-mi-goreng', 'mama-tomyum-shrimp', 'prima-wholegrain-laksa'].map((x) => BY[x]).filter(Boolean), { from: '' })}
+</section>
+
 <section class="sec" aria-labelledby="h-story">
 ${secHead('라면 이야기', moreLink('/story/', '읽을거리 모두 보기'), 'h-story')}
 <div class="sgrid sgrid-home">${storyHomeCards(3)}</div>
@@ -134,36 +141,62 @@ ${buyLink(r.s, from, '쿠팡에서 보기', 'btn btn-buy btn-sm')}
 
 // ---------- 라면 도감 ----------
 const RETAILERS = ['gs25', 'cu', 'seven', 'emart24', 'emart', 'homeplus', 'lottemart'];
+// 필터 칩: 값마다 버튼 하나 (숫자는 화면에서 채워요)
+const fchip = (k, v, label) => `<button type="button" class="fchip" data-k="${k}" data-v="${esc(v)}" data-label="${esc(label)}" aria-pressed="false">${esc(label)}<span class="fchip-n"></span></button>`;
+const fgroup = (id, title, chips) => `<div class="fgroup" role="group" aria-labelledby="fg-${id}"><p class="fgroup-h" id="fg-${id}">${title}</p><div class="fchips">${chips}</div></div>`;
+
 export function dogamPage() {
+  const cnt = (fn) => RAMEN.filter(fn).length;
+  const KR = cnt((r) => r.co === 'kr');
+  const ABROAD = RAMEN.length - KR;
+  const nations = Object.values(COUNTRIES).filter((c) => c.code !== 'kr' && RAMEN.some((r) => r.co === c.code))
+    .sort((a, b) => cnt((r) => r.co === b.code) - cnt((r) => r.co === a.code));
+  const makerCos = (k) => [...new Set(RAMEN.filter((x) => x.m === k).map((x) => x.co))];
+  const makerCo = (k) => makerCos(k)[0] || 'kr';
   const makers = Object.entries(MAKERS).filter(([k]) => RAMEN.some((r) => r.m === k));
-  const body = `${pageBanner('banner-atlas', '라면 도감', `국내 라면 ${RAMEN.length}가지를 종류별로 모았어요. 초성으로도 찾을 수 있어요.`, '달걀과 대파를 올린 매운 국물 라면', '면면도감')}
+  const opt = ([k, v]) => `<option value="${k}">${esc(v)}</option>`;
+  const krMakers = makers.filter(([k]) => makerCo(k) === 'kr' && !RETAILERS.includes(k));
+  const shopMakers = makers.filter(([k]) => RETAILERS.includes(k));
+  const abroadMakers = makers.filter(([k]) => makerCo(k) !== 'kr').sort((a, b) => a[1].localeCompare(b[1], 'ko'));
+  const body = `${pageBanner('banner-atlas', '라면 도감', `한국 라면 ${KR}가지와 해외 ${nations.length}개 나라 라면 ${ABROAD}가지를 모았어요. 나라·맵기·맛으로 골라 보고, 초성으로도 찾을 수 있어요.`, '달걀과 대파를 올린 매운 국물 라면', '면면도감')}
 <div class="wrap" data-dogam>
+<nav class="sub-tabs" aria-label="도감 둘러보기"><a href="/ramen/" aria-current="page">라면 도감</a><a href="/world/">세계 라면 지도</a><a href="/new/">신상 레이더</a></nav>
 ${groupTiles()}
-<form class="filter-bar" data-filter role="search" onsubmit="return false">
-<label class="search-box">${icon('i-search')}<input type="search" name="q" placeholder="라면 이름, 회사, 초성 (예: ㅈㅍㄱㅌ)" aria-label="라면 찾기" autocomplete="off"></label>
-<div class="filter-row">
-<label class="sel"><span class="sr">회사</span><select name="m"><option value="">회사 전체</option><optgroup label="라면 회사">${makers.filter(([k]) => !RETAILERS.includes(k)).map(([k, v]) => `<option value="${k}">${esc(v)}</option>`).join('')}</optgroup><optgroup label="편의점·마트 자체 라면">${makers.filter(([k]) => RETAILERS.includes(k)).map(([k, v]) => `<option value="${k}">${esc(v)}</option>`).join('')}</optgroup></select></label>
-<label class="sel"><span class="sr">형태</span><select name="f"><option value="">형태 전체</option>${Object.entries(FORMS).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}</select></label>
-<label class="sel"><span class="sr">맵기</span><select name="hot"><option value="">맵기 전체</option>${Object.entries(HOTS).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}</select></label>
-<label class="sel"><span class="sr">판매</span><select name="st"><option value="">판매 상태 전체</option>${Object.entries(STATUS).filter(([k]) => RAMEN.some((r) => r.st === k)).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}</select></label>
+<form class="filter-bar dfilter" data-filter role="search" onsubmit="return false">
+<label class="search-box">${icon('i-search')}<input type="search" name="q" placeholder="라면 이름, 회사, 나라, 초성 (예: ㅈㅍㄱㅌ)" aria-label="라면 찾기" autocomplete="off"></label>
+<div class="dfilter-top">
+<button type="button" class="btn btn-line dfilter-toggle" data-ftoggle aria-expanded="false" aria-controls="fpanel">${icon('i-filter')}필터<b class="fbadge" data-fcount hidden></b></button>
 <label class="sel"><span class="sr">정렬</span><select name="sort"><option value="name">가나다순</option><option value="new">최근 출시순</option><option value="n">기록 많은 순</option><option value="a">별점 높은 순</option><option value="saved">내가 저장한 라면</option></select></label>
+</div>
+<div class="factive" data-factive hidden></div>
+<div class="fpanel" id="fpanel" data-fpanel>
+${fgroup('co', '나라', fchip('co', 'kr', '한국') + fchip('co', 'xx', '해외 전체') + nations.map((c) => fchip('co', c.code, c.name)).join(''))}
+${fgroup('hot', '맵기', Object.entries(HOTS).map(([k, v]) => fchip('hot', k, v)).join('') + fchip('hot', 'u', '미분류'))}
+${fgroup('ta', '맛', TASTES.map((t) => fchip('ta', t.id, t.name)).join(''))}
+${fgroup('c', '조리 방식', Object.entries(STYLES).map(([k, v]) => fchip('c', k, v)).join(''))}
+${fgroup('f', '형태', Object.entries(FORMS).map(([k, v]) => fchip('f', k, v)).join(''))}
+${fgroup('nd', '면', Object.entries(NOODLE_TYPES).filter(([k]) => k === 'oil' || RAMEN.some((r) => r.noodle === k)).map(([k, v]) => fchip('nd', k, v)).join(''))}
+<div class="fgroup"><p class="fgroup-h">회사·판매</p><div class="fsel-row">
+<label class="sel"><span class="sr">회사</span><select name="m"><option value="">회사 전체</option><optgroup label="한국 라면 회사">${krMakers.map(opt).join('')}</optgroup><optgroup label="편의점·마트 자체 라면">${shopMakers.map(opt).join('')}</optgroup><optgroup label="해외 라면 회사">${abroadMakers.map(([k, v]) => `<option value="${k}">${esc(v)} (${makerCos(k).map((c) => esc(COUNTRIES[c].name)).join('·')})</option>`).join('')}</optgroup></select></label>
+<label class="sel"><span class="sr">판매</span><select name="st"><option value="">판매 상태 전체</option>${Object.entries(STATUS).filter(([k]) => RAMEN.some((r) => r.st === k)).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}</select></label>
+</div></div>
 </div>
 </form>
 <p class="filter-count" data-count aria-live="polite">${RAMEN.length}가지</p>
 <div class="rgrid" data-list>${SORTED.map((r, i) => ramenCard(r, { eager: i < 4 })).join('')}</div>
 <p class="more-wrap"><button type="button" class="btn btn-line" data-more hidden>더 보기</button></p>
 <div class="empty" data-empty hidden><p>조건에 맞는 라면이 없어요.</p><p><button type="button" class="btn btn-sub" data-reset>조건 지우기</button> <button type="button" class="btn btn-line" data-report="">새 라면 제보하기</button></p></div>
-<p class="note">맵기 표시(${icon('i-flame')})는 이름과 제조사 설명을 보고 편집부가 나눈 거예요. 실제로 먹어 본 사람들이 느낀 맵기는 라면 페이지의 맛 지도에서 볼 수 있어요.</p>
-<p class="note">수록 기준: 농심·오뚜기·삼양식품·팔도·하림·풀무원은 공식 홈페이지와 공식 쇼핑몰 제품 목록을 따랐어요. 편의점(GS25·CU·세븐일레븐·이마트24)과 대형마트(이마트·홈플러스·롯데마트)의 자체 라면과 단독 라면은 각 회사 상품 안내와 발표, 기사로 확인한 것만 실었어요(${esc(DOGAM_CHECKED)} 확인). 편의점 한정판은 금방 바뀌니 매장에 없을 수 있어요. 같은 맛이라도 봉지·컵·큰컵은 맛과 양이 달라 따로 실었어요. 빠진 라면이 있으면 <button type="button" class="link-btn" data-report="">제보</button>해 주세요. <a href="/ramen/?st=exclusive">편의점·마트 라면만 모아 보기</a></p>
+<p class="note">맵기 표시(${icon('i-flame')})와 맛 분류는 이름과 제조사 설명을 보고 편집부가 나눈 거예요. 실제로 먹어 본 사람들이 느낀 맛은 라면 페이지의 맛 지도에서 볼 수 있어요.</p>
+<p class="note">수록 기준: 한국 라면은 농심·오뚜기·삼양식품·팔도·하림·풀무원의 공식 홈페이지와 공식 쇼핑몰 제품 목록을 따랐어요. 편의점(GS25·CU·세븐일레븐·이마트24)과 대형마트(이마트·홈플러스·롯데마트)의 자체 라면과 단독 라면은 각 회사 상품 안내와 발표, 기사로 확인한 것만 실었어요. 해외 라면은 나라마다 시장을 이끄는 회사의 대표 제품과 오래 팔린 제품, 세계 라면 평가에서 이름난 제품을 골라 실었고, 나라 이야기는 <a href="/world/">세계 라면 지도</a>에 정리했어요(${esc(DOGAM_CHECKED)} 확인). 해외 라면은 국내 판매 여부와 값이 수입 사정에 따라 달라요. 같은 맛이라도 봉지·컵·큰컵은 맛과 양이 달라 따로 실었어요. 빠진 라면이 있으면 <button type="button" class="link-btn" data-report="">제보</button>해 주세요. <a href="/ramen/?st=exclusive">편의점·마트 라면만 모아 보기</a></p>
 </div>`;
   const jsonld = [crumbLd([['/', SITE_NAME], ['/ramen/', '라면 도감']]), { '@context': 'https://schema.org', '@type': 'ItemList', name: `${SITE_NAME} 라면 도감`, numberOfItems: RAMEN.length, itemListElement: SORTED.map((r, i) => ({ '@type': 'ListItem', position: i + 1, url: abs(`/ramen/${r.s}/`), name: r.n })) }];
-  return layout({ title: `라면 도감 - 국내 라면 ${RAMEN.length}가지 | ${SITE_NAME}`, description: `신라면, 진라면, 불닭볶음면, 짜파게티부터 신상 라면까지 ${RAMEN.length}가지. 국물면, 비빔면, 짜장면, 볶음면, 컵라면으로 나눠 보고 초성으로 찾아요.`, path: '/ramen/', body, scripts: ['dogam.js'], jsonld });
+  return layout({ title: `라면 도감 - 한국과 세계 라면 ${RAMEN.length}가지 | ${SITE_NAME}`, description: `신라면, 불닭볶음면, 짜파게티부터 닛신 컵누들, 인도미 미고렝, 마마 똠얌꿍까지 ${RAMEN.length}가지. 나라·맵기·맛·조리 방식으로 골라 보고 초성으로 찾아요.`, path: '/ramen/', body, scripts: ['dogam.js'], jsonld });
 }
 
 // ---------- 라면 한 개 ----------
 function similar(r) {
   const same = RAMEN.filter((x) => x.s !== r.s && x.groups.some((g) => r.groups.includes(g)));
-  same.sort((a, b) => (b.c === r.c) - (a.c === r.c) || (b.m === r.m) - (a.m === r.m) || Math.abs((a.hot ?? 1) - (r.hot ?? 1)) - Math.abs((b.hot ?? 1) - (r.hot ?? 1)) || collatorCmp(a, b));
+  same.sort((a, b) => (b.co === r.co) - (a.co === r.co) || (b.c === r.c) - (a.c === r.c) || (b.m === r.m) - (a.m === r.m) || Math.abs((a.hot ?? 1) - (r.hot ?? 1)) - Math.abs((b.hot ?? 1) - (r.hot ?? 1)) || collatorCmp(a, b));
   return same.slice(0, 4);
 }
 const collatorCmp = (a, b) => a.n.localeCompare(b.n, 'ko');
@@ -175,6 +208,8 @@ export function ramenPage(r) {
   const items = [['/', SITE_NAME], ['/ramen/', '라면 도감'], [`/ramen/?g=${g}`, groupName(g)], [path, r.n]];
   const news = NEWS.filter((n) => n.ramen.includes(r.s));
   const facts = [
+    r.co !== 'kr' ? ['나라', `<a href="/world/${r.co}/">${esc(r.coName)}</a>`] : null,
+    r.on ? ['원래 이름', `<span lang="${r.co === 'jp' ? 'ja' : r.co === 'cn' || r.co === 'tw' || r.co === 'hk' ? 'zh' : 'en'}">${esc(r.on)}</span>`] : null,
     ['회사', `<a href="/ramen/?m=${r.m}">${esc(r.maker)}</a>`],
     ['형태', r.f ? FORMS[r.f] : '<span class="muted">확인 중</span>'],
     ['조리 방식', STYLES[r.c]],
@@ -189,7 +224,7 @@ ${crumbs(items)}
 <article class="rhead" data-ramen="${r.s}" data-name="${esc(r.n)}">
 <div class="rhead-pic">${img(r.img, `${STYLES[r.c]} 라면 예시 그림`, '', true)}${statusChip(r)}<p class="pic-note">그림은 조리 방식을 보여 주는 예시예요.</p></div>
 <div class="rhead-text">
-<p class="rhead-maker"><a href="/ramen/?m=${r.m}">${esc(r.maker)}</a>${r.f ? ` · ${formText(r)}` : ''} · ${styleText(r)}</p>
+<p class="rhead-maker">${r.co !== 'kr' ? `<a class="rcard-co" href="/world/${r.co}/">${esc(r.coName)}</a>` : ''}<a href="/ramen/?m=${r.m}">${esc(r.maker)}</a>${r.f ? ` · ${formText(r)}` : ''} · ${styleText(r)}</p>
 <h1>${esc(r.n)}</h1>
 <p class="rcard-tags">${hotChip(r)}${r.t.map((t) => `<span class="pill pill-sm">${esc(t)}</span>`).join('')}</p>
 <p class="rhead-desc">${esc(r.d)}</p>

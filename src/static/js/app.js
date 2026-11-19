@@ -307,7 +307,7 @@
     var st2 = r.st && r.st !== 'sale' ? '<span class="chip-st st-' + r.st + '">' + esc((MMD.STATUS || {})[r.st] || '') + (r.ch ? ' · ' + esc(r.ch) : '') + '</span>' : '';
     var hot = r.hot == null ? '' : '<span class="chip-hot hot' + r.hot + '">' + (r.hot === 2 ? ico('i-flame') + ico('i-flame') : r.hot === 1 ? ico('i-flame') : '') + esc(MMD.HOTS[r.hot]) + '</span>';
     return '<article class="rcard" data-s="' + r.s + '"><a class="rcard-link" href="/ramen/' + r.s + '/"><div class="rcard-img"><img src="' + imgOf(r) + '" width="800" height="800" alt="" loading="lazy">' + st2 + '</div>' +
-      '<div class="rcard-body"><p class="rcard-maker">' + esc(r.mn) + (r.f ? ' · ' + esc(MMD.FORMS[r.f]) : '') + '</p><h3 class="rcard-name">' + esc(r.n) + '</h3>' +
+      '<div class="rcard-body"><p class="rcard-maker">' + (r.cn ? '<span class="rcard-co">' + esc(r.cn) + '</span>' : '') + esc(r.mn) + (r.f ? ' · ' + esc(MMD.FORMS[r.f]) : '') + '</p><h3 class="rcard-name">' + esc(r.n) + '</h3>' +
       '<p class="rcard-tags"><span class="chip-style">' + esc(MMD.STYLES[r.c]) + '</span>' + hot + '</p><p class="rcard-stat" data-stat>' + statLine(st) + '</p></div></a>' +
       '<button type="button" class="save-btn" data-save="' + r.s + '" aria-pressed="false" aria-label="' + esc(r.n) + ' 저장">' + ico('i-bookmark') + '</button></article>';
   }

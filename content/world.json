@@ -1,0 +1,693 @@
+{
+ "_안내": "세계 라면 지도 원고예요. countries의 code는 content/ramen.json의 co와 같아야 해요. 숫자는 세계라면협회(WINA) 발표와 기사로 확인한 것만 적고, 출처는 sources에 남겨 주세요. body의 [[ramen:주소|글자]]는 도감 링크가 돼요.",
+ "updated": "2026-11-19",
+ "wina": {
+  "year": 2025,
+  "released": "2026년 8월 6일",
+  "total": "1,242억 1,000만 개",
+  "change": "1년 전보다 0.7% 늘었어요",
+  "rows": [
+   [
+    "1",
+    "중국·홍콩",
+    432.7,
+    "1.2% 줄었어요"
+   ],
+   [
+    "2",
+    "인도네시아",
+    145.4,
+    "1.0% 줄었어요 (5년 만의 감소)"
+   ],
+   [
+    "3",
+    "인도",
+    96.0,
+    "8.9% 늘었어요"
+   ],
+   [
+    "4",
+    "베트남",
+    82.3,
+    "1.2% 늘었어요"
+   ],
+   [
+    "5",
+    "일본",
+    59.5,
+    ""
+   ],
+   [
+    "6",
+    "미국",
+    52,
+    "약 52억 개"
+   ],
+   [
+    "7",
+    "필리핀",
+    43,
+    "약 43억 개"
+   ],
+   [
+    "8",
+    "태국",
+    42,
+    "약 42억 개"
+   ],
+   [
+    "9",
+    "한국",
+    null,
+    "2024년 41억 개"
+   ],
+   [
+    "10",
+    "나이지리아",
+    31,
+    "약 31억 개"
+   ]
+  ],
+  "note": "6위 아래는 기사에 실린 반올림 값이에요. 한국의 2025년 값은 WINA 누리집이 점검 중이라 확인하지 못해 2024년 값을 함께 적었어요.",
+  "percap": [
+   [
+    "베트남",
+    81
+   ],
+   [
+    "한국",
+    79.2
+   ],
+   [
+    "태국",
+    57
+   ],
+   [
+    "네팔",
+    54
+   ],
+   [
+    "인도네시아",
+    52
+   ],
+   [
+    "일본",
+    47
+   ],
+   [
+    "말레이시아",
+    47
+   ],
+   [
+    "대만",
+    40
+   ],
+   [
+    "필리핀",
+    39
+   ],
+   [
+    "중국·홍콩",
+    31
+   ]
+  ],
+  "percapNote": "2024년 1인당 소비량(개). WINA가 2025년 10월 발표한 값이에요."
+ },
+ "regions": [
+  {
+   "h": "동아시아",
+   "p": "간장·된장·소금·돼지뼈처럼 국물 바탕으로 나뉘어요. 일본은 우동·메밀국수·야키소바까지 즉석으로 만들고, 중국과 대만은 간장에 졸인 소고기, 새콤한 갓 절임(쏸차이), 다진 돼지고기 양념(러우짜오) 맛이 중심이에요."
+  },
+  {
+   "h": "동남아시아",
+   "p": "새콤매콤한 똠얌, 코코넛을 넣은 락사와 커리, 달콤한 간장으로 비비는 미고렝처럼 노점 음식을 옮긴 맛이 많아요. 쌀국수와 국물 없는 볶음면도 흔해요."
+  },
+  {
+   "h": "남아시아",
+   "p": "마살라·카레·토마토처럼 향신료 맛이 중심이에요. 네팔의 와이와이처럼 미리 양념한 면을 과자처럼 부숴 먹는 문화도 있어요."
+  },
+  {
+   "h": "미주·유럽·아프리카",
+   "p": "닭·소고기 같은 기본 맛의 값싼 봉지라면이 오래 시장을 이끌었어요. 미국에서는 2021년 무렵부터 튀기지 않은 면이나 고단백 면을 내세운 새 브랜드가 늘었어요."
+  }
+ ],
+ "tips": [
+  [
+   "뒷면 조리법부터 보세요",
+   "인도미 미고렝이나 판싯 칸톤처럼 삶은 뒤 물을 버리고 비벼 먹는 라면이 많아요. 국물 라면처럼 끓이면 짜고 싱거워져요."
+  ],
+  [
+   "같은 이름이라도 나라마다 달라요",
+   "데마에잇초나 인도미는 만드는 나라마다 면과 맛이 달라요. 도감에는 나라를 나눠 적었어요."
+  ],
+  [
+   "매운 표시는 나라마다 기준이 달라요",
+   "도감의 맵기 분류는 이름과 제조사 설명을 보고 편집부가 나눈 거예요. 실제로 먹어 본 사람들의 맵기는 라면 페이지의 맛 지도에서 확인하세요."
+  ],
+  [
+   "수입품에는 한글 표시가 붙어요",
+   "국내에서 정식으로 파는 수입 라면에는 원재료와 알레르기 정보를 적은 한글 표시 스티커가 붙어 있어요. 해외 직구품은 없을 수 있어요."
+  ],
+  [
+   "매장에 없을 수 있어요",
+   "해외 라면은 수입 사정에 따라 판매가 끊기거나 값이 자주 바뀌어요. 구매 버튼은 쿠팡 검색 결과로 이어져요."
+  ]
+ ],
+ "countries": [
+  {
+   "code": "kr",
+   "name": "한국",
+   "en": "Korea",
+   "region": "동아시아",
+   "lead": "1인당 소비량 세계 2위. 매운 국물과 쫄깃한 면",
+   "percap": 79.2,
+   "rank": "총소비 9위",
+   "short": "매운 국물과 쫄깃한 유탕면이 중심이에요. 자세한 이야기는 라면 이야기에 정리했어요.",
+   "link": "/story/"
+  },
+  {
+   "code": "jp",
+   "name": "일본",
+   "en": "Japan",
+   "region": "동아시아",
+   "lead": "인스턴트 라면과 컵라면이 태어난 나라",
+   "wina": "59억 5,000만 개 (5위)",
+   "percap": 47,
+   "makers": "닛신식품, 도요수산(마루짱), 산요식품(삿포로이치방), 묘조식품, 에이스콕, 마루카식품(페양)",
+   "flavors": "간장(쇼유), 된장(미소), 소금(시오), 돼지뼈(돈코츠), 유부우동, 야키소바",
+   "short": "간장·된장·소금 국물에 우동, 메밀국수, 야키소바까지 즉석으로 만들어요.",
+   "body": [
+    "인스턴트 라면은 1958년 8월 25일 닛신식품의 [[ramen:nissin-chicken-ramen|치킨라멘]]에서 시작됐어요. 창업자 안도 모모후쿠는 집 뒤 작은 오두막에서 1년을 매달려 면을 기름에 튀겨 말리는 방법을 찾아냈어요. 1971년 9월 18일에는 세계 첫 컵라면인 [[ramen:nissin-cup-noodle|컵누들]]이 나왔어요.",
+    "일본 라면은 국물 바탕에 따라 간장, 된장, 소금, 돼지뼈로 나뉘고, 우동과 메밀국수, 야키소바까지 컵과 봉지로 만들어요. 1966년에 나온 [[ramen:sapporo-ichiban-shoyu|삿포로이치방]]과 [[ramen:myojo-charumera|묘조 차르메라]]처럼 60년 동안 팔려 온 제품이 많아요.",
+    "2025년 일본의 라면 수요는 59억 5,000만 개로 세계 5위예요. 1인당으로는 2024년 47개를 먹어 말레이시아와 함께 공동 6위였어요."
+   ],
+   "sources": [
+    [
+     "세계라면협회(WINA) 2025년 세계 수요 발표 (2026.8.6)",
+     "https://www.atpress.ne.jp/news/621213"
+    ],
+    [
+     "現代ビジネス, 日清がカップヌードルを発売(1971年)",
+     "https://gendai.media/articles/-/75592"
+    ],
+    [
+     "日清食品ホールディングスの歴史",
+     "https://the-shashi.com/tse/2897/decisions/"
+    ],
+    [
+     "GetNavi, サッポロ一番はなぜ神なのか",
+     "https://getnavi.jp/gourmet/40344/"
+    ]
+   ]
+  },
+  {
+   "code": "cn",
+   "name": "중국",
+   "en": "China",
+   "region": "동아시아",
+   "lead": "세계 라면의 3분의 1을 먹는 나라",
+   "wina": "432억 7,000만 개 (중국·홍콩 1위)",
+   "percap": 31,
+   "makers": "캉스푸, 퉁이, 바이샹, 진마이랑",
+   "flavors": "간장에 졸인 소고기(훙사오), 새콤한 갓 절임(쏸차이), 사골, 마라",
+   "short": "간장에 졸인 소고기와 새콤한 갓 절임 국물이 양대 맛이에요.",
+   "body": [
+    "중국과 홍콩은 2025년 432억 7,000만 개를 먹어 세계 라면 소비의 35%쯤을 차지했어요. 1년 전보다 1.2% 줄었지만 2위 인도네시아의 세 배에 가까운 압도적인 1위예요.",
+    "1992년 8월 21일 톈진에서 [[ramen:masterkong-hongshao-beef|캉스푸 훙사오 뉴러우몐]]이 나오며 시장이 크게 자랐어요. 2008년에는 퉁이가 새콤한 [[ramen:unipresident-laotan-suancai|라오탄 쏸차이 뉴러우몐]]을 전국에 내놓아 한동안 ‘쏸차이 라면’ 경쟁이 붙었어요.",
+    "2023년 판매량 점유율은 캉스푸 45%, 퉁이 16%, 바이샹 12%, 진마이랑 10%였어요. 바이샹은 2003년 중국 첫 사골 국물 라면 [[ramen:baixiang-dagu|다구몐]]을 낸 회사예요.",
+    "라면 말고도 광시 류저우의 우렁이 쌀국수 [[ramen:haohuanluo-luosifen|뤄쓰펀]] 같은 봉지 면이 크게 늘었어요. 류저우 봉지 뤄쓰펀 매출은 2022년 182억 위안까지 올랐다가 2025년 163억 위안으로 줄었어요."
+   ],
+   "sources": [
+    [
+     "세계라면협회(WINA) 2025년 세계 수요 발표 (2026.8.6)",
+     "https://www.atpress.ne.jp/news/621213"
+    ],
+    [
+     "新华网, 康师傅红烧牛肉面的国民经典之路 (2025.11.3)",
+     "https://www.news.cn/food/20251103/10e0aac11284418494b64864c29d46f0/c.html"
+    ],
+    [
+     "蓝鲸新闻, 方便面市场份额 (2025)",
+     "https://www.lanjinger.com/d/1753433616453427257"
+    ],
+    [
+     "界面新闻, 白象 骨汤方便面",
+     "https://www.jiemian.com/article/7224217.html"
+    ],
+    [
+     "界面新闻, 螺蛳粉 销售收入 (2026)",
+     "https://m.jiemian.com/article/15340611.html"
+    ]
+   ]
+  },
+  {
+   "code": "tw",
+   "name": "대만",
+   "en": "Taiwan",
+   "region": "동아시아",
+   "lead": "다진 돼지고기 양념과 고기 파우치 라면",
+   "wina": "9억 개 (17위)",
+   "percap": 40,
+   "makers": "퉁이(대만), 웨이리, 웨이단, 대만담배주류공사",
+   "flavors": "러우짜오(다진 돼지고기 양념), 소고기, 새우·어묵, 짜장, 갈비·닭",
+   "short": "다진 돼지고기 양념(러우짜오)과 진짜 고기 파우치가 든 라면이 유명해요.",
+   "body": [
+    "대만 라면은 1967년 무렵 시작됐어요. 1971년 8월 3일 퉁이가 다진 돼지고기 기름 봉지를 넣은 [[ramen:tw-unif-rouzao|러우짜오몐]]을 내놓아 1위가 됐고, 1973년 웨이리의 [[ramen:tw-weilih-zhajiang|짜장몐]] 등과 함께 ‘라면 사천왕’으로 불렸어요.",
+    "1980년대 퉁이는 요리 연구가 푸페이메이와 함께 만든 ‘만한대찬’으로 큰 고기 덩어리를 넣은 고급 라면을 열었고, 2015년에는 화댜오주로 맛을 낸 [[ramen:tw-ttl-huadiao-chicken|타이주 화댜오지몐]]이 갑자기 인기를 끌었어요.",
+    "대만 사람들은 2025년 9억 개쯤을 먹었어요. 2025년 상반기 까르푸 대만 판매 순위 1위는 여전히 러우짜오몐이었어요."
+   ],
+   "sources": [
+    [
+     "FoodNext, 台灣泡麵四大天王",
+     "https://www.foodnext.net/life/culture/paper/5234939203"
+    ],
+    [
+     "NOWnews, 滿漢大餐 起源",
+     "https://www.nownews.com/news/6610349"
+    ],
+    [
+     "Beauty321, 2025 上半年 泡麵排行",
+     "https://www.beauty321.com/amp/post/69263"
+    ],
+    [
+     "民報, WINA 2025 台灣 第17名",
+     "https://www.peoplenews.tw/?p=51470"
+    ]
+   ]
+  },
+  {
+   "code": "hk",
+   "name": "홍콩",
+   "en": "Hong Kong",
+   "region": "동아시아",
+   "lead": "라면을 ‘공자이몐’이라 부르는 도시",
+   "wina": "중국과 함께 집계",
+   "makers": "닛신식품(공자이몐, 데마에잇초)",
+   "flavors": "참기름, 새우·해물, 오향 소고기",
+   "short": "분식집(차찬텡) 메뉴에 라면이 오르고, 새우·해물 국물이 인기예요.",
+   "body": [
+    "홍콩은 1968년 영남식품이 만든 [[ramen:hk-doll-noodle|공자이몐]]으로 자기 라면을 시작했어요. 이듬해 닛신의 [[ramen:hk-demae-sesame|데마에잇초]]가 들어와 두 브랜드가 오랫동안 겨뤘고, 1989년 닛신이 영남식품을 사들였어요.",
+    "홍콩식 분식집 차찬텡에서는 아침, 오후 간식, 식사 메뉴에 모두 라면이 올라요. 새우·해물·소고기·닭·돼지뼈처럼 국물 맛이 다양하고, 여러 가지 고명을 얹어 먹어요."
+   ],
+   "sources": [
+    [
+     "TVBS, 全球泡麵1年賣破千億份 (나라별 인기 맛)",
+     "https://news.tvbs.com.tw/travel/3016247"
+    ],
+    [
+     "香港01, 公仔麵扎根香港半世紀",
+     "https://www.hk01.com/即時國際/24372/"
+    ],
+    [
+     "香港01, 即食麵 杯麵顛覆全球飲食文化",
+     "https://www.hk01.com/即時國際/114265/"
+    ],
+    [
+     "Industrial History of Hong Kong, Winner Food Products",
+     "https://industrialhistoryhk.org/?p=39292"
+    ]
+   ]
+  },
+  {
+   "code": "id",
+   "name": "인도네시아",
+   "en": "Indonesia",
+   "region": "동남아시아",
+   "lead": "미고렝의 나라, 세계 2위 시장",
+   "wina": "145억 4,000만 개 (2위)",
+   "percap": 52,
+   "makers": "인도푸드(인도미), 윙스푸드(미 세답)",
+   "flavors": "달콤한 간장 볶음(미고렝), 렌당, 소토, 닭 카레",
+   "short": "달콤한 간장으로 비비는 미고렝과 지역 요리를 옮긴 맛이 많아요.",
+   "body": [
+    "인도네시아는 중국 다음으로 라면을 많이 먹는 나라예요. 2025년에는 145억 4,000만 개로 5년 만에 처음 줄었는데, 세계라면협회는 통화 가치 하락과 원재료값 상승으로 살 여력이 줄어든 탓으로 봤어요.",
+    "인도미는 1972년 닭 육수 국물 라면으로 시작해 1982년 국물 없이 비벼 먹는 [[ramen:indomie-mi-goreng|미고렝]]을 내놓았어요. 인도푸드가 시장의 70%쯤을 차지하고, 2003년 나온 윙스푸드의 [[ramen:mie-sedaap-goreng|미 세답]]이 2위예요.",
+    "달콤한 간장(케찹 마니스)과 튀긴 양파가 기본 양념이고, 렌당·소토·아체 국수처럼 지역 요리를 옮긴 맛이 계속 늘고 있어요."
+   ],
+   "sources": [
+    [
+     "VnExpress, Indonesia instant noodle demand falls (2026)",
+     "https://e.vnexpress.net/news/business/economy/world-s-second-largest-instant-noodles-market-posts-first-demand-fall-in-5-years-5112834.html"
+    ],
+    [
+     "Indomie, About us",
+     "https://indomie.com/page/about-us"
+    ],
+    [
+     "Databoks, Indofood controls 71% of market",
+     "https://databoks.katadata.co.id/en/food-beverage-tobacco/statistics/388c89bcff14b88/indofood-controls-71-of-indonesias-instant-noodle-market"
+    ],
+    [
+     "Wikipedia, Indomie",
+     "https://en.wikipedia.org/wiki/Indomie"
+    ]
+   ]
+  },
+  {
+   "code": "my",
+   "name": "말레이시아",
+   "en": "Malaysia",
+   "region": "동남아시아",
+   "lead": "노점 국수를 옮긴 고급 라면",
+   "percap": 47,
+   "makers": "마이쿠알리, 네슬레(매기), 마미",
+   "flavors": "화이트 커리, 매운 새우 국수, 똠얌, 카레",
+   "short": "페낭의 화이트 커리와 매운 새우 국수를 옮긴 라면이 세계적으로 알려졌어요.",
+   "body": [
+    "말레이시아 사람은 2024년 한 사람이 47개를 먹어 일본과 함께 1인당 소비량 상위권에 들어요.",
+    "페낭의 화이트 커리, 호키엔 새우 국수처럼 노점 국수를 옮긴 고급 라면이 강해요. 2013년 5월 나온 [[ramen:mykuali-white-curry|마이쿠알리 페낭 화이트 커리]]는 라면 리뷰어 한스 리네시가 운영하는 ‘더 라멘 레이터’의 2014년 ‘역대 최고 라면 10’ 1위에 올랐고, 2025년 목록에도 5위로 이름을 올렸어요."
+   ],
+   "sources": [
+    [
+     "Malay Mail, An instant noodle sensation (2013.12.29)",
+     "https://www.malaymail.com/news/malaysia/2013/12/29/an-instant-noodle-sensation-born-of-a-homesick-students-cravings/589023"
+    ],
+    [
+     "Asia News Network, MyKuali among top 10 (2025)",
+     "https://asianews.network/malaysias-mykuali-penang-white-curry-mamee-rendang-among-top-10-instant-noodles-in-the-world/"
+    ],
+    [
+     "The Vibes, Malaysians sixth largest consumers (2025)",
+     "https://www.thevibes.com/index.php/articles/culture/115399/malaysians-are-the-sixth-largest-consumers-of-instant-noodles-in-the-world"
+    ]
+   ]
+  },
+  {
+   "code": "sg",
+   "name": "싱가포르",
+   "en": "Singapore",
+   "region": "동남아시아",
+   "lead": "‘역대 최고 라면’ 10년 연속 1위",
+   "makers": "프리마테이스트",
+   "flavors": "락사(코코넛 커리 국수), 커리, 새우 국물",
+   "short": "코코넛 국물 국수 락사를 옮긴 고급 라면으로 유명해요.",
+   "body": [
+    "싱가포르의 프리마테이스트는 2011년 코코넛 국물 국수 ‘락사’를 옮긴 고급 라면 [[ramen:prima-laksa-lamian|락사 라미엔]]을 내놓았어요. 2013년 더 라멘 레이터의 ‘역대 최고 라면’에서 락사 라미엔이 1위, 커리 라미엔이 2위에 올랐어요.",
+    "통곡물 면을 쓴 [[ramen:prima-wholegrain-laksa|통곡물 락사 라미엔]]은 같은 목록에서 2025년까지 10년 연속 1위를 지켰어요. 끓이는 데 7분쯤 걸리고 값도 높은 편이지만, 식당 국수에 가까운 맛을 내세워요."
+   ],
+   "sources": [
+    [
+     "Wikipedia, Prima Taste",
+     "https://en.wikipedia.org/wiki/Prima_Taste"
+    ],
+    [
+     "Asia News Network, Prima Taste top spot tenth year (2025)",
+     "https://asianews.network/?p=218419"
+    ],
+    [
+     "FairPrice, Prima Taste La Mian Laksa",
+     "https://omni.fairprice.com.sg/product/prima-taste-la-mian-laksa-4s-x-185g-13014957"
+    ]
+   ]
+  },
+  {
+   "code": "th",
+   "name": "태국",
+   "en": "Thailand",
+   "region": "동남아시아",
+   "lead": "새콤매콤한 똠얌의 나라",
+   "wina": "약 42억 개 (8위)",
+   "percap": 57,
+   "makers": "타이 프레지던트 푸드(마마), 와이와이",
+   "flavors": "똠얌꿍, 크리미 똠얌, 다진 돼지고기, 그린 커리, 팟키마오",
+   "short": "레몬그라스와 라임 잎으로 새콤매콤한 똠얌 국물이 대표 맛이에요.",
+   "body": [
+    "태국은 2024년 한 사람이 57개를 먹어 1인당 소비량 세계 3위였어요. 2025년 전체 소비량은 42억 개쯤으로 세계 8위예요.",
+    "대표 브랜드 ‘마마’는 1972년 대만 퉁이그룹과 태국 사하 그룹이 함께 세운 타이 프레지던트 푸드가 만들어요. 처음 내놓은 맛이 [[ramen:mama-tomyum-shrimp|새우 똠얌]]이에요.",
+    "태국에서는 라면을 그대로 먹기도 하지만, 라면으로 볶음(팟 마마)이나 새콤한 샐러드(얌 마마)를 만들어 먹기도 해요."
+   ],
+   "sources": [
+    [
+     "Wikipedia, Thai President Foods",
+     "https://en.wikipedia.org/wiki/Thai_President_Foods"
+    ],
+    [
+     "Lazada Brand Wiki, MAMA",
+     "https://brandwiki.lazada.com.ph/mama/"
+    ],
+    [
+     "Wordnik, The language of instant noodles",
+     "https://blog.wordnik.com/the-language-of-instant-noodles"
+    ],
+    [
+     "Seasia Stats, Top 10 instant noodle consumers 2025",
+     "https://seasiastats.com/statistic/top-10-instant-noodle-consumers-in-the-world-in-2025-9uFFo"
+    ]
+   ]
+  },
+  {
+   "code": "vn",
+   "name": "베트남",
+   "en": "Vietnam",
+   "region": "동남아시아",
+   "lead": "1인당 소비량 세계 1위",
+   "wina": "82억 3,000만 개 (4위)",
+   "percap": 81,
+   "makers": "에이스콕 베트남(하오하오), 마산 컨슈머(오마치)",
+   "flavors": "새콤매콤한 새우 국물, 사떼 고추기름, 쌀국수 퍼",
+   "short": "한 사람이 한 해 81개를 먹어 1인당 소비량 1위예요.",
+   "body": [
+    "베트남은 2024년 한 사람이 81개를 먹어 1인당 소비량 세계 1위였어요. 2025년 전체 수요도 82억 3,000만 개로 1.2% 늘었고, 컵라면이 도시 밖으로 퍼지며 꾸준히 커지고 있어요.",
+    "시장 1위는 일본 에이스콕의 베트남 법인으로, 한 해 33억 개쯤 팔아 점유율이 40% 안팎이에요. 2000년 시작한 [[ramen:haohao-tom-chua-cay|하오하오]]는 베트남에서 가장 많이 팔린 라면 브랜드로 공식 기록에 올랐어요.",
+    "마산 컨슈머의 [[ramen:omachi-bo-ham|오마치]]는 감자 전분을 넣은 면으로 고급 시장을 이끌어요."
+   ],
+   "sources": [
+    [
+     "世界ラーメン協会 2025年総需要 (2026.8.6)",
+     "https://www.atpress.ne.jp/news/621213"
+    ],
+    [
+     "VnBusiness, Acecook 3,3 tỷ gói",
+     "https://vnbusiness.vn/viet-nam-se-tro-thanh-trung-tam-xuat-khau-cua-tap-doan-san-xuat-mi-nhat-cha-de-hao-hao.html"
+    ],
+    [
+     "Acecook Vietnam, Hảo Hảo record",
+     "https://acecookvietnam.vn/en/media/hao-hao-noodles-named-one-of-the-top-10-best-brands-in-vietnam-for-2023/"
+    ],
+    [
+     "VnEconomy, Omachi high-end segment",
+     "https://epaper.vneconomy.vn/epaper/2021/04/vet316/files/basic-html/page35.html"
+    ]
+   ]
+  },
+  {
+   "code": "ph",
+   "name": "필리핀",
+   "en": "Philippines",
+   "region": "동남아시아",
+   "lead": "국물 없는 볶음면 판싯 칸톤",
+   "wina": "약 43억 개 (7위)",
+   "percap": 39,
+   "makers": "몬데 닛신(럭키미)",
+   "flavors": "판싯 칸톤(간장 볶음), 칼라만시, 소고기 국물, 바초이",
+   "short": "필리핀 볶음국수를 옮긴 판싯 칸톤이 국물 라면만큼 인기예요.",
+   "body": [
+    "필리핀은 2025년 43억 개쯤을 먹어 세계 7위예요.",
+    "몬데 닛신의 럭키미는 1989년 11월 국물 라면 ‘인스턴트 마미’로 시작해, 1991년 국물 없는 볶음면 [[ramen:luckyme-pancit-canton|판싯 칸톤]]으로 새 시장을 만들었어요. 2020년 기준 몬데 닛신의 라면 소매 점유율은 68%였어요."
+   ],
+   "sources": [
+    [
+     "Wikipedia, Lucky Me (noodles)",
+     "https://en.wikipedia.org/wiki/Lucky_Me_(noodles)"
+    ],
+    [
+     "Wikipedia, Monde Nissin",
+     "https://en.wikipedia.org/wiki/Monde_Nissin"
+    ]
+   ]
+  },
+  {
+   "code": "in",
+   "name": "인도",
+   "en": "India",
+   "region": "남아시아",
+   "lead": "가장 빠르게 크는 큰 시장",
+   "wina": "96억 개 (3위)",
+   "makers": "네슬레(매기), ITC(이피), 닛신(탑라멘), CG푸드(와이와이)",
+   "flavors": "마살라, 카레, 토마토",
+   "short": "마살라와 카레처럼 향신료 맛이 중심이고, 시장이 빠르게 커요.",
+   "body": [
+    "인도는 2025년 96억 개를 먹어 1년 전보다 8.9% 늘었어요. 상위 나라 가운데 가장 빠른 성장으로, 온라인 쇼핑이 늘고 맛이 다양해진 덕분으로 봐요.",
+    "1983년 네슬레의 [[ramen:maggi-masala-india|매기]]가 들어오며 시장이 생겼고, 2009년까지 매기의 점유율이 90%에 이를 만큼 ‘매기가 곧 라면’이었어요. 2010년 ITC의 [[ramen:yippee-magic-masala|이피]] 등이 뒤따라 들어왔어요."
+   ],
+   "sources": [
+    [
+     "香港01, 2025年全球賣1242億份",
+     "https://global.hk01.com/环球趣闻/60382745/世界即食面协会公布数据-2025年全球卖1242亿份-中国与香港居首"
+    ],
+    [
+     "Business Standard, Not a two-minute war",
+     "https://www.business-standard.com/article/management/not-a-two-minute-war-111011700046_1.html"
+    ],
+    [
+     "Kathmandu Post, How Maggi became an iconic Indian snack",
+     "https://kathmandupost.com/world/2015/06/04/how-maggi-noodles-became-an-iconic-indian-snack"
+    ]
+   ]
+  },
+  {
+   "code": "np",
+   "name": "네팔",
+   "en": "Nepal",
+   "region": "남아시아",
+   "lead": "과자처럼 부숴 먹는 라면",
+   "percap": 54,
+   "makers": "CG푸드(와이와이)",
+   "flavors": "닭, 채소, 매콤한 양념",
+   "short": "미리 양념한 면을 봉지째 부숴 과자처럼 먹는 와이와이가 국민 간식이에요.",
+   "body": [
+    "네팔은 2024년 한 사람이 54개를 먹어 1인당 소비량 세계 4위였어요. 하루 400만 봉지가 팔린다는 보도도 있어요.",
+    "1980년대 중반 초드하리 그룹이 태국 회사와 손잡고 [[ramen:waiwai-chicken|와이와이]]를 내놓으며 시장이 열렸어요. 와이와이는 면을 미리 익히고 양념해서 봉지째 부숴 먹을 수 있어요."
+   ],
+   "sources": [
+    [
+     "Kathmandu Post, How Nepal became obsessed with instant noodles (2019)",
+     "https://kathmandupost.com/money/2019/08/10/how-nepal-became-obsessed-with-instant-noodles-and-why-it-s-here-to-stay"
+    ],
+    [
+     "The Ramen Rater, Wai Wai Instant Noodles",
+     "https://www.theramenrater.com/2017/03/12/2360-wai-wai-instant-noodles-chicken"
+    ]
+   ]
+  },
+  {
+   "code": "us",
+   "name": "미국",
+   "en": "United States",
+   "region": "미주·유럽·아프리카",
+   "lead": "값싼 봉지라면에서 고급 면까지",
+   "wina": "약 52억 개 (6위)",
+   "makers": "도요수산(마루짱), 닛신식품, 모모푸쿠, 이미(immi)",
+   "flavors": "닭, 소고기, 새우, 칠리",
+   "short": "마루짱과 닛신이 이끌고, 2021년부터 고급 신생 브랜드가 늘었어요.",
+   "body": [
+    "미국은 2025년 52억 개쯤으로 세계 6위예요. 닛신은 1970년 미국 법인을 세우고 1972년 [[ramen:nissin-top-ramen-chicken|탑라멘]]을 팔기 시작했고, 같은 해 마루짱도 미국에 첫 라면 공장을 열었어요.",
+    "값싼 봉지라면이 대학생 식사의 상징처럼 여겨지는 한편, 2021년부터 [[ramen:momofuku-tingly-chili|모모푸쿠]]와 [[ramen:immi-black-garlic|이미]] 같은 새 브랜드가 튀기지 않은 면이나 고단백 면을 내세워 고급 시장을 열고 있어요."
+   ],
+   "sources": [
+    [
+     "Wikipedia, Top Ramen",
+     "https://en.wikipedia.org/wiki/Top_Ramen"
+    ],
+    [
+     "American Business History, instant noodle in the US",
+     "https://americanbusiness-history.blogspot.com/2018/01/when-was-instant-noodle-introduced-to.html"
+    ],
+    [
+     "Hypebeast, Momofuku noodles (2021.8)",
+     "https://hypebeast.com/2021/8/momofuku-noodle-lovers-box-release-soy-scallion-spicy-soy-tingly-chili-wavy-info"
+    ],
+    [
+     "Green Queen, immi debut (2021.1)",
+     "https://www.greenqueen.com.hk/?p=45082"
+    ]
+   ]
+  },
+  {
+   "code": "gb",
+   "name": "영국",
+   "en": "United Kingdom",
+   "region": "미주·유럽·아프리카",
+   "lead": "컵라면 하면 팟누들",
+   "makers": "유니레버(팟누들)",
+   "flavors": "닭고기·버섯, 카레, 소고기·토마토",
+   "short": "1977년 나온 컵라면 팟누들이 대표예요.",
+   "body": [
+    "영국의 대표 컵라면은 1977년 나온 [[ramen:pot-noodle-chicken-mushroom|팟누들]]이에요. 지금은 유니레버가 웨일스 크럼린 공장에서 한 해 1억 7,500만 개쯤 만들어요."
+   ],
+   "sources": [
+    [
+     "Pot Noodle 역사",
+     "https://cavac.at/cavacopedia/Pot%20Noodle"
+    ],
+    [
+     "Daily Record, A potted history",
+     "https://www.pressreader.com/uk/daily-record/20210916/282222308887286"
+    ]
+   ]
+  },
+  {
+   "code": "br",
+   "name": "브라질",
+   "en": "Brazil",
+   "region": "미주·유럽·아프리카",
+   "lead": "라면을 ‘미오조’라 부르는 나라",
+   "makers": "닛신식품(미오조)",
+   "flavors": "시골 닭(갈리냐 카이피라), 소고기, 갈비",
+   "short": "1965년 들어온 미오조가 라면을 부르는 말이 됐어요.",
+   "body": [
+    "브라질에는 1965년 라면이 들어왔고, 처음 만든 회사 이름 ‘미오조(Miojo)’가 지금은 인스턴트 라면을 뜻하는 말이 됐어요. 그 회사는 뒤에 닛신 브라질로 이어졌어요.",
+    "8월 25일을 ‘미오조의 날’로 기념하고, 가장 인기 있는 맛은 [[ramen:nissin-miojo-galinha-caipira|시골 닭(갈리냐 카이피라)]]이에요. WINA 자료로 브라질은 세계 11위 시장이에요."
+   ],
+   "sources": [
+    [
+     "Guia da Semana, Loucos por miojo",
+     "https://www.guiadasemana.com.br/restaurantes/noticia/loucos-por-miojo"
+    ],
+    [
+     "Mundo do Marketing, 60 anos de Miojo (2025)",
+     "https://mundodomarketing.com.br/60-anos-de-miojo-no-brasil-nissin-celebra-data-com-acoes-especiais-no-dia-do-miojo"
+    ],
+    [
+     "Consumidor Moderno, curiosidades sobre o miojo",
+     "https://consumidormoderno.com.br/comida-de-preguicoso-10-curiosidades-sobre-o-miojo/"
+    ]
+   ]
+  },
+  {
+   "code": "ng",
+   "name": "나이지리아",
+   "en": "Nigeria",
+   "region": "미주·유럽·아프리카",
+   "lead": "아프리카에서 유일한 10위권",
+   "wina": "약 31억 개 (10위)",
+   "makers": "듀필 프리마 푸드(인도미)",
+   "flavors": "닭",
+   "short": "인도미가 사실상 라면의 다른 이름이에요.",
+   "body": [
+    "나이지리아는 2025년 31억 개쯤을 먹어 아프리카에서 유일하게 세계 10위 안에 들었어요.",
+    "인도네시아의 [[ramen:indomie-nigeria-chicken|인도미]]가 들어와 큰 인기를 끌었고, 1995년에는 나이지리아 안에 공장을 세워 직접 만들기 시작했어요."
+   ],
+   "sources": [
+    [
+     "Seasia Stats, Top 10 instant noodle consumers 2025",
+     "https://seasiastats.com/statistic/top-10-instant-noodle-consumers-in-the-world-in-2025-9uFFo"
+    ],
+    [
+     "Wikipedia, Indomie",
+     "https://en.wikipedia.org/wiki/Indomie"
+    ]
+   ]
+  }
+ ],
+ "sources": [
+  [
+   "세계라면협회(WINA) 2025년 인스턴트 라면 세계 수요 발표 (2026.8.6)",
+   "https://en.atpress.com/news/621213"
+  ],
+  [
+   "日本食糧新聞, 世界ラーメン協会 25年総需要 (2026.8)",
+   "https://news.nissyoku.co.jp/flash/1310252"
+  ],
+  [
+   "The Standard, Global instant noodle demand tops 124 billion servings",
+   "https://www.thestandard.com.hk/news/article/340748/Global-instant-noodle-demand-tops-124-billion-servings-China-and-Hong-Kong-lead"
+  ],
+  [
+   "Seasia Stats, Top 10 instant noodle consumers in 2025",
+   "https://seasiastats.com/statistic/top-10-instant-noodle-consumers-in-the-world-in-2025-9uFFo"
+  ],
+  [
+   "아시아경제, 1인당 79개 먹어도 한국은 2위 (2025.10.9)",
+   "https://www.asiae.co.kr/en/article/2025100909525588071"
+  ],
+  [
+   "Korea Times, per capita ramyeon consumption ranks 2nd (2025.10.9)",
+   "https://www.koreatimes.co.kr/southkorea/society/20251009/koreans-per-capita-ramyeon-consumption-ranks-2nd-after-vietnam"
+  ],
+  [
+   "VnExpress, A Vietnamese eats 81 packs a year (2025.11.9)",
+   "https://e.vnexpress.net/news/travel/food-recipes/a-vietnamese-eats-81-packs-of-instant-noodles-a-year-surpassing-koreans-4959375.html"
+  ]
+ ]
+}

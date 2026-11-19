@@ -7,6 +7,7 @@ import { ROOT, OUT, STATIC, BUILD, cfg, SITE, abs, SITE_NAME, RAMEN, BY, MAKERS,
 import { homePage, dogamPage, ramenPage, recordPage, rankPage, rankRulesPage, newPage, shopPage } from './pages-main.mjs';
 import { storyHubPage, storyPage, timelinePage, STORIES } from './pages-story.mjs';
 import { recipeListPage, recipeWritePage, recipeViewPage } from './pages-recipes.mjs';
+import { worldHubPage, worldCountryPage, WORLD_PAGES } from './pages-world.mjs';
 import { labHubPage, labPages, clubPages, levelsPage, clubRulesPage, mePage, aboutPage, termsPage, privacyPage, contactPage, adminPage, notFoundPage, offlinePage } from './pages-more.mjs';
 import * as CD from '../server/catalog-data.js';
 import { LEVELS, RULES, BADGES, levelOf, glyph, emblemSVG, badgeSVG } from '../server/growth-data.js';
@@ -41,6 +42,8 @@ for (const r of RAMEN) page(`ramen/${r.s}`, ramenPage(r));
 page('story', storyHubPage());
 for (const s of STORIES) page(`story/${s.s}`, storyPage(s));
 page('story/timeline', timelinePage());
+page('world', worldHubPage());
+for (const c of WORLD_PAGES) page(`world/${c.code}`, worldCountryPage(c));
 page('record', recordPage());
 page('rank', rankPage());
 page('rank/rules', rankRulesPage());
@@ -97,7 +100,7 @@ write('assets/js/meta.js', meta);
 
 // 라면 목록 (화면과 서버가 함께 읽어요)
 const compact = RAMEN.map((r) => ({
-  s: r.s, n: r.n, m: r.m, mn: r.maker, f: r.f || null, c: r.c, hot: r.hot ?? null, st: r.st, ch: r.ch || '', y: r.y || '', yk: releaseKey(r),
+  s: r.s, n: r.n, m: r.m, mn: r.maker, co: r.co, cn: r.co === 'kr' ? '' : r.coName, f: r.f || null, c: r.c, hot: r.hot ?? null, st: r.st, ch: r.ch || '', y: r.y || '', yk: releaseKey(r),
   shu: r.shu || null, t: r.t, img: r.img, g: r.groups, q: (ramenSearchText(r) + ' ' + cho(ramenSearchText(r))).toLowerCase(),
 }));
 write('data/ramen.json', JSON.stringify({ built: today, ramen: compact }));
@@ -122,6 +125,7 @@ write('manifest.webmanifest', JSON.stringify({
 // 검색 엔진
 const urls = [
   ['/', '1.0'], ['/ramen/', '0.9'], ['/rank/', '0.9'], ['/rank/rules/', '0.5'], ['/new/', '0.7'], ['/shop/', '0.6'],
+  ['/world/', '0.8'], ...WORLD_PAGES.map((c) => [`/world/${c.code}/`, '0.7']),
   ['/story/', '0.8'], ['/story/timeline/', '0.7'], ...STORIES.map((s) => [`/story/${s.s}/`, '0.7']),
   ['/lab/', '0.6'], ['/lab/map/', '0.6'], ['/lab/compare/', '0.6'], ['/lab/worldcup/', '0.6'], ['/lab/timer/', '0.6'], ['/lab/water/', '0.5'],
   ['/club/', '0.6'], ['/club/board/', '0.6'], ['/recipes/', '0.7'], ['/club/feed/', '0.5'], ['/club/events/', '0.5'], ['/club/people/', '0.4'], ['/club/levels/', '0.4'], ['/club/rules/', '0.3'],

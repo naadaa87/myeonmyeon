@@ -2,7 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { STYLES, FORMS, STATUS, HOTS, GROUPS, inGroup, bowlImage } from '../server/catalog-data.js';
+import { STYLES, FORMS, STATUS, HOTS, GROUPS, inGroup, bowlImage, tasteIds } from '../server/catalog-data.js';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const OUT = path.join(ROOT, 'public');
@@ -49,6 +49,9 @@ export const yearText = (y) => {
 // ---------- 라면 원고 ----------
 const RAW = readJSON('content/ramen.json');
 export const MAKERS = RAW.makers;
+export const WORLD = readJSON('content/world.json');
+export const COUNTRIES = Object.fromEntries(WORLD.countries.map((c) => [c.code, c]));
+export const countryName = (co) => (COUNTRIES[co] ? COUNTRIES[co].name : co);
 export const DOGAM_CHECKED = (() => { const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(RAW.checked || ''); return m ? `${m[1]}년 ${Number(m[2])}월 ${Number(m[3])}일` : ''; })();
 export const problems = [];
 const slugs = new Set();
@@ -65,8 +68,10 @@ export const RAMEN = RAW.ramen.map((r, i) => {
   need(STATUS[r.st || 'sale'], `판매 상태(st) ${r.st}를 알 수 없어요.`);
   need(r.hot == null || HOTS[r.hot] !== undefined, `편집부 맵기 분류(hot) ${r.hot}는 0, 1, 2 가운데 하나로 적어 주세요.`);
   need(r.d && r.d.length >= 10, '설명(d)을 한두 문장 적어 주세요.');
+  need(!r.co || COUNTRIES[r.co], `나라(co) ${r.co}가 content/world.json에 없어요.`);
   const groups = GROUPS.filter((g) => inGroup(r, g)).map((g) => g.id);
-  return { ...r, st: r.st || 'sale', t: r.t || [], k: r.k || [], maker: MAKERS[r.m] || r.m, img: bowlImage(r), groups };
+  const co = r.co || 'kr';
+  return { ...r, co, coName: countryName(co), st: r.st || 'sale', t: r.t || [], k: r.k || [], maker: MAKERS[r.m] || r.m, img: bowlImage(r), groups, ta: tasteIds(r) };
 });
 if (problems.length) {
   console.error('\n[원고 점검] 고쳐야 할 곳이 있어요:\n' + problems.map((p) => ' - ' + p).join('\n') + '\n');
@@ -81,7 +86,7 @@ export const releaseKey = (r) => {
 export const NEWEST = [...RAMEN].sort((a, b) => releaseKey(b) - releaseKey(a) || collator.compare(a.n, b.n));
 export const formText = (r) => (r.f ? FORMS[r.f] : '');
 export const styleText = (r) => STYLES[r.c] || '';
-export const ramenSearchText = (r) => [r.n, r.maker, ...(r.k || []), ...(r.t || []), styleText(r), formText(r)].join(' ');
+export const ramenSearchText = (r) => [r.n, r.on || '', r.maker, r.co !== 'kr' ? `${r.coName} 해외` : '', ...(r.k || []), ...(r.t || []), styleText(r), formText(r)].join(' ');
 
 // ---------- 아이콘 (선 그림) ----------
 const ICONS = {
@@ -199,7 +204,7 @@ function footer() {
 <p class="foot-lead">먹어 본 사람의 기록으로 만드는 라면 도감이에요. 순위는 팔지 않아요.</p>
 </div>
 <nav class="foot-nav" aria-label="바닥 메뉴">
-<div><b>둘러보기</b><a href="/ramen/">라면 도감</a><a href="/story/">라면 이야기</a><a href="/rank/">랭킹</a><a href="/new/">신상 레이더</a><a href="/shop/">라면몰</a></div>
+<div><b>둘러보기</b><a href="/ramen/">라면 도감</a><a href="/world/">세계 라면 지도</a><a href="/story/">라면 이야기</a><a href="/rank/">랭킹</a><a href="/new/">신상 레이더</a><a href="/shop/">라면몰</a></div>
 <div><b>함께하기</b><a href="/record/">한 그릇 기록</a><a href="/lab/">취향실험실</a><a href="/club/">후루룩클럽</a><a href="/recipes/">레시피 자랑</a><a href="/me/">내 도감</a></div>
 <div><b>${esc(SITE_NAME)}</b><a href="/about/">${esc(SITE_NAME)} 소개</a><a href="/rank/rules/">평가 기준</a><a href="/contact/">문의하기</a><button type="button" class="link-btn" data-report="">틀린 정보 알려 주기</button></div>
 </nav>
@@ -321,11 +326,11 @@ export const statusChip = (r) => (r.st && r.st !== 'sale' ? `<span class="chip-s
 
 // 라면 카드 (도감, 처음 화면, 비슷한 라면). 숫자는 화면에서 채워요(data-stat).
 export function ramenCard(r, { eager = false, from = '' } = {}) {
-  return `<article class="rcard" data-s="${r.s}" data-g="${r.groups.join(' ')}" data-m="${r.m}" data-f="${r.f || ''}" data-c="${r.c}" data-hot="${r.hot == null ? '' : r.hot}" data-st="${r.st}" data-y="${releaseKey(r)}" data-q="${esc((ramenSearchText(r) + ' ' + cho(ramenSearchText(r))).toLowerCase())}">
+  return `<article class="rcard" data-s="${r.s}" data-g="${r.groups.join(' ')}" data-m="${r.m}" data-f="${r.f || ''}" data-c="${r.c}" data-hot="${r.hot == null ? '' : r.hot}" data-st="${r.st}" data-co="${r.co}" data-ta="${r.ta.join(' ')}" data-nd="${r.noodle || 'oil'}" data-y="${releaseKey(r)}" data-q="${esc((ramenSearchText(r) + ' ' + cho(ramenSearchText(r))).toLowerCase())}">
 <a class="rcard-link" href="/ramen/${r.s}/${from}">
 <div class="rcard-img">${img(r.img, '', '', eager)}${statusChip(r)}</div>
 <div class="rcard-body">
-<p class="rcard-maker">${esc(r.maker)}${r.f ? ` · ${formText(r)}` : ''}</p>
+<p class="rcard-maker">${r.co !== 'kr' ? `<span class="rcard-co">${esc(r.coName)}</span>` : ''}${esc(r.maker)}${r.f ? ` · ${formText(r)}` : ''}</p>
 <h3 class="rcard-name">${esc(r.n)}</h3>
 <p class="rcard-tags"><span class="chip-style">${styleText(r)}</span>${hotChip(r)}</p>
 <p class="rcard-stat" data-stat>기록 모으는 중</p>

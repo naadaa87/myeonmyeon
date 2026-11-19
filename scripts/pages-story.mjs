@@ -107,6 +107,7 @@ ${s.facts ? `<dl class="story-facts">${s.facts.map(([a, b]) => `<div><dt>${esc(a
 <nav class="story-toc" aria-label="이 글의 차례"><p>차례</p><ol>${toc}</ol></nav>
 <div class="story-body">
 ${s.sections.map((x, k) => `<section aria-labelledby="s${k + 1}"><h2 id="s${k + 1}">${esc(x.h)}</h2>${x.p.map((p) => `<p>${rich(p)}</p>`).join('')}${k === 0 ? table : ''}</section>`).join('\n')}
+${s.more ? `<p class="story-more"><a class="btn btn-sub" href="${esc(s.more.u)}">${esc(s.more.t)}${icon('i-chev')}</a></p>` : ''}
 <section class="story-src" aria-labelledby="h-src">
 <h2 id="h-src">참고한 자료</h2>
 <ol>${s.sources.map((x) => `<li><a href="${esc(x.u)}" target="_blank" rel="noopener">${esc(x.t)}</a></li>`).join('')}</ol>

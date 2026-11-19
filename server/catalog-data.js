@@ -12,6 +12,33 @@ export const STATUS = { sale: '판매 중', limited: '한정판', exclusive: '�
 // 편집부 맵기 분류(hot)
 export const HOTS = { 0: '순한 편', 1: '매콤', 2: '아주 매운 편' };
 
+// 면 종류(noodle). 비어 있으면 기름에 튀긴 유탕면이에요
+export const NOODLE_TYPES = { oil: '유탕면', dry: '건면', fresh: '생면', cooked: '숙면', rice: '쌀국수', glass: '당면' };
+
+// 맛 계열: 원고의 맛 꼬리표(t)와 조리 방식을 묶어 도감 필터로 써요
+export const TASTES = [
+  { id: 'beef', name: '소고기', tags: ['소고기', '우지'] },
+  { id: 'chicken', name: '닭', tags: ['닭'] },
+  { id: 'pork', name: '돼지·사골', tags: ['돼지', '사골', '돈코츠'] },
+  { id: 'seafood', name: '해물', tags: ['해물', '새우', '오징어', '조개', '게', '굴', '멸치', '가쓰오', '북어', '어묵', '가리비', '우렁이', '다시마'] },
+  { id: 'kimchi', name: '김치·찌개', tags: ['김치', '부대찌개'] },
+  { id: 'jjajang', name: '짜장', tags: ['짜장'], c: ['jjajang'] },
+  { id: 'cream', name: '크림·치즈·코코넛', tags: ['크림', '치즈', '버터', '코코넛'] },
+  { id: 'curry', name: '카레·마살라', tags: ['카레', '마살라', '강황', '향신료'] },
+  { id: 'sour', name: '새콤·똠얌', tags: ['새콤', '똠얌', '토마토'] },
+  { id: 'mala', name: '마라·얼얼', tags: ['마라'] },
+  { id: 'soy', name: '간장·소스', tags: ['간장', '소스', '달콤', '유부', '마요네즈'] },
+  { id: 'gochujang', name: '고추장·떡볶이', tags: ['고추장', '떡볶이', '쫄면'] },
+  { id: 'nutty', name: '참깨·고소한 맛', tags: ['참깨', '들기름', '땅콩', '김'] },
+  { id: 'clear', name: '소금·맑은 국물', tags: ['소금', '미역'] },
+  { id: 'miso', name: '된장·미소', tags: ['된장', '미소', '쌈장'] },
+  { id: 'veg', name: '채소·버섯', tags: ['채소', '버섯', '비건', '고수'] },
+];
+export function tasteIds(r) {
+  const t = r.t || [];
+  return TASTES.filter((x) => (x.c && x.c.includes(r.c)) || x.tags.some((g) => t.includes(g))).map((x) => x.id);
+}
+
 // 무드보드의 카테고리 탭: 조리 방식과 형태를 묶어서 보여 줘요
 export const GROUPS = [
   { id: 'soup', name: '국물면', img: 'broth-spicy', test: { c: ['soup', 'jjamppong', 'udon'] } },
