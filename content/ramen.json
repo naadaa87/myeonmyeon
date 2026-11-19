@@ -20,7 +20,7 @@
   "toyosuisan": "도요수산(마루짱)",
   "myojo": "묘조식품",
   "acecook": "에이스콕",
-  "maruka": "마루카식품",
+  "maruka": "마루카식품(페양)",
   "masterkong": "캉스푸",
   "unipresident": "퉁이(중국)",
   "baixiang": "바이샹",
@@ -61,7 +61,21 @@
   "momsdry": "노마반몐(老媽拌麵)",
   "tseng": "쩡반몐(曾拌麵)",
   "ramentalk": "라멘숴(拉面说)",
-  "pran": "프란(PRAN)"
+  "pran": "프란(PRAN)",
+  "house": "하우스식품",
+  "tokushima": "도쿠시마제분",
+  "jinmailang": "진마이랑(今麦郎)",
+  "wugudaochang": "우구다오창(五谷道场)",
+  "redchef": "레드셰프",
+  "andersonwatts": "앤더슨 와츠",
+  "ceylonagro": "실론 애그로(프리마 그룹)",
+  "pinehill": "파인힐 아라비아 푸드",
+  "mama-mm": "마마(미얀마)",
+  "shuangyue": "문문푸드(雙月)",
+  "johns": "존스(元鍋)",
+  "abc-id": "ABC(인도네시아)",
+  "itsuki": "이쓰키식품(五木食品)",
+  "nishiyama": "니시야마 제면"
  },
  "ramen": [
   {
@@ -8943,6 +8957,821 @@
    ],
    "q": "미스터 누들 방글라데시",
    "d": "방글라데시 식품회사 프란의 라면 브랜드 ‘미스터 누들’의 카레 맛이에요. 미스터 누들은 네슬레 매기와 함께 방글라데시 라면 시장 1위를 다퉈요."
+  },
+  {
+   "s": "house-umakacchan",
+   "n": "하우스 우마캇짱",
+   "on": "うまかっちゃん",
+   "m": "house",
+   "co": "jp",
+   "f": "bag",
+   "c": "soup",
+   "t": [
+    "돈코츠",
+    "돼지"
+   ],
+   "y": "1979",
+   "hot": 0,
+   "st": "sale",
+   "k": [
+    "우마캇찬",
+    "우마카짱",
+    "Umakacchan"
+   ],
+   "q": "우마캇짱",
+   "d": "1979년 하우스식품이 규슈 사람 입맛에 맞춰 만든 돈코츠 봉지라면이에요. 규슈에서 자사 라면이 잘 팔리지 않자 ‘규슈에서 팔리는 라면을 만들어 달라’는 영업 담당자들의 요청으로 개발했고, 처음에는 규슈에서만 팔았어요. 규슈 봉지라면 시장의 4분의 1쯤을 차지하는 1위 제품으로, 일본 지역 라면의 시초로 꼽혀요."
+  },
+  {
+   "s": "house-umakacchan-takana",
+   "n": "하우스 우마캇짱 가라시 다카나",
+   "on": "うまかっちゃん からし高菜風味",
+   "m": "house",
+   "co": "jp",
+   "f": "bag",
+   "c": "soup",
+   "t": [
+    "돈코츠",
+    "돼지",
+    "고추"
+   ],
+   "hot": 1,
+   "st": "sale",
+   "k": [
+    "가라시타카나",
+    "からし高菜"
+   ],
+   "q": "우마캇짱 다카나",
+   "d": "우마캇짱에 매콤한 갓 절임 ‘가라시 다카나’ 풍미를 더한 맛이에요. 하우스식품은 2013년 기본 맛 다음으로 많이 팔리는 맛이라고 소개했어요."
+  },
+  {
+   "s": "maruchan-yakisoba-bento",
+   "n": "마루짱 야키소바 벤토",
+   "on": "マルちゃん やきそば弁当",
+   "m": "toyosuisan",
+   "co": "jp",
+   "f": "cup",
+   "c": "fried",
+   "t": [
+    "소스"
+   ],
+   "noodle": "unk",
+   "y": "1975-08",
+   "hot": 0,
+   "st": "sale",
+   "k": [
+    "야키벤",
+    "やきそば弁当",
+    "야키소바 도시락"
+   ],
+   "q": "야키소바 벤토",
+   "d": "홋카이도 사람들이 즐겨 먹는 컵 야키소바로, ‘야키벤’이라고 줄여 불러요. 1975년 8월 혼슈에서 먼저 나왔고, 1976년 2월 홋카이도 입맛에 맞춰 면과 소스를 바꿔 내놓은 뒤 홋카이도에 뿌리내렸어요. 홋카이도 발매 때 겨울에도 잘 팔리도록 중화 스프를 묶어 준 행사가 호응을 얻어 지금도 스프가 같이 들어 있어요."
+  },
+  {
+   "s": "kinchan-noodle",
+   "n": "긴짱 누들",
+   "on": "金ちゃんヌードル",
+   "m": "tokushima",
+   "co": "jp",
+   "f": "cup",
+   "c": "soup",
+   "t": [],
+   "noodle": "unk",
+   "hot": 0,
+   "st": "sale",
+   "k": [
+    "킨짱 누들",
+    "金ちゃん"
+   ],
+   "q": "긴짱 누들",
+   "d": "시코쿠 도쿠시마의 제분회사가 만드는 컵라면이에요. 오키나와에서는 50년쯤 전 한 도매상이 맡아 외딴섬까지 돌며 판 뒤로 지금까지 동네 가게마다 놓이는 라면이 됐어요."
+  },
+  {
+   "s": "nissin-chicken-ramen-donburi",
+   "n": "닛신 치킨라멘 돈부리",
+   "on": "チキンラーメンどんぶり",
+   "m": "nissin",
+   "co": "jp",
+   "f": "bigcup",
+   "c": "soup",
+   "t": [
+    "닭",
+    "간장"
+   ],
+   "y": "1991",
+   "hot": 0,
+   "st": "sale",
+   "k": [
+    "치키돈",
+    "チキどん"
+   ],
+   "q": "치킨라멘 돈부리",
+   "d": "치킨라멘을 사발 그릇에 담은 컵 제품이에요. 치킨라멘의 컵 제품은 1991년부터 나왔어요. 냄비나 그릇 없이 뜨거운 물만 부으면 돼요."
+  },
+  {
+   "s": "myojo-chukazanmai-suratan",
+   "n": "묘조 중화삼매 산라탕면",
+   "on": "明星 中華三昧 榮林 酸辣湯麺",
+   "m": "myojo",
+   "co": "jp",
+   "f": "bag",
+   "c": "soup",
+   "t": [
+    "새콤",
+    "고추"
+   ],
+   "noodle": "dry",
+   "hot": 1,
+   "st": "sale",
+   "k": [
+    "스라탄멘",
+    "酸辣湯麺",
+    "중화삼매"
+   ],
+   "q": "중화삼매 산라탕",
+   "d": "중화삼매의 시고 매운 국물 ‘산라탕면’이에요. 도쿄의 중국요리점 에이린(榮林)이 감수했고 튀기지 않은 면을 써요."
+  },
+  {
+   "s": "myojo-chukazanmai-tantan",
+   "n": "묘조 중화삼매 탄탄면",
+   "on": "明星 中華三昧 四川飯店 担々麺",
+   "m": "myojo",
+   "co": "jp",
+   "f": "bag",
+   "c": "soup",
+   "t": [
+    "참깨",
+    "고추"
+   ],
+   "noodle": "dry",
+   "hot": 1,
+   "st": "sale",
+   "k": [
+    "탄탄멘",
+    "担々麺",
+    "중화삼매"
+   ],
+   "q": "중화삼매 탄탄면",
+   "d": "중화삼매의 탄탄면이에요. 일본의 첫 본격 쓰촨요리점으로 꼽히는 시센한텐(四川飯店)이 감수했고, 참깨와 산초, 고추로 맛을 낸 국물에 튀기지 않은 면을 써요."
+  },
+  {
+   "s": "marutai-kumamoto-tonkotsu",
+   "n": "마루타이 구마모토 돈코츠 라멘",
+   "on": "Marutai Kumamoto Tonkotsu Style Noodles",
+   "m": "marutai",
+   "co": "jp",
+   "f": "bag",
+   "c": "soup",
+   "t": [
+    "돈코츠",
+    "돼지"
+   ],
+   "noodle": "unk",
+   "hot": 0,
+   "st": "sale",
+   "k": [
+    "구마모토 라멘",
+    "熊本"
+   ],
+   "q": "마루타이 구마모토",
+   "d": "규슈 마루타이의 구마모토식 돈코츠 라멘이에요. 더 라멘 레이터의 2026년 일본 라면 TOP 10에서 9위에 올랐어요."
+  },
+  {
+   "s": "unif-xiaohuanxiong",
+   "n": "퉁이 샤오환슝 간추이몐",
+   "on": "统一 小浣熊干脆面",
+   "m": "unipresident",
+   "co": "cn",
+   "f": "bag",
+   "c": "etc",
+   "t": [],
+   "hot": null,
+   "st": "sale",
+   "k": [
+    "小浣熊",
+    "샤오환슝",
+    "수호지 카드",
+    "너구리 라면땅"
+   ],
+   "q": "샤오환슝 간추이몐",
+   "d": "끓이지 않고 봉지째 부숴 양념을 뿌려 먹는 중국의 과자 라면이에요. 2000년 무렵 봉지마다 ‘수호지’ 인물 카드를 한 장씩 넣었는데, 영웅 108명과 악인 6명을 모으려는 학생들이 상자째 사들여 한 해 1억 2,000만 봉지까지 팔렸어요."
+  },
+  {
+   "s": "wugudaochang-tomato-beef",
+   "n": "우구다오창 토마토 소고기 자색고구마면",
+   "on": "五谷道场 番茄牛腩紫薯面",
+   "m": "wugudaochang",
+   "co": "cn",
+   "f": "bag",
+   "c": "soup",
+   "t": [
+    "토마토",
+    "소고기"
+   ],
+   "noodle": "unk",
+   "hot": 0,
+   "st": "sale",
+   "k": [
+    "五谷道场",
+    "우구다오창"
+   ],
+   "q": "우구다오창",
+   "d": "보라색 자색고구마 면에 토마토 소고기 국물을 곁들인 라면이에요. 더 라멘 레이터의 2016년 세계 TOP 10에 올라, 중국 라면으로는 처음 이 목록에 이름을 올렸어요."
+  },
+  {
+   "s": "jinmailang-lamianfan",
+   "n": "진마이랑 라몐판",
+   "on": "今麦郎 拉面范",
+   "m": "jinmailang",
+   "co": "cn",
+   "f": null,
+   "c": "soup",
+   "t": [],
+   "noodle": "dry",
+   "hot": null,
+   "st": "sale",
+   "k": [
+    "拉面范",
+    "라미엔판",
+    "今麦郎"
+   ],
+   "q": "진마이랑 라면",
+   "d": "중국 진마이랑이 내놓은 튀기지 않은 면이에요. 기름에 튀기는 대신 쪄서 만들고, 3분이면 익는다는 점을 내세워요."
+  },
+  {
+   "s": "asha-beef-noodle",
+   "n": "아샤 힘줄·살코기 소고기면",
+   "on": "阿舍食堂 老饕半筋半肉牛肉麵",
+   "m": "asha",
+   "co": "tw",
+   "f": null,
+   "c": "soup",
+   "t": [
+    "소고기"
+   ],
+   "noodle": "unk",
+   "hot": null,
+   "st": "sale",
+   "k": [
+    "반근반육",
+    "半筋半肉",
+    "뉴러우몐"
+   ],
+   "q": "아샤 소고기면",
+   "d": "소 힘줄과 살코기를 반씩 넣은 대만식 소고기 국수예요. 더 라멘 레이터의 2026년 대만 TOP 10에서 4위에 올랐어요."
+  },
+  {
+   "s": "shuangyue-truffle",
+   "n": "문문푸드 블랙 트러플 오일 비빔면",
+   "on": "Moon Moon Food Baby Can U Love Dry Noodle With Black Truffle Oil (雙月 黑松露拌麵)",
+   "m": "shuangyue",
+   "co": "tw",
+   "f": null,
+   "c": "bibim",
+   "t": [
+    "버섯"
+   ],
+   "noodle": "unk",
+   "hot": 0,
+   "st": "sale",
+   "k": [
+    "雙月",
+    "쌍월",
+    "솽웨",
+    "트러플",
+    "Moon Moon Food"
+   ],
+   "q": "문문푸드 트러플 비빔면",
+   "d": "검은 송로버섯(블랙 트러플) 기름에 비벼 먹는 대만 비빔면이에요. 더 라멘 레이터의 2026년 세계 TOP 10에서 4위, 대만 TOP 10에서 2위에 올랐어요."
+  },
+  {
+   "s": "johns-scallion-oil",
+   "n": "존스 파기름 조림 비빔면",
+   "on": "John's Braised Scallion Oil Noodles",
+   "m": "johns",
+   "co": "tw",
+   "f": null,
+   "c": "bibim",
+   "t": [
+    "파"
+   ],
+   "noodle": "unk",
+   "hot": null,
+   "st": "sale",
+   "k": [
+    "John's",
+    "충유몐",
+    "蔥油"
+   ],
+   "q": "존스 파기름 비빔면",
+   "d": "파기름 향으로 비벼 먹는 대만 비빔면이에요. 더 라멘 레이터의 2025년 대만 TOP 10에서 5위에 올랐어요."
+  },
+  {
+   "s": "indomie-keriting-goreng-spesial",
+   "n": "인도미 미 크리팅 고렝 스페셜",
+   "on": "Indomie Mi Keriting Goreng Spesial",
+   "m": "indofood",
+   "co": "id",
+   "f": "bag",
+   "c": "fried",
+   "t": [
+    "간장",
+    "달콤"
+   ],
+   "noodle": "unk",
+   "hot": null,
+   "st": "sale",
+   "k": [
+    "Mi Keriting",
+    "미 케리팅"
+   ],
+   "q": "인도미 케리팅",
+   "d": "‘크리팅’은 곱슬곱슬하다는 뜻으로, 꼬불꼬불한 면을 쓴 인도미의 볶음면이에요. 더 라멘 레이터 세계 TOP 10에 2025년과 2026년 모두 9위로 올랐어요."
+  },
+  {
+   "s": "abc-selera-pedas-beef",
+   "n": "미 ABC 슬레라 프다스 매운 소고기 볶음면",
+   "on": "mi ABC Selera Pedas Spicy Beef Stir-Fry Noodles",
+   "m": "abc-id",
+   "co": "id",
+   "f": "bag",
+   "c": "fried",
+   "t": [
+    "소고기",
+    "고추"
+   ],
+   "noodle": "unk",
+   "hot": 2,
+   "st": "sale",
+   "k": [
+    "Selera Pedas",
+    "ABC 라면"
+   ],
+   "q": "ABC 슬레라 프다스",
+   "d": "‘슬레라 프다스’는 매운 입맛이라는 뜻이에요. 더 라멘 레이터의 ‘가장 매운 라면 TOP 10’에 2023년판 9위, 2025년판 10위로 오른 인도네시아 볶음면이에요."
+  },
+  {
+   "s": "mamee-slrp-kari-xtra-pedas",
+   "n": "마미 슬럽! 카레 엑스트라 매운맛",
+   "on": "Mamee SLRP! Mi Segera Perisa Kari Xtra Pedas",
+   "m": "mamee",
+   "co": "my",
+   "f": "bag",
+   "c": "soup",
+   "t": [
+    "카레",
+    "고추"
+   ],
+   "noodle": "unk",
+   "hot": 2,
+   "st": "sale",
+   "k": [
+    "SLRP",
+    "슬럽"
+   ],
+   "q": "마미 슬럽 카레",
+   "d": "말레이시아 마미의 매운 카레 라면이에요. 더 라멘 레이터의 ‘가장 매운 라면 TOP 10’에 2024년판과 2025년판 모두 9위로 올랐어요."
+  },
+  {
+   "s": "redchef-hae-bee-hiam",
+   "n": "레드셰프 하에비히암 비빔면",
+   "on": "Red Chef Hae Bee Hiam Dried Noodles",
+   "m": "redchef",
+   "co": "sg",
+   "f": "bag",
+   "c": "bibim",
+   "t": [
+    "새우",
+    "고추"
+   ],
+   "noodle": "unk",
+   "hot": 1,
+   "st": "sale",
+   "k": [
+    "Hae Bee Hiam",
+    "하이비히암",
+    "Red Chef"
+   ],
+   "q": "레드셰프 라면",
+   "d": "말린 새우와 고추를 볶은 양념 ‘하에비히암’에 비벼 먹는 면이에요. 더 라멘 레이터 세계 TOP 10에 2022년 3위, 2024년 7위로 올랐어요."
+  },
+  {
+   "s": "koka-laksa-singapura",
+   "n": "코카 시그니처 락사 싱가푸라",
+   "on": "KOKA Signature Laksa Singapura",
+   "m": "tathui",
+   "co": "sg",
+   "f": "bag",
+   "c": "soup",
+   "t": [
+    "코코넛",
+    "카레"
+   ],
+   "noodle": "unk",
+   "hot": null,
+   "st": "sale",
+   "k": [
+    "KOKA",
+    "코카 락사"
+   ],
+   "q": "코카 락사",
+   "d": "코카의 락사(코코넛 커리 국수) 맛이에요. 2분이면 익고, 더 라멘 레이터의 2026년 싱가포르 TOP 10 개정판에서 10위에 올랐어요."
+  },
+  {
+   "s": "mr-noodles-beef",
+   "n": "미스터 누들 비프 (캐나다)",
+   "on": "Mr. Noodles Instant Noodles Beef",
+   "m": "andersonwatts",
+   "co": "ca",
+   "f": "bag",
+   "c": "soup",
+   "t": [
+    "소고기"
+   ],
+   "hot": 0,
+   "st": "sale",
+   "k": [
+    "Mr. Noodles",
+    "미스터 누들스"
+   ],
+   "q": "Mr. Noodles",
+   "d": "1970년대부터 캐나다에서 팔린 봉지라면이에요. 밴쿠버의 앤더슨 와츠가 들여오고 중국 후이저우의 벨텍 푸드가 만들어요."
+  },
+  {
+   "s": "prima-kottumee-hot-spicy",
+   "n": "프리마 코투미 핫 앤 스파이시",
+   "on": "Prima KottuMee Hot 'N' Spicy",
+   "m": "ceylonagro",
+   "co": "lk",
+   "f": "bag",
+   "c": "etc",
+   "t": [
+    "고추",
+    "향신료"
+   ],
+   "noodle": "unk",
+   "hot": 1,
+   "st": "sale",
+   "k": [
+    "Kottu Mee",
+    "코투 미"
+   ],
+   "q": "프리마 코투미",
+   "d": "스리랑카 라면 브랜드 ‘코투미’의 매운맛 제품이에요. 프리마 그룹 스리랑카 계열사인 실론 애그로 인더스트리가 만들어요."
+  },
+  {
+   "s": "prima-kottumee-korean-fiery-chicken",
+   "n": "프리마 코투미 코리안 라멘 파이어리 치킨",
+   "on": "Prima KottuMee Korean Ramen Fiery Chicken",
+   "m": "ceylonagro",
+   "co": "lk",
+   "f": "bag",
+   "c": "etc",
+   "t": [
+    "닭",
+    "고추"
+   ],
+   "noodle": "unk",
+   "y": "2024-04",
+   "hot": 1,
+   "st": "sale",
+   "k": [
+    "Korean Ramen",
+    "코투미 한국 라면"
+   ],
+   "q": "코투미 코리안 라멘",
+   "d": "2024년 4월 스리랑카 코투미가 내놓은 한국식 매운 닭 맛 라면이에요. 브랜드 처음으로 한국 음식에서 맛을 따왔고, 회사는 매운 정도가 2배라고 소개했어요. 호주, 이탈리아, 몰디브, 아랍에미리트, 영국으로도 수출해요."
+  },
+  {
+   "s": "indomie-saudi-chicken",
+   "n": "인도미 치킨 (사우디아라비아)",
+   "on": "Indomie Chicken Flavour",
+   "m": "pinehill",
+   "co": "sa",
+   "f": "bag",
+   "c": "soup",
+   "t": [
+    "닭"
+   ],
+   "hot": 0,
+   "st": "sale",
+   "k": [
+    "Indomie Saudi",
+    "인도미 사우디"
+   ],
+   "q": "인도미 치킨",
+   "d": "1986년 사우디아라비아에 들어온 인도미예요. 1992년 문을 연 제다 공장은 중동·북아프리카에서 가장 큰 라면 공장으로 하루 200만 봉지까지 만들 수 있고, 만드는 회사 파인힐 아라비아 푸드는 사우디 라면 시장의 95%를 차지한다고 밝힌 적이 있어요."
+  },
+  {
+   "s": "mama-coconut-myanmar",
+   "n": "마마 코코넛 밀크 맛 (미얀마)",
+   "on": "MAMA Instant Noodles Coconut Milk Flavour",
+   "m": "mama-mm",
+   "co": "mm",
+   "f": "bag",
+   "c": "soup",
+   "t": [
+    "코코넛"
+   ],
+   "noodle": "unk",
+   "hot": null,
+   "st": "sale",
+   "k": [
+    "MAMA Myanmar",
+    "마마 미얀마"
+   ],
+   "q": "마마 코코넛",
+   "d": "미얀마에서 파는 마마의 코코넛 밀크 맛 라면이에요. 더 라멘 레이터의 2016년 세계 TOP 10에서 10위에 올랐어요. 미얀마의 마마는 태국 타이 프레지던트 푸드의 합작회사가 양곤에서 만들어요."
+  },
+  {
+   "s": "peyoung-kyushu-tonkotsu-yakisoba",
+   "n": "페양 규슈 돈코츠 야키소바",
+   "on": "Peyoung Kyushu Tonkotsu Yakisoba",
+   "m": "maruka",
+   "co": "jp",
+   "f": null,
+   "c": "fried",
+   "t": [
+    "돈코츠",
+    "돼지"
+   ],
+   "noodle": "unk",
+   "hot": null,
+   "st": "sale",
+   "k": [
+    "ペヤング",
+    "페양구"
+   ],
+   "q": "페양 야키소바",
+   "d": "컵 야키소바 ‘페양’의 규슈 돈코츠 맛이에요. 더 라멘 레이터의 2026년 일본 TOP 10에서 3위에 올랐어요."
+  },
+  {
+   "s": "nishiyama-miso-ramen",
+   "n": "니시야마 제면 미소 라멘",
+   "on": "Nishiyama Seimen Miso Ramen",
+   "m": "nishiyama",
+   "co": "jp",
+   "f": null,
+   "c": "soup",
+   "t": [
+    "미소",
+    "된장"
+   ],
+   "noodle": "unk",
+   "hot": null,
+   "st": "sale",
+   "k": [
+    "西山製麺",
+    "니시야마"
+   ],
+   "q": "니시야마 라멘",
+   "d": "삿포로의 제면 회사 니시야마 제면이 만든 미소 라멘이에요. 더 라멘 레이터의 2026년 일본 TOP 10에서 4위에 올랐어요."
+  },
+  {
+   "s": "seven-premium-ryu-shanghai",
+   "n": "세븐프리미엄 류샹하이 매운 미소 라멘",
+   "on": "Seven&I Premium / Myojo Ryu Shanghai Spicy Miso Ramen",
+   "m": "myojo",
+   "co": "jp",
+   "f": "bigcup",
+   "c": "soup",
+   "t": [
+    "미소",
+    "된장",
+    "고추"
+   ],
+   "noodle": "unk",
+   "hot": 1,
+   "st": "sale",
+   "k": [
+    "龍上海",
+    "가라미소",
+    "セブンプレミアム"
+   ],
+   "q": "류샹하이 라멘",
+   "d": "일본 세븐일레븐의 자체 상표 세븐프리미엄으로 묘조식품이 만든 사발 라면이에요. 라멘집 류샹하이(龍上海)의 매운 미소 라멘을 옮겼고, 더 라멘 레이터의 2026년 일본 TOP 10에서 5위에 올랐어요."
+  },
+  {
+   "s": "seven-gold-iida-shoten",
+   "n": "세븐일레븐 골드 이이다 쇼텐 라멘",
+   "on": "7 Eleven Gold / Maruchan Iida Shoten Ramen",
+   "m": "toyosuisan",
+   "co": "jp",
+   "f": null,
+   "c": "soup",
+   "t": [],
+   "noodle": "unk",
+   "hot": null,
+   "st": "sale",
+   "k": [
+    "飯田商店",
+    "이이다쇼텐",
+    "セブンプレミアム ゴールド"
+   ],
+   "q": "이이다 쇼텐 라멘",
+   "d": "일본 세븐일레븐의 고급 자체 상표로 마루짱이 만든 라멘집 이이다 쇼텐(飯田商店)의 라멘이에요. 더 라멘 레이터의 2026년 일본 TOP 10에서 6위에 올랐어요."
+  },
+  {
+   "s": "itsuki-kumamoto-red-spicy",
+   "n": "이쓰키 구마모토 레드 스파이시 라멘",
+   "on": "Itsuki Kumamoto Red Spicy Ramen",
+   "m": "itsuki",
+   "co": "jp",
+   "f": null,
+   "c": "soup",
+   "t": [
+    "고추"
+   ],
+   "noodle": "unk",
+   "hot": 1,
+   "st": "sale",
+   "k": [
+    "五木食品",
+    "이츠키"
+   ],
+   "q": "이쓰키 구마모토 라멘",
+   "d": "구마모토의 면 회사 이쓰키식품이 만든 매운 구마모토 라멘이에요. 더 라멘 레이터의 2026년 일본 TOP 10에서 7위에 올랐어요."
+  },
+  {
+   "s": "marutai-hakata-tonkotsu",
+   "n": "마루타이 하카타 돈코츠 라멘",
+   "on": "Marutai Hakata Tonkotsu Ramen",
+   "m": "marutai",
+   "co": "jp",
+   "f": "bag",
+   "c": "soup",
+   "t": [
+    "돈코츠",
+    "돼지"
+   ],
+   "noodle": "unk",
+   "hot": 0,
+   "st": "sale",
+   "k": [
+    "博多",
+    "하카타 라멘"
+   ],
+   "q": "마루타이 하카타",
+   "d": "규슈 마루타이의 하카타식 돈코츠 라멘이에요. 더 라멘 레이터의 2026년 일본 TOP 10에서 8위에 올랐어요."
+  },
+  {
+   "s": "maruchan-zubaan-tonkotsu-gyokai",
+   "n": "마루짱 즈반! 돈코츠 해물 라멘",
+   "on": "Maruchan Zubaan! Tonkotsu & Seafood Ramen",
+   "m": "toyosuisan",
+   "co": "jp",
+   "f": null,
+   "c": "soup",
+   "t": [
+    "돈코츠",
+    "돼지",
+    "해물"
+   ],
+   "noodle": "unk",
+   "hot": null,
+   "st": "sale",
+   "k": [
+    "ZUBAAAN",
+    "즈바안",
+    "豚骨魚介"
+   ],
+   "q": "마루짱 ZUBAAAN",
+   "d": "돼지뼈 국물에 해물 맛을 더한 마루짱의 라멘이에요. 더 라멘 레이터의 2026년 일본 TOP 10에서 10위에 올랐어요."
+  },
+  {
+   "s": "asha-meteor-hot-sour",
+   "n": "아샤 유성 비빔면 새콤매운 소스",
+   "on": "A-Sha Meteor Noodles With Hot & Sour Sauce",
+   "m": "asha",
+   "co": "tw",
+   "f": null,
+   "c": "bibim",
+   "t": [
+    "새콤",
+    "고추"
+   ],
+   "noodle": "unk",
+   "hot": 1,
+   "st": "sale",
+   "k": [
+    "流星拌麵",
+    "류성 비빔면",
+    "Meteor Noodles"
+   ],
+   "q": "아샤 유성 비빔면",
+   "d": "아샤 유성 비빔면의 새콤하고 매운 소스 맛이에요. 더 라멘 레이터의 2026년 세계 TOP 10에서 3위에 올랐어요."
+  },
+  {
+   "s": "mamee-chef-nyonya-laksa",
+   "n": "마미 셰프 미고렝 뇨냐 락사",
+   "on": "Mamee Chef Mi Goreng Nyonya Laksa",
+   "m": "mamee",
+   "co": "my",
+   "f": null,
+   "c": "fried",
+   "t": [
+    "코코넛",
+    "카레"
+   ],
+   "noodle": "unk",
+   "hot": null,
+   "st": "sale",
+   "k": [
+    "Nyonya Laksa",
+    "뇨냐 락사"
+   ],
+   "q": "마미 셰프 락사",
+   "d": "말레이시아 마미 셰프의 뇨냐 락사 맛 볶음면이에요. 더 라멘 레이터의 2026년 세계 TOP 10에서 6위에 올랐어요."
+  },
+  {
+   "s": "daebak-ghost-pepper-chicken",
+   "n": "대박 고스트 페퍼 스파이시 치킨",
+   "on": "Daebak Ghost Pepper Spicy Chicken Flavour",
+   "m": "mamee",
+   "co": "my",
+   "f": null,
+   "c": "fried",
+   "t": [
+    "닭",
+    "고추"
+   ],
+   "noodle": "unk",
+   "hot": 2,
+   "st": "sale",
+   "k": [
+    "Daebak",
+    "고스트 페퍼",
+    "Ghost Pepper"
+   ],
+   "q": "대박 고스트 페퍼",
+   "d": "말레이시아 마미와 한국 신세계가 함께 만드는 ‘대박’ 브랜드의 매운 닭 맛 라면이에요. 더 라멘 레이터의 2025년 ‘가장 매운 라면 TOP 10’에서 5위에 올랐어요."
+  },
+  {
+   "s": "daebak-tntco-carolina-reaper",
+   "n": "대박 × TNTCO 캐롤라이나 리퍼 스파이시 치킨",
+   "on": "Daebak x TNTCO Carolina Reaper Spicy Chicken Flavour",
+   "m": "mamee",
+   "co": "my",
+   "f": null,
+   "c": "fried",
+   "t": [
+    "닭",
+    "고추"
+   ],
+   "noodle": "unk",
+   "hot": 2,
+   "st": "sale",
+   "k": [
+    "Daebak",
+    "캐롤라이나 리퍼",
+    "Carolina Reaper"
+   ],
+   "q": "대박 캐롤라이나 리퍼",
+   "d": "‘대박’ 브랜드가 캐롤라이나 리퍼 고추를 내세워 만든 매운 닭 맛 라면이에요. 더 라멘 레이터의 2025년 ‘가장 매운 라면 TOP 10’에서 2위에 올랐어요."
+  },
+  {
+   "s": "nissin-328-katong-laksa",
+   "n": "닛신 × 328 카통 락사",
+   "on": "Nissin x 328 Katong Laksa Laksa Flavour",
+   "m": "nissin",
+   "co": "sg",
+   "f": null,
+   "c": "soup",
+   "t": [
+    "코코넛",
+    "카레"
+   ],
+   "noodle": "unk",
+   "hot": null,
+   "st": "sale",
+   "k": [
+    "Katong Laksa",
+    "카통 락사"
+   ],
+   "q": "닛신 카통 락사",
+   "d": "싱가포르 닛신이 락사 가게 ‘328 카통 락사’와 함께 만든 락사 맛 라면이에요. 더 라멘 레이터의 2026년 싱가포르 TOP 10 개정판에서 3위에 올랐어요."
+  },
+  {
+   "s": "prima-kottumee-nai-miris",
+   "n": "프리마 코투미 나이 미리스",
+   "on": "Prima KottuMee Nai Miris",
+   "m": "ceylonagro",
+   "co": "lk",
+   "f": "bag",
+   "c": "etc",
+   "t": [
+    "고추",
+    "향신료"
+   ],
+   "noodle": "unk",
+   "y": "2023-10",
+   "hot": 1,
+   "st": "sale",
+   "k": [
+    "Nai Miris",
+    "Kottu Mee"
+   ],
+   "q": "코투미 나이 미리스",
+   "d": "2023년 10월 스리랑카 코투미가 그때까지 가운데 가장 매운 맛이라며 내놓은 제품이에요."
   }
  ]
 }

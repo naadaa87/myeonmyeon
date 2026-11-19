@@ -65,4 +65,22 @@
     feed(home.ok ? home : {}, cm.ok ? cm : {});
     if (home.ok && home.demo) { var bar = $('[data-demo-bar]'); if (bar) bar.hidden = false; }
   });
+
+  // 라면 한 줄 상식: 퀴즈 해설 가운데 하나를 보여 줘요
+  var fact = $('[data-fact]');
+  if (fact) {
+    var facts = [];
+    try { facts = JSON.parse($('#fact-data').textContent); } catch (e) { facts = []; }
+    if (facts.length) {
+      var fi = Math.floor(Math.random() * facts.length);
+      var showFact = function () {
+        $('[data-fact-q]', fact).textContent = facts[fi][0];
+        $('[data-fact-t]', fact).textContent = facts[fi][1];
+        $('[data-fact-a]', fact).setAttribute('href', facts[fi][2]);
+      };
+      $('[data-fact-next]', fact).addEventListener('click', function () { fi = (fi + 1 + Math.floor(Math.random() * (facts.length - 1))) % facts.length; showFact(); });
+      showFact();
+      fact.hidden = false;
+    }
+  }
 })();

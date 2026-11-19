@@ -127,8 +127,8 @@
    "p": "마살라·카레·토마토처럼 향신료 맛이 중심이에요. 네팔의 와이와이처럼 미리 양념한 면을 과자처럼 부숴 먹는 문화도 있어요."
   },
   {
-   "h": "미주·유럽·아프리카",
-   "p": "닭·소고기 같은 기본 맛의 값싼 봉지라면이 오래 시장을 이끌었어요. 미국에서는 2021년 무렵부터 튀기지 않은 면이나 고단백 면을 내세운 새 브랜드가 늘었어요."
+   "h": "미주·유럽·중동·아프리카",
+   "p": "닭·소고기 같은 기본 맛의 값싼 봉지라면이 오래 시장을 이끌었어요. 미국에서는 2021년 무렵부터 튀기지 않은 면이나 고단백 면을 내세운 새 브랜드가 늘었어요. 사우디아라비아와 나이지리아에서는 인도네시아에서 건너온 인도미가 시장을 이끌어요."
   }
  ],
  "tips": [
@@ -181,7 +181,8 @@
     "일본 라면은 국물 바탕에 따라 간장, 된장, 소금, 돼지뼈로 나뉘고, 우동과 메밀국수, 야키소바까지 컵과 봉지로 만들어요. 1966년에 나온 [[ramen:sapporo-ichiban-shoyu|삿포로이치방]]과 [[ramen:myojo-charumera|묘조 차르메라]]처럼 60년 동안 팔려 온 제품이 많아요.",
     "2025년 일본의 라면 수요는 59억 5,000만 개로 세계 5위예요. 1인당으로는 2024년 47개를 먹어 말레이시아와 함께 공동 6위였어요.",
     "후쿠오카의 마루타이가 1959년 11월 내놓은 [[ramen:marutai-ramen|봉 라멘]]은 곧은 면을 튀기지 않고 말린 제품으로, 규슈에서는 집에서 끓이는 라면의 대명사예요. 2011년 11월 도요수산이 생면을 그대로 말린 [[ramen:maruchan-seimen-shoyu|마루짱 세이멘]]을 내놓아 1년 만에 2억 개를 팔자, 업계는 이를 ‘마루짱 쇼크’라 불렀고 닛신 [[ramen:nissin-raoh-shoyu|라오]] 같은 튀기지 않은 봉지면이 뒤따랐어요.",
-    "1981년 10월 묘조식품의 [[ramen:myojo-chukazanmai-canton|중화삼매]]는 튀기지 않은 면에 이름난 중국요리점의 맛을 담아 ‘고급 봉지라면’ 바람을 일으켰어요. 1983년 나온 에이스콕의 [[ramen:acecook-wakame-ramen|와카메 라멘]]처럼 40년 넘게 맛을 거의 바꾸지 않고 팔리는 컵라면도 있어요."
+    "1981년 10월 묘조식품의 [[ramen:myojo-chukazanmai-canton|중화삼매]]는 튀기지 않은 면에 이름난 중국요리점의 맛을 담아 ‘고급 봉지라면’ 바람을 일으켰어요. 1983년 나온 에이스콕의 [[ramen:acecook-wakame-ramen|와카메 라멘]]처럼 40년 넘게 맛을 거의 바꾸지 않고 팔리는 컵라면도 있어요.",
+    "지역에서만 파는 라면도 많아요. 규슈에서는 하우스식품의 [[ramen:house-umakacchan|우마캇짱]]이 봉지라면 1위이고, 홋카이도에서는 중화 스프가 같이 든 [[ramen:maruchan-yakisoba-bento|야키소바 벤토]]가 컵 야키소바의 대명사예요. 오키나와에서는 도쿠시마에서 건너온 [[ramen:kinchan-noodle|긴짱 누들]]이 50년 가까이 팔리고 있어요."
    ],
    "sources": [
     [
@@ -227,6 +228,18 @@
     [
      "東京ウォーカー, エースコック「わかめラーメン」開発秘話",
      "https://www.walkerplus.com/article/1108567/"
+    ],
+    [
+     "プレジデントオンライン, 九州で「うまかっちゃん」が強い理由",
+     "https://president.jp/articles/-/23925"
+    ],
+    [
+     "ウォーカープラス, 「やきそば弁当」が北海道限定になった理由",
+     "https://www.walkerplus.com/article/1125888/"
+    ],
+    [
+     "琉球新報, 金ちゃんヌードルと沖縄",
+     "https://ryukyushimpo.jp/news/entry-1726877.html"
     ]
    ],
    "eat": "야키소바 컵은 물을 부어 익힌 뒤 뚜껑의 구멍으로 물을 따라 내고 소스를 비벼요. 야키비훈은 삶지 않고 프라이팬에서 채소와 볶아요."
@@ -247,7 +260,8 @@
     "1992년 8월 21일 톈진에서 [[ramen:masterkong-hongshao-beef|캉스푸 훙사오 뉴러우몐]]이 나오며 시장이 크게 자랐어요. 2008년에는 퉁이가 새콤한 [[ramen:unipresident-laotan-suancai|라오탄 쏸차이 뉴러우몐]]을 전국에 내놓아 한동안 ‘쏸차이 라면’ 경쟁이 붙었어요.",
     "2023년 판매량 점유율은 캉스푸 45%, 퉁이 16%, 바이샹 12%, 진마이랑 10%였어요. 바이샹은 2003년 중국 첫 사골 국물 라면 [[ramen:baixiang-dagu|다구몐]]을 낸 회사예요.",
     "라면 말고도 광시 류저우의 우렁이 쌀국수 [[ramen:haohuanluo-luosifen|뤄쓰펀]] 같은 봉지 면이 크게 늘었어요. 류저우 봉지 뤄쓰펀 매출은 2022년 182억 위안까지 올랐다가 2025년 163억 위안으로 줄었어요.",
-    "2016년 상하이에서 시작한 [[ramen:ramentalk-seafood-tomyum|라멘숴(拉面说)]]처럼, 반건조 생면에 고명을 갖춘 일본식 즉석 라멘을 인터넷으로 파는 새 브랜드도 늘었어요."
+    "2016년 상하이에서 시작한 [[ramen:ramentalk-seafood-tomyum|라멘숴(拉面说)]]처럼, 반건조 생면에 고명을 갖춘 일본식 즉석 라멘을 인터넷으로 파는 새 브랜드도 늘었어요.",
+    "끓이지 않고 부숴 먹는 과자 라면 [[ramen:unif-xiaohuanxiong|샤오환슝 간추이몐]]은 2000년 무렵 봉지마다 수호지 인물 카드를 넣어 학생들 사이에서 수집 열풍을 일으켰어요. 요즘은 [[ramen:jinmailang-lamianfan|라몐판]]처럼 튀기지 않은 면을 내세운 제품도 늘고 있어요."
    ],
    "sources": [
     [
@@ -277,6 +291,10 @@
     [
      "36氪, 拉面说 (2016.8 上海)",
      "https://pitchhub.36kr.com/project/1678454305846274"
+    ],
+    [
+     "数英, 小浣熊水浒卡 (干脆面)",
+     "https://www.digitaling.com/articles/447964.html"
     ]
    ]
   },
@@ -368,8 +386,13 @@
     [
      "Industrial History of Hong Kong, Winner Food Products",
      "https://industrialhistoryhk.org/?p=39292"
+    ],
+    [
+     "HK01, 茶餐廳公仔麵配料排行",
+     "https://www.hk01.com/教煮/746275"
     ]
-   ]
+   ],
+   "eat": "차찬텡에서는 공자이몐에 런천미트와 달걀 프라이를 올린 ‘찬단민(餐蛋麵)’을 아침 세트로 즐겨 먹어요."
   },
   {
    "code": "id",
@@ -673,7 +696,7 @@
    "code": "us",
    "name": "미국",
    "en": "United States",
-   "region": "미주·유럽·아프리카",
+   "region": "미주·유럽·중동·아프리카",
    "lead": "값싼 봉지라면에서 고급 면까지",
    "wina": "약 52억 개 (6위)",
    "makers": "도요수산(마루짱), 닛신식품, 모모푸쿠, 이미(immi)",
@@ -699,14 +722,19 @@
     [
      "Green Queen, immi debut (2021.1)",
      "https://www.greenqueen.com.hk/?p=45082"
+    ],
+    [
+     "Fox News, Ramen burger is next new food craze (2013)",
+     "https://www.foxnews.com/leisure/2013/08/13/ramen-burger-is-next-new-food-craze/"
     ]
-   ]
+   ],
+   "eat": "2013년 뉴욕 브루클린에서는 구운 라멘 면 두 장 사이에 패티를 끼운 ‘라멘 버거’가 나와 줄을 세웠어요."
   },
   {
    "code": "gb",
    "name": "영국",
    "en": "United Kingdom",
-   "region": "미주·유럽·아프리카",
+   "region": "미주·유럽·중동·아프리카",
    "lead": "컵라면 하면 팟누들",
    "makers": "유니레버(팟누들)",
    "flavors": "닭고기·버섯, 카레, 소고기·토마토",
@@ -739,7 +767,7 @@
    "code": "br",
    "name": "브라질",
    "en": "Brazil",
-   "region": "미주·유럽·아프리카",
+   "region": "미주·유럽·중동·아프리카",
    "lead": "라면을 ‘미오조’라 부르는 나라",
    "makers": "닛신식품(미오조)",
    "flavors": "시골 닭(갈리냐 카이피라), 소고기, 갈비",
@@ -767,7 +795,7 @@
    "code": "ng",
    "name": "나이지리아",
    "en": "Nigeria",
-   "region": "미주·유럽·아프리카",
+   "region": "미주·유럽·중동·아프리카",
    "lead": "아프리카에서 유일한 10위권",
    "wina": "약 31억 개 (10위)",
    "makers": "듀필 프리마 푸드(인도미)",
@@ -792,7 +820,7 @@
    "code": "ru",
    "name": "러시아",
    "en": "Russia",
-   "region": "미주·유럽·아프리카",
+   "region": "미주·유럽·중동·아프리카",
    "lead": "라면을 ‘도시락’이라 부르는 나라",
    "makers": "팔도(도시락), 마레벤 푸드(롤톤)",
    "short": "한국 팔도의 사각 컵라면 도시락이 라면을 부르는 말이 됐어요.",
@@ -819,7 +847,7 @@
    "code": "ua",
    "name": "우크라이나",
    "en": "Ukraine",
-   "region": "미주·유럽·아프리카",
+   "region": "미주·유럽·중동·아프리카",
    "lead": "베트남 청년이 만든 국민 라면",
    "makers": "네슬레(미비나)",
    "short": "1995년 하르키우에서 태어난 미비나가 라면의 다른 이름이 됐어요.",
@@ -846,7 +874,7 @@
    "code": "pl",
    "name": "폴란드",
    "en": "Poland",
-   "region": "미주·유럽·아프리카",
+   "region": "미주·유럽·중동·아프리카",
    "lead": "라면을 ‘중국 수프’라 부르는 나라",
    "makers": "비폰(탄비엣)",
    "flavors": "닭, 카레, 김치, 퍼",
@@ -874,7 +902,7 @@
    "code": "mx",
    "name": "멕시코",
    "en": "Mexico",
-   "region": "미주·유럽·아프리카",
+   "region": "미주·유럽·중동·아프리카",
    "lead": "라임을 짜 넣는 컵라면의 나라",
    "makers": "도요수산(마루짱), 닛신식품",
    "flavors": "새우, 라임, 하바네로, 칠레 피킨, 닭, 소고기",
@@ -903,7 +931,7 @@
    "code": "pe",
    "name": "페루",
    "en": "Peru",
-   "region": "미주·유럽·아프리카",
+   "region": "미주·유럽·중동·아프리카",
    "lead": "닭고기 수프의 나라가 고른 라면",
    "makers": "아지노모토 페루",
    "flavors": "닭, 소고기, 오리엔탈",
@@ -927,7 +955,7 @@
    "code": "au",
    "name": "호주",
    "en": "Australia",
-   "region": "미주·유럽·아프리카",
+   "region": "미주·유럽·중동·아프리카",
    "lead": "국물째, 혹은 물을 따라 내고",
    "makers": "네슬레(매기)",
    "flavors": "닭, 꿀간장 닭, 카레, 베지마이트",
@@ -1005,6 +1033,118 @@
     [
      "The Daily Star, Nation of noodle lovers",
      "https://www.thedailystar.net/business/news/nation-noodle-lovers-1854271"
+    ]
+   ]
+  },
+  {
+   "code": "sa",
+   "name": "사우디아라비아",
+   "en": "Saudi Arabia",
+   "region": "미주·유럽·중동·아프리카",
+   "lead": "중동에서 가장 큰 인도미 공장",
+   "makers": "파인힐 아라비아 푸드(인도미)",
+   "short": "1986년 인도미가 들어왔고, 제다에 중동·북아프리카에서 가장 큰 라면 공장이 있어요.",
+   "body": [
+    "인도네시아 라면 인도미는 1986년 사우디아라비아에 들어왔어요. 1992년 제다에 문을 연 공장은 중동·북아프리카에서 가장 큰 라면 공장으로, 하루에 200만 봉지까지 만들 수 있어요.",
+    "사우디에서 [[ramen:indomie-saudi-chicken|인도미]]를 만드는 회사는 파인힐 아라비아 푸드예요. 이 회사는 사우디 라면 시장의 95%를 차지한다고 밝힌 적이 있어요.",
+    "파인힐은 사우디아라비아 말고도 나이지리아, 튀르키예, 이집트, 케냐, 모로코, 세르비아에서 인도미를 면허 생산해요."
+   ],
+   "sources": [
+    [
+     "Arab News, Indomie in Saudi Arabia",
+     "https://arab.news/vvzac"
+    ],
+    [
+     "Tempo, Indomie Saudi Arabia market share",
+     "https://en.tempo.co/read/921650"
+    ],
+    [
+     "Just Food, Indofood CBP and Pinehill",
+     "https://www.just-food.com/?p=84386"
+    ]
+   ]
+  },
+  {
+   "code": "ca",
+   "name": "캐나다",
+   "en": "Canada",
+   "region": "미주·유럽·중동·아프리카",
+   "lead": "1970년대부터 팔린 미스터 누들",
+   "makers": "앤더슨 와츠(미스터 누들)",
+   "short": "봉지라면 ‘미스터 누들’이 1970년대부터 팔리고 있어요.",
+   "body": [
+    "[[ramen:mr-noodles-beef|미스터 누들]]은 1970년대부터 캐나다에서 팔린 봉지라면이에요. 밴쿠버의 앤더슨 와츠가 들여오고, 중국 후이저우의 벨텍 푸드가 만들어요.",
+    "캐나다 라면은 아직 확인한 내용이 많지 않아요. 자료를 찾는 대로 더 채울게요."
+   ],
+   "sources": [
+    [
+     "Mr. Noodles, Wikipedia",
+     "https://en.wikipedia.org/wiki/Mr._Noodles"
+    ]
+   ]
+  },
+  {
+   "code": "lk",
+   "name": "스리랑카",
+   "en": "Sri Lanka",
+   "region": "남아시아",
+   "lead": "매운맛을 내세운 코투미",
+   "makers": "실론 애그로 인더스트리(프리마 코투미)",
+   "flavors": "매운 양념, 닭고기",
+   "short": "라면 브랜드 프리마 코투미가 ‘핫 앤 스파이시’를 내세워 매운맛을 늘려 가요.",
+   "body": [
+    "스리랑카의 라면 브랜드 프리마 코투미는 프리마 그룹 스리랑카 계열사인 실론 애그로 인더스트리가 만들어요. [[ramen:prima-kottumee-hot-spicy|핫 앤 스파이시]]를 앞세운 매운맛 브랜드예요.",
+    "2023년 10월에는 그때까지 가운데 가장 맵다는 [[ramen:prima-kottumee-nai-miris|나이 미리스]]를, 2024년 4월에는 브랜드 처음으로 한국 음식에서 맛을 따온 [[ramen:prima-kottumee-korean-fiery-chicken|코리안 라멘 파이어리 치킨]]을 내놓았어요. 회사는 코리안 라멘의 매운 정도가 2배라고 소개했어요.",
+    "코리안 라멘은 2025년 5월 기준으로 호주, 이탈리아, 몰디브, 아랍에미리트, 영국에도 나가 있어요. 몰디브에서는 젊은 층을 중심으로 코투미 인기가 높다고 해요."
+   ],
+   "sources": [
+    [
+     "Daily Mirror, Prima KottuMee introduces spiciest Korean Ramen (2024.4)",
+     "https://dailymirror.lk/features/Prima-KottuMee-introduces-spiciest-Korean-Ramen/185-281376"
+    ],
+    [
+     "Daily Mirror, Prima KottuMee Korean Ramen expands international reach (2025.5)",
+     "https://www.dailymirror.lk/print/business-news/Prima-KottuMee-Korean-Ramen-expands-international-reach/273-310045"
+    ],
+    [
+     "Daily FT, Prima KottuMee spices up Maldives with Korean Ramen (2024.11)",
+     "https://www.ft.lk/Food-Beverage/Prima-KottuMee-spices-up-Maldives-with-Korean-Ramen/39-769220"
+    ],
+    [
+     "LMD, Heat things up with Prima KottuMee Nai Miris (2023.10)",
+     "https://lmd.lk/prima-kottumee-9/"
+    ]
+   ]
+  },
+  {
+   "code": "mm",
+   "name": "미얀마",
+   "en": "Myanmar",
+   "region": "동남아시아",
+   "lead": "얌얌과 마마가 겨루는 시장",
+   "makers": "야타초 인더스트리(얌얌), 타이 프레지던트 푸드 합작회사(마마)",
+   "short": "현지 브랜드 얌얌이 1위, 태국에서 건너온 마마가 2위예요.",
+   "body": [
+    "미얀마 라면 시장은 현지 회사 야타초 인더스트리의 ‘얌얌’이 1위이고, 태국에서 건너온 ‘마마’가 2위예요. 2019년 보도에서 마마의 점유율은 30%쯤이었어요.",
+    "미얀마의 마마는 태국 타이 프레지던트 푸드가 지분 51%를 가진 합작회사가 양곤 공장에서 만들어요. 일본 닛신식품도 2018년 미얀마 시장에 들어왔어요.",
+    "미얀마에서 파는 [[ramen:mama-coconut-myanmar|마마 코코넛 밀크 맛]]은 2016년 ‘더 라멘 레이터’ 세계 TOP 10에서 10위에 올랐어요."
+   ],
+   "sources": [
+    [
+     "Bangkok Post, Mama in Myanmar (2019)",
+     "https://www.bangkokpost.com/business/general/1623094"
+    ],
+    [
+     "Bangkok Post, Myanmar noodle firm in expansion",
+     "https://www.bangkokpost.com/business/general/368689/myanmar-noodle-firm-in-expansion"
+    ],
+    [
+     "The Japan Times, Nissin Foods launches products in Myanmar (2018)",
+     "https://www.japantimes.co.jp/news/2018/08/15/business/corporate-business/instant-noodle-giant-nissin-foods-launches-products-myanmar/"
+    ],
+    [
+     "大紀元, 拉麵達人評2016年版十大美味方便麵",
+     "https://www.epochtimes.com/b5/16/4/19/n7571892.htm"
     ]
    ]
   }

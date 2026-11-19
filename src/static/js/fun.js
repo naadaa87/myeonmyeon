@@ -202,4 +202,130 @@
     };
     if (N) start(); else quiz.innerHTML = '<p class="muted">문제를 불러오지 못했어요.</p>';
   }
+
+  // ---------- 라면 도전 과제 ----------
+  var quests = $('[data-quests]');
+  if (quests) {
+    var local = MM.store.get('mm-quest', {}) || {}, rec = {}, logged = false;
+    var sum = $('[data-quest-sum]', quests);
+    var paintQ = function () {
+      var done = 0, all = $$('[data-quest]', quests);
+      all.forEach(function (q) {
+        var btns = $$('[data-qs]', q), n = 0;
+        btns.forEach(function (b) {
+          var s = b.getAttribute('data-qs'), on = !!(rec[s] || local[s]);
+          b.setAttribute('aria-pressed', on ? 'true' : 'false');
+          b.classList.toggle('is-rec', !!rec[s]);
+          if (on) n++;
+        });
+        $('[data-qn]', q).textContent = n + ' / ' + btns.length;
+        $('[data-qbar]', q).style.width = (btns.length ? n / btns.length * 100 : 0) + '%';
+        var full = btns.length > 0 && n === btns.length;
+        q.classList.toggle('is-done', full);
+        if (full) done++;
+      });
+      sum.innerHTML = (done ? '도전 과제 ' + all.length + '개 가운데 <b>' + done + '개</b>를 완주했어요.' : '먹어 본 라면에 표시해 보세요. 한 줄을 다 채우면 완주예요.') +
+        (logged ? ' 빨간 표시는 한 그릇 기록으로 확인된 라면이에요.' : ' <a href="/me/">로그인</a>하면 기록한 라면이 자동으로 표시돼요.');
+    };
+    quests.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-qs]');
+      if (!b) return;
+      var s = b.getAttribute('data-qs');
+      if (rec[s]) { MM.toast('한 그릇 기록으로 확인된 라면이에요'); return; }
+      if (local[s]) delete local[s]; else local[s] = 1;
+      MM.store.set('mm-quest', local);
+      paintQ();
+      var q = b.closest('[data-quest]');
+      if (local[s] && q.classList.contains('is-done')) MM.toast($('h2', q).textContent + ' 완주! 축하해요');
+    });
+    paintQ();
+    MM.getMe().then(function (u) {
+      if (!u) return;
+      logged = true;
+      MM.api('growth').then(function (g) {
+        if (g && g.ok && g.bowls) g.bowls.forEach(function (x) { rec[x.s] = 1; });
+        paintQ();
+      });
+    });
+  }
+
+  // ---------- 라면 초성 퀴즈 ----------
+  var choEl = $('[data-cho]');
+  if (choEl) {
+    var cbox = $('[data-cho-box]', choEl), scope = 'kr', bank2 = [], round = [], ci = 0, cscore = 0, hint = 0, answered = false, missed = [];
+    var CN = 10;
+    var same = function (a, b) { return MM.matches(a, b) && MM.matches(b, a); };
+    var hangul = function (s) { return (s.match(/[가-힣]/g) || []).length; };
+    var usable = function (r) { return hangul(r.n) >= 2 && r.n.length <= 11 && !/[×()]/.test(r.n); };
+    var poolC = function () {
+      return bank2.filter(function (r) { return scope === '' || (scope === 'kr' ? r.co === 'kr' : r.co !== 'kr'); });
+    };
+    var meta = function (r) { return (r.cn ? r.cn + ' · ' : '') + r.mn + ' · ' + ((MM.D.STYLES || {})[r.c] || '라면'); };
+    var startC = function () {
+      round = shuffle(poolC().slice()).slice(0, CN); ci = 0; cscore = 0; missed = [];
+      if (!round.length) { cbox.innerHTML = '<p class="muted">문제를 만들 라면이 없어요.</p>'; return; }
+      showC();
+    };
+    var showC = function () {
+      var r = round[ci]; hint = 0; answered = false;
+      cbox.innerHTML = '<div class="quiz-top"><span>' + (ci + 1) + ' / ' + round.length + '</span><span>맞힌 문제 ' + cscore + '</span></div>' +
+        '<div class="quiz-bar"><i style="width:' + (ci / round.length * 100) + '%"></i></div>' +
+        '<p class="cho-word' + (r.n.length > 7 ? ' cho-long' : '') + '" aria-label="초성">' + esc(MM.cho(r.n)) + '</p>' +
+        '<p class="cho-hint" data-cho-hint aria-live="polite"></p>' +
+        '<form class="cho-form" data-cho-form autocomplete="off"><label class="sr" for="cho-in">라면 이름</label><input class="input" id="cho-in" name="a" type="text" placeholder="라면 이름을 적어 주세요" autocapitalize="off" spellcheck="false">' +
+        '<button type="submit" class="btn btn-main">확인</button></form>' +
+        '<p class="row-btns cho-btns"><button type="button" class="btn btn-line btn-sm" data-cho-h>힌트 보기</button><button type="button" class="btn btn-ghost btn-sm" data-cho-skip>모르겠어요</button></p>' +
+        '<div class="quiz-why" data-cho-why hidden></div>';
+      var inp = $('#cho-in', cbox);
+      if (inp && ci > 0) inp.focus();
+    };
+    var reveal = function (ok) {
+      var r = round[ci]; answered = true;
+      if (ok) cscore++; else missed.push(r);
+      var why = $('[data-cho-why]', cbox);
+      why.hidden = false;
+      why.innerHTML = '<p><b>' + (ok ? '정답이에요.' : '정답은 ' + esc(r.n) + '예요.') + '</b> ' + esc(meta(r)) + '</p>' +
+        '<p class="row-btns"><a class="btn btn-line btn-sm" href="/ramen/' + r.s + '/">도감에서 보기</a><button type="button" class="btn btn-main btn-sm" data-cho-next>' + (ci + 1 < round.length ? '다음 문제' : '결과 보기') + '</button></p>';
+      $$('input, [data-cho-h], [data-cho-skip], .cho-form button', cbox).forEach(function (x) { x.disabled = true; });
+      $('[data-cho-next]', cbox).focus();
+    };
+    var endC = function () {
+      var best = 0;
+      try { best = +(localStorage.getItem('mm-cho-best') || 0); if (cscore > best) localStorage.setItem('mm-cho-best', String(cscore)); } catch (e) { /* 저장 못 해도 괜찮아요 */ }
+      var n = round.length, tier = cscore === n ? '초성만 봐도 라면이 보이는 분' : cscore >= n * 0.7 ? '라면 이름에 밝은 분' : cscore >= n * 0.4 ? '조금만 더 하면 돼요' : '도감을 한 번 훑어보면 금방 늘어요';
+      cbox.innerHTML = '<div class="quiz-end"><p class="quiz-score"><b>' + cscore + '</b> / ' + n + '</p><h2>' + tier + '</h2>' +
+        (best && best > cscore ? '<p class="small muted">이 기기에서 가장 잘한 기록은 ' + best + '개예요.</p>' : '') +
+        (missed.length ? '<h3>놓친 라면</h3><ul class="quiz-wrong">' + missed.map(function (r) { return '<li><a href="/ramen/' + r.s + '/">' + esc(r.n) + '</a><span>' + esc(MM.cho(r.n)) + ' · ' + esc(meta(r)) + '</span></li>'; }).join('') + '</ul>' : '') +
+        '<p class="row-btns"><button type="button" class="btn btn-main" data-cho-retry>' + ico('i-reset') + '다시 하기</button><button type="button" class="btn btn-line" data-cho-share>' + ico('i-share') + '결과 알리기</button></p></div>';
+    };
+    choEl.addEventListener('submit', function (e) {
+      var f = e.target.closest('[data-cho-form]');
+      if (!f) return;
+      e.preventDefault();
+      if (answered) return;
+      var v = f.a.value.trim();
+      if (!v) return;
+      if (same(v, round[ci].n)) reveal(true);
+      else { f.a.value = ''; f.a.focus(); $('[data-cho-hint]', cbox).textContent = '아쉽지만 ‘' + v + '’ 말고 다른 이름이에요.'; }
+    });
+    choEl.addEventListener('click', function (e) {
+      var sc = e.target.closest('[data-cho-co]');
+      if (sc) {
+        scope = sc.getAttribute('data-cho-co');
+        $$('[data-cho-co]', choEl).forEach(function (x) { x.setAttribute('aria-pressed', x === sc ? 'true' : 'false'); });
+        startC(); return;
+      }
+      if (e.target.closest('[data-cho-h]')) {
+        var r = round[ci]; hint++;
+        $('[data-cho-hint]', cbox).textContent = hint === 1 ? '힌트: ' + meta(r) : '힌트: ‘' + r.n.charAt(0) + '’로 시작하고 ' + r.n.replace(/\s/g, '').length + '글자예요. (' + meta(r) + ')';
+        if (hint >= 2) e.target.closest('[data-cho-h]').disabled = true;
+        return;
+      }
+      if (e.target.closest('[data-cho-skip]')) { reveal(false); return; }
+      if (e.target.closest('[data-cho-next]')) { ci++; if (ci < round.length) showC(); else endC(); return; }
+      if (e.target.closest('[data-cho-retry]')) { startC(); return; }
+      if (e.target.closest('[data-cho-share]')) MM.share({ title: '면면 라면 초성 퀴즈', text: '면면 라면 초성 퀴즈에서 ' + round.length + '문제 중 ' + cscore + '개를 맞혔어요. ㅅㄹㅁ은 뭘까요?', url: location.origin + '/lab/chosung/' });
+    });
+    MM.loadRamen().then(function (d) { bank2 = d.ramen.filter(usable); startC(); }).catch(function () { cbox.innerHTML = '<p class="muted">문제를 불러오지 못했어요.</p>'; });
+  }
 })();

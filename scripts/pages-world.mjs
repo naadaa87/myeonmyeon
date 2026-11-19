@@ -22,7 +22,7 @@ for (const [, co, , r] of MORE.timeline) {
 }
 for (const f of MORE.families) for (const m of f.makers) if (!MAKERS[m]) problems.push(`가계도: 회사 ${m}가 없어요.`);
 for (const l of MORE.best.lists) for (const [, co, , r] of l.rows) {
-  if (!COUNTRIES[co]) problems.push(`TOP 10: 나라 ${co}가 없어요.`);
+  if (!COUNTRIES[co] && !(MORE.best.others || {})[co]) problems.push(`TOP 10: 나라 ${co}가 없어요.`);
   if (r && !BY[r]) problems.push(`TOP 10: 라면 주소 ${r}가 도감에 없어요.`);
 }
 if (problems.length) {
@@ -195,6 +195,7 @@ const TILE = {
   gb: [6, 1], pl: [7, 1], ru: [9, 1], ua: [8, 2], us: [2, 2], mx: [2, 3], pe: [3, 5], br: [4, 5], ng: [6, 4],
   pk: [9, 3], np: [10, 3], in: [10, 4], bd: [11, 4], cn: [12, 2], kr: [13, 2], jp: [14, 2], hk: [12, 3], tw: [13, 3],
   th: [11, 5], vn: [12, 5], ph: [14, 4], my: [11, 6], sg: [12, 6], id: [13, 6], au: [14, 7],
+  ca: [2, 1], sa: [8, 3], lk: [10, 5], mm: [12, 4],
 };
 function tileMap() {
   const miss = LIST.filter((c) => !TILE[c.code]).map((c) => c.code);
@@ -208,7 +209,7 @@ function tileMap() {
 }
 
 const ymd = (d) => { const [y, m, dd] = d.split('-'); return `${y}년${m ? ` ${+m}월` : ''}${dd ? ` ${+dd}일` : ''}`; };
-const cn = (co) => (co ? COUNTRIES[co].name : '세계');
+const cn = (co) => (co ? (COUNTRIES[co] ? COUNTRIES[co].name : (MORE.best.others || {})[co] || co) : '세계');
 const srcList = (arr) => `<section class="story-src" aria-labelledby="h-src"><h2 id="h-src">참고한 자료</h2><ol>${arr.map(([t, u]) => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a></li>`).join('')}</ol>
 <p class="small muted">나라별 라면 이야기의 자료는 나라 페이지마다 따로 밝혀 두었어요. 고칠 곳이 보이면 <button type="button" class="link-btn" data-report="">알려 주세요</button>.</p></section>`;
 const head = (kick, h1, lead) => `<header class="story-head"><p class="kicker">${WAVE}${kick}</p><h1>${h1}</h1><p class="story-lead">${lead}</p></header>`;
@@ -271,6 +272,7 @@ ${secHead(esc(l.h), `<span class="small muted">${esc(l.date)}</span>`, `h-best-$
   const body = `<div class="wrap">
 ${crumbs(items)}
 ${head('세계 라면 지도 · 평론가의 선택', '세계가 뽑은 라면 TOP 10', esc(B.about))}
+<nav class="best-nav" aria-label="목록 바로가기">${B.lists.map((l, li) => `<a class="pill" href="#h-best-${li}">${esc(l.h)}</a>`).join('')}</nav>
 ${lists}
 <section class="sec" aria-labelledby="h-best-notes">
 ${secHead('해마다 바뀌는 순위', '', 'h-best-notes')}

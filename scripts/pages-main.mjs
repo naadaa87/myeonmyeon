@@ -6,6 +6,9 @@ import {
 import { STYLES, FORMS, STATUS, HOTS, GROUPS, AXES, RANK_RULE, TASTES, NOODLE_TYPES } from '../server/catalog-data.js';
 import { storyHomeCards } from './pages-story.mjs';
 
+// 처음 화면 ‘라면 한 줄 상식’: 퀴즈 해설에서 가져와요
+const FACTS = readJSON('content/quiz.json').questions.map((x) => [x.q, x.why, x.link]);
+
 const NEWS = readJSON('content/news.json').news;
 const SHOP = readJSON('content/shop.json');
 const groupName = (id) => (GROUPS.find((g) => g.id === id) || {}).name || '';
@@ -102,6 +105,8 @@ ${ramenGrid(['nissin-cup-noodle', 'indomie-mi-goreng', 'mama-tomyum-shrimp', 'pr
 
 <section class="sec" aria-labelledby="h-mania">
 ${secHead('라면 매니아 코너', '', 'h-mania')}
+<aside class="fact" data-fact hidden><p class="fact-k">${icon('i-help')}라면 한 줄 상식</p><p class="fact-q" data-fact-q></p><p class="fact-t" data-fact-t></p><p class="fact-foot"><a data-fact-a href="/lab/quiz/">더 알아보기</a><button type="button" class="link-btn" data-fact-next>다른 상식 보기</button></p></aside>
+<script type="application/json" id="fact-data">${JSON.stringify(FACTS).replace(/</g, '\\u003c')}</script>
 <div class="mania">${[
     ['/lab/heat/', 'i-flame', '맵기 사다리', '신라면의 몇 배일까? 스코빌 지수로 줄 세운 매운 라면'],
     ['/lab/pick/', 'i-dice', '오늘의 라면 뽑기', '고르기 어려운 날엔 조건만 정하고 뽑기에 맡겨요'],
@@ -112,6 +117,9 @@ ${secHead('라면 매니아 코너', '', 'h-mania')}
     ['/lab/match/', 'i-heart', '나에게 맞는 라면 찾기', '질문 다섯 개로 입맛에 맞을 라면 세 가지'],
     ['/world/best/', 'i-trophy', '세계가 뽑은 라면 TOP 10', '라면 후기 5,000편 평론가의 역대 최고 라면'],
     ['/world/timeline/', 'i-clock', '세계 라면 연표', '1958년 치킨라멘부터 세계 곳곳의 첫 라면까지'],
+    ['/lab/quest/', 'i-check', '라면 도전 과제', '세계 TOP 10 정복부터 라면 세계 일주까지 하나씩 채워요'],
+    ['/lab/chosung/', 'i-search', '라면 초성 퀴즈', 'ㅅㄹㅁ은 신라면. 초성만 보고 이름 맞히기'],
+    ['/story/eat/', 'i-bowl', '세계의 라면 먹는 법', '부숴 먹고, 비벼 먹고, 빵에 끼워 먹는 나라들'],
   ].map(([h, ic, t, d]) => `<a class="mania-tile" href="${h}"><span class="mania-ico">${icon(ic)}</span><b>${t}</b><span>${d}</span></a>`).join('')}</div>
 </section>
 

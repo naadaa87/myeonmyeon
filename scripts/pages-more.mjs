@@ -16,6 +16,8 @@ const LAB = [
   ['pick', '오늘의 라면 뽑기', '나라, 맵기, 종류를 고르고 뽑기를 누르면 오늘 먹을 라면 하나를 골라 드려요.', 'mixed-bibim', '비빔면 한 그릇', 'i-dice'],
   ['match', '나에게 맞는 라면 찾기', '다섯 가지 질문에 답하면 도감 속 라면 가운데 입맛에 맞을 세 가지를 골라 드려요.', 'club-recipe', '냄비에서 끓고 있는 라면', 'i-heart'],
   ['quiz', '라면 퀴즈', '세계 라면 상식 10문제. 문제마다 답과 짧은 이야기가 따라 나와요.', 'archive-card', '라면 사진 카드를 꽂아 둔 나무 서랍', 'i-help'],
+  ['quest', '라면 도전 과제', '세계 TOP 10 정복, 맵기 사다리 완주, 세계 일주까지. 먹어 본 라면에 표시하며 하나씩 채워 가요.', 'record-notebook', '라면 기록을 적은 공책', 'i-trophy'],
+  ['chosung', '라면 초성 퀴즈', 'ㅅㄹㅁ은 신라면. 초성만 보고 라면 이름을 맞혀 보세요.', 'cup', '컵라면 한 개', 'i-search'],
 ];
 const labTabs = (cur) => `<nav class="sub-tabs" aria-label="취향실험실 메뉴"><a href="/lab/"${cur === '' ? ' aria-current="page"' : ''}>실험실 홈</a>${LAB.map(([k, t]) => `<a href="/lab/${k}/"${cur === k ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</nav>`;
 
@@ -52,6 +54,8 @@ export const labPages = () => [
   ['lab/heat', labPage('heat', '맵기 사다리', '라면 회사가 밝혀 기사에 실린 스코빌 지수(SHU)로 매운 순서를 줄 세웠어요. 막대 오른쪽 숫자는 신라면(3,400 SHU)의 몇 배인지예요.', heatHTML(), '신라면, 불닭볶음면, 핵불닭, 틈새라면, 킹뚜껑까지 라면 회사가 밝힌 스코빌 지수로 줄 세운 맵기 사다리.', '')],
   ['lab/pick', labPage('pick', '오늘의 라면 뽑기', '고르기 어려운 날엔 뽑기에 맡겨 보세요. 조건을 정하면 그 안에서 하나를 골라 드려요.', pickHTML(), '나라, 맵기, 종류를 고르면 오늘 먹을 라면 하나를 골라 주는 라면 뽑기.', 'fun.js')],
   ['lab/match', labPage('match', '나에게 맞는 라면 찾기', '맵기, 국물, 맛, 나라, 면까지 다섯 가지만 답해 주세요. 도감에 실린 라면 가운데 잘 맞을 세 가지를 골라 드려요.', matchHTML(), '맵기, 국물, 맛, 나라, 면 취향을 고르면 도감 속 라면 가운데 잘 맞을 라면 세 가지를 추천해요.', 'fun.js')],
+  ['lab/quest', labPage('quest', '라면 도전 과제', '주제마다 모아 둔 라면을 하나씩 먹어 보며 채워 가는 목록이에요. 다 채우면 완주 표시가 붙어요.', questHTML(), '세계 TOP 10 정복, 맵기 사다리 완주, 라면 세계 일주, 과자 라면 모으기. 먹어 본 라면에 표시하며 채워 가는 라면 도전 과제.', 'fun.js')],
+  ['lab/chosung', labPage('chosung', '라면 초성 퀴즈', '초성만 보고 라면 이름을 맞혀 보세요. 한 판에 열 문제, 막히면 힌트를 쓸 수 있어요.', chosungHTML(), 'ㅅㄹㅁ은 신라면. 초성만 보고 라면 이름을 맞히는 라면 초성 퀴즈 10문제.', 'fun.js')],
   ['lab/quiz', labPage('quiz', '라면 퀴즈', '문제는 매번 섞여서 나와요. 다 풀면 점수와 함께 더 읽을거리를 보여 드려요.', quizHTML(), '세계 첫 라면부터 나라별 라면 문화까지, 라면 상식 퀴즈 10문제.', 'fun.js')],
 ];
 
@@ -132,6 +136,47 @@ const QUIZ = readJSON('content/quiz.json').questions;
 QUIZ.forEach((x, i) => {
   if (!(x.o && x.o.length === 4 && x.a >= 0 && x.a < 4 && x.why && x.link)) { console.error(`[라면 퀴즈] ${i + 1}번 문제를 확인해 주세요.`); process.exit(1); }
 });
+// 라면 도전 과제: 목록은 도감 자료에서 뽑아요
+const MORE_W = readJSON('content/world-more.json');
+const BY_S = Object.fromEntries(RAMEN.map((r) => [r.s, r]));
+const uniq = (a) => [...new Set(a)];
+const QUESTS = [
+  ['world10', 'i-trophy', '세계 TOP 10 정복', '‘더 라멘 레이터’가 2024~2026년 세계 TOP 10에 올린 라면 가운데 도감에 있는 것들이에요.',
+    uniq(MORE_W.best.lists.filter((l) => l.h.includes('세계 TOP 10')).flatMap((l) => l.rows.map((x) => x[3])).filter(Boolean))],
+  ['heat', 'i-flame', '맵기 사다리 완주', '스코빌 지수가 공개된 라면을 순한 것부터 매운 순서로 놓았어요.',
+    RAMEN.filter((r) => r.shu).sort((a, b) => a.shu.v - b.shu.v).map((r) => r.s)],
+  ['tour', 'i-map', '라면 세계 일주', '도감에 실린 나라마다 라면 하나씩. 한국은 신라면으로 출발해요.',
+    Object.keys(COUNTRIES).map((co) => (co === 'kr' ? 'shin-ramyun' : (RAMEN.find((r) => r.co === co) || {}).s)).filter(Boolean)],
+  ['old', 'i-clock', '오래된 라면 열두 가지', '도감에서 나온 해가 확인된 라면 가운데 가장 오래된 열두 가지예요.',
+    RAMEN.filter((r) => r.y && r.st !== 'off').sort((a, b) => String(a.y).localeCompare(String(b.y))).slice(0, 12).map((r) => r.s)],
+  ['snack', 'i-dice', '과자 라면 모으기', '끓이지 않고 봉지째 부숴 먹는 세계의 과자 라면이에요.',
+    ['waiwai-chicken', 'rara-chicken', 'weiwang-prince-noodle', 'unif-science-noodle', 'mamee-monster', 'unif-xiaohuanxiong']],
+  ['japan', 'i-pin', '일본 지역 라면 순례', '규슈의 돈코츠부터 홋카이도의 야키소바까지, 그 지역에서 사랑받는 라면이에요.',
+    ['house-umakacchan', 'house-umakacchan-takana', 'marutai-ramen', 'marutai-hakata-tonkotsu', 'marutai-kumamoto-tonkotsu', 'itsuki-kumamoto-red-spicy', 'marutai-nagasaki-champon', 'kinchan-noodle', 'nishiyama-miso-ramen', 'maruchan-yakisoba-bento']],
+];
+for (const [id, , , , list] of QUESTS) for (const x of list) if (!BY_S[x]) { console.error(`[도전 과제] ${id}: 라면 주소 ${x}가 도감에 없어요.`); process.exit(1); }
+function questHTML() {
+  return `<div class="quests" data-quests>
+<p class="quest-sum" data-quest-sum aria-live="polite">먹어 본 라면에 표시해 보세요.</p>
+${QUESTS.map(([id, ic, title, desc, list]) => `<section class="quest" data-quest="${id}" aria-labelledby="h-q-${id}">
+<header class="quest-head"><span class="mania-ico">${icon(ic)}</span><div><h2 id="h-q-${id}">${esc(title)}</h2><p>${esc(desc)}</p></div><b class="quest-n" data-qn>0 / ${list.length}</b></header>
+<div class="quiz-bar"><i data-qbar style="width:0"></i></div>
+<ul class="quest-list">${list.map((x) => { const r = BY_S[x]; return `<li><button type="button" class="quest-chk" data-qs="${x}" aria-pressed="false" aria-label="${esc(r.n)} 먹어 봤어요">${icon('i-check')}</button><a href="/ramen/${x}/">${esc(r.n)}</a><small>${esc(r.co === 'kr' ? r.maker : `${r.coName} · ${r.maker}`)}${r.shu && id === 'heat' ? ` · ${r.shu.v.toLocaleString('ko-KR')} SHU` : ''}</small></li>`; }).join('')}</ul>
+</section>`).join('\n')}
+</div>
+<p class="note">${icon('i-flag')}로그인하면 한 그릇 기록을 남긴 라면이 자동으로 표시돼요. 손으로 누른 표시는 이 기기에만 저장돼요. 해외 라면은 국내에서 구하기 어려운 것도 있어요.</p>`;
+}
+
+// 라면 초성 퀴즈: 문제는 도감 이름으로 그때그때 만들어요
+function chosungHTML() {
+  const chip = (v, label, on) => `<button type="button" class="fchip" data-cho-co="${v}" aria-pressed="${on ? 'true' : 'false'}">${esc(label)}</button>`;
+  return `<div class="quiz cho" data-cho>
+<div class="fchips cho-scope" role="group" aria-label="문제 범위">${chip('kr', '국내 라면', true)}${chip('xx', '해외 라면')}${chip('', '모두')}</div>
+<div data-cho-box><p class="muted">문제를 준비하는 중이에요</p></div>
+</div>
+<p class="note">${icon('i-flag')}문제는 도감에 실린 라면 이름으로 만들어요. 띄어쓰기와 된소리는 틀려도 맞은 것으로 쳐요.</p>`;
+}
+
 function quizHTML() {
   return `<div class="quiz" data-quiz><p class="muted">퀴즈를 준비하는 중이에요</p></div>
 <script type="application/json" id="quiz-data">${JSON.stringify(QUIZ).replace(/</g, '\\u003c')}</script>

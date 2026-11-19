@@ -131,7 +131,7 @@ const urls = [
   ['/', '1.0'], ['/ramen/', '0.9'], ['/rank/', '0.9'], ['/rank/rules/', '0.5'], ['/new/', '0.7'], ['/shop/', '0.6'],
   ['/world/', '0.8'], ['/world/best/', '0.7'], ['/world/timeline/', '0.7'], ['/world/brands/', '0.6'], ...WORLD_PAGES.map((c) => [`/world/${c.code}/`, '0.7']),
   ['/story/', '0.8'], ['/story/timeline/', '0.7'], ['/story/words/', '0.7'], ...STORIES.map((s) => [`/story/${s.s}/`, '0.7']),
-  ['/lab/', '0.6'], ['/lab/map/', '0.6'], ['/lab/compare/', '0.6'], ['/lab/worldcup/', '0.6'], ['/lab/timer/', '0.6'], ['/lab/water/', '0.5'], ['/lab/heat/', '0.6'], ['/lab/pick/', '0.5'], ['/lab/quiz/', '0.5'], ['/lab/match/', '0.6'],
+  ['/lab/', '0.6'], ['/lab/map/', '0.6'], ['/lab/compare/', '0.6'], ['/lab/worldcup/', '0.6'], ['/lab/timer/', '0.6'], ['/lab/water/', '0.5'], ['/lab/heat/', '0.6'], ['/lab/pick/', '0.5'], ['/lab/quiz/', '0.5'], ['/lab/match/', '0.6'], ['/lab/quest/', '0.6'], ['/lab/chosung/', '0.5'],
   ['/club/', '0.6'], ['/club/board/', '0.6'], ['/recipes/', '0.7'], ['/club/feed/', '0.5'], ['/club/events/', '0.5'], ['/club/people/', '0.4'], ['/club/levels/', '0.4'], ['/club/rules/', '0.3'],
   ['/about/', '0.4'], ['/contact/', '0.3'], ['/terms/', '0.2'], ['/privacy/', '0.2'],
   ...RAMEN.map((r) => [`/ramen/${r.s}/`, '0.8']),
