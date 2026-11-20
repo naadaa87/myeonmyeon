@@ -302,7 +302,7 @@
         var buy = r.ramen.filter(function (s) { return MM.BY[s]; });
         var my = j.my;
         render('<article class="rcp-view">' + (r.hidden ? '<p class="notice">운영 규칙에 따라 다른 사람에게는 가려진 레시피예요.</p>' : '') +
-          '<div class="rcp-head">' + (gal || '<div class="rcp-gal rcp-gal-none"><img src="' + (buy[0] ? MM.imgOf(MM.BY[buy[0]]) : '/assets/img/club-recipe.webp') + '" alt=""><span>사진 없이 올린 레시피예요</span></div>') +
+          '<div class="rcp-head">' + (gal || '<div class="rcp-gal rcp-gal-none"><img src="' + (buy[0] ? MM.imgOf(MM.BY[buy[0]], true) : '/assets/img/club-recipe.webp') + '" alt=""><span>사진 없이 올린 레시피예요</span></div>') +
           '<div class="rcp-info"><p class="rcp-ramens">' + (buy.length ? buy.map(function (s) { return '<a class="pill pill-sm" href="/ramen/' + s + '/">' + esc(ramenName(s)) + '</a>'; }).join('') : '<span class="pill pill-sm">라면 레시피</span>') + '</p>' +
           '<h1>' + esc(r.title) + '</h1><p class="post-meta">' + (r.gone ? '탈퇴한 회원' : MM.who(r)) + '<span>' + MM.ago(r.created_at) + (r.updated_at !== r.created_at ? ' (고침)' : '') + '</span><span>조회 ' + r.views + '</span></p>' +
           (r.intro ? '<p class="rcp-intro">' + nl2br(r.intro) + '</p>' : '') +

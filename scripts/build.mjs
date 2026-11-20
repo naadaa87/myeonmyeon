@@ -3,7 +3,7 @@
 // 실행: npm run build  (Cloudflare Pages 빌드 명령도 같아요)
 import fs from 'node:fs';
 import path from 'node:path';
-import { ROOT, OUT, STATIC, BUILD, cfg, SITE, abs, SITE_NAME, RAMEN, BY, MAKERS, cho, ramenSearchText, releaseKey, today, readJSON, esc } from './lib.mjs';
+import { ROOT, OUT, STATIC, BUILD, cfg, SITE, abs, SITE_NAME, RAMEN, BY, MAKERS, cho, ramenSearchText, releaseKey, today, readJSON, esc, PHOTOS, PHOTO_PROBLEMS } from './lib.mjs';
 import { homePage, dogamPage, ramenPage, recordPage, rankPage, rankRulesPage, newPage, shopPage } from './pages-main.mjs';
 import { storyHubPage, storyPage, timelinePage, wordsPage, STORIES } from './pages-story.mjs';
 import { recipeListPage, recipeWritePage, recipeViewPage } from './pages-recipes.mjs';
@@ -22,10 +22,11 @@ function write(rel, data) {
   fs.writeFileSync(file, data);
 }
 const page = (dir, html) => write(dir ? `${dir}/index.html` : 'index.html', html);
-function copyDir(src, dst) {
+function copyDir(src, dst, skip = []) {
   if (!fs.existsSync(src)) return;
   fs.mkdirSync(dst, { recursive: true });
   for (const f of fs.readdirSync(src)) {
+    if (skip.includes(f)) continue;
     const s = path.join(src, f), d = path.join(dst, f);
     if (fs.statSync(s).isDirectory()) copyDir(s, d);
     else fs.copyFileSync(s, d);
@@ -73,7 +74,18 @@ write('404.html', notFoundPage());
 // ---------- 정적 파일 ----------
 copyDir(path.join(STATIC, 'css'), path.join(OUT, 'assets/css'));
 copyDir(path.join(STATIC, 'js'), path.join(OUT, 'assets/js'));
-copyDir(path.join(STATIC, 'img'), path.join(OUT, 'assets/img'));
+// 실물 사진(img/ramen)은 허락 기록이 있는 것만 골라 옮겨요. AI 조리 예시(img/ramen-ai)는 그대로.
+copyDir(path.join(STATIC, 'img'), path.join(OUT, 'assets/img'), ['ramen']);
+for (const r of RAMEN) {
+  if (!r.pic || r.pic.kind !== 'photo') continue;
+  for (const kind of r.pic.detail ? ['thumb', 'square', 'wide'] : ['thumb']) {
+    const to = path.join(OUT, 'assets/img/ramen', kind, `${r.pic.f}.webp`);
+    if (fs.existsSync(to)) continue;
+    fs.mkdirSync(path.dirname(to), { recursive: true });
+    fs.copyFileSync(path.join(STATIC, 'img/ramen', kind, `${r.pic.f}.webp`), to);
+  }
+}
+if (PHOTO_PROBLEMS.length) console.warn('[사진 점검] ' + PHOTO_PROBLEMS.join('\n[사진 점검] '));
 for (const f of ['_headers', 'sw.js']) if (fs.existsSync(path.join(STATIC, f))) fs.copyFileSync(path.join(STATIC, f), path.join(OUT, f));
 
 // 화면에서 쓰는 자료: 서버(server/*-data.js)와 같은 것을 그대로 옮겨 적어요
@@ -106,8 +118,27 @@ write('assets/js/meta.js', meta);
 const compact = RAMEN.map((r) => ({
   s: r.s, n: r.n, m: r.m, mn: r.maker, co: r.co, cn: r.co === 'kr' ? '' : r.coName, ta: r.ta, nd: r.noodle || 'oil', f: r.f || null, c: r.c, hot: r.hot ?? null, st: r.st, ch: r.ch || '', y: r.y || '', yk: releaseKey(r),
   shu: r.shu || null, t: r.t, img: r.img, g: r.groups, q: (ramenSearchText(r) + ' ' + cho(ramenSearchText(r))).toLowerCase(),
+  pi: r.pic ? [r.pic.kind === 'ai' ? 1 : 2, r.pic.f === r.s ? '' : r.pic.f, r.pic.small ? 1 : 0] : null,
 }));
 write('data/ramen.json', JSON.stringify({ built: today, ramen: compact }));
+
+// 운영 관리 › 라면 사진: 출처별 허락 현황 (사진 파일 주소는 넣지 않아요)
+{
+  const used = {}, onCount = { photo: 0, ai: 0 };
+  for (const [s, p] of Object.entries(PHOTOS.photos)) {
+    if (!BY[s]) continue;
+    for (const part of ['pack', 'dish']) for (const [id] of p[part]) (used[id] = used[id] || new Set()).add(s);
+  }
+  for (const r of RAMEN) if (r.pic) onCount[r.pic.kind] += 1;
+  const sources = Object.entries(PHOTOS.sources).map(([id, x]) => ({
+    id, name: x.name, greet: x.greet || '', kind: x.kind, home: x.home, ask: x.ask || '', license: x.license || '', allowed: x.allowed || '',
+    ramen: [...(used[id] || [])].map((s) => [s, BY[s].n]),
+  }));
+  write('data/photo-status.json', JSON.stringify({
+    built: today, total: Object.keys(PHOTOS.photos).length, on: onCount, illus: RAMEN.filter((r) => !r.pic).length,
+    problems: PHOTO_PROBLEMS, sources, repo: cfg.githubRepo || '', branch: cfg.githubBranch || 'main',
+  }));
+}
 
 // 구매 버튼(/go/)이 읽는 상품 목록: 라면 주소 -> 이름, 쿠팡 검색어, 고정 링크
 const items = {};

@@ -229,6 +229,7 @@
     'kpi/engage': ['검색·참여', '지표', kpiEngage, true],
     'kpi/live': ['실시간', '지표', kpiLive],
     content: ['원고 관리', '운영', loadContent],
+    photos: ['라면 사진', '운영', loadPhotos],
     reports: ['제보·오류', '운영', loadReports],
     inquiries: ['문의함', '운영', loadInq],
     community: ['커뮤니티', '운영', loadCm],
@@ -818,6 +819,70 @@
     }
     var row = b.closest('[data-id]'); if (!row || !b.hasAttribute('data-save')) return;
     post('shop/link', { id: row.dataset.id, url: $('[data-url]', row).value.trim() }).then(function (j) { RS.toast(j.ok ? (j.removed ? '링크를 지웠어요' : '저장했어요') : (j.message || '저장하지 못했어요')); });
+  });
+
+  // ---------- 라면 사진 ----------
+  // 실물 사진은 출처(권리자)가 허락한 것만 화면에 나와요. 허락 기록은 content/photos.json의 allowed에 적어요.
+  var photoData = null;
+  var isKo = function (x) { return /[가-힣]/.test(x.name) || /\.kr(\/|$)|naver\.com|tistory\.com|daum\.net/.test(x.home || ''); };
+  function askText(x) {
+    var site = location.origin.replace(/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?/, 'https://myeonmyeon.pages.dev');
+    var list = x.ramen.map(function (r) { return '- ' + r[1]; }).join('\n');
+    var name = x.greet || x.name.replace(/\(네이버 블로그\)$/, '');
+    if (!isKo(x)) {
+      return 'Subject: Permission request to use your ramen photos on Myeonmyeon\n\nHello ' + name + ',\n\n' +
+        'I am [your name], preparing Myeonmyeon (' + site + '), a Korean-language encyclopedia of instant noodles from Korea and around the world.\n\n' +
+        'We would like to show some of your photos on our product pages, with credit and a link back to your original page. They are the package or cooked-noodle photos of these ' + x.ramen.length + ' product(s):\n' + list + '\n\n' +
+        '- Where: product cards and product pages on Myeonmyeon\n- Credit: "Photo: ' + name + '" with a link to your original page under each photo\n- Edits: cropped to fit our layout and resized only\n- Note: the site includes Coupang Partners affiliate links, so it may earn a commission on purchases.\n\n' +
+        'If you are happy for us to use them, please let us know any conditions. If you would rather not, that is completely fine. We will also take down any photo right away whenever you ask.\n\nBest regards,\n[your name]\n[email]';
+    }
+    if (x.kind === '개인') {
+      return '제목: 라면 사진 사용 허락을 여쭙니다 (면면 라면 도감)\n\n안녕하세요, ' + name + '님.\n라면 정보 사이트 ‘면면’(' + site + ')을 준비하고 있는 [이름]입니다.\n\n' +
+        name + '님 글에 올라온 라면 사진이 제품을 잘 보여 줘서, 면면 라면 도감에 출처를 밝히고 싣고 싶어 연락드립니다.\n\n' +
+        '- 쓰고 싶은 사진: 아래 ' + x.ramen.length + '가지 라면의 포장·조리 사진\n' + list + '\n' +
+        '- 쓰는 곳: 면면 라면 도감의 라면 카드와 라면 페이지\n- 표기: 사진 아래에 ‘사진 ' + name + '’과 원래 글 링크를 적어요.\n- 편집: 화면 비율에 맞춰 자르고 크기만 줄여요. 색이나 내용은 바꾸지 않아요.\n- 참고: 사이트에 쿠팡 파트너스 링크가 있어 구매가 일어나면 수수료를 받을 수 있어요.\n\n' +
+        '허락해 주시면 정말 감사하겠습니다. 어려우시면 편하게 거절하셔도 괜찮고, 나중에라도 내려 달라고 하시면 바로 내리겠습니다.\n\n[이름] 드림\n[연락처]';
+    }
+    return '제목: [면면] 라면 도감 제품 사진 사용 허락 요청\n\n안녕하세요. 라면 정보 사이트 ‘면면’(' + site + ')을 준비하고 있는 [이름]입니다.\n\n' +
+      '면면은 국내외 라면을 한곳에 모아 제품 정보와 먹어 본 사람들의 기록을 보여 주는 라면 도감입니다. 라면 페이지에 ' + x.name + '에서 공개한 제품 사진을 쓰고 싶어 허락을 여쭙니다.\n\n' +
+      '- 쓰려는 사진: 아래 ' + x.ramen.length + '가지 제품의 포장 사진과 조리 예시 사진\n' + list + '\n' +
+      '- 쓰는 곳: 면면 라면 도감의 제품 카드와 제품 페이지\n- 표기: 사진 아래에 ‘사진 ' + x.name + '’과 원문 링크를 적습니다.\n- 편집: 화면 비율에 맞춰 자르고 크기만 줄입니다. 색이나 내용은 바꾸지 않습니다.\n- 참고: 사이트에 쿠팡 파트너스 제휴 링크가 있어 구매가 일어나면 수수료를 받을 수 있습니다.\n\n' +
+      '허락해 주시면 정해 주신 범위와 조건 안에서만 쓰고, 요청하시면 언제든 바로 내리겠습니다. 쓰면 안 되는 사진이나 따로 지켜야 할 조건이 있으면 알려 주세요.\n\n[이름] 드림\n[연락처]';
+  }
+  function loadPhotos(p) {
+    fetch('/data/photo-status.json?' + Date.now()).then(function (r) { return r.json(); }).then(function (j) {
+      photoData = j;
+      var ok = j.sources.filter(function (x) { return x.allowed; }).length;
+      var gh = j.repo ? 'https://github.com/' + j.repo : '';
+      var steps = '<ol class="list">' +
+        '<li>권리자에게 허락을 받아요. 출처마다 ‘요청 문안 복사’를 누르면 메일·쪽지에 붙여 넣을 글이 복사돼요.</li>' +
+        '<li>허락을 받으면 ' + (gh ? '<a href="' + gh + '/edit/' + j.branch + '/content/photos.json" target="_blank" rel="noopener">content/photos.json</a>' : 'content/photos.json') + '에서 그 출처의 <code>allowed</code>에 날짜와 방법을 적어요. 예: <code>"2026-12-03 농심 고객상담 메일 회신"</code></li>' +
+        '<li>드라이브 ‘라면도감_제품별_실물사진’의 사진을 ' + (gh ? '<a href="' + gh + '/upload/' + j.branch + '/src/static/img/ramen/thumb" target="_blank" rel="noopener">src/static/img/ramen/thumb</a>' : 'src/static/img/ramen/thumb') + '(1000×800), wide(1440×900), square(1200×1200) 폴더에 같은 이름으로 올려요.</li>' +
+        '<li>1~2분 뒤 다시 배포되면 그 라면의 카드와 페이지에 사진과 출처가 나와요. 허락 기록이 없는 출처의 파일은 올라와 있어도 화면에 쓰지 않아요.</li></ol>' +
+        '<p class="small muted">저장소가 공개라서 파일을 올리는 순간 GitHub에서는 누구나 볼 수 있어요. 허락을 받기 전에는 실물 사진 파일을 올리지 마세요. AI 조리 예시 그림(src/static/img/ramen-ai)은 텍스트로 새로 만든 그림이라 허락 없이 바로 써요.</p>';
+      var rows = j.sources.map(function (x, i) {
+        var st = x.allowed ? '<span class="pill pill-ok">허락: ' + esc(x.allowed) + '</span>' : x.license ? '<span class="pill">공개 이용조건: ' + esc(x.license) + '</span>' : '<span class="pill pill-warn">허락 전</span>';
+        return [
+          '<b>' + esc(x.name) + '</b><br><span class="small muted">' + esc(x.kind) + '</span> <details class="small"><summary>라면 ' + x.ramen.length + '가지</summary>' + x.ramen.map(function (r) { return '<a href="/ramen/' + r[0] + '/" target="_blank" rel="noopener">' + esc(r[1]) + '</a>'; }).join(', ') + '</details>',
+          { h: x.ramen.length, s: x.ramen.length }, st,
+          '<div class="row-btns" style="justify-content:flex-end;margin:0"><button type="button" class="btn btn-sub btn-sm" data-ask="' + i + '">요청 문안 복사</button>' +
+          (x.ask || x.home ? '<a class="btn btn-line btn-sm" href="' + esc(x.ask || x.home) + '" target="_blank" rel="noopener nofollow">' + (x.ask ? '문의 창구' : '사이트') + '</a>' : '') + '</div>',
+        ];
+      });
+      p.innerHTML = '<div class="kpi-grid kpi-4">' +
+        kpiCard('AI 조리 예시', N(j.on.ai) + '가지', '텍스트로 새로 만든 그림') +
+        kpiCard('허락받은 실물 사진', N(j.on.photo) + '가지', '출처 ' + N(ok) + '곳 허락') +
+        kpiCard('실물 사진 후보', N(j.total) + '가지', '드라이브에 준비된 사진') +
+        kpiCard('예시 그림만', N(j.illus) + '가지', '조리 방식 그림') + '</div>' +
+        (j.problems && j.problems.length ? card('확인이 필요한 파일', '<ul class="list">' + j.problems.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul><p class="small muted">허락 기록이 없는 실물 사진 파일은 저장소에서 지워 주세요.</p>') : '') +
+        card('사진을 켜는 순서', steps) +
+        card('출처별 허락 현황', tableHTML(['출처', '라면 수', '상태', ''], rows));
+    }).catch(function (e) { failBox(p); if (window.console) console.error(e); });
+  }
+  $('#a-photos').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-ask]');
+    if (!b || !photoData) return;
+    RS.copyText(askText(photoData.sources[+b.dataset.ask]), '요청 문안을 복사했어요. [이름]과 [연락처]를 채워서 보내 주세요.');
   });
 
   // ---------- 시험 데이터 ----------

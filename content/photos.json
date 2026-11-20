@@ -1,0 +1,7661 @@
+{
+ "about": "라면 실물 사진의 출처 목록이에요. 사진 파일은 권리자의 허락을 받은 뒤에만 저장소에 올려요.",
+ "how": [
+  "권리자에게 허락을 받으면 sources에서 그 출처의 allowed에 허락받은 날짜와 방법을 적어요. 예: \"2026-12-03 농심 고객상담 메일 회신\".",
+  "사진 파일을 src/static/img/ramen/thumb(1000×800), wide(1440×900), square(1200×1200) 폴더에 라면 주소 이름(.webp)으로 올려요. 파일은 드라이브의 라면도감_제품별_실물사진 폴더에 있어요.",
+  "포장 사진(pack) 출처가 허락되면 카드에, 포장과 조리 사진(dish) 출처가 모두 허락되면 라면 페이지 큰 사진에도 나와요. 허락이 적히지 않은 출처의 파일은 올라와 있어도 화면과 배포 파일에 넣지 않아요.",
+  "저장소가 공개라서 파일을 올리는 순간 GitHub에서는 보여요. 허락을 받기 전에는 파일을 올리지 마세요."
+ ],
+ "updated": "2026-11-20",
+ "sources": {
+  "ottogi": {
+   "name": "오뚜기(오뚜기몰·뉴스룸)",
+   "kind": "제조사",
+   "home": "https://www.ottogi.co.kr",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "nongshim": {
+   "name": "농심(농심몰·보도자료)",
+   "kind": "제조사",
+   "home": "https://www.nongshim.com",
+   "ask": "https://www.nongshim.com/customer/overview/index",
+   "license": "",
+   "allowed": ""
+  },
+  "samyang": {
+   "name": "삼양식품",
+   "kind": "제조사",
+   "home": "https://www.samyangfoods.com",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "paldo": {
+   "name": "팔도",
+   "kind": "제조사",
+   "home": "https://www.paldofood.co.kr",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "nissin": {
+   "name": "닛신식품(日清食品)",
+   "kind": "제조사",
+   "home": "https://www.nissin.com",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "harim": {
+   "name": "하림산업(더미식)",
+   "kind": "제조사",
+   "home": "https://the-mishik.com",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "maggi-my": {
+   "name": "네슬레 말레이시아(매기)",
+   "kind": "제조사",
+   "home": "https://www.maggi.my",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "peyoung": {
+   "name": "마루카식품(페양)",
+   "kind": "제조사",
+   "home": "https://www.peyoung.co.jp",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "myojo": {
+   "name": "묘조식품(明星食品)",
+   "kind": "제조사",
+   "home": "https://www.myojofoods.co.jp",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "gumi": {
+   "name": "구미시 낭만관광과",
+   "kind": "공공기관",
+   "home": "https://www.gumi.go.kr",
+   "ask": "",
+   "license": "공공누리 제1유형(출처표시, 상업적 이용·변경 가능)",
+   "allowed": ""
+  },
+  "sirabee": {
+   "name": "sirabee",
+   "kind": "언론",
+   "home": "https://sirabee.com",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "asiae": {
+   "name": "아시아경제",
+   "kind": "언론",
+   "home": "https://www.asiae.co.kr",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "24h-pchome-com-tw": {
+   "name": "24h.pchome.com.tw",
+   "kind": "판매처",
+   "home": "https://24h.pchome.com.tw",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "item-gmarket-co-kr": {
+   "name": "G마켓 · GS25 모바일 교환권 상품",
+   "kind": "판매처",
+   "home": "https://item.gmarket.co.kr",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "www-y-mart-de": {
+   "name": "Y-Mart",
+   "kind": "판매처",
+   "home": "https://www.y-mart.de",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "icheck-vn": {
+   "name": "icheck.vn",
+   "kind": "판매처",
+   "home": "https://icheck.vn",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "instantramen-com": {
+   "name": "instantramen.com",
+   "kind": "판매처",
+   "home": "https://instantramen.com",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "japanfield-net": {
+   "name": "japanfield.net",
+   "kind": "판매처",
+   "home": "https://japanfield.net",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "mikoplace-com": {
+   "name": "mikoplace.com",
+   "kind": "판매처",
+   "home": "https://mikoplace.com",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "www-lazada-com-ph": {
+   "name": "www.lazada.com.ph",
+   "kind": "판매처",
+   "home": "https://www.lazada.com.ph",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "www-miyanomayu-com": {
+   "name": "www.miyanomayu.com",
+   "kind": "판매처",
+   "home": "https://www.miyanomayu.com",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "www-ndutoyou-com": {
+   "name": "www.ndutoyou.com",
+   "kind": "판매처",
+   "home": "https://www.ndutoyou.com",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "www-rawota-hiroshima-jp": {
+   "name": "www.rawota.hiroshima.jp",
+   "kind": "판매처",
+   "home": "https://www.rawota.hiroshima.jp",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "www-ukcnshop-com": {
+   "name": "www.ukcnshop.com",
+   "kind": "판매처",
+   "home": "https://www.ukcnshop.com",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "www-umall-com-au": {
+   "name": "www.umall.com.au",
+   "kind": "판매처",
+   "home": "https://www.umall.com.au",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "www-weee-com": {
+   "name": "www.weee.com",
+   "kind": "판매처",
+   "home": "https://www.weee.com",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "yuann-tw": {
+   "name": "yuann.tw",
+   "kind": "판매처",
+   "home": "https://yuann.tw",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "lottemartzetta-com": {
+   "name": "롯데마트 제타",
+   "kind": "판매처",
+   "home": "https://lottemartzetta.com",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "www-kurly-com": {
+   "name": "컬리",
+   "kind": "판매처",
+   "home": "https://www.kurly.com",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "www-costco-co-kr": {
+   "name": "코스트코 코리아",
+   "kind": "판매처",
+   "home": "https://www.costco.co.kr",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "pikich89": {
+   "name": "지영준 라면 평론가(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/pikich89",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "ramenrater": {
+   "name": "Hans Lienesch · The Ramen Rater",
+   "kind": "개인",
+   "home": "https://www.theramenrater.com",
+   "ask": "",
+   "license": "",
+   "allowed": "",
+   "greet": "Hans"
+  },
+  "www-youtube-com-watch-2": {
+   "name": "www.youtube.com",
+   "kind": "개인",
+   "home": "https://www.youtube.com/watch?v=zpAYHNO8Gv4",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-sese9": {
+   "name": "꾸부기(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/sese9",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "ssong6604-tistory-com": {
+   "name": "DuDu0307 · 내 작은 서랍속의 일기",
+   "kind": "개인",
+   "home": "https://ssong6604.tistory.com",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "family-gram-tistory-com": {
+   "name": "FamilyGram",
+   "kind": "개인",
+   "home": "https://family-gram.tistory.com",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "mrmo-tistory-com": {
+   "name": "Mr. Mo · 노총각 자취남 라이프 앤 리뷰",
+   "kind": "개인",
+   "home": "https://mrmo.tistory.com",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-soojh0331": {
+   "name": "SJ(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/soojh0331",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "www-youtube-com-watch-3": {
+   "name": "YouTube · wDqSpIuAED4",
+   "kind": "개인",
+   "home": "https://www.youtube.com/watch?v=wDqSpIuAED4",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "etaiwan-blog": {
+   "name": "etaiwan.blog",
+   "kind": "개인",
+   "home": "https://etaiwan.blog",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-fromj402": {
+   "name": "peace(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/fromj402",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-withfs": {
+   "name": "withfs(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/withfs",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-dsk03064": {
+   "name": "wonvely(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/dsk03064",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-jae5340": {
+   "name": "ㅉㅒ(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/jae5340",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-kingrldus55": {
+   "name": "곡동이와 각동이(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/kingrldus55",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-horadrim77": {
+   "name": "낚만고양이 · 20년차 엔지니어 집사의 디테일 리뷰 채널",
+   "kind": "개인",
+   "home": "https://blog.naver.com/horadrim77",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-nansinna": {
+   "name": "도플이(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/nansinna",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-bmd25720": {
+   "name": "디케이빠(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/bmd25720",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "rani-09-tistory-com": {
+   "name": "라니도리 · 라니도리의 여러가지 블로그",
+   "kind": "개인",
+   "home": "https://rani-09.tistory.com",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-hguhefufhueffuehefh7": {
+   "name": "러블린(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/hguhefufhueffuehefh7",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-8winner": {
+   "name": "레슬리(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/8winner",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "yeamuzin-tistory-com": {
+   "name": "메가트론 · 핵불닭볶음면 시식기",
+   "kind": "개인",
+   "home": "https://yeamuzin.tistory.com",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-toqhrdlsp": {
+   "name": "미식가 왕코(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/toqhrdlsp",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-mitsru79": {
+   "name": "미쯔루(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/mitsru79",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-donnadonna0915": {
+   "name": "방가(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/donnadonna0915",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-eco3345": {
+   "name": "벌칩(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/eco3345",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-busan-like": {
+   "name": "부산스러운(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/busan_like",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-2jieun626": {
+   "name": "비니 · 소소한 일상",
+   "kind": "개인",
+   "home": "https://blog.naver.com/2jieun626",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "sclvup37-tistory-com": {
+   "name": "삼천프로 · 시식 후기",
+   "kind": "개인",
+   "home": "https://sclvup37.tistory.com",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-sunyoung0221": {
+   "name": "소중한 순간의 기록 (sunyoung0221)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/sunyoung0221",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-kjutaeng30": {
+   "name": "솔직한 리뷰어(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/kjutaeng30",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-sseunghyee": {
+   "name": "승혜(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/sseunghyee_",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "shinwoongs-tistory-com": {
+   "name": "신웅 · 신웅의 이것저것",
+   "kind": "개인",
+   "home": "https://shinwoongs.tistory.com",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-yousem9": {
+   "name": "씰더딜(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/yousem9",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "ottogi-review": {
+   "name": "오뚜기몰 구매 후기 작성자",
+   "kind": "개인",
+   "home": "https://www.otokimall.com",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-yumding-ing": {
+   "name": "윰딩(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/yumding-ing",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-ygy0706": {
+   "name": "일상가용(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/ygy0706",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "stopone-tistory-com": {
+   "name": "정PD의 일상 기행 · 조셉스탈린",
+   "kind": "개인",
+   "home": "https://stopone.tistory.com",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "peak-nexon-com": {
+   "name": "제이메르 · 넥슨 Peak",
+   "kind": "개인",
+   "home": "https://peak.nexon.com",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-bbory87": {
+   "name": "주디베리(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/bbory87",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "geniet-co-kr": {
+   "name": "지니어트 후기 · bboya",
+   "kind": "개인",
+   "home": "https://geniet.co.kr",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "geniet-co-kr-3": {
+   "name": "지니어트 후기 · 먹는건다좋아",
+   "kind": "개인",
+   "home": "https://geniet.co.kr",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "geniet-co-kr-2": {
+   "name": "지니어트 후기 · 알수없음",
+   "kind": "개인",
+   "home": "https://geniet.co.kr",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "geniet-co-kr-4": {
+   "name": "지니어트 후기 · 지니5684928",
+   "kind": "개인",
+   "home": "https://geniet.co.kr",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "geniet-co-kr-5": {
+   "name": "지니어트 후기 · 최비아",
+   "kind": "개인",
+   "home": "https://geniet.co.kr",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-kies84": {
+   "name": "초대리(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/kies84",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "www-youtube-com-watch": {
+   "name": "편강수 · YouTube",
+   "kind": "개인",
+   "home": "https://www.youtube.com/watch?v=iCh2KPMzufg",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-avrildefiant0304": {
+   "name": "해맥(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/avrildefiant0304",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-ego2021": {
+   "name": "해피니스(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/ego2021",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-kongblog2447": {
+   "name": "해피콩(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/kongblog2447",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-hamham1013": {
+   "name": "햄햄지(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/hamham1013-",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-hohosy0115": {
+   "name": "호호맘(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/hohosy0115",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  },
+  "blog-naver-com-shfkdchfhr1": {
+   "name": "히린(네이버 블로그)",
+   "kind": "개인",
+   "home": "https://blog.naver.com/shfkdchfhr1",
+   "ask": "",
+   "license": "",
+   "allowed": ""
+  }
+ },
+ "photos": {
+  "shin-ramyun": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2660"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2660"
+    ]
+   ],
+   "altPack": "농심 신라면 5개입 묶음 포장",
+   "altDish": "농심 신라면 5개입 묶음 포장, 검은 그릇에 담은 신라면"
+  },
+  "shin-ramyun-black": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2663"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2663"
+    ]
+   ],
+   "altPack": "농심 신라면 블랙 4개입 묶음 포장",
+   "altDish": "농심 신라면 블랙 4개입 묶음 포장, 사골 국물의 신라면 블랙"
+  },
+  "shin-ramyun-gun": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2661"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2661"
+    ]
+   ],
+   "altPack": "농심 신라면 건면 5개입 묶음 포장",
+   "altDish": "농심 신라면 건면 5개입 묶음 포장, 신라면 건면 조리 예시"
+  },
+  "shin-ramyun-gold": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4529"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4529"
+    ]
+   ],
+   "altPack": "농심 신라면 골드 4개입 묶음 포장",
+   "altDish": "농심 신라면 골드 4개입 묶음 포장, 농심 제품 상세의 조리 예시"
+  },
+  "shin-ramyun-toomba": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4262"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4262"
+    ]
+   ],
+   "altPack": "농심 신라면 툼바 툼바 큰사발 113g 용기",
+   "altDish": "농심 신라면 툼바 툼바 큰사발 113g 용기, 큰사발에 담긴 툼바 면발"
+  },
+  "shin-ramyun-kimchi-bokkeum": {
+   "pack": [
+    [
+     "nongshim",
+     "https://v.daum.net/v/20251104092940272"
+    ]
+   ],
+   "dish": [
+    [
+     "asiae",
+     "https://v.daum.net/v/2670vlOckZ"
+    ]
+   ],
+   "altPack": "농심 신라면 김치볶음면 국내 발매용 낱개 봉지",
+   "altDish": "농심 신라면 김치볶음면 국내 발매용 낱개 봉지, 기자의 실제 시식 사진"
+  },
+  "shin-ramyun-big-bowl": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2712"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2712"
+    ]
+   ],
+   "altPack": "농심 신라면 큰사발면 신라면 큰사발 114g 용기",
+   "altDish": "농심 신라면 큰사발면 신라면 큰사발 114g 용기, 큰사발에 담긴 신라면"
+  },
+  "ansung-tangmyun": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2665"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2665"
+    ]
+   ],
+   "altPack": "농심 안성탕면 5개입 묶음 포장",
+   "altDish": "농심 안성탕면 5개입 묶음 포장, 달걀을 곁들인 안성탕면"
+  },
+  "neoguri": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2639"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2639"
+    ]
+   ],
+   "altPack": "농심 너구리 얼큰한 너구리 5개입 포장",
+   "altDish": "농심 너구리 얼큰한 너구리 5개입 포장, 다시마와 굵은 면발"
+  },
+  "chapagetti": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2674"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2674"
+    ]
+   ],
+   "altPack": "농심 짜파게티 올리브 짜파게티 5개입 포장",
+   "altDish": "농심 짜파게티 올리브 짜파게티 5개입 포장, 짜장 소스를 비빈 면발"
+  },
+  "sari-gomtang": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2653"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2653"
+    ]
+   ],
+   "altPack": "농심 사리곰탕면 5개입 묶음 포장",
+   "altDish": "농심 사리곰탕면 5개입 묶음 포장, 사리곰탕면과 뽀얀 국물"
+  },
+  "yukgaejang-sabalmyun": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2718"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2718"
+    ]
+   ],
+   "altPack": "농심 육개장 사발면 86g 사발면 용기",
+   "altDish": "농심 육개장 사발면 86g 사발면 용기, 사발에 담긴 가는 면과 어묵"
+  },
+  "ojingeo-jjamppong": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2668"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2668"
+    ]
+   ],
+   "altPack": "농심 오징어짬뽕 5개입 묶음 포장",
+   "altDish": "농심 오징어짬뽕 5개입 묶음 포장, 해물을 곁들인 오징어짬뽕"
+  },
+  "jjawang": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2670"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2670"
+    ]
+   ],
+   "altPack": "농심 짜왕 4개입 묶음 포장",
+   "altDish": "농심 짜왕 4개입 묶음 포장, 짜장 소스를 비빈 짜왕 면발"
+  },
+  "tempura-udon": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2731"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2731"
+    ]
+   ],
+   "altPack": "농심 튀김우동 큰사발 111g 큰사발 용기",
+   "altDish": "농심 튀김우동 큰사발 111g 큰사발 용기, 튀김과 어묵을 올린 우동"
+  },
+  "mupama-tangmyun": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2649"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2649"
+    ]
+   ],
+   "altPack": "농심 무파마탕면 4개입 묶음 포장",
+   "altDish": "농심 무파마탕면 4개입 묶음 포장, 무파마탕면 한 그릇과 채소"
+  },
+  "anchovy-kalguksu": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2647"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2647"
+    ]
+   ],
+   "altPack": "농심 멸치칼국수 5개입 묶음 포장",
+   "altDish": "농심 멸치칼국수 5개입 묶음 포장, 젓가락으로 들어 올린 칼국수"
+  },
+  "baehongdong-bibimmyeon": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2650"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2650"
+    ]
+   ],
+   "altPack": "농심 배홍동비빔면 4개입 묶음 포장",
+   "altDish": "농심 배홍동비빔면 4개입 묶음 포장, 비빔면과 배홍동 포장"
+  },
+  "baehongdong-makguksu": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4574"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4574"
+    ]
+   ],
+   "altPack": "농심 배홍동막국수 4개입 묶음 포장",
+   "altDish": "농심 배홍동막국수 4개입 묶음 포장, 농심 제품 상세의 조리 예시"
+  },
+  "dungji-naengmyeon": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2642"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2642"
+    ]
+   ],
+   "altPack": "농심 둥지냉면 동치미물냉면 4개입 포장",
+   "altDish": "농심 둥지냉면 동치미물냉면 4개입 포장, 동치미 육수와 냉면 고명"
+  },
+  "gumi-ramen-festival": {
+   "pack": [
+    [
+     "gumi",
+     "https://www.gumi.go.kr/portal/board/post/view.do?bcIdx=211&idx=844120&mid=0504020000"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4751"
+    ]
+   ],
+   "altPack": "농심 구미라면축제면 5개입 묶음 포장",
+   "altDish": "농심 구미라면축제면 5개입 묶음 포장, 농심 제품 상세의 조리 예시"
+  },
+  "jin-ramen-mild": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/502"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/502"
+    ]
+   ],
+   "altPack": "오뚜기 진라면 순한맛 순한맛 120g × 5봉",
+   "altDish": "오뚜기 진라면 순한맛 순한맛 120g × 5봉, 달걀과 고명을 올린 순한맛"
+  },
+  "jin-ramen-hot": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/503"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/503"
+    ]
+   ],
+   "altPack": "오뚜기 진라면 매운맛 매운맛 120g × 5봉",
+   "altDish": "오뚜기 진라면 매운맛 매운맛 120g × 5봉, 파와 버섯을 올린 매운맛"
+  },
+  "sesame-ramen": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/516"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/516"
+    ]
+   ],
+   "altPack": "오뚜기 참깨라면 115g × 4봉",
+   "altDish": "오뚜기 참깨라면 115g × 4봉, 달걀 고명을 올린 참깨라면"
+  },
+  "yeol-ramen": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/501"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/501"
+    ]
+   ],
+   "altPack": "오뚜기 열라면 120g × 5봉",
+   "altDish": "오뚜기 열라면 120g × 5봉, 검은 그릇에 담은 열라면"
+  },
+  "snack-myeon": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/499"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/499"
+    ]
+   ],
+   "altPack": "오뚜기 스낵면 108g × 5봉",
+   "altDish": "오뚜기 스낵면 108g × 5봉, 위에서 본 스낵면 한 그릇"
+  },
+  "jin-jjamppong": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/507"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/507"
+    ]
+   ],
+   "altPack": "오뚜기 진짬뽕 130g × 4봉",
+   "altDish": "오뚜기 진짬뽕 130g × 4봉, 해물을 곁들인 진짬뽕"
+  },
+  "jin-jjajang": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/506"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/506"
+    ]
+   ],
+   "altPack": "오뚜기 진짜장 135g × 4봉",
+   "altDish": "오뚜기 진짜장 135g × 4봉, 짜장 소스와 굵은 면"
+  },
+  "cup-noodle": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/599"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/599"
+    ]
+   ],
+   "altPack": "오뚜기 컵누들 매콤한맛 37.8g 컵과 6개입 포장",
+   "altDish": "오뚜기 컵누들 매콤한맛 37.8g 컵과 6개입 포장, 젓가락으로 들어 올린 당면"
+  },
+  "jin-bibimmyeon": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/523"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/523"
+    ]
+   ],
+   "altPack": "오뚜기 진비빔면 156g × 4봉",
+   "altDish": "오뚜기 진비빔면 156g × 4봉, 달걀과 오이를 얹은 진비빔면"
+  },
+  "odongtong-myeon": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/526"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/526"
+    ]
+   ],
+   "altPack": "오뚜기 오동통면 다시마 2개 표기 · 120g × 5봉",
+   "altDish": "오뚜기 오동통면 다시마 2개 표기 · 120g × 5봉, 다시마를 곁들인 굵은 우동면"
+  },
+  "gogiri-deulgireum-makguksu": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/463"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/463"
+    ]
+   ],
+   "altPack": "오뚜기 고기리 들기름막국수 들기름막국수 제품 포장",
+   "altDish": "오뚜기 고기리 들기름막국수 들기름막국수 제품 포장, 김과 깨를 곁들인 메밀면"
+  },
+  "jin-milmyeon": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/5965"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otoki.com/pr/news-detail?idx=931"
+    ]
+   ],
+   "altPack": "오뚜기 진밀면 4개입 묶음 포장",
+   "altDish": "오뚜기 진밀면 4개입 묶음 포장, 부산식 밀면 조리 예시와 봉지"
+  },
+  "samyang-ramen": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.co.kr/goods/view?no=100004"
+    ]
+   ],
+   "dish": [
+    [
+     "samyang",
+     "https://www.samyangfoods.co.kr/goods/view?no=100004"
+    ]
+   ],
+   "altPack": "삼양식품 삼양라면 삼양라면 봉지 앞면",
+   "altDish": "삼양식품 삼양라면 삼양라면 봉지 앞면, 젓가락으로 들어 올린 면과 국물"
+  },
+  "buldak": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.co.kr/goods/view?no=100005"
+    ]
+   ],
+   "dish": [
+    [
+     "samyang",
+     "https://www.samyangfoods.co.kr/goods/view?no=100005"
+    ]
+   ],
+   "altPack": "삼양식품 불닭볶음면 오리지널 5개입 포장",
+   "altDish": "삼양식품 불닭볶음면 오리지널 5개입 포장, 검은 접시에 담은 불닭볶음면"
+  },
+  "carbo-buldak": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.co.kr/goods/view?no=100006"
+    ]
+   ],
+   "dish": [
+    [
+     "samyang",
+     "https://www.samyangfoods.co.kr/goods/view?no=100006"
+    ]
+   ],
+   "altPack": "삼양식품 까르보불닭볶음면 까르보 4개입 포장",
+   "altDish": "삼양식품 까르보불닭볶음면 까르보 4개입 포장, 흰 접시에 담은 까르보불닭"
+  },
+  "haek-buldak": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.10x10.co.kr/shopping/category_prd.asp?itemid=3498545"
+    ]
+   ],
+   "dish": [
+    [
+     "yeamuzin-tistory-com",
+     "https://yeamuzin.tistory.com/39"
+    ]
+   ],
+   "altPack": "삼양식품 핵불닭볶음면 핵불닭볶음면 140g 봉지",
+   "altDish": "삼양식품 핵불닭볶음면 핵불닭볶음면 140g 봉지, 흰 그릇에 비벼 담은 핵불닭"
+  },
+  "jjajjaroni": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.co.kr/goods/view?no=100085"
+    ]
+   ],
+   "dish": [
+    [
+     "samyang",
+     "https://www.samyangfoods.co.kr/goods/view?no=100085"
+    ]
+   ],
+   "altPack": "삼양식품 짜짜로니 짜짜로니 봉지 앞면",
+   "altDish": "삼양식품 짜짜로니 짜짜로니 봉지 앞면, 젓가락으로 들어 올린 짜장면"
+  },
+  "nagasaki-jjamppong": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.co.kr/goods/view?no=100001"
+    ]
+   ],
+   "dish": [
+    [
+     "samyang",
+     "https://www.samyangfoods.co.kr/goods/view?no=100001"
+    ]
+   ],
+   "altPack": "삼양식품 나가사끼짬뽕 나가사끼짬뽕 봉지 앞면",
+   "altDish": "삼양식품 나가사끼짬뽕 나가사끼짬뽕 봉지 앞면, 해물과 달걀을 올린 짬뽕"
+  },
+  "jjareureu": {
+   "pack": [
+    [
+     "www-costco-co-kr",
+     "https://www.costco.co.kr/Foods/Processed-Food/PastaNoodles/Samyang-Charr-Ramyun-140g-x-16/p/699134"
+    ]
+   ],
+   "dish": [
+    [
+     "www-costco-co-kr",
+     "https://www.costco.co.kr/Foods/Processed-Food/PastaNoodles/Samyang-Charr-Ramyun-140g-x-16/p/699134"
+    ]
+   ],
+   "altPack": "삼양식품 짜르르 낱개 봉지 정면",
+   "altDish": "삼양식품 짜르르 낱개 봉지 정면, 조리한 짜장라면"
+  },
+  "paldo-bibimmyeon": {
+   "pack": [
+    [
+     "paldo",
+     "https://paldofood.co.kr/product/noodle/12"
+    ]
+   ],
+   "dish": [
+    [
+     "paldo",
+     "https://paldofood.co.kr/product/archive/1148"
+    ]
+   ],
+   "altPack": "팔도 팔도비빔면 오리지널 비빔면 봉지",
+   "altDish": "팔도 팔도비빔면 오리지널 비빔면 봉지, 달걀과 오이를 올린 비빔면"
+  },
+  "paldo-bibimmyeon-blue": {
+   "pack": [
+    [
+     "paldo",
+     "https://paldofood.co.kr/product/noodle/183"
+    ]
+   ],
+   "dish": [
+    [
+     "paldo",
+     "https://paldofood.co.kr/product/archive/1506"
+    ]
+   ],
+   "altPack": "팔도 팔도비빔면 더 블루 낱개 봉지 정면",
+   "altDish": "팔도 팔도비빔면 더 블루 낱개 봉지 정면, 중면과 비빔장 조리 예시"
+  },
+  "king-lid": {
+   "pack": [
+    [
+     "paldo",
+     "https://paldofood.co.kr/product/noodle/11"
+    ]
+   ],
+   "dish": [
+    [
+     "paldo",
+     "https://paldofood.co.kr/product/archive/1145"
+    ]
+   ],
+   "altPack": "팔도 왕뚜껑 오리지널 큰컵 뚜껑",
+   "altDish": "팔도 왕뚜껑 오리지널 큰컵 뚜껑, 둥근 사발에 담은 왕뚜껑"
+  },
+  "king-lid-rabokki": {
+   "pack": [
+    [
+     "lottemartzetta-com",
+     "https://lottemartzetta.com/products/OS8809695257919/details"
+    ]
+   ],
+   "dish": [
+    [
+     "www-kurly-com",
+     "https://www.kurly.com/goods/1002098968"
+    ],
+    [
+     "shinwoongs-tistory-com",
+     "https://shinwoongs.tistory.com/2936"
+    ]
+   ],
+   "altPack": "팔도 왕뚜껑 국물라볶이 큰컵 뚜껑 및 측면",
+   "altDish": "팔도 왕뚜껑 국물라볶이 큰컵 뚜껑과 측면, 큰컵에 조리한 면과 붉은 국물"
+  },
+  "dosirak": {
+   "pack": [
+    [
+     "paldo",
+     "https://paldofood.co.kr/product/noodle/5"
+    ]
+   ],
+   "dish": [
+    [
+     "paldo",
+     "https://paldofood.co.kr/product/archive/1063"
+    ]
+   ],
+   "altPack": "팔도 도시락 오리지널 사각 용기",
+   "altDish": "팔도 도시락 오리지널 사각 용기, 사각 용기에 담은 오리지널 도시락"
+  },
+  "kokomyeon": {
+   "pack": [
+    [
+     "paldo",
+     "https://paldofood.co.kr/product/noodle/4"
+    ]
+   ],
+   "dish": [
+    [
+     "paldo",
+     "https://paldofood.co.kr/product/archive/1361"
+    ]
+   ],
+   "altPack": "팔도 꼬꼬면 꼬꼬면 봉지 앞면",
+   "altDish": "팔도 꼬꼬면 꼬꼬면 봉지 앞면, 맑은 국물과 닭고기 고명"
+  },
+  "teumsae-ramen": {
+   "pack": [
+    [
+     "paldo",
+     "https://paldofood.co.kr/product/noodle/179"
+    ]
+   ],
+   "dish": [
+    [
+     "paldo",
+     "https://paldofood.co.kr/product/archive/1165"
+    ]
+   ],
+   "altPack": "팔도 틈새라면 빨계떡 오리지널 빨계떡 봉지",
+   "altDish": "팔도 틈새라면 빨계떡 오리지널 빨계떡 봉지, 검은 그릇에 담은 빨계떡"
+  },
+  "themisik-jangin": {
+   "pack": [
+    [
+     "harim",
+     "https://the-mishik.com/product/detail.html?product_no=1456"
+    ]
+   ],
+   "dish": [
+    [
+     "harim",
+     "https://the-mishik.com/product/detail.html?product_no=1456"
+    ]
+   ],
+   "altPack": "하림 더미식 장인라면 얼큰한맛 은색·적색 봉지 앞면",
+   "altDish": "하림 더미식 장인라면 얼큰한맛 은색·적색 봉지 앞면, 검은 그릇에 담은 장인라면 얼큰한맛"
+  },
+  "themisik-bibimmyeon": {
+   "pack": [
+    [
+     "harim",
+     "https://the-mishik.com/product/detail.html?product_no=1667"
+    ]
+   ],
+   "dish": [
+    [
+     "harim",
+     "https://the-mishik.com/product/detail.html?product_no=1667"
+    ]
+   ],
+   "altPack": "하림 더미식 비빔면 은색·분홍색 비빔면 봉지 앞면",
+   "altDish": "하림 더미식 비빔면 은색·분홍색 비빔면 봉지 앞면, 검은 그릇에 담은 붉은 비빔면과 김 고명"
+  },
+  "gs25-yongsa-ramen": {
+   "pack": [
+    [
+     "peak-nexon-com",
+     "https://peak.nexon.com/post/697"
+    ]
+   ],
+   "dish": [
+    [
+     "peak-nexon-com",
+     "https://peak.nexon.com/post/697"
+    ]
+   ],
+   "altPack": "GS25 용사라면 메이플스토리 캐릭터가 그려진 용사라면 컵",
+   "altDish": "GS25 용사라면 메이플스토리 캐릭터가 그려진 용사라면 컵, 파란버섯 모양 어묵이 보이는 용사라면"
+  },
+  "gs25-omori-kimchi-jjigae": {
+   "pack": [
+    [
+     "item-gmarket-co-kr",
+     "https://item.gmarket.co.kr/Item?goodsCode=4556559073"
+    ]
+   ],
+   "dish": [
+    [
+     "ssong6604-tistory-com",
+     "https://ssong6604.tistory.com/entry/GS25-편의점-오모리-김치찌개-라면-솔직-후기"
+    ]
+   ],
+   "altPack": "GS25 오모리김치찌개라면 오모리 김치찌개라면 낱개 봉지 앞면",
+   "altDish": "GS25 오모리김치찌개라면 오모리 김치찌개라면 낱개 봉지 앞면, 봉지면을 끓여 초록색 그릇에 담은 김치찌개라면",
+   "note": "CC BY-NC-ND 4.0 조리 사진: 상업적 이용과 변경이 금지돼 허락 없이는 쓸 수 없어요."
+  },
+  "gs25-omori-kimcheese-bokkeum": {
+   "pack": [
+    [
+     "rani-09-tistory-com",
+     "https://rani-09.tistory.com/entry/GS25-유어스-오모리-김치즈볶음면-리뷰"
+    ]
+   ],
+   "dish": [
+    [
+     "rani-09-tistory-com",
+     "https://rani-09.tistory.com/entry/GS25-유어스-오모리-김치즈볶음면-리뷰"
+    ]
+   ],
+   "altPack": "GS25 오모리김치즈볶음면 김치즈볶음면 글씨가 보이는 컵과 뚜껑",
+   "altDish": "GS25 오모리김치즈볶음면 김치즈볶음면 글씨가 보이는 컵과 뚜껑, 치즈 소스에 비빈 면을 젓가락으로 들어 올린 모습"
+  },
+  "neoguri-mild": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2637"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2637"
+    ]
+   ],
+   "altPack": "농심 순한너구리 120g 5개입 묶음 봉지",
+   "altDish": "농심 순한너구리 120g 5개입 묶음 봉지, 다시마와 면을 담은 순한너구리 한 그릇"
+  },
+  "neoguri-cup": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=3313"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=3313"
+    ]
+   ],
+   "altPack": "농심 너구리컵 62g 컵 앞면",
+   "altDish": "농심 너구리컵 62g 컵 앞면, 빨간 컵 옆에 담은 너구리 면과 해물 고명"
+  },
+  "neoguri-big-bowl": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2684"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2684"
+    ]
+   ],
+   "altPack": "농심 너구리큰사발 111g 큰사발 앞면",
+   "altDish": "농심 너구리큰사발 111g 큰사발 앞면, 큰사발 옆에 담은 너구리 면과 해물 고명"
+  },
+  "neoguri-mild-cup": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2686"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2686"
+    ]
+   ],
+   "altPack": "농심 순한너구리 컵 63g 컵 앞면",
+   "altDish": "농심 순한너구리 컵 63g 컵 앞면, 노란 컵 옆에 담은 순한너구리 한 그릇"
+  },
+  "angry-rta": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2638"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2638"
+    ]
+   ],
+   "altPack": "농심 앵그리RtA 121g 5개입 묶음 봉지",
+   "altDish": "농심 앵그리RtA 121g 5개입 묶음 봉지, 조개와 다시마를 올린 앵그리너구리"
+  },
+  "shin-ramyun-rose": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4647"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4647"
+    ]
+   ],
+   "altPack": "농심 신라면 로제 134g 4개입 묶음 봉지",
+   "altDish": "농심 신라면 로제 134g 4개입 묶음 봉지, 분홍 그릇에서 들어 올린 로제 면발"
+  },
+  "shin-ramyun-rose-big-bowl": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4637"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4637"
+    ]
+   ],
+   "altPack": "농심 신라면 로제 큰사발면 108g 큰사발 앞면",
+   "altDish": "농심 신라면 로제 큰사발면 108g 큰사발 앞면, 분홍 큰사발에 담은 로제 면과 방울토마토"
+  },
+  "shin-ramyun-toomba-bag": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4274"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4274"
+    ]
+   ],
+   "altPack": "농심 신라면툼바 137g 4개입 묶음 봉지",
+   "altDish": "농심 신라면툼바 137g 4개입 묶음 봉지, 접시에 담아 들어 올린 툼바 면발"
+  },
+  "shin-ramyun-the-red": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=3959"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=3959"
+    ]
+   ],
+   "altPack": "농심 신라면 더 레드 123g 4개입 묶음 봉지",
+   "altDish": "농심 신라면 더 레드 123g 4개입 묶음 봉지, 붉은 봉지 옆 검은 그릇에 끓인 신라면 더 레드"
+  },
+  "shin-ramyun-the-red-big-bowl": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4042"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4042"
+    ]
+   ],
+   "altPack": "농심 신라면 더 레드 큰사발면 117g 큰사발 앞면",
+   "altDish": "농심 신라면 더 레드 큰사발면 117g 큰사발 앞면, 더 레드 큰사발과 붉은 국물 한 그릇"
+  },
+  "shin-ramyun-cup": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2711"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2711"
+    ]
+   ],
+   "altPack": "농심 신라면컵 65g 컵 앞면",
+   "altDish": "농심 신라면컵 65g 컵 앞면, 작은 그릇에서 젓가락으로 들어 올린 신라면"
+  },
+  "shin-ramyun-black-sabal": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2706"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2706"
+    ]
+   ],
+   "altPack": "농심 신라면블랙사발 101g 사발 앞면",
+   "altDish": "농심 신라면블랙사발 101g 사발 앞면, 신라면블랙사발 포장과 버섯을 올린 국물"
+  },
+  "shin-ramyun-gun-sabal": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2704"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2704"
+    ]
+   ],
+   "altPack": "농심 신라면건면 사발 77g 사발 앞면",
+   "altDish": "농심 신라면건면 사발 77g 사발 앞면, 버섯과 고추를 올린 신라면건면"
+  },
+  "ansung-mild": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4013"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4013"
+    ]
+   ],
+   "altPack": "농심 순하군 안성탕면 125g 5개입 묶음 봉지",
+   "altDish": "농심 순하군 안성탕면 125g 5개입 묶음 봉지, 달걀노른자 옆에서 들어 올린 순하군 안성탕면"
+  },
+  "ansung-seafood": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2666"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2666"
+    ]
+   ],
+   "altPack": "농심 해물안성탕면 112g 5개입 묶음 봉지",
+   "altDish": "농심 해물안성탕면 112g 5개입 묶음 봉지, 홍합과 고추를 올린 해물안성탕면"
+  },
+  "ansung-cup": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2714"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2714"
+    ]
+   ],
+   "altPack": "농심 안성탕면컵 66g 컵 6개입 포장",
+   "altDish": "농심 안성탕면컵 66g 컵 6개입 포장, 양은냄비에 달걀을 곁들인 안성탕면"
+  },
+  "nongshim-ramyun": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4317"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4317"
+    ]
+   ],
+   "altPack": "농심 농심라면 124g 4개입 묶음 봉지",
+   "altDish": "농심 농심라면 124g 4개입 묶음 봉지, 고기와 달걀지단을 올린 농심라면"
+  },
+  "nongshim-ramyun-big-bowl": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4484"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4484"
+    ]
+   ],
+   "altPack": "농심 농심라면큰사발면 95g 큰사발 앞면",
+   "altDish": "농심 농심라면큰사발면 95g 큰사발 앞면, 농심라면 큰사발 옆에 차린 한 그릇"
+  },
+  "soon-ramyun": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4624"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4624"
+    ]
+   ],
+   "altPack": "농심 순라면 100g 4개입 묶음 봉지",
+   "altDish": "농심 순라면 100g 4개입 묶음 봉지, 채소와 버섯이 보이는 순라면"
+  },
+  "gamja-myeon": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2634"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2634"
+    ]
+   ],
+   "altPack": "농심 감자면 117g 5개입 묶음 봉지",
+   "altDish": "농심 감자면 117g 5개입 묶음 봉지, 감자면 봉지와 파를 곁들인 국물 한 그릇"
+  },
+  "kimchi-sabalmyun": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2679"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2679"
+    ]
+   ],
+   "altPack": "농심 김치사발면 86g 사발 앞면",
+   "altDish": "농심 김치사발면 86g 사발 앞면, 흰 사발에 담은 면과 젓가락으로 집은 김치"
+  },
+  "kimchi-big-bowl": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2681"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2681"
+    ]
+   ],
+   "altPack": "농심 김치큰사발 112g 큰사발 앞면",
+   "altDish": "농심 김치큰사발 112g 큰사발 앞면, 김치큰사발에서 젓가락으로 집은 김치"
+  },
+  "yukgaejang-ramyun": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2669"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2669"
+    ]
+   ],
+   "altPack": "농심 육개장라면 116g 4개입 묶음 봉지",
+   "altDish": "농심 육개장라면 116g 4개입 묶음 봉지, 그릇에 담은 육개장라면과 고기·파 고명"
+  },
+  "yukgaejang-big-bowl": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2720"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2720"
+    ]
+   ],
+   "altPack": "농심 육개장 큰사발 110g 큰사발 앞면",
+   "altDish": "농심 육개장 큰사발 110g 큰사발 앞면, 큰사발에 담은 육개장 면과 어묵"
+  },
+  "saeutang-myeon": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4464"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4464"
+    ]
+   ],
+   "altPack": "농심 새우탕면 122g 4개입 묶음 봉지",
+   "altDish": "농심 새우탕면 122g 4개입 묶음 봉지, 봉지 옆에 새우를 올린 새우탕면"
+  },
+  "saeutang-cup": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2698"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2698"
+    ]
+   ],
+   "altPack": "농심 새우탕컵면 67g 컵 앞면",
+   "altDish": "농심 새우탕컵면 67g 컵 앞면, 새우탕 컵 옆에 차린 새우탕 한 그릇"
+  },
+  "saeutang-big-bowl": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2699"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2699"
+    ]
+   ],
+   "altPack": "농심 새우탕큰사발 115g 큰사발 앞면",
+   "altDish": "농심 새우탕큰사발 115g 큰사발 앞면, 새우탕 큰사발 옆에 차린 새우탕 한 그릇"
+  },
+  "sari-gomtang-cup": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2694"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2694"
+    ]
+   ],
+   "altPack": "농심 사리곰탕컵 61g 컵 앞면",
+   "altDish": "농심 사리곰탕컵 61g 컵 앞면, 사리곰탕컵 옆에 차린 뽀얀 국물과 달걀지단"
+  },
+  "sari-gomtang-big-bowl": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2695"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2695"
+    ]
+   ],
+   "altPack": "농심 사리곰탕큰사발 111g 큰사발 앞면",
+   "altDish": "농심 사리곰탕큰사발 111g 큰사발 앞면, 사리곰탕큰사발 옆에 차린 뽀얀 국물과 달걀지단"
+  },
+  "ojingeo-jjamppong-cup": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2715"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2715"
+    ]
+   ],
+   "altPack": "농심 오징어짬뽕컵 67g 컵 앞면",
+   "altDish": "농심 오징어짬뽕컵 67g 컵 앞면, 해물과 채소를 올리고 젓가락으로 들어 올린 오징어짬뽕"
+  },
+  "ojingeo-jjamppong-big-bowl": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2717"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2717"
+    ]
+   ],
+   "altPack": "농심 오징어짬뽕큰사발 115g 큰사발 앞면",
+   "altDish": "농심 오징어짬뽕큰사발 115g 큰사발 앞면, 포장 여러 개와 검은 그릇에 차린 오징어짬뽕"
+  },
+  "sacheon-baek-jjamppong": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2654"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2654"
+    ]
+   ],
+   "altPack": "농심 사천백짬뽕 94g 4개입 묶음 봉지",
+   "altDish": "농심 사천백짬뽕 94g 4개입 묶음 봉지, 맑은 국물과 버섯·채소 위로 들어 올린 면발"
+  },
+  "sacheon-baek-jjamppong-sabal": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=3792"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=3792"
+    ]
+   ],
+   "altPack": "농심 사천백짬뽕사발 75g 사발 앞면",
+   "altDish": "농심 사천백짬뽕사발 75g 사발 앞면, 사천백짬뽕 사발에 담긴 면과 채소 고명"
+  },
+  "sacheon-chapagetti": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2672"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2672"
+    ]
+   ],
+   "altPack": "농심 사천짜파게티 137g 4개입 묶음 봉지",
+   "altDish": "농심 사천짜파게티 137g 4개입 묶음 봉지, 검은 접시에서 젓가락으로 들어 올린 사천짜파게티"
+  },
+  "sacheon-chapagetti-big-bowl": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2722"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2722"
+    ]
+   ],
+   "altPack": "농심 사천짜파게티 큰사발 115g 큰사발 앞면",
+   "altDish": "농심 사천짜파게티 큰사발 115g 큰사발 앞면, 분홍 배경에 큰사발과 함께 차린 사천짜파게티"
+  },
+  "chapagetti-the-black": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4147"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4147"
+    ]
+   ],
+   "altPack": "농심 짜파게티더블랙 116g 4개입 묶음 봉지",
+   "altDish": "농심 짜파게티더블랙 116g 4개입 묶음 봉지, 검은 접시에 담은 짜파게티더블랙과 큼직한 건더기"
+  },
+  "chapagetti-the-black-sabal": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4290"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4290"
+    ]
+   ],
+   "altPack": "농심 짜파게티더블랙 사발 90g 사발 앞면",
+   "altDish": "농심 짜파게티더블랙 사발 90g 사발 앞면, 더블랙 봉지·사발 앞에 차린 짜장면"
+  },
+  "chapagetti-beombeok": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2723"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2723"
+    ]
+   ],
+   "altPack": "농심 짜파게티범벅 70g 컵 앞면",
+   "altDish": "농심 짜파게티범벅 70g 컵 앞면, 범벅 컵 앞에 오이를 곁들여 담은 짜장면"
+  },
+  "chapagetti-big-bowl": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2725"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2725"
+    ]
+   ],
+   "altPack": "농심 짜파게티큰사발 123g 큰사발 앞면",
+   "altDish": "농심 짜파게티큰사발 123g 큰사발 앞면, 오이채와 함께 담은 짜파게티 면발"
+  },
+  "angry-chapaguri-big-bowl": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2727"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2727"
+    ]
+   ],
+   "altPack": "농심 앵그리짜파구리큰사발 108g 큰사발 앞면",
+   "altDish": "농심 앵그리짜파구리큰사발 108g 큰사발 앞면, 너구리 모양 어묵과 채소를 곁들인 짜파구리"
+  },
+  "caguri-big-bowl": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2687"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2687"
+    ]
+   ],
+   "altPack": "농심 카구리큰사발면 103g 큰사발 앞면",
+   "altDish": "농심 카구리큰사발면 103g 큰사발 앞면, 노란 카구리 용기 옆에 담은 카레 국물과 면"
+  },
+  "rabbokguri-big-bowl": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4541"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4541"
+    ]
+   ],
+   "altPack": "농심 라뽁구리큰사발면 105g 큰사발 앞면",
+   "altDish": "농심 라뽁구리큰사발면 105g 큰사발 앞면, 라뽁구리 용기에서 젓가락으로 들어 올린 붉은 면발"
+  },
+  "tempura-udon-cup": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2729"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2729"
+    ]
+   ],
+   "altPack": "농심 튀김우동컵 62g 컵 앞면",
+   "altDish": "농심 튀김우동컵 62g 컵 앞면, 튀김과 어묵을 올린 우동 국물과 면"
+  },
+  "mupama-big-bowl": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2692"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2692"
+    ]
+   ],
+   "altPack": "농심 무파마큰사발 112g 큰사발 앞면",
+   "altDish": "농심 무파마큰사발 112g 큰사발 앞면, 무파마 용기 옆에 차린 파 고명 국물면"
+  },
+  "ueuktang-big-bowl": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2691"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2691"
+    ]
+   ],
+   "altPack": "농심 우육탕큰사발 115g 큰사발 앞면",
+   "altDish": "농심 우육탕큰사발 115g 큰사발 앞면, 우육탕 용기의 뚜껑을 열어 보이는 국물과 면"
+  },
+  "anchovy-kalguksu-sabal": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=3802"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=3802"
+    ]
+   ],
+   "altPack": "농심 멸치칼국수사발 75g 사발 앞면",
+   "altDish": "농심 멸치칼국수사발 75g 사발 앞면, 그릇에서 건져 올린 칼국수 면발과 조개"
+  },
+  "eolkeun-jang-kalguksu": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2667"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2667"
+    ]
+   ],
+   "altPack": "농심 얼큰장칼국수 103g 4개입 묶음 봉지",
+   "altDish": "농심 얼큰장칼국수 103g 4개입 묶음 봉지, 김과 고추를 올린 얼큰장칼국수"
+  },
+  "bugle-budae": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2651"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2651"
+    ]
+   ],
+   "altPack": "농심 보글보글 부대찌개면 127g 4개입 묶음 봉지",
+   "altDish": "농심 보글보글 부대찌개면 127g 4개입 묶음 봉지, 햄과 소시지를 올린 부대찌개면"
+  },
+  "ramen-king-kimtongkkae": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=3766"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=3766"
+    ]
+   ],
+   "altPack": "농심 라면왕김통깨 100g 4개입 묶음 봉지",
+   "altDish": "농심 라면왕김통깨 100g 4개입 묶음 봉지, 주황색 봉지 앞에 담은 김·깨 고명의 라면"
+  },
+  "baehongdong-jjoljjol": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=3852"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=3852"
+    ]
+   ],
+   "altPack": "농심 배홍동 쫄쫄면 129g 4개입 묶음 봉지",
+   "altDish": "농심 배홍동 쫄쫄면 129g 4개입 묶음 봉지, 반쪽 달걀을 곁들인 배홍동 쫄쫄면과 젓가락으로 들어 올린 면발"
+  },
+  "baehongdong-kalbim": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4349"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4349"
+    ]
+   ],
+   "altPack": "농심 배홍동칼빔면 128g 4개입 묶음 봉지",
+   "altDish": "농심 배홍동칼빔면 128g 4개입 묶음 봉지, 스테인리스 그릇에 담긴 칼빔면과 달걀, 젓가락으로 들어 올린 면발"
+  },
+  "baehongdong-big-bowl": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4149"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4149"
+    ]
+   ],
+   "altPack": "농심 배홍동큰사발면 116g 큰사발 앞면",
+   "altDish": "농심 배홍동큰사발면 116g 큰사발 앞면, 파란 큰사발에 담은 배홍동 비빔면과 달걀 고명"
+  },
+  "dungji-bibim-naengmyeon": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2643"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2643"
+    ]
+   ],
+   "altPack": "농심 둥지냉면 비빔냉면 4개입 봉지",
+   "altDish": "둥지냉면 비빔냉면 포장과 붉은 양념에 비빈 냉면"
+  },
+  "cool-memil-soba": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2645"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2645"
+    ]
+   ],
+   "altPack": "농심 시원한 메밀소바 127g 5개입 묶음 봉지",
+   "altDish": "농심 시원한 메밀소바 127g 5개입 묶음 봉지, 메밀면을 젓가락으로 집어 장국에 담그는 모습"
+  },
+  "saengsaeng-udon": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=3968"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=3968"
+    ]
+   ],
+   "altPack": "농심 생생우동 253g 봉지형 1인분 외부 상자",
+   "altDish": "농심 생생우동 253g 봉지형 1인분 외부 상자, 어묵과 채소를 곁들인 생생우동 한 그릇"
+  },
+  "saengsaeng-udon-cup": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2701"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2701"
+    ]
+   ],
+   "altPack": "농심 생생우동 용기 276g 용기 앞면",
+   "altDish": "농심 생생우동 용기 276g 용기 앞면, 숟가락으로 국물을 뜬 생생우동 조리 예시"
+  },
+  "saengsaeng-yaki-udon-teriyaki": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=3966"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=3966"
+    ]
+   ],
+   "altPack": "농심 생생야끼우동 데리야끼맛 251g 상자 앞면",
+   "altDish": "농심 생생야끼우동 데리야끼맛 251g 상자 앞면, 가다랑어포를 올린 데리야끼맛 볶음우동과 들어 올린 면발"
+  },
+  "saengsaeng-yaki-udon-hot": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=3964"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=3964"
+    ]
+   ],
+   "altPack": "농심 생생야끼우동 화끈한맛 251g 상자 앞면",
+   "altDish": "농심 생생야끼우동 화끈한맛 251g 상자 앞면, 붉은 소스에 볶은 화끈한맛 우동과 채소"
+  },
+  "saengsaeng-napjak-tteokbokki": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4487"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4487"
+    ]
+   ],
+   "altPack": "농심 생생납작떡볶이면 258g 상자 앞면",
+   "altDish": "농심 생생납작떡볶이면 258g 상자 앞면, 넓적한 면발을 들어 올린 떡볶이면과 삶은 달걀"
+  },
+  "hooroorook-guksu": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2676"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2676"
+    ]
+   ],
+   "altPack": "농심 후루룩국수 92g 4개입 묶음 봉지",
+   "altDish": "농심 후루룩국수 92g 4개입 묶음 봉지, 채소와 지단을 올린 후루룩국수와 포장"
+  },
+  "hooroorook-kalguksu": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2677"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=2677"
+    ]
+   ],
+   "altPack": "농심 후루룩칼국수 97g 4개입 묶음 봉지",
+   "altDish": "농심 후루룩칼국수 97g 4개입 묶음 봉지, 검은 그릇에 담긴 후루룩칼국수와 포장"
+  },
+  "hooroorook-rice-dakgomtang": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4254"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4254"
+    ]
+   ],
+   "altPack": "농심 후루룩쌀국수 닭곰탕 73g 낱개 컵 포장",
+   "altDish": "농심 후루룩쌀국수 닭곰탕 73g 낱개 컵 포장, 닭고기와 노란 고명을 올린 닭곰탕 쌀국수"
+  },
+  "hooroorook-rice-miyeokguk": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=3753"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=3753"
+    ]
+   ],
+   "altPack": "농심 후루룩쌀국수 미역국 74g 낱개 컵 포장",
+   "altDish": "농심 후루룩쌀국수 미역국 74g 낱개 컵 포장, 미역과 달걀 고명을 담은 미역국 쌀국수"
+  },
+  "hooroorook-rice-sogogi": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4257"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4257"
+    ]
+   ],
+   "altPack": "농심 후루룩쌀국수 소고기장국 73g 낱개 컵 포장",
+   "altDish": "농심 후루룩쌀국수 소고기장국 73g 낱개 컵 포장, 소고기와 채소를 얹은 소고기장국 쌀국수"
+  },
+  "noodlefit-saeutang": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4508"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4508"
+    ]
+   ],
+   "altPack": "농심 누들핏 새우탕맛 36g 낱개 컵 포장",
+   "altDish": "농심 누들핏 새우탕맛 36g 낱개 컵 포장, 새우탕맛 용기에 담은 조리 예시"
+  },
+  "noodlefit-kimchi": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4118"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4118"
+    ]
+   ],
+   "altPack": "농심 누들핏 김치사발면맛 37.5g 낱개 컵 포장",
+   "altDish": "농심 누들핏 김치사발면맛 37.5g 낱개 컵 포장, 김치사발면맛 용기에서 젓가락으로 들어 올린 면"
+  },
+  "noodlefit-yukgaejang": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4119"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4119"
+    ]
+   ],
+   "altPack": "농심 누들핏 육개장사발면맛 35.5g 낱개 컵 포장",
+   "altDish": "농심 누들핏 육개장사발면맛 35.5g 낱개 컵 포장, 육개장사발면맛 용기에서 들어 올린 면발"
+  },
+  "noodlefit-chapaguri": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4214"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4214"
+    ]
+   ],
+   "altPack": "농심 누들핏 짜파구리맛 41.5g 낱개 컵 포장",
+   "altDish": "농심 누들핏 짜파구리맛 41.5g 낱개 컵 포장, 짜파구리맛 용기에서 들어 올린 짜장 양념 면발"
+  },
+  "noodlefit-tempura-udon": {
+   "pack": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4337"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://nongshimmall.com/product/detail.html?product_no=4337"
+    ]
+   ],
+   "altPack": "농심 누들핏 튀김우동맛 35.5g 낱개 컵 포장",
+   "altDish": "농심 누들핏 튀김우동맛 35.5g 낱개 컵 포장, 튀김우동맛 용기에서 젓가락으로 들어 올린 면발"
+  },
+  "noodlefit-w-gwangdong-jjamppong": {
+   "pack": [
+    [
+     "nongshim",
+     "https://www.nongshim.com/newsroom/news/view?category=all&id=234&page=5"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://www.nongshim.com/newsroom/news/view?category=all&id=234&page=5"
+    ]
+   ],
+   "altPack": "농심 누들핏W 광동짬뽕 낱개 컵 포장",
+   "altDish": "농심 누들핏W 광동짬뽕 낱개 컵 포장, 넓은 면을 담은 광동짬뽕 조리 예시"
+  },
+  "noodlefit-w-sacheon-malatang": {
+   "pack": [
+    [
+     "nongshim",
+     "https://www.nongshim.com/newsroom/news/view?category=all&id=234&page=5"
+    ]
+   ],
+   "dish": [
+    [
+     "nongshim",
+     "https://www.nongshim.com/newsroom/news/view?category=all&id=234&page=5"
+    ]
+   ],
+   "altPack": "농심 누들핏W 사천마라탕 낱개 컵 포장",
+   "altDish": "농심 누들핏W 사천마라탕 낱개 컵 포장, 넓은 면을 담은 사천마라탕 조리 예시"
+  },
+  "jin-ramen-medium": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/4499"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/4499"
+    ]
+   ],
+   "altPack": "오뚜기 진라면 약간매운맛 120g 5개입 묶음 포장",
+   "altDish": "오뚜기 진라면 약간매운맛 120g 5개입 묶음 포장, 달걀노른자와 고명을 올린 진라면 약간매운맛 한 그릇"
+  },
+  "jin-ramen-hot-cup": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/576"
+    ]
+   ],
+   "dish": [
+    [
+     "geniet-co-kr",
+     "https://geniet.co.kr/review/798445"
+    ]
+   ],
+   "altPack": "오뚜기 진라면 매운맛 컵 65g 낱개 포장",
+   "altDish": "오뚜기 진라면 매운맛 컵 65g 낱개 포장, 삶은 달걀을 곁들인 매운맛 작은 컵의 국물과 면"
+  },
+  "jin-ramen-hot-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/546"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/546"
+    ]
+   ],
+   "altPack": "오뚜기 진라면 매운맛 용기 110g 낱개 포장",
+   "altDish": "오뚜기 진라면 매운맛 용기 110g 낱개 포장, 매운맛 큰 용기에서 젓가락으로 들어 올린 면발"
+  },
+  "jin-ramen-mild-cup": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/575"
+    ]
+   ],
+   "dish": [
+    [
+     "geniet-co-kr-2",
+     "https://geniet.co.kr/review/116427"
+    ]
+   ],
+   "altPack": "오뚜기 진라면 순한맛 컵 65g 낱개 포장",
+   "altDish": "오뚜기 진라면 순한맛 컵 65g 낱개 포장, 순한맛 작은 컵에서 들어 올린 면발"
+  },
+  "jin-ramen-mild-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/545"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/545"
+    ]
+   ],
+   "altPack": "오뚜기 진라면 순한맛 용기 110g 낱개 포장",
+   "altDish": "오뚜기 진라면 순한맛 용기 110g 낱개 포장, 달걀과 고명을 올린 순한맛 큰 용기"
+  },
+  "jin-ramen-medium-cup": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/6345"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/6345"
+    ]
+   ],
+   "altPack": "오뚜기 진라면 약간매운맛 컵 65g 낱개 포장",
+   "altDish": "오뚜기 진라면 약간매운맛 컵 65g 낱개 포장, 약간매운맛 작은 컵에서 들어 올린 면발"
+  },
+  "jin-ramen-medium-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/6343"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/6343"
+    ]
+   ],
+   "altPack": "오뚜기 진라면 약간매운맛 용기 110g 낱개 포장",
+   "altDish": "오뚜기 진라면 약간매운맛 용기 110g 낱개 포장, 약간매운맛 큰 용기에 담은 면과 달걀 고명"
+  },
+  "sesame-ramen-cup": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/574"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/574"
+    ]
+   ],
+   "altPack": "오뚜기 참깨라면 컵 65g 낱개 포장",
+   "altDish": "오뚜기 참깨라면 컵 65g 낱개 포장, 참깨라면 작은 컵에 조미유를 넣는 모습"
+  },
+  "sesame-ramen-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/543"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/543"
+    ]
+   ],
+   "altPack": "오뚜기 참깨라면 용기 110g 낱개 포장",
+   "altDish": "오뚜기 참깨라면 용기 110g 낱개 포장, 참깨라면 큰 용기에 조미유를 넣는 모습"
+  },
+  "yeol-ramen-cup": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/547"
+    ]
+   ],
+   "dish": [
+    [
+     "geniet-co-kr-3",
+     "https://geniet.co.kr/review/508209"
+    ]
+   ],
+   "altPack": "오뚜기 열라면 컵 62g 낱개 포장",
+   "altDish": "오뚜기 열라면 컵 62g 낱개 포장, 열라면 작은 컵의 뚜껑을 연 뒤 보이는 면과 국물"
+  },
+  "yeol-ramen-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/547"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/547"
+    ]
+   ],
+   "altPack": "오뚜기 열라면 용기 105g 낱개 포장",
+   "altDish": "오뚜기 열라면 용기 105g 낱개 포장, 열라면 큰 용기에서 젓가락으로 들어 올린 면발"
+  },
+  "snack-myeon-cup": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/578"
+    ]
+   ],
+   "dish": [
+    [
+     "geniet-co-kr-4",
+     "https://geniet.co.kr/review/829597"
+    ]
+   ],
+   "altPack": "오뚜기 스낵면 컵 62g 낱개 포장",
+   "altDish": "오뚜기 스낵면 컵 62g 낱개 포장, 스낵면 작은 컵의 뚜껑 아래로 보이는 국물과 면"
+  },
+  "snack-myeon-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/548"
+    ]
+   ],
+   "dish": [
+    [
+     "sclvup37-tistory-com",
+     "https://sclvup37.tistory.com/413"
+    ]
+   ],
+   "altPack": "오뚜기 스낵면 용기 90g 낱개 포장",
+   "altDish": "오뚜기 스낵면 용기 90g 낱개 포장, 조리한 스낵면 큰 용기를 위에서 본 모습"
+  },
+  "jin-jjamppong-cup": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/580"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/580"
+    ]
+   ],
+   "altPack": "오뚜기 진짬뽕 컵 75g 낱개 포장",
+   "altDish": "오뚜기 진짬뽕 컵 75g 낱개 포장, 진짬뽕 작은 컵에서 젓가락으로 들어 올린 면"
+  },
+  "jin-jjamppong-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/550"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/550"
+    ]
+   ],
+   "altPack": "오뚜기 진짬뽕 용기 115g 낱개 포장",
+   "altDish": "오뚜기 진짬뽕 용기 115g 낱개 포장, 전자레인지 앞에서 손에 든 진짬뽕 큰 용기"
+  },
+  "jin-jjajang-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/549"
+    ]
+   ],
+   "dish": [
+    [
+     "geniet-co-kr-5",
+     "https://geniet.co.kr/review/381993"
+    ]
+   ],
+   "altPack": "오뚜기 진짜장 용기 115g 낱개 포장",
+   "altDish": "오뚜기 진짜장 용기 115g 낱개 포장, 진짜장 용기 안에서 짜장 소스를 비빈 면과 젓가락"
+  },
+  "jin-bibimmyeon-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/3166"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/3166"
+    ]
+   ],
+   "altPack": "오뚜기 진비빔면 용기 134g 낱개 포장",
+   "altDish": "오뚜기 진비빔면 용기 134g 낱개 포장, 달걀 고명을 곁들인 진비빔면 용기"
+  },
+  "odongtong-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/565"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/565"
+    ]
+   ],
+   "altPack": "오뚜기 오동통면 용기 100g 낱개 포장",
+   "altDish": "오뚜기 오동통면 용기 100g 낱개 포장, 오동통면 용기에서 들어 올린 굵은 면발과 국물"
+  },
+  "jjaslang": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/537"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/537"
+    ]
+   ],
+   "altPack": "오뚜기 짜슐랭 145g 5개입 묶음 포장",
+   "altDish": "오뚜기 짜슐랭 145g 5개입 묶음 포장, 짜장 소스를 입힌 짜슐랭 면을 담은 접시"
+  },
+  "jjaslang-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/3861"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/3861"
+    ]
+   ],
+   "altPack": "오뚜기 짜슐랭 용기 125g 낱개 포장",
+   "altDish": "오뚜기 짜슐랭 용기 125g 낱개 포장, 짜슐랭 용기에서 젓가락으로 들어 올린 면과 오이 고명"
+  },
+  "ma-yeol-ramen": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/2414"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/2414"
+    ]
+   ],
+   "altPack": "오뚜기 마열라면 120g 4개입 묶음 포장",
+   "altDish": "오뚜기 마열라면 120g 4개입 묶음 포장, 그릇에 끓인 마열라면 봉지면의 면발과 마늘 고명"
+  },
+  "ma-yeol-ramen-cup": {
+   "pack": [
+    [
+     "www-y-mart-de",
+     "https://www.y-mart.de/ko/kategori/ramyeon-myeollyu/keomnamyeon/naesu-ottugi-mayeollamyeon-keop.8801045214023-1260936667.html"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://lottemartzetta.com/products/OS8801045189758/details"
+    ]
+   ],
+   "altPack": "오뚜기 마열라면 컵 62g 낱개 포장",
+   "altDish": "오뚜기 마열라면 컵 62g 낱개 포장, 마열라면 작은 컵에서 들어 올린 면발"
+  },
+  "ma-yeol-ramen-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/2476"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/2476"
+    ]
+   ],
+   "altPack": "오뚜기 마열라면 용기 105g 낱개 포장",
+   "altDish": "오뚜기 마열라면 용기 105g 낱개 포장, 마열라면 큰 용기에서 들어 올린 면발"
+  },
+  "the-hot-yeol-ramen": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/4861"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/4861"
+    ]
+   ],
+   "altPack": "오뚜기 더핫 열라면 120g 4개입 묶음 포장",
+   "altDish": "오뚜기 더핫 열라면 120g 4개입 묶음 포장, 냄비에 끓인 더핫 열라면과 고추"
+  },
+  "the-hot-yeol-ramen-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/5052"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/5052"
+    ]
+   ],
+   "altPack": "오뚜기 더핫 열라면 용기 105g 낱개 포장",
+   "altDish": "오뚜기 더핫 열라면 용기 105g 낱개 포장, 붉은 배경에서 더핫 열라면 큰 용기의 면을 들어 올린 모습"
+  },
+  "royal-ramen": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/6252"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/6252"
+    ]
+   ],
+   "altPack": "오뚜기 로열라면 120g 4개입 묶음 포장",
+   "altDish": "오뚜기 로열라면 120g 4개입 묶음 포장, 분홍색 배경의 접시에 담은 로열라면"
+  },
+  "royal-ramen-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/6338"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/6338"
+    ]
+   ],
+   "altPack": "오뚜기 로열라면 용기 100g 낱개 포장",
+   "altDish": "오뚜기 로열라면 용기 100g 낱개 포장, 포크로 면을 섞는 로열라면 용기"
+  },
+  "ottogi-kimchi-ramen": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/512"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/542"
+    ]
+   ],
+   "altPack": "오뚜기 김치라면 120g 5개입 묶음 포장",
+   "altDish": "오뚜기 김치라면 120g 5개입 묶음 포장, 달걀과 김치를 올린 김치라면 조리 예시"
+  },
+  "kimchi-myeon-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/542"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/542"
+    ]
+   ],
+   "altPack": "오뚜기 김치면 용기 105g 낱개 포장",
+   "altDish": "오뚜기 김치면 용기 105g 낱개 포장, 김치면 용기에서 젓가락으로 들어 올린 면"
+  },
+  "jeju-ttot-ttot": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/539"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/539"
+    ]
+   ],
+   "altPack": "오뚜기 제주똣똣라면 135g 4개입 묶음 포장",
+   "altDish": "오뚜기 제주똣똣라면 135g 4개입 묶음 포장, 제주똣똣라면에 돼지고기와 대파 고명을 올린 조리 예시"
+  },
+  "jeju-ttot-ttot-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/6179"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-sunyoung0221",
+     "https://m.blog.naver.com/sunyoung0221/224475381158"
+    ]
+   ],
+   "altPack": "오뚜기 제주똣똣라면 용기 100g 낱개 포장",
+   "altDish": "오뚜기 제주똣똣라면 용기 100g 낱개 포장, 제주똣똣라면 용기에서 젓가락으로 들어 올린 면발"
+  },
+  "ottogi-spaghetti": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/525"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/525"
+    ]
+   ],
+   "altPack": "오뚜기 스파게티 150g 4개입 묶음 포장",
+   "altDish": "오뚜기 스파게티 150g 4개입 묶음 포장, 포크에 감은 스파게티 면발과 그릇"
+  },
+  "beef-miyeokguk-ramen": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/520"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/520"
+    ]
+   ],
+   "altPack": "오뚜기 쇠고기미역국라면 115g 4개입 묶음 포장",
+   "altDish": "오뚜기 쇠고기미역국라면 115g 4개입 묶음 포장, 그릇에 담은 쇠고기미역국라면"
+  },
+  "beef-miyeokguk-ramen-cup": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/582"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/582"
+    ]
+   ],
+   "altPack": "오뚜기 쇠고기미역국라면 컵 60g 낱개 포장",
+   "altDish": "오뚜기 쇠고기미역국라면 컵 60g 낱개 포장, 작은 컵에서 들어 올린 쇠고기미역국라면 면발"
+  },
+  "beef-miyeokguk-ramen-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/556"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/556"
+    ]
+   ],
+   "altPack": "오뚜기 쇠고기미역국라면 용기 100g 낱개 포장",
+   "altDish": "오뚜기 쇠고기미역국라면 용기 100g 낱개 포장, 큰 용기에 담긴 쇠고기미역국라면"
+  },
+  "memil-bibimmyeon": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/521"
+    ]
+   ],
+   "dish": [
+    [
+     "stopone-tistory-com",
+     "https://stopone.tistory.com/150"
+    ]
+   ],
+   "altPack": "오뚜기 메밀비빔면 130g 4개입 묶음 포장",
+   "altDish": "오뚜기 메밀비빔면 130g 4개입 묶음 포장, 젓가락으로 들어 올린 메밀비빔면"
+  },
+  "gul-jin-jjamppong": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/511"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/511"
+    ]
+   ],
+   "altPack": "오뚜기 굴진짬뽕 130g 4개입 묶음 포장",
+   "altDish": "오뚜기 굴진짬뽕 130g 4개입 묶음 포장, 그릇에서 들어 올린 굴진짬뽕 면발"
+  },
+  "gul-jin-jjamppong-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/554"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/554"
+    ]
+   ],
+   "altPack": "오뚜기 굴진짬뽕 용기 110g 낱개 포장",
+   "altDish": "오뚜기 굴진짬뽕 용기 110g 낱개 포장, 두 손에 든 굴진짬뽕 용기와 국물"
+  },
+  "cream-jin-jjamppong": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/528"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/528"
+    ]
+   ],
+   "altPack": "오뚜기 크림진짬뽕 130g 4개입 묶음 포장",
+   "altDish": "오뚜기 크림진짬뽕 130g 4개입 묶음 포장, 포크로 들어 올린 크림진짬뽕 면발"
+  },
+  "cream-jin-jjamppong-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/564"
+    ]
+   ],
+   "dish": [
+    [
+     "mrmo-tistory-com",
+     "https://mrmo.tistory.com/12"
+    ]
+   ],
+   "altPack": "오뚜기 크림진짬뽕 용기 105g 낱개 포장",
+   "altDish": "오뚜기 크림진짬뽕 용기 105g 낱개 포장, 컵에 담긴 크림진짬뽕 조리 예시"
+  },
+  "wow-shrimp-jin-jjamppong-cup": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/4563"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/4563"
+    ]
+   ],
+   "altPack": "오뚜기 WOW 새우진짬뽕 컵 80g 낱개 포장",
+   "altDish": "오뚜기 WOW 새우진짬뽕 컵 80g 낱개 포장, 새우진짬뽕 컵에서 젓가락으로 들어 올린 면발"
+  },
+  "haemul-jjamppong": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/522"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-2jieun626",
+     "https://m.blog.naver.com/2jieun626/224382573877"
+    ]
+   ],
+   "altPack": "오뚜기 해물짬뽕 120g 5개입 묶음 포장",
+   "altDish": "오뚜기 해물짬뽕 120g 5개입 묶음 포장, 냄비에 끓인 해물짬뽕의 붉은 국물과 면발"
+  },
+  "ottogi-budae-jjigae": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/508"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/508"
+    ]
+   ],
+   "altPack": "오뚜기 부대찌개라면 130g 4개입 묶음 포장",
+   "altDish": "오뚜기 부대찌개라면 130g 4개입 묶음 포장, 소시지와 면을 떠 올린 부대찌개라면"
+  },
+  "ottogi-budae-jjigae-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/552"
+    ]
+   ],
+   "dish": [
+    [
+     "family-gram-tistory-com",
+     "https://family-gram.tistory.com/109"
+    ]
+   ],
+   "altPack": "오뚜기 부대찌개라면 용기 115g 낱개 포장",
+   "altDish": "오뚜기 부대찌개라면 용기 115g 낱개 포장, 조리한 부대찌개라면 용기에 젓가락을 넣은 모습"
+  },
+  "ottogi-curry-myeon": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/518"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-horadrim77",
+     "https://m.blog.naver.com/horadrim77/224133216661"
+    ]
+   ],
+   "altPack": "오뚜기 오뚜기카레면 130g 4개입 묶음 포장",
+   "altDish": "오뚜기 오뚜기카레면 130g 4개입 묶음 포장, 달걀을 곁들인 카레면 한 그릇"
+  },
+  "ottogi-curry-myeon-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/555"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-bbory87",
+     "https://m.blog.naver.com/bbory87/221419682815"
+    ]
+   ],
+   "altPack": "오뚜기 오뚜기카레면 용기 110g 낱개 포장",
+   "altDish": "오뚜기 오뚜기카레면 용기 110g 낱개 포장, 카레면 용기에서 들어 올린 면발"
+  },
+  "dongdaemun-dakhanmari-kalguksu": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/6567"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/6567"
+    ]
+   ],
+   "altPack": "오뚜기 동대문식 닭한마리칼국수 115g 4개입 묶음 포장",
+   "altDish": "오뚜기 동대문식 닭한마리칼국수 115g 4개입 묶음 포장, 닭고기와 채소를 곁들여 끓인 칼국수"
+  },
+  "bugeotguk-ramen": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/515"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/515"
+    ]
+   ],
+   "altPack": "오뚜기 북엇국라면 110g 4개입 묶음 포장",
+   "altDish": "오뚜기 북엇국라면 110g 4개입 묶음 포장, 북엇국라면의 맑은 국물과 면발"
+  },
+  "real-cheese-ramen": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/510"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/510"
+    ]
+   ],
+   "altPack": "오뚜기 리얼치즈라면 135g 4개입 묶음 포장",
+   "altDish": "오뚜기 리얼치즈라면 135g 4개입 묶음 포장, 그릇에 담긴 리얼치즈라면 위로 치즈 소스를 붓는 모습"
+  },
+  "real-cheese-ramen-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/553"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/553"
+    ]
+   ],
+   "altPack": "오뚜기 리얼치즈라면 용기 120g 낱개 포장",
+   "altDish": "오뚜기 리얼치즈라면 용기 120g 낱개 포장, 조리한 리얼치즈라면 용기를 양손에 든 모습"
+  },
+  "pat-kalguksu": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/517"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/517"
+    ]
+   ],
+   "altPack": "오뚜기 팥칼국수 120g 4개입 묶음 포장",
+   "altDish": "오뚜기 팥칼국수 120g 4개입 묶음 포장, 젓가락으로 들어 올린 면발과 팥 국물이 담긴 흰 그릇"
+  },
+  "naeng-mobil": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.newswire.co.kr/newsRead.php?no=942504"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-avrildefiant0304",
+     "https://m.blog.naver.com/avrildefiant0304/224255431485"
+    ]
+   ],
+   "altPack": "오뚜기 냉모밀 127g 낱개 포장",
+   "altDish": "오뚜기 냉모밀 127g 낱개 포장, 간장 육수에 담아 낸 오뚜기 냉모밀"
+  },
+  "jin-jjolmyeon": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/4380"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/4380"
+    ]
+   ],
+   "altPack": "오뚜기 진쫄면 150g 4개입 묶음 포장",
+   "altDish": "오뚜기 진쫄면 150g 4개입 묶음 포장, 반숙 달걀과 오이를 곁들인 진쫄면 한 그릇"
+  },
+  "hello-veggie-chaehwang": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/514"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/514"
+    ]
+   ],
+   "altPack": "오뚜기 헬로베지 채황 110g 4개입 묶음 포장",
+   "altDish": "오뚜기 헬로베지 채황 110g 4개입 묶음 포장, 버섯과 채소를 곁들인 채황 라면"
+  },
+  "hangang-ramen": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/6945"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/6945"
+    ]
+   ],
+   "altPack": "오뚜기 한강라면 110g 4개입 묶음 포장",
+   "altDish": "오뚜기 한강라면 110g 4개입 묶음 포장, 한강라면 전용 조리 용기에 끓인 라면"
+  },
+  "soon-huchu-sagol-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/567"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/567"
+    ]
+   ],
+   "altPack": "오뚜기 순후추라면 사골곰탕맛 용기 105g 낱개 포장",
+   "altDish": "오뚜기 순후추라면 사골곰탕맛 용기 105g 낱개 포장, 후추와 파를 올린 사골곰탕맛의 흰 국물"
+  },
+  "soon-huchu-hot-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/568"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/568"
+    ]
+   ],
+   "altPack": "오뚜기 순후추라면 매운맛 용기 105g 낱개 포장",
+   "altDish": "오뚜기 순후추라면 매운맛 용기 105g 낱개 포장, 후추와 파를 올린 매운맛의 붉은 국물"
+  },
+  "ottogi-tempura-udon-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/544"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/544"
+    ]
+   ],
+   "altPack": "오뚜기 튀김우동 용기 110g 낱개 포장",
+   "altDish": "오뚜기 튀김우동 용기 110g 낱개 포장, 튀김우동을 조리한 용기를 양손에 든 모습"
+  },
+  "yubu-udon-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/551"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/551"
+    ]
+   ],
+   "altPack": "오뚜기 유부우동 용기 100g 낱개 포장",
+   "altDish": "오뚜기 유부우동 용기 100g 낱개 포장, 유부와 건더기를 얹은 우동 한 그릇 (용기·컵 공통 조리 예시)"
+  },
+  "yubu-udon-cup": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/592"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/592"
+    ]
+   ],
+   "altPack": "오뚜기 유부우동 컵 62g 6개입 묶음 포장",
+   "altDish": "오뚜기 유부우동 컵 62g 6개입 묶음 포장, 젓가락으로 들어 올린 우동 면발과 유부 (용기·컵 공통 조리 예시)"
+  },
+  "yeol-tempura-udon": {
+   "pack": [
+    [
+     "blog-naver-com-busan-like",
+     "https://m.blog.naver.com/busan_like/223997246045"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-busan-like",
+     "https://m.blog.naver.com/busan_like/223997246045"
+    ]
+   ],
+   "altPack": "오뚜기 열튀김우동 제품 포장",
+   "altDish": "열튀김우동의 실물 포장과 조리 예시"
+  },
+  "yukgaejang-cup-ottogi": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/593"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-mitsru79",
+     "https://m.blog.naver.com/mitsru79/224431771104"
+    ]
+   ],
+   "altPack": "오뚜기 육개장 컵 제품 포장",
+   "altDish": "육개장 컵의 실물 포장과 조리 예시"
+  },
+  "yukgaejang-bowl-ottogi": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/540"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223325310148"
+    ]
+   ],
+   "altPack": "오뚜기 육개장 용기 제품 포장",
+   "altDish": "육개장 용기의 실물 포장과 조리 예시"
+  },
+  "ottogi-saeutang-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/541"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi-review",
+     "https://www.otokimall.com/front/product/541"
+    ]
+   ],
+   "altPack": "오뚜기 새우탕 용기 제품 포장",
+   "altDish": "새우탕 용기의 실물 포장과 조리 예시"
+  },
+  "sesame-ramen-bokkeum-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/2311"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-yumding-ing",
+     "https://m.blog.naver.com/yumding-ing/224459919570"
+    ]
+   ],
+   "altPack": "오뚜기 참깨라면볶음면 용기 제품 포장",
+   "altDish": "참깨라면볶음면 용기의 실물 포장과 조리 예시"
+  },
+  "bodeul-cheese-bokkeum-hot": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/4377"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-8winner",
+     "https://m.blog.naver.com/8winner/223850445537"
+    ]
+   ],
+   "altPack": "오뚜기 보들보들 치즈볶음면 매운맛 용기 제품 포장",
+   "altDish": "보들보들 치즈볶음면 매운맛 용기의 실물 포장과 조리 예시"
+  },
+  "yetnal-rice-noodle-anchovy": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/4055"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-sseunghyee",
+     "https://m.blog.naver.com/sseunghyee_/223786431573"
+    ]
+   ],
+   "altPack": "오뚜기 옛날 쌀국수 멸치맛 제품 포장",
+   "altDish": "옛날 쌀국수 멸치맛의 실물 포장과 조리 예시"
+  },
+  "yetnal-rice-noodle-kimchi": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/4056"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-jae5340",
+     "https://m.blog.naver.com/jae5340/224428009451"
+    ]
+   ],
+   "altPack": "오뚜기 옛날 쌀국수 김치맛 제품 포장",
+   "altDish": "옛날 쌀국수 김치맛의 실물 포장과 조리 예시"
+  },
+  "kokkok-spaghetti": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/570"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-kjutaeng30",
+     "https://m.blog.naver.com/kjutaeng30/224191596570"
+    ]
+   ],
+   "altPack": "오뚜기 콕콕콕 스파게티 용기 제품 포장",
+   "altDish": "콕콕콕 스파게티 용기의 실물 포장과 조리 예시"
+  },
+  "kokkok-rabokki": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/571"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-kingrldus55",
+     "https://m.blog.naver.com/kingrldus55/224379441017"
+    ]
+   ],
+   "altPack": "오뚜기 콕콕콕 라면볶이 용기 제품 포장",
+   "altDish": "콕콕콕 라면볶이 용기의 실물 포장과 조리 예시"
+  },
+  "kokkok-cheese-bokki": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/572"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-toqhrdlsp",
+     "https://m.blog.naver.com/toqhrdlsp/224379829536"
+    ]
+   ],
+   "altPack": "오뚜기 콕콕콕 치즈볶이 용기 제품 포장",
+   "altDish": "콕콕콕 치즈볶이 용기의 실물 포장과 조리 예시"
+  },
+  "kokkok-sesame-ranbokki": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/6935"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-kongblog2447",
+     "https://m.blog.naver.com/kongblog2447/224439550568"
+    ]
+   ],
+   "altPack": "오뚜기 콕콕콕 참깨란볶이 제품 포장",
+   "altDish": "콕콕콕 참깨란볶이의 실물 포장과 조리 예시"
+  },
+  "kokkok-jjajang-cheese-bokki": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/6117"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-eco3345",
+     "https://m.blog.naver.com/eco3345/224265215103"
+    ]
+   ],
+   "altPack": "오뚜기 콕콕콕 짜장치즈볶이 용기 제품 포장",
+   "altDish": "콕콕콕 짜장치즈볶이 용기의 실물 포장과 조리 예시"
+  },
+  "yeolgwang-rabokki": {
+   "pack": [
+    [
+     "blog-naver-com-shfkdchfhr1",
+     "https://m.blog.naver.com/shfkdchfhr1/223800236000"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-shfkdchfhr1",
+     "https://m.blog.naver.com/shfkdchfhr1/223800236000"
+    ]
+   ],
+   "altPack": "오뚜기 열광라볶이 제품 포장",
+   "altDish": "열광라볶이의 실물 포장과 조리 예시"
+  },
+  "cup-noodle-pho": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/601"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-sese9",
+     "https://m.blog.naver.com/sese9/224135107879"
+    ]
+   ],
+   "altPack": "오뚜기 컵누들 베트남쌀국수 제품 포장",
+   "altDish": "컵누들 베트남쌀국수의 실물 포장과 조리 예시"
+  },
+  "cup-noodle-pho-bowl": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/608"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/608"
+    ]
+   ],
+   "altPack": "오뚜기 컵누들 베트남쌀국수 용기 제품 포장",
+   "altDish": "컵누들 베트남쌀국수 용기의 실물 포장과 조리 예시"
+  },
+  "cup-noodle-spicy": {
+   "file": "cup-noodle",
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/599"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/599"
+    ]
+   ],
+   "altPack": "오뚜기 컵누들 매콤한맛 37.8g 컵과 6개입 포장",
+   "altDish": "오뚜기 컵누들 매콤한맛 37.8g 컵과 6개입 포장, 젓가락으로 들어 올린 당면"
+  },
+  "big-cup-noodle-spicy": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/2215"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/2215"
+    ]
+   ],
+   "altPack": "오뚜기 BIG컵누들 매콤한맛 제품 포장",
+   "altDish": "BIG컵누들 매콤한맛의 실물 포장과 조리 예시"
+  },
+  "cup-noodle-udon": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/600"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/600"
+    ]
+   ],
+   "altPack": "오뚜기 컵누들 우동맛 제품 포장",
+   "altDish": "컵누들 우동맛의 실물 포장과 조리 예시"
+  },
+  "big-cup-noodle-udon": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/2216"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/2216"
+    ]
+   ],
+   "altPack": "오뚜기 BIG컵누들 우동맛 제품 포장",
+   "altDish": "BIG컵누들 우동맛의 실물 포장과 조리 예시"
+  },
+  "cup-noodle-malatang": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/2660"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-sese9",
+     "https://m.blog.naver.com/sese9/224115755615"
+    ]
+   ],
+   "altPack": "오뚜기 컵누들 마라탕 제품 포장",
+   "altDish": "컵누들 마라탕의 실물 포장과 조리 예시"
+  },
+  "big-cup-noodle-malatang": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/3582"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-ego2021",
+     "https://m.blog.naver.com/ego2021/224158412091"
+    ]
+   ],
+   "altPack": "오뚜기 BIG컵누들 마라탕 제품 포장",
+   "altDish": "BIG컵누들 마라탕의 실물 포장과 조리 예시"
+  },
+  "cup-noodle-sesame": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/4066"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-hamham1013",
+     "https://m.blog.naver.com/hamham1013-/224309561290"
+    ]
+   ],
+   "altPack": "오뚜기 컵누들 참깨라면 제품 포장",
+   "altDish": "컵누들 참깨라면의 실물 포장과 조리 예시"
+  },
+  "cup-noodle-jin-jjamppong": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/4127"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-fromj402",
+     "https://m.blog.naver.com/fromj402/224324691020"
+    ]
+   ],
+   "altPack": "오뚜기 컵누들 진짬뽕 제품 포장",
+   "altDish": "컵누들 진짬뽕의 실물 포장과 조리 예시"
+  },
+  "cup-noodle-yeol-ramen": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/5364"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-hguhefufhueffuehefh7",
+     "https://m.blog.naver.com/hguhefufhueffuehefh7/224145406974"
+    ]
+   ],
+   "altPack": "오뚜기 컵누들 열라면 제품 포장",
+   "altDish": "컵누들 열라면의 실물 포장과 조리 예시"
+  },
+  "cup-noodle-jjaslang": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/614"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-dsk03064",
+     "https://m.blog.naver.com/dsk03064/224468321369"
+    ]
+   ],
+   "altPack": "오뚜기 컵누들 짜슐랭 제품 포장",
+   "altDish": "컵누들 짜슐랭의 실물 포장과 조리 예시"
+  },
+  "cup-noodle-janchi": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/606"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/606"
+    ]
+   ],
+   "altPack": "오뚜기 컵누들 잔치쌀국수 제품 포장",
+   "altDish": "컵누들 잔치쌀국수의 실물 포장과 조리 예시"
+  },
+  "cup-noodle-kimchi-rice": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/607"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/607"
+    ]
+   ],
+   "altPack": "오뚜기 컵누들 김치쌀국수 제품 포장",
+   "altDish": "컵누들 김치쌀국수의 실물 포장과 조리 예시"
+  },
+  "cup-noodle-eolkeun-rice": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/605"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/605"
+    ]
+   ],
+   "altPack": "오뚜기 컵누들 얼큰쌀국수 제품 포장",
+   "altDish": "컵누들 얼큰쌀국수의 실물 포장과 조리 예시"
+  },
+  "cup-noodle-tomyum": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/2682"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/2682"
+    ]
+   ],
+   "altPack": "오뚜기 컵누들 톰얌꿍쌀국수 제품 포장",
+   "altDish": "컵누들 톰얌꿍쌀국수의 실물 포장과 조리 예시"
+  },
+  "cup-noodle-padthai": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/2681"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-sese9",
+     "https://m.blog.naver.com/sese9/224196051555"
+    ]
+   ],
+   "altPack": "오뚜기 컵누들 팟타이쌀국수 제품 포장",
+   "altDish": "컵누들 팟타이쌀국수의 실물 포장과 조리 예시"
+  },
+  "cup-noodle-jjimdak": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222427258347"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222427258347"
+    ]
+   ],
+   "altPack": "오뚜기 컵누들 매콤찜닭맛 제품 포장",
+   "altDish": "컵누들 매콤찜닭맛의 실물 포장과 조리 예시"
+  },
+  "cup-noodle-lowsugar-yeoldak": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/5363"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-ygy0706",
+     "https://m.blog.naver.com/ygy0706/224432365225"
+    ]
+   ],
+   "altPack": "오뚜기 저당컵누들 열닭맛 제품 포장",
+   "altDish": "저당컵누들 열닭맛의 실물 포장과 조리 예시"
+  },
+  "cup-noodle-lowsugar-rose": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/6245"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/6245"
+    ]
+   ],
+   "altPack": "오뚜기 당을줄인컵누들 로제맛 제품 포장",
+   "altDish": "당을줄인컵누들 로제맛의 실물 포장과 조리 예시"
+  },
+  "cup-noodle-lowsugar-jjimdak": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/6247"
+    ]
+   ],
+   "dish": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/6247"
+    ]
+   ],
+   "altPack": "오뚜기 당을줄인컵누들 매콤찜닭맛 제품 포장",
+   "altDish": "당을줄인컵누들 매콤찜닭맛의 실물 포장과 조리 예시"
+  },
+  "cup-noodle-protein-malaxiangguo": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/4670"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224020583204"
+    ]
+   ],
+   "altPack": "오뚜기 고단백컵누들 마라샹궈맛 제품 포장",
+   "altDish": "고단백컵누들 마라샹궈맛의 실물 포장과 조리 예시"
+  },
+  "cup-noodle-protein-rose": {
+   "pack": [
+    [
+     "ottogi",
+     "https://www.otokimall.com/front/product/4669"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224004487187"
+    ]
+   ],
+   "altPack": "오뚜기 고단백컵누들 매콤로제맛 제품 포장",
+   "altDish": "고단백컵누들 매콤로제맛의 실물 포장과 조리 예시"
+  },
+  "samyang-1963": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=685"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-yousem9",
+     "https://m.blog.naver.com/yousem9/224469620368"
+    ]
+   ],
+   "altPack": "삼양식품 삼양1963 제품 포장",
+   "altDish": "삼양1963의 실물 포장과 조리 예시"
+  },
+  "samyang-1963-bigcup-pagaejang": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=693"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224303244249"
+    ]
+   ],
+   "altPack": "삼양식품 삼양1963 큰컵 우지 파개장 제품 포장",
+   "altDish": "삼양1963 큰컵 우지 파개장의 실물 포장과 조리 예시"
+  },
+  "samyang-ramen-bigcup": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=73"
+    ]
+   ],
+   "dish": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=73"
+    ]
+   ],
+   "altPack": "삼양식품 큰컵 삼양라면 제품 포장",
+   "altDish": "큰컵 삼양라면의 실물 포장과 조리 예시"
+  },
+  "samyang-ramen-cup": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=72"
+    ]
+   ],
+   "dish": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=72"
+    ]
+   ],
+   "altPack": "삼양식품 컵 삼양라면 제품 포장",
+   "altDish": "컵 삼양라면의 실물 포장과 조리 예시"
+  },
+  "samyang-ramen-hot": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=486"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223231038039"
+    ]
+   ],
+   "altPack": "삼양식품 삼양라면 매운맛 제품 포장",
+   "altDish": "삼양라면 매운맛의 실물 포장과 조리 예시"
+  },
+  "samyang-ramen-hot-bigcup": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=380"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223309269744"
+    ]
+   ],
+   "altPack": "삼양식품 큰컵 삼양라면 매운맛 제품 포장",
+   "altDish": "큰컵 삼양라면 매운맛의 실물 포장과 조리 예시"
+  },
+  "buldak-bigcup": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=70"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222104967912"
+    ]
+   ],
+   "altPack": "삼양식품 큰컵 불닭볶음면 제품 포장",
+   "altDish": "큰컵 불닭볶음면의 실물 포장과 조리 예시"
+  },
+  "buldak-cup": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=69"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222273379609"
+    ]
+   ],
+   "altPack": "삼양식품 컵 불닭볶음면 제품 포장",
+   "altDish": "컵 불닭볶음면의 실물 포장과 조리 예시"
+  },
+  "carbo-buldak-bigcup": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=389"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222220952786"
+    ]
+   ],
+   "altPack": "삼양식품 큰컵 까르보불닭볶음면 제품 포장",
+   "altDish": "큰컵 까르보불닭볶음면의 실물 포장과 조리 예시"
+  },
+  "carbo-buldak-cup": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=523"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222255273992"
+    ]
+   ],
+   "altPack": "삼양식품 컵 까르보불닭볶음면 제품 포장",
+   "altDish": "컵 까르보불닭볶음면의 실물 포장과 조리 예시"
+  },
+  "rose-buldak": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=533"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223339216844"
+    ]
+   ],
+   "altPack": "삼양식품 로제불닭볶음면 제품 포장",
+   "altDish": "로제불닭볶음면의 실물 포장과 조리 예시"
+  },
+  "rose-buldak-bigcup": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=531"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222537283127"
+    ]
+   ],
+   "altPack": "삼양식품 큰컵 로제불닭볶음면 제품 포장",
+   "altDish": "큰컵 로제불닭볶음면의 실물 포장과 조리 예시"
+  },
+  "buldak-bokkeum-tangmyun": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=590"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223169237380"
+    ]
+   ],
+   "altPack": "삼양식품 불닭볶음탕면 제품 포장",
+   "altDish": "불닭볶음탕면의 실물 포장과 조리 예시"
+  },
+  "buldak-bokkeum-tangmyun-bigcup": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=589"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223827837477"
+    ]
+   ],
+   "altPack": "삼양식품 큰컵 불닭볶음탕면 제품 포장",
+   "altDish": "큰컵 불닭볶음탕면의 실물 포장과 조리 예시"
+  },
+  "four-cheese-buldak": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=522"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223892601674"
+    ]
+   ],
+   "altPack": "삼양식품 4가지치즈불닭볶음면 제품 포장",
+   "altDish": "4가지치즈불닭볶음면의 실물 포장과 조리 예시"
+  },
+  "four-cheese-buldak-bigcup": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=521"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222385337934"
+    ]
+   ],
+   "altPack": "삼양식품 큰컵 4가지치즈불닭볶음면 제품 포장",
+   "altDish": "큰컵 4가지치즈불닭볶음면의 실물 포장과 조리 예시"
+  },
+  "cheese-buldak-bigcup": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=68"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222066316256"
+    ]
+   ],
+   "altPack": "삼양식품 큰컵 치즈불닭볶음면 제품 포장",
+   "altDish": "큰컵 치즈불닭볶음면의 실물 포장과 조리 예시"
+  },
+  "yakisoba-buldak-bigcup": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=600"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223172388663"
+    ]
+   ],
+   "altPack": "삼양식품 큰컵 야키소바불닭볶음면 제품 포장",
+   "altDish": "큰컵 야키소바불닭볶음면의 실물 포장과 조리 예시"
+  },
+  "puphatphong-curry-buldak-bigcup": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=675"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223845274548"
+    ]
+   ],
+   "altPack": "삼양식품 큰컵 푸팟퐁커리불닭볶음면 제품 포장",
+   "altDish": "큰컵 푸팟퐁커리불닭볶음면의 실물 포장과 조리 예시"
+  },
+  "maeptaeng-garlic-clam": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=651"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223208077629"
+    ]
+   ],
+   "altPack": "삼양식품 맵탱 마늘조개라면 제품 포장",
+   "altDish": "맵탱 마늘조개라면의 실물 포장과 조리 예시"
+  },
+  "maeptaeng-garlic-clam-bigcup": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=654"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223229599447"
+    ]
+   ],
+   "altPack": "삼양식품 큰컵 맵탱 마늘조개라면 제품 포장",
+   "altDish": "큰컵 맵탱 마늘조개라면의 실물 포장과 조리 예시"
+  },
+  "maeptaeng-cheongyang-daepa": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=656"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223220258051"
+    ]
+   ],
+   "altPack": "삼양식품 맵탱 청양고추대파라면 제품 포장",
+   "altDish": "맵탱 청양고추대파라면의 실물 포장과 조리 예시"
+  },
+  "maeptaeng-cheongyang-daepa-bigcup": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=657"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223272464015"
+    ]
+   ],
+   "altPack": "삼양식품 큰컵 맵탱 청양고추대파라면 제품 포장",
+   "altDish": "큰컵 맵탱 청양고추대파라면의 실물 포장과 조리 예시"
+  },
+  "maeptaeng-cool-spicy-bibim-kimchi": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=674"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223814119361"
+    ]
+   ],
+   "altPack": "삼양식품 맵탱 쿨스파이시 비빔면 김치맛 제품 포장",
+   "altDish": "맵탱 쿨스파이시 비빔면 김치맛의 실물 포장과 조리 예시"
+  },
+  "jjajjaroni-bigcup": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=541"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222788708842"
+    ]
+   ],
+   "altPack": "삼양식품 큰컵 짜짜로니 제품 포장",
+   "altDish": "큰컵 짜짜로니의 실물 포장과 조리 예시"
+  },
+  "masinneun-ramen": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=44"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223404884366"
+    ]
+   ],
+   "altPack": "삼양식품 맛있는라면 제품 포장",
+   "altDish": "맛있는라면의 실물 포장과 조리 예시"
+  },
+  "masinneun-ramen-bigcup": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=64"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222100609009"
+    ]
+   ],
+   "altPack": "삼양식품 큰컵 맛있는라면 제품 포장",
+   "altDish": "큰컵 맛있는라면의 실물 포장과 조리 예시"
+  },
+  "masinneun-ramen-cup": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=63"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222229716493"
+    ]
+   ],
+   "altPack": "삼양식품 컵 맛있는라면 제품 포장",
+   "altDish": "컵 맛있는라면의 실물 포장과 조리 예시"
+  },
+  "gan-jjamppong": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=134"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223377372074"
+    ]
+   ],
+   "altPack": "삼양식품 간짬뽕 제품 포장",
+   "altDish": "간짬뽕의 실물 포장과 조리 예시"
+  },
+  "gan-jjamppong-bigcup": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=61"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-nansinna",
+     "https://m.blog.naver.com/nansinna/224455450794"
+    ]
+   ],
+   "altPack": "삼양식품 큰컵 간짬뽕 제품 포장",
+   "altDish": "큰컵 간짬뽕의 실물 포장과 조리 예시"
+  },
+  "nagasaki-jjamppong-bigcup": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=321"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222114918185"
+    ]
+   ],
+   "altPack": "삼양식품 큰컵 나가사끼짬뽕 제품 포장",
+   "altDish": "큰컵 나가사끼짬뽕의 실물 포장과 조리 예시"
+  },
+  "udon-sagol-gomtang": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=569"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223793431353"
+    ]
+   ],
+   "altPack": "삼양식품 우돈사골곰탕면 제품 포장",
+   "altDish": "우돈사골곰탕면의 실물 포장과 조리 예시"
+  },
+  "samyang-sogogi-myeon": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=478"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223417872867"
+    ]
+   ],
+   "altPack": "삼양식품 쇠고기면 제품 포장",
+   "altDish": "쇠고기면의 실물 포장과 조리 예시"
+  },
+  "samyang-yukgaejang": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=56"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223438029971"
+    ]
+   ],
+   "altPack": "삼양식품 육개장 제품 포장",
+   "altDish": "육개장의 실물 포장과 조리 예시"
+  },
+  "tangle-mushroom-cream": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=677"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223855312699"
+    ]
+   ],
+   "altPack": "삼양식품 탱글 머쉬룸크림 파스타 제품 포장",
+   "altDish": "탱글 머쉬룸크림 파스타의 실물 포장과 조리 예시"
+  },
+  "tangle-mushroom-cream-bigcup": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=680"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223847990488"
+    ]
+   ],
+   "altPack": "삼양식품 큰컵 탱글 머쉬룸크림 파스타 제품 포장",
+   "altDish": "큰컵 탱글 머쉬룸크림 파스타의 실물 포장과 조리 예시"
+  },
+  "tangle-garlic-oil": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=678"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223861105038"
+    ]
+   ],
+   "altPack": "삼양식품 탱글 갈릭오일 파스타 제품 포장",
+   "altDish": "탱글 갈릭오일 파스타의 실물 포장과 조리 예시"
+  },
+  "tangle-garlic-oil-bigcup": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=679"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223849086432"
+    ]
+   ],
+   "altPack": "삼양식품 큰컵 탱글 갈릭오일 파스타 제품 포장",
+   "altDish": "큰컵 탱글 갈릭오일 파스타의 실물 포장과 조리 예시"
+  },
+  "tangle-basil-tomato-protein": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=686"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224273686044"
+    ]
+   ],
+   "altPack": "삼양식품 탱글 바질토마토 프로틴 파스타 제품 포장",
+   "altDish": "탱글 바질토마토 프로틴 파스타의 실물 포장과 조리 예시"
+  },
+  "tangle-basil-tomato-protein-bigcup": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=687"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224316894839"
+    ]
+   ],
+   "altPack": "삼양식품 큰컵 탱글 바질토마토 프로틴 파스타 제품 포장",
+   "altDish": "큰컵 탱글 바질토마토 프로틴 파스타의 실물 포장과 조리 예시"
+  },
+  "tangle-garlic-shrimp-protein": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=688"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224271889415"
+    ]
+   ],
+   "altPack": "삼양식품 탱글 갈릭쉬림프 프로틴 파스타 제품 포장",
+   "altDish": "탱글 갈릭쉬림프 프로틴 파스타의 실물 포장과 조리 예시"
+  },
+  "tangle-garlic-shrimp-protein-bigcup": {
+   "pack": [
+    [
+     "samyang",
+     "https://www.samyangfoods.com/kor/brand/view.do?seq=689"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224296256855"
+    ]
+   ],
+   "altPack": "삼양식품 큰컵 탱글 갈릭쉬림프 프로틴 파스타 제품 포장",
+   "altDish": "큰컵 탱글 갈릭쉬림프 프로틴 파스타의 실물 포장과 조리 예시"
+  },
+  "namja-ramen": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/1"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223927509203"
+    ]
+   ],
+   "altPack": "팔도 남자라면 제품 포장",
+   "altDish": "남자라면의 실물 포장과 조리 예시"
+  },
+  "namja-ramen-cup": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/175"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224167947747"
+    ]
+   ],
+   "altPack": "팔도 남자라면컵 제품 포장",
+   "altDish": "남자라면컵의 실물 포장과 조리 예시"
+  },
+  "sang-namja-ramen": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/176"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224140980825"
+    ]
+   ],
+   "altPack": "팔도 상남자라면 제품 포장",
+   "altDish": "상남자라면의 실물 포장과 조리 예시"
+  },
+  "kokomyeon-wangcup": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/63"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222213165038"
+    ]
+   ],
+   "altPack": "팔도 꼬꼬면왕컵 제품 포장",
+   "altDish": "꼬꼬면왕컵의 실물 포장과 조리 예시"
+  },
+  "kimchi-kokomyeon-wangcup": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/145"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223419581797"
+    ]
+   ],
+   "altPack": "팔도 김치꼬꼬면왕컵 제품 포장",
+   "altDish": "김치꼬꼬면왕컵의 실물 포장과 조리 예시"
+  },
+  "kimchi-dosirak": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/62"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223752826939"
+    ]
+   ],
+   "altPack": "팔도 김치 도시락 제품 포장",
+   "altDish": "김치 도시락의 실물 포장과 조리 예시"
+  },
+  "kimchi-king-lid": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/42"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222771563587"
+    ]
+   ],
+   "altPack": "팔도 김치 왕뚜껑 제품 포장",
+   "altDish": "김치 왕뚜껑의 실물 포장과 조리 예시"
+  },
+  "jjamppong-king-lid": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/43"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223457308153"
+    ]
+   ],
+   "altPack": "팔도 짬뽕 왕뚜껑 제품 포장",
+   "altDish": "짬뽕 왕뚜껑의 실물 포장과 조리 예시"
+  },
+  "mini-king-lid": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/44"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222525657357"
+    ]
+   ],
+   "altPack": "팔도 mini 왕뚜껑 제품 포장",
+   "altDish": "mini 왕뚜껑의 실물 포장과 조리 예시"
+  },
+  "king-king-lid": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/50"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223862311505"
+    ]
+   ],
+   "altPack": "팔도 킹뚜껑 제품 포장",
+   "altDish": "킹뚜껑의 실물 포장과 조리 예시"
+  },
+  "daewang-lid": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/146"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223544148468"
+    ]
+   ],
+   "altPack": "팔도 대왕뚜껑 제품 포장",
+   "altDish": "대왕뚜껑의 실물 포장과 조리 예시"
+  },
+  "teumsae-kimchi": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/180"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223336530439"
+    ]
+   ],
+   "altPack": "팔도 틈새라면 매운김치 제품 포장",
+   "altDish": "틈새라면 매운김치의 실물 포장과 조리 예시"
+  },
+  "teumsae-kimchi-wangcup": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/58"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222390462286"
+    ]
+   ],
+   "altPack": "팔도 틈새라면 매운김치왕컵 제품 포장",
+   "altDish": "틈새라면 매운김치왕컵의 실물 포장과 조리 예시"
+  },
+  "teumsae-gogi-jjamppong": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/181"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223385476025"
+    ]
+   ],
+   "altPack": "팔도 틈새라면 고기짬뽕 제품 포장",
+   "altDish": "틈새라면 고기짬뽕의 실물 포장과 조리 예시"
+  },
+  "teumsae-gogi-jjamppong-cup": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/96"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223010754524"
+    ]
+   ],
+   "altPack": "팔도 틈새라면 고기짬뽕 컵 제품 포장",
+   "altDish": "틈새라면 고기짬뽕 컵의 실물 포장과 조리 예시"
+  },
+  "teumsae-entry": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/182"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224193053299"
+    ]
+   ],
+   "altPack": "팔도 틈새라면 입문용 제품 포장",
+   "altDish": "틈새라면 입문용의 실물 포장과 조리 예시"
+  },
+  "ilpum-haemul-ramen": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/163"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223870694542"
+    ]
+   ],
+   "altPack": "팔도 일품해물라면 제품 포장",
+   "altDish": "일품해물라면의 실물 포장과 조리 예시"
+  },
+  "ilpum-haemul-wangcup": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/59"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/221909272936"
+    ]
+   ],
+   "altPack": "팔도 일품 해물라면왕컵 제품 포장",
+   "altDish": "일품 해물라면왕컵의 실물 포장과 조리 예시"
+  },
+  "paldo-jjajangmyeon": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/65"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223174067548"
+    ]
+   ],
+   "altPack": "팔도 팔도짜장면 제품 포장",
+   "altDish": "팔도짜장면의 실물 포장과 조리 예시"
+  },
+  "jinguk-seolleongtang": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/107"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222953573959"
+    ]
+   ],
+   "altPack": "팔도 진국 설렁탕면 제품 포장",
+   "altDish": "진국 설렁탕면의 실물 포장과 조리 예시"
+  },
+  "paldo-rabokki": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/169"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222687482125"
+    ]
+   ],
+   "altPack": "팔도 팔도 라볶이 제품 포장",
+   "altDish": "팔도 라볶이의 실물 포장과 조리 예시"
+  },
+  "paldo-bibimmyeon-hot": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/40"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223890829249"
+    ]
+   ],
+   "altPack": "팔도 팔도비빔면 매운맛 제품 포장",
+   "altDish": "팔도비빔면 매운맛의 실물 포장과 조리 예시"
+  },
+  "paldo-bibimmyeon-cup": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/41"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224386905896"
+    ]
+   ],
+   "altPack": "팔도 팔도 비빔면컵 제품 포장",
+   "altDish": "팔도 비빔면컵의 실물 포장과 조리 예시"
+  },
+  "paldo-bajirak-jjamppong": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/210"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-kies84",
+     "https://m.blog.naver.com/kies84/224481654178"
+    ]
+   ],
+   "altPack": "팔도 팔도 바지락 짬뽕 제품 포장",
+   "altDish": "팔도 바지락 짬뽕의 실물 포장과 조리 예시"
+  },
+  "ari-modern-bongole": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/196"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224319148212"
+    ]
+   ],
+   "altPack": "팔도 아리 모던누들 봉골레 제품 포장",
+   "altDish": "아리 모던누들 봉골레의 실물 포장과 조리 예시"
+  },
+  "ari-modern-bongole-cup": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/189"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-soojh0331",
+     "https://m.blog.naver.com/soojh0331/224379731275"
+    ]
+   ],
+   "altPack": "팔도 아리 모던누들 봉골레 컵 제품 포장",
+   "altDish": "아리 모던누들 봉골레 컵의 실물 포장과 조리 예시"
+  },
+  "ari-modern-truffle-bulgogi": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/197"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224321300375"
+    ]
+   ],
+   "altPack": "팔도 아리 모던누들 트러플불고기 제품 포장",
+   "altDish": "아리 모던누들 트러플불고기의 실물 포장과 조리 예시"
+  },
+  "ari-modern-truffle-bulgogi-cup": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/190"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224460187516"
+    ]
+   ],
+   "altPack": "팔도 아리 모던누들 트러플불고기 컵 제품 포장",
+   "altDish": "아리 모던누들 트러플불고기 컵의 실물 포장과 조리 예시"
+  },
+  "ari-modern-gochujang-butter": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/198"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224327392518"
+    ]
+   ],
+   "altPack": "팔도 아리 모던누들 고추장버터 제품 포장",
+   "altDish": "아리 모던누들 고추장버터의 실물 포장과 조리 예시"
+  },
+  "ari-modern-gochujang-butter-cup": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/191"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-hohosy0115",
+     "https://m.blog.naver.com/hohosy0115/224469277371"
+    ]
+   ],
+   "altPack": "팔도 아리 모던누들 고추장버터 컵 제품 포장",
+   "altDish": "아리 모던누들 고추장버터 컵의 실물 포장과 조리 예시"
+  },
+  "ari-modern-pepper-rabokki": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/199"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224351255771"
+    ]
+   ],
+   "altPack": "팔도 아리 모던누들 후추라볶이 제품 포장",
+   "altDish": "아리 모던누들 후추라볶이의 실물 포장과 조리 예시"
+  },
+  "ari-modern-pepper-rabokki-cup": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/192"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-withfs",
+     "https://m.blog.naver.com/withfs/224469339869"
+    ]
+   ],
+   "altPack": "팔도 아리 모던누들 후추라볶이 컵 제품 포장",
+   "altDish": "아리 모던누들 후추라볶이 컵의 실물 포장과 조리 예시"
+  },
+  "ari-modern-kim-original": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/200"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224328402695"
+    ]
+   ],
+   "altPack": "팔도 아리 모던누들 김볶음면 오리지널 제품 포장",
+   "altDish": "아리 모던누들 김볶음면 오리지널의 실물 포장과 조리 예시"
+  },
+  "ari-modern-kim-original-cup": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/193"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-bmd25720",
+     "https://m.blog.naver.com/bmd25720/224477948965"
+    ]
+   ],
+   "altPack": "팔도 아리 모던누들 김볶음면 오리지널 컵 제품 포장",
+   "altDish": "아리 모던누들 김볶음면 오리지널 컵의 실물 포장과 조리 예시"
+  },
+  "ari-modern-kim-hot": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/201"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224357033721"
+    ]
+   ],
+   "altPack": "팔도 아리 모던누들 김볶음면 매운맛 제품 포장",
+   "altDish": "아리 모던누들 김볶음면 매운맛의 실물 포장과 조리 예시"
+  },
+  "ari-modern-kim-hot-cup": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/194"
+    ]
+   ],
+   "dish": [
+    [
+     "www-youtube-com-watch",
+     "https://www.youtube.com/watch?v=iCh2KPMzufg"
+    ]
+   ],
+   "altPack": "팔도 아리 모던누들 김볶음면 매운맛 컵 제품 포장",
+   "altDish": "아리 모던누들 김볶음면 매운맛 컵의 실물 포장과 조리 예시"
+  },
+  "ari-modern-soy-butter": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/202"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224338574421"
+    ]
+   ],
+   "altPack": "팔도 아리 모던누들 간장버터 제품 포장",
+   "altDish": "아리 모던누들 간장버터의 실물 포장과 조리 예시"
+  },
+  "ari-modern-soy-butter-cup": {
+   "pack": [
+    [
+     "paldo",
+     "https://www.paldofood.co.kr/product/noodle/195"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224387763765"
+    ]
+   ],
+   "altPack": "팔도 아리 모던누들 간장버터 컵 제품 포장",
+   "altDish": "아리 모던누들 간장버터 컵의 실물 포장과 조리 예시"
+  },
+  "themisik-jangin-mild": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223950196615"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223950196615"
+    ]
+   ],
+   "altPack": "하림 더미식 장인라면 담백한맛 제품 포장",
+   "altDish": "더미식 장인라면 담백한맛의 실물 포장과 조리 예시"
+  },
+  "themisik-jangin-maepssa": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223903881076"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223903881076"
+    ]
+   ],
+   "altPack": "하림 더미식 장인라면 맵싸한맛 제품 포장",
+   "altDish": "더미식 장인라면 맵싸한맛의 실물 포장과 조리 예시"
+  },
+  "themisik-maeum-jangin": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223592195939"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223592195939"
+    ]
+   ],
+   "altPack": "하림 매움주의 장인라면 제품 포장",
+   "altDish": "매움주의 장인라면의 실물 포장과 조리 예시"
+  },
+  "themisik-jangin-small-cup": {
+   "pack": [
+    [
+     "blog-naver-com-donnadonna0915",
+     "https://m.blog.naver.com/donnadonna0915/224477387665"
+    ]
+   ],
+   "dish": [
+    [
+     "blog-naver-com-donnadonna0915",
+     "https://m.blog.naver.com/donnadonna0915/224477387665"
+    ]
+   ],
+   "altPack": "하림 더미식 장인라면 소컵 제품 포장",
+   "altDish": "더미식 장인라면 소컵의 실물 포장과 조리 예시"
+  },
+  "themisik-memil-bibimmyeon": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223965717628"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223965717628"
+    ]
+   ],
+   "altPack": "하림 더미식 메밀비빔면 제품 포장",
+   "altDish": "더미식 메밀비빔면의 실물 포장과 조리 예시"
+  },
+  "themisik-bibimmyeon-maepssak": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223535064828"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223535064828"
+    ]
+   ],
+   "altPack": "하림 더미식 비빔면 맵싹한맛 제품 포장",
+   "altDish": "더미식 비빔면 맵싹한맛의 실물 포장과 조리 예시"
+  },
+  "themisik-ojingeo-ramen": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223695638091"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223695638091"
+    ]
+   ],
+   "altPack": "하림 더미식 오징어라면 제품 포장",
+   "altDish": "더미식 오징어라면의 실물 포장과 조리 예시"
+  },
+  "themisik-ojingeo-ramen-cup": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223755618746"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223755618746"
+    ]
+   ],
+   "altPack": "하림 더미식 오징어라면 컵 제품 포장",
+   "altDish": "더미식 오징어라면 컵의 실물 포장과 조리 예시"
+  },
+  "harim-matnamyeon": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224419883993"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224419883993"
+    ]
+   ],
+   "altPack": "하림 맛나면 제품 포장",
+   "altDish": "맛나면의 실물 포장과 조리 예시"
+  },
+  "pulmuone-saengmyeon-mild": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222440286874"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222440286874"
+    ]
+   ],
+   "altPack": "풀무원 풀무원 생면식감 순한맛 제품 포장",
+   "altDish": "풀무원 생면식감 순한맛의 실물 포장과 조리 예시"
+  },
+  "pulmuone-saengmyeon-hot": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222439073945"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222439073945"
+    ]
+   ],
+   "altPack": "풀무원 풀무원 생면식감 매운맛 제품 포장",
+   "altDish": "풀무원 생면식감 매운맛의 실물 포장과 조리 예시"
+  },
+  "pulmuone-roasting-jeongmyeon": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223806810803"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223806810803"
+    ]
+   ],
+   "altPack": "풀무원 풀무원 로스팅 정면 제품 포장",
+   "altDish": "풀무원 로스팅 정면의 실물 포장과 조리 예시"
+  },
+  "cu-cheatkey-cream-buldak": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224307258026"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224307258026"
+    ]
+   ],
+   "altPack": "CU 치트키 리얼 크림 불닭맛 제품 포장",
+   "altDish": "치트키 리얼 크림 불닭맛의 실물 포장과 조리 예시"
+  },
+  "cu-cheatkey-saeutang": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224350468059"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224350468059"
+    ]
+   ],
+   "altPack": "CU 치트키 진한 새우탕면 제품 포장",
+   "altDish": "치트키 진한 새우탕면의 실물 포장과 조리 예시"
+  },
+  "gs25-omori-kimchi-jjigae-bowl": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223454817831"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223454817831"
+    ]
+   ],
+   "altPack": "GS25 오모리김치찌개라면 용기 제품 포장",
+   "altDish": "오모리김치찌개라면 용기의 실물 포장과 조리 예시"
+  },
+  "gs25-paldo-jumbo-dosirak": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223141797030"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223141797030"
+    ]
+   ],
+   "altPack": "GS25 팔도점보도시락 제품 포장",
+   "altDish": "팔도점보도시락의 실물 포장과 조리 예시"
+  },
+  "gs25-omori-jumbo-dosirak": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223364712551"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223364712551"
+    ]
+   ],
+   "altPack": "GS25 오모리점보도시락 제품 포장",
+   "altDish": "오모리점보도시락의 실물 포장과 조리 예시"
+  },
+  "gs25-gonggangchun": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223259448247"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223259448247"
+    ]
+   ],
+   "altPack": "GS25 공간춘 제품 포장",
+   "altDish": "공간춘의 실물 포장과 조리 예시"
+  },
+  "gs25-teumsae-bigim": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223424882950"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223424882950"
+    ]
+   ],
+   "altPack": "GS25 틈새비김면 제품 포장",
+   "altDish": "틈새비김면의 실물 포장과 조리 예시"
+  },
+  "gs25-myeonwang": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223273167014"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223273167014"
+    ]
+   ],
+   "altPack": "GS25 면왕 제품 포장",
+   "altDish": "면왕의 실물 포장과 조리 예시"
+  },
+  "cu-baek-gogi-jjamppong": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222988188717"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222988188717"
+    ]
+   ],
+   "altPack": "CU 백종원의 고기짬뽕 제품 포장",
+   "altDish": "백종원의 고기짬뽕의 실물 포장과 조리 예시"
+  },
+  "cu-baek-ramen-cup": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224329911374"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224329911374"
+    ]
+   ],
+   "altPack": "CU 빽라면컵 제품 포장",
+   "altDish": "빽라면컵의 실물 포장과 조리 예시"
+  },
+  "cu-baek-jjajang-cup": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224331086766"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224331086766"
+    ]
+   ],
+   "altPack": "CU 빽짜장컵 제품 포장",
+   "altDish": "빽짜장컵의 실물 포장과 조리 예시"
+  },
+  "cu-baek-jjajang-bag": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223285982363"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223285982363"
+    ]
+   ],
+   "altPack": "CU 백종원의 빽짜장 제품 포장",
+   "altDish": "백종원의 빽짜장의 실물 포장과 조리 예시"
+  },
+  "cu-baek-kimchi-jjigae": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223412352203"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223412352203"
+    ]
+   ],
+   "altPack": "CU 백종원 김치찌개라면 제품 포장",
+   "altDish": "백종원 김치찌개라면의 실물 포장과 조리 예시"
+  },
+  "cu-jjanggu-chocobi-jjajang": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223839158011"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223839158011"
+    ]
+   ],
+   "altPack": "CU 짱구 초코비의 짜장라면 제품 포장",
+   "altDish": "짱구 초코비의 짜장라면의 실물 포장과 조리 예시"
+  },
+  "cu-jjanggu-baebulleo": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223815005540"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223815005540"
+    ]
+   ],
+   "altPack": "CU 짱구는 배불러 라면 제품 포장",
+   "altDish": "짱구는 배불러 라면의 실물 포장과 조리 예시"
+  },
+  "cu-jjanggu-heendungi": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223876649364"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223876649364"
+    ]
+   ],
+   "altPack": "CU 흰둥이 흰국물라면 제품 포장",
+   "altDish": "흰둥이 흰국물라면의 실물 포장과 조리 예시"
+  },
+  "cu-odeng-budae-cup": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223305819671"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223305819671"
+    ]
+   ],
+   "altPack": "CU 오뎅식당 부대찌개라면컵 제품 포장",
+   "altDish": "오뎅식당 부대찌개라면컵의 실물 포장과 조리 예시"
+  },
+  "cu-deuktem-ramen": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223415044281"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223415044281"
+    ]
+   ],
+   "altPack": "CU 헤이루 득템라면 제품 포장",
+   "altDish": "헤이루 득템라면의 실물 포장과 조리 예시"
+  },
+  "seven-ibiga-jjamppong-ramen": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224145569826"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224145569826"
+    ]
+   ],
+   "altPack": "세븐일레븐 세븐셀렉트 이비가짬뽕라면 제품 포장",
+   "altDish": "세븐셀렉트 이비가짬뽕라면의 실물 포장과 조리 예시"
+  },
+  "seven-yeolpadak-bigcup": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223587497631"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223587497631"
+    ]
+   ],
+   "altPack": "세븐일레븐 열파닭볶음면 큰컵 제품 포장",
+   "altDish": "열파닭볶음면 큰컵의 실물 포장과 조리 예시"
+  },
+  "seven-daepa-yeol-ramen": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223209821792"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223209821792"
+    ]
+   ],
+   "altPack": "세븐일레븐 대파열라면 제품 포장",
+   "altDish": "대파열라면의 실물 포장과 조리 예시"
+  },
+  "seven-ojingeo-alive": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224035698507"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224035698507"
+    ]
+   ],
+   "altPack": "세븐일레븐 세븐셀렉트 오징어얼라이브 매콤볶음면 제품 포장",
+   "altDish": "세븐셀렉트 오징어얼라이브 매콤볶음면의 실물 포장과 조리 예시"
+  },
+  "emart24-ttangs-budae": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224390184573"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224390184573"
+    ]
+   ],
+   "altPack": "이마트24 땅스부대찌개라면 제품 포장",
+   "altDish": "땅스부대찌개라면의 실물 포장과 조리 예시"
+  },
+  "emart24-daebakgak-bulmat-jjamppong": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224427614226"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224427614226"
+    ]
+   ],
+   "altPack": "이마트24 대박각 불맛짬뽕라면 제품 포장",
+   "altDish": "대박각 불맛짬뽕라면의 실물 포장과 조리 예시"
+  },
+  "emart24-daebakgak-gochu-jjajang": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224426332840"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224426332840"
+    ]
+   ],
+   "altPack": "이마트24 대박각 고추짜장라면 제품 포장",
+   "altDish": "대박각 고추짜장라면의 실물 포장과 조리 예시"
+  },
+  "emart24-minsaeng-ramen": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222338069057"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222338069057"
+    ]
+   ],
+   "altPack": "이마트24 민생라면 제품 포장",
+   "altDish": "민생라면의 실물 포장과 조리 예시"
+  },
+  "emart24-dolsagol-saeu": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223229294298"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223229294298"
+    ]
+   ],
+   "altPack": "이마트24 아임e 진한 돈사골 새우라면 제품 포장",
+   "altDish": "아임e 진한 돈사골 새우라면의 실물 포장과 조리 예시"
+  },
+  "emart24-churamen": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224160662754"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224160662754"
+    ]
+   ],
+   "altPack": "이마트24 추라면 제품 포장",
+   "altDish": "추라면의 실물 포장과 조리 예시"
+  },
+  "emart24-daepa-yukgaejang": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224164282980"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224164282980"
+    ]
+   ],
+   "altPack": "이마트24 대파육개장면 제품 포장",
+   "altDish": "대파육개장면의 실물 포장과 조리 예시"
+  },
+  "emart24-hot-cream-jjamppong-cup": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224064719768"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224064719768"
+    ]
+   ],
+   "altPack": "이마트24 매운크림짬뽕컵 제품 포장",
+   "altDish": "매운크림짬뽕컵의 실물 포장과 조리 예시"
+  },
+  "emart24-ttabl-sogogi": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224136222645"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224136222645"
+    ]
+   ],
+   "altPack": "이마트24 따블라면 얼큰소고기맛 제품 포장",
+   "altDish": "따블라면 얼큰소고기맛의 실물 포장과 조리 예시"
+  },
+  "emart24-ttabl-jjajang": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224138124658"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224138124658"
+    ]
+   ],
+   "altPack": "이마트24 따블라면 짜장 제품 포장",
+   "altDish": "따블라면 짜장의 실물 포장과 조리 예시"
+  },
+  "emart-nobrand-ramen": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/220940209531"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/220940209531"
+    ]
+   ],
+   "altPack": "이마트 노브랜드 라면한그릇 제품 포장",
+   "altDish": "노브랜드 라면한그릇의 실물 포장과 조리 예시"
+  },
+  "emart-nobrand-jjajang": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223736877419"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223736877419"
+    ]
+   ],
+   "altPack": "이마트 노브랜드 짜장한그릇 제품 포장",
+   "altDish": "노브랜드 짜장한그릇의 실물 포장과 조리 예시"
+  },
+  "emart-nobrand-ramen-dry": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223712716099"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223712716099"
+    ]
+   ],
+   "altPack": "이마트 노브랜드 라면한그릇 건면 오리지널맛 제품 포장",
+   "altDish": "노브랜드 라면한그릇 건면 오리지널맛의 실물 포장과 조리 예시"
+  },
+  "emart-nobrand-ramen-dry-seafood": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223716676241"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223716676241"
+    ]
+   ],
+   "altPack": "이마트 노브랜드 라면한그릇 건면 해물맛 제품 포장",
+   "altDish": "노브랜드 라면한그릇 건면 해물맛의 실물 포장과 조리 예시"
+  },
+  "emart-tent-ssamjang": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223678239065"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223678239065"
+    ]
+   ],
+   "altPack": "이마트 텐트 밖은 유럽 쌈장라면 제품 포장",
+   "altDish": "텐트 밖은 유럽 쌈장라면의 실물 포장과 조리 예시"
+  },
+  "homeplus-ichunsam": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222988352779"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222988352779"
+    ]
+   ],
+   "altPack": "홈플러스 이춘삼 짜장라면 제품 포장",
+   "altDish": "이춘삼 짜장라면의 실물 포장과 조리 예시"
+  },
+  "homeplus-ichunsam-dry": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224166843718"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224166843718"
+    ]
+   ],
+   "altPack": "홈플러스 이춘삼 짜장라면 건면 제품 포장",
+   "altDish": "이춘삼 짜장라면 건면의 실물 포장과 조리 예시"
+  },
+  "homeplus-ihaebong": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223207367023"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223207367023"
+    ]
+   ],
+   "altPack": "홈플러스 이해봉 짬뽕라면 제품 포장",
+   "altDish": "이해봉 짬뽕라면의 실물 포장과 조리 예시"
+  },
+  "homeplus-ihaebong-dry": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224166437250"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/224166437250"
+    ]
+   ],
+   "altPack": "홈플러스 이해봉 짬뽕라면 건면 제품 포장",
+   "altDish": "이해봉 짬뽕라면 건면의 실물 포장과 조리 예시"
+  },
+  "homeplus-ijinguk": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223947181736"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223947181736"
+    ]
+   ],
+   "altPack": "홈플러스 이진국 라면 제품 포장",
+   "altDish": "이진국 라면의 실물 포장과 조리 예시"
+  },
+  "lottemart-yorihada-sogogi": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223393650125"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223393650125"
+    ]
+   ],
+   "altPack": "롯데마트 요리하다 소고기라면 제품 포장",
+   "altDish": "요리하다 소고기라면의 실물 포장과 조리 예시"
+  },
+  "lottemart-yorihada-bulmat-jjajang": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222955883449"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/222955883449"
+    ]
+   ],
+   "altPack": "롯데마트 요리하다 불맛짜장라면 제품 포장",
+   "altDish": "요리하다 불맛짜장라면의 실물 포장과 조리 예시"
+  },
+  "nissin-chicken-ramen": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223102825930"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223102825930"
+    ]
+   ],
+   "altPack": "닛신식품 치킨라멘 제품 포장",
+   "altDish": "치킨라멘의 실물 포장과 조리 예시"
+  },
+  "nissin-cup-noodle": {
+   "pack": [
+    [
+     "nissin",
+     "https://www.nissin.com/jp/product/items/13462/"
+    ]
+   ],
+   "dish": [
+    [
+     "nissin",
+     "https://www.nissin.com/jp/product/recipes/354/"
+    ]
+   ],
+   "altPack": "닛신식품 닛신 컵누들 오리지널 제품 포장",
+   "altDish": "닛신 컵누들 오리지널의 실물 포장과 조리 예시"
+  },
+  "nissin-cup-noodle-seafood": {
+   "pack": [
+    [
+     "nissin",
+     "https://www.nissin.com/jp/product/items/13464/"
+    ]
+   ],
+   "dish": [
+    [
+     "nissin",
+     "https://www.nissin.com/jp/product/recipes/380/"
+    ]
+   ],
+   "altPack": "닛신식품 닛신 컵누들 시푸드 제품 포장",
+   "altDish": "닛신 컵누들 시푸드의 실물 포장과 조리 예시"
+  },
+  "nissin-cup-noodle-curry": {
+   "pack": [
+    [
+     "nissin",
+     "https://www.nissin.com/jp/product/items/13463/"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/220877308802"
+    ]
+   ],
+   "altPack": "닛신식품 닛신 컵누들 카레 제품 포장",
+   "altDish": "닛신 컵누들 카레의 실물 포장과 조리 예시"
+  },
+  "nissin-donbei-kitsune": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223159253758"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223159253758"
+    ]
+   ],
+   "altPack": "닛신식품 돈베 키쓰네 우동 제품 포장",
+   "altDish": "돈베 키쓰네 우동의 실물 포장과 조리 예시"
+  },
+  "nissin-ufo": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2012/05/14/738-nissin-u-f-o-unidentified-flying-object-yakisoba/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2012/05/14/738-nissin-u-f-o-unidentified-flying-object-yakisoba/"
+    ]
+   ],
+   "altPack": "닛신식품 닛신 야키소바 U.F.O. 제품 포장",
+   "altDish": "닛신 야키소바 U.F.O.의 실물 포장과 조리 예시"
+  },
+  "nissin-yakisoba": {
+   "pack": [
+    [
+     "nissin",
+     "https://www.nissin.com/jp/product/items/14001/"
+    ]
+   ],
+   "dish": [
+    [
+     "sirabee",
+     "https://sirabee.com/2026/02/28/20163524511/"
+    ]
+   ],
+   "altPack": "닛신식품 닛신 야키소바 제품 포장",
+   "altDish": "닛신 야키소바의 실물 포장과 조리 예시"
+  },
+  "demae-iccho": {
+   "pack": [
+    [
+     "www-rawota-hiroshima-jp",
+     "https://www.rawota.hiroshima.jp/entry/2022/02/15/050000"
+    ]
+   ],
+   "dish": [
+    [
+     "www-rawota-hiroshima-jp",
+     "https://www.rawota.hiroshima.jp/entry/2022/02/15/050000"
+    ]
+   ],
+   "altPack": "닛신식품 데마에잇초 제품 포장",
+   "altDish": "데마에잇초의 실물 포장과 조리 예시"
+  },
+  "sapporo-ichiban-shoyu": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/220919463767"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/220919463767"
+    ]
+   ],
+   "altPack": "산요식품 삿포로이치방 쇼유 제품 포장",
+   "altDish": "삿포로이치방 쇼유의 실물 포장과 조리 예시"
+  },
+  "sapporo-ichiban-miso": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/220772131287"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/220772131287"
+    ]
+   ],
+   "altPack": "산요식품 삿포로이치방 미소라멘 제품 포장",
+   "altDish": "삿포로이치방 미소라멘의 실물 포장과 조리 예시"
+  },
+  "sapporo-ichiban-shio": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/220771543608"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/220771543608"
+    ]
+   ],
+   "altPack": "산요식품 삿포로이치방 시오라멘 제품 포장",
+   "altDish": "삿포로이치방 시오라멘의 실물 포장과 조리 예시"
+  },
+  "maruchan-seimen-shoyu": {
+   "pack": [
+    [
+     "www-miyanomayu-com",
+     "https://www.miyanomayu.com/archives/6893446.html"
+    ]
+   ],
+   "dish": [
+    [
+     "www-miyanomayu-com",
+     "https://www.miyanomayu.com/archives/6893446.html"
+    ]
+   ],
+   "altPack": "도요수산(마루짱) 마루짱 세이멘 쇼유 제품 포장",
+   "altDish": "마루짱 세이멘 쇼유의 실물 포장과 조리 예시"
+  },
+  "maruchan-akai-kitsune": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2010/09/25/maruchan-instant-oriental-noodles-akai-kitsune-udon/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2010/09/25/maruchan-instant-oriental-noodles-akai-kitsune-udon/"
+    ]
+   ],
+   "altPack": "도요수산(마루짱) 아카이 키쓰네 우동 제품 포장",
+   "altDish": "아카이 키쓰네 우동의 실물 포장과 조리 예시"
+  },
+  "maruchan-midori-tanuki": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2011/06/05/412-maruchan-midori-no-tanuki-instant-soba-bowl/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2011/06/05/412-maruchan-midori-no-tanuki-instant-soba-bowl/"
+    ]
+   ],
+   "altPack": "도요수산(마루짱) 미도리노 타누키 소바 제품 포장",
+   "altDish": "미도리노 타누키 소바의 실물 포장과 조리 예시"
+  },
+  "myojo-charumera": {
+   "pack": [
+    [
+     "myojo",
+     "https://www.myojofoods.co.jp/products/items/13357"
+    ]
+   ],
+   "dish": [
+    [
+     "www-youtube-com-watch-2",
+     "https://www.youtube.com/watch?v=zpAYHNO8Gv4"
+    ]
+   ],
+   "altPack": "묘조식품 묘조 차르메라 쇼유 제품 포장",
+   "altDish": "묘조 차르메라 쇼유의 실물 포장과 조리 예시"
+  },
+  "myojo-ippeichan-yakisoba": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2019/07/20/3231-myojo-ippeichan-yakisoba/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2019/07/20/3231-myojo-ippeichan-yakisoba/"
+    ]
+   ],
+   "altPack": "묘조식품 잇페이짱 요미세노 야키소바 제품 포장",
+   "altDish": "잇페이짱 요미세노 야키소바의 실물 포장과 조리 예시"
+  },
+  "acecook-super-cup-tonkotsu": {
+   "pack": [
+    [
+     "japanfield-net",
+     "https://japanfield.net/home/cupmen/superton/"
+    ]
+   ],
+   "dish": [
+    [
+     "japanfield-net",
+     "https://japanfield.net/home/cupmen/superton/"
+    ]
+   ],
+   "altPack": "에이스콕 슈퍼컵 1.5배 돈코츠 제품 포장",
+   "altDish": "슈퍼컵 1.5배 돈코츠의 실물 포장과 조리 예시"
+  },
+  "peyoung-yakisoba": {
+   "pack": [
+    [
+     "peyoung",
+     "https://www.peyoung.co.jp/products/000007.html"
+    ]
+   ],
+   "dish": [
+    [
+     "www-youtube-com-watch-2",
+     "https://www.youtube.com/watch?v=hiLZeGgvqLM"
+    ]
+   ],
+   "altPack": "마루카식품 페양 소스 야키소바 제품 포장",
+   "altDish": "페양 소스 야키소바의 실물 포장과 조리 예시"
+  },
+  "masterkong-hongshao-beef": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2015/08/05/1740-master-kong-braised-beef-noodle/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2015/08/05/1740-master-kong-braised-beef-noodle/"
+    ]
+   ],
+   "altPack": "캉스푸 캉스푸 훙사오 뉴러우몐 제품 포장",
+   "altDish": "캉스푸 훙사오 뉴러우몐의 실물 포장과 조리 예시"
+  },
+  "masterkong-laotan-suancai": {
+   "pack": [
+    [
+     "www-ukcnshop-com",
+     "https://www.ukcnshop.com/kang-noodles-laotan.html"
+    ]
+   ],
+   "dish": [
+    [
+     "www-weee-com",
+     "https://www.weee.com/zh/social/video/92410"
+    ]
+   ],
+   "altPack": "캉스푸 캉스푸 라오탄 쏸차이 뉴러우몐 제품 포장",
+   "altDish": "캉스푸 라오탄 쏸차이 뉴러우몐의 실물 포장과 조리 예시"
+  },
+  "unipresident-laotan-suancai": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2017/08/22/2531-uni-president-pickled-cabbage-beef/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2017/08/22/2531-uni-president-pickled-cabbage-beef/"
+    ]
+   ],
+   "altPack": "퉁이(중국) 퉁이 라오탄 쏸차이 뉴러우몐 제품 포장",
+   "altDish": "퉁이 라오탄 쏸차이 뉴러우몐의 실물 포장과 조리 예시"
+  },
+  "unipresident-tangdaren-tonkotsu": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2019/08/24/3263-soup-daren-pork-bone-noodle-china/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2019/08/24/3263-soup-daren-pork-bone-noodle-china/"
+    ]
+   ],
+   "altPack": "퉁이(중국) 탕다런 일본식 돈코츠 라멘 제품 포장",
+   "altDish": "탕다런 일본식 돈코츠 라멘의 실물 포장과 조리 예시"
+  },
+  "baixiang-dagu": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2023/03/05/4405-baixiang-big-bone-noodle-soup-pork-flavor-china/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2023/03/05/4405-baixiang-big-bone-noodle-soup-pork-flavor-china/"
+    ]
+   ],
+   "altPack": "바이샹 바이샹 다구몐 제품 포장",
+   "altDish": "바이샹 다구몐의 실물 포장과 조리 예시"
+  },
+  "baixiang-laomuji": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2021/07/19/3879-baixiang-artificial-chicken-soup-flavor-instant-noodle-china/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2021/07/19/3879-baixiang-artificial-chicken-soup-flavor-instant-noodle-china/"
+    ]
+   ],
+   "altPack": "바이샹 바이샹 탕하오허 라오무지탕몐 제품 포장",
+   "altDish": "바이샹 탕하오허 라오무지탕몐의 실물 포장과 조리 예시"
+  },
+  "baixiang-xiangcai": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2025/03/23/5141-baixiang-instant-noodles-coriander-noodle-china/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2025/03/23/5141-baixiang-instant-noodles-coriander-noodle-china/"
+    ]
+   ],
+   "altPack": "바이샹 바이샹 샹차이몐 제품 포장",
+   "altDish": "바이샹 샹차이몐의 실물 포장과 조리 예시"
+  },
+  "haohuanluo-luosifen": {
+   "pack": [
+    [
+     "www-umall-com-au",
+     "https://www.umall.com.au/collections/instant-rice-noodles?filter.p.tag=instant-luosifen"
+    ]
+   ],
+   "dish": [
+    [
+     "www-lazada-com-ph",
+     "https://www.lazada.com.ph/videodetail/?video_id=30059082932"
+    ]
+   ],
+   "altPack": "하오환뤄 하오환뤄 뤄쓰펀 제품 포장",
+   "altDish": "하오환뤄 뤄쓰펀의 실물 포장과 조리 예시"
+  },
+  "tw-unif-rouzao": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2017/03/08/2352-uni-president-minced-pork/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2017/03/08/2352-uni-president-minced-pork/"
+    ]
+   ],
+   "altPack": "퉁이(대만) 퉁이 러우짜오몐 제품 포장",
+   "altDish": "퉁이 러우짜오몐의 실물 포장과 조리 예시"
+  },
+  "tw-manhan-congshao-beef": {
+   "pack": [
+    [
+     "mikoplace-com",
+     "https://mikoplace.com/uni-president-man-han-da-can-bowl-chili-hot-beef-flavor-192g/"
+    ]
+   ],
+   "dish": [
+    [
+     "yuann-tw",
+     "https://yuann.tw/%E6%B3%A1%E9%BA%B5%E6%8E%A8%E8%96%A6%E6%BB%BF%E6%BC%A2%E5%A4%A7%E9%A4%90%E7%89%9B%E8%82%89%E9%BA%B5-%E8%94%A5%E7%87%92%E7%8F%8D%E5%91%B3%E6%9C%89%E4%BB%80%E9%BA%BC%E4%B8%8D%E5%90%8C%EF%BC%9F/"
+    ]
+   ],
+   "altPack": "퉁이(대만) 만한대찬 충사오 뉴러우몐 제품 포장",
+   "altDish": "만한대찬 충사오 뉴러우몐의 실물 포장과 조리 예시"
+  },
+  "tw-laiyike-shrimp": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2024/07/09/4904-uni-president-one-more-cup-seafood-flavor-taiwan/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2024/07/09/4904-uni-president-one-more-cup-seafood-flavor-taiwan/"
+    ]
+   ],
+   "altPack": "퉁이(대만) 라이이커 셴샤위반몐 제품 포장",
+   "altDish": "라이이커 셴샤위반몐의 실물 포장과 조리 예시"
+  },
+  "tw-weilih-zhajiang": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2024/03/20/4784-wei-lih-jah-jan-mien-instant-noodle-with-jah-jan-flavour-taiwan/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2024/03/20/4784-wei-lih-jah-jan-mien-instant-noodle-with-jah-jan-flavour-taiwan/"
+    ]
+   ],
+   "altPack": "웨이리 웨이리 짜장몐 제품 포장",
+   "altDish": "웨이리 짜장몐의 실물 포장과 조리 예시"
+  },
+  "tw-weiwei-a": {
+   "pack": [
+    [
+     "etaiwan-blog",
+     "https://etaiwan.blog/weiweia-chicken-flavor/"
+    ]
+   ],
+   "dish": [
+    [
+     "etaiwan-blog",
+     "https://etaiwan.blog/weiweia-chicken-flavor/"
+    ]
+   ],
+   "altPack": "웨이단 웨이웨이A 파이구지탕몐 제품 포장",
+   "altDish": "웨이웨이A 파이구지탕몐의 실물 포장과 조리 예시"
+  },
+  "tw-ttl-huadiao-chicken": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2018/12/02/3035-ttl-spring-chicken-hua-diao/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2018/12/02/3035-ttl-spring-chicken-hua-diao/"
+    ]
+   ],
+   "altPack": "대만담배주류공사 타이주 화댜오지몐 제품 포장",
+   "altDish": "타이주 화댜오지몐의 실물 포장과 조리 예시"
+  },
+  "tw-yiduzan-kongrou": {
+   "pack": [
+    [
+     "24h-pchome-com-tw",
+     "https://24h.pchome.com.tw/prod/DBAY13-A9009F30J"
+    ]
+   ],
+   "dish": [
+    [
+     "www-youtube-com-watch-2",
+     "https://www.youtube.com/watch?v=xVQMct2CW2M"
+    ]
+   ],
+   "altPack": "웨이리 이두짠 쿵러우몐 제품 포장",
+   "altDish": "이두짠 쿵러우몐의 실물 포장과 조리 예시"
+  },
+  "tw-asha-tainan": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2016/06/10/2071-sha-tainan-noodle-original-sauce/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2016/06/10/2071-sha-tainan-noodle-original-sauce/"
+    ]
+   ],
+   "altPack": "아샤푸드 아샤 타이난 간몐 제품 포장",
+   "altDish": "아샤 타이난 간몐의 실물 포장과 조리 예시"
+  },
+  "hk-doll-noodle": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2021/08/01/3900-doll-ramen-noodles-sesame-flavour-hong-kong/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2021/08/01/3900-doll-ramen-noodles-sesame-flavour-hong-kong/"
+    ]
+   ],
+   "altPack": "닛신식품 공자이몐 제품 포장",
+   "altDish": "공자이몐의 실물 포장과 조리 예시"
+  },
+  "hk-demae-sesame": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2025/03/10/5128-nissin-demae-iccho-sesame-oil-flavor-instant-noodles-hong-kong/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2025/03/10/5128-nissin-demae-iccho-sesame-oil-flavor-instant-noodles-hong-kong/"
+    ]
+   ],
+   "altPack": "닛신식품 데마에잇초 참기름 맛 (홍콩) 제품 포장",
+   "altDish": "데마에잇초 참기름 맛 (홍콩)의 실물 포장과 조리 예시"
+  },
+  "indomie-mi-goreng": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2011/12/08/re-review-indomie-mi-goreng-fried-noodles/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2011/12/08/re-review-indomie-mi-goreng-fried-noodles/"
+    ]
+   ],
+   "altPack": "인도푸드 인도미 미고렝 제품 포장",
+   "altDish": "인도미 미고렝의 실물 포장과 조리 예시"
+  },
+  "indomie-mi-goreng-pedas": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2012/10/28/re-review-indomie-mi-goreng-pedas-hot-fried-noodles/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2012/10/28/re-review-indomie-mi-goreng-pedas-hot-fried-noodles/"
+    ]
+   ],
+   "altPack": "인도푸드 인도미 미고렝 페다스 제품 포장",
+   "altDish": "인도미 미고렝 페다스의 실물 포장과 조리 예시"
+  },
+  "indomie-ayam-panggang": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2012/05/10/734-meet-the-manufacturer-indomie-mi-instan-mi-goreng-rasa-ayam-panggang-jumbo-local-version/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2012/05/10/734-meet-the-manufacturer-indomie-mi-instan-mi-goreng-rasa-ayam-panggang-jumbo-local-version/"
+    ]
+   ],
+   "altPack": "인도푸드 인도미 미고렝 아얌 팡강 제품 포장",
+   "altDish": "인도미 미고렝 아얌 팡강의 실물 포장과 조리 예시"
+  },
+  "indomie-rendang": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2024/02/01/4719-indomie-mi-goreng-rasa-rendang-indonesia/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2024/02/01/4719-indomie-mi-goreng-rasa-rendang-indonesia/"
+    ]
+   ],
+   "altPack": "인도푸드 인도미 미고렝 렌당 제품 포장",
+   "altDish": "인도미 미고렝 렌당의 실물 포장과 조리 예시"
+  },
+  "indomie-iga-penyet": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2014/05/16/1390-indomie-mi-goreng-rasa-iga-penyet/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2014/05/16/1390-indomie-mi-goreng-rasa-iga-penyet/"
+    ]
+   ],
+   "altPack": "인도푸드 인도미 미고렝 이가 프녯 제품 포장",
+   "altDish": "인도미 미고렝 이가 프녯의 실물 포장과 조리 예시"
+  },
+  "indomie-mie-aceh": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2024/02/04/4723-indomie-mi-goreng-aceh-indonesia/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2024/02/04/4723-indomie-mi-goreng-aceh-indonesia/"
+    ]
+   ],
+   "altPack": "인도푸드 인도미 미 아체 제품 포장",
+   "altDish": "인도미 미 아체의 실물 포장과 조리 예시"
+  },
+  "indomie-chicken-soup": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2023/09/09/4588-indomie-mi-instan-rasa-kaldu-ayam-indonesia/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2023/09/09/4588-indomie-mi-instan-rasa-kaldu-ayam-indonesia/"
+    ]
+   ],
+   "altPack": "인도푸드 인도미 치킨 국물 라면 제품 포장",
+   "altDish": "인도미 치킨 국물 라면의 실물 포장과 조리 예시"
+  },
+  "indomie-kari-ayam": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2012/11/25/re-review-indomie-chicken-curry-flavour-instant-noodles-2/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2012/11/25/re-review-indomie-chicken-curry-flavour-instant-noodles-2/"
+    ]
+   ],
+   "altPack": "인도푸드 인도미 카리 아얌 제품 포장",
+   "altDish": "인도미 카리 아얌의 실물 포장과 조리 예시"
+  },
+  "mie-sedaap-goreng": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2011/10/29/556-wings-food-mie-sedaap-mi-goreng-perisa-asli/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2011/10/29/556-wings-food-mie-sedaap-mi-goreng-perisa-asli/"
+    ]
+   ],
+   "altPack": "윙스푸드 미 세답 고렝 제품 포장",
+   "altDish": "미 세답 고렝의 실물 포장과 조리 예시"
+  },
+  "mie-sedaap-soto": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2011/10/24/549-wing-food-mie-sedaap-supreme-soto-soup-noodle/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2011/10/24/549-wing-food-mie-sedaap-supreme-soto-soup-noodle/"
+    ]
+   ],
+   "altPack": "윙스푸드 미 세답 소토 제품 포장",
+   "altDish": "미 세답 소토의 실물 포장과 조리 예시"
+  },
+  "mykuali-white-curry": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2025/03/03/5122-mykuali-penang-white-curry-malaysia/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2025/03/03/5122-mykuali-penang-white-curry-malaysia/"
+    ]
+   ],
+   "altPack": "마이쿠알리 마이쿠알리 페낭 화이트 커리 제품 포장",
+   "altDish": "마이쿠알리 페낭 화이트 커리의 실물 포장과 조리 예시"
+  },
+  "mykuali-hokkien-prawn": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2017/04/05/2404-mykuali-penang-hokkien-prawn/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2017/04/05/2404-mykuali-penang-hokkien-prawn/"
+    ]
+   ],
+   "altPack": "마이쿠알리 마이쿠알리 페낭 호키엔 새우 국수 제품 포장",
+   "altDish": "마이쿠알리 페낭 호키엔 새우 국수의 실물 포장과 조리 예시"
+  },
+  "mykuali-red-tomyum": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2017/04/21/2419-mykuali-penang-red-tom-yum-goong/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2017/04/21/2419-mykuali-penang-red-tom-yum-goong/"
+    ]
+   ],
+   "altPack": "마이쿠알리 마이쿠알리 페낭 레드 똠얌꿍 제품 포장",
+   "altDish": "마이쿠알리 페낭 레드 똠얌꿍의 실물 포장과 조리 예시"
+  },
+  "maggi-kari-my": {
+   "pack": [
+    [
+     "maggi-my",
+     "https://www.maggi.my/ms/produkte/maggi-2-minit-kari-9556000000000/"
+    ]
+   ],
+   "dish": [
+    [
+     "maggi-my",
+     "https://www.maggi.my/en/recipes/maggi-prawn-curry-noodles"
+    ]
+   ],
+   "altPack": "네슬레(매기) 매기 카리 제품 포장",
+   "altDish": "매기 카리의 실물 포장과 조리 예시"
+  },
+  "prima-laksa-lamian": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2015/03/23/re-review-prima-taste-singapore-laksa-la-mian/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2015/03/23/re-review-prima-taste-singapore-laksa-la-mian/"
+    ]
+   ],
+   "altPack": "프리마테이스트 프리마테이스트 싱가포르 락사 라미엔 제품 포장",
+   "altDish": "프리마테이스트 싱가포르 락사 라미엔의 실물 포장과 조리 예시"
+  },
+  "prima-wholegrain-laksa": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2025/01/20/5081-prima-taste-singapore-wholegrain-laksa-lamian-singapore/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2025/01/20/5081-prima-taste-singapore-wholegrain-laksa-lamian-singapore/"
+    ]
+   ],
+   "altPack": "프리마테이스트 프리마테이스트 통곡물 락사 라미엔 제품 포장",
+   "altDish": "프리마테이스트 통곡물 락사 라미엔의 실물 포장과 조리 예시"
+  },
+  "prima-curry-lamian": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2015/04/01/re-review-prima-taste-singapore-curry-la-mian/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2015/04/01/re-review-prima-taste-singapore-curry-la-mian/"
+    ]
+   ],
+   "altPack": "프리마테이스트 프리마테이스트 싱가포르 커리 라미엔 제품 포장",
+   "altDish": "프리마테이스트 싱가포르 커리 라미엔의 실물 포장과 조리 예시"
+  },
+  "mama-tomyum-shrimp": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2015/09/04/1767-MAMA-instant-noodles-shrimp-tom-yum-flavour/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2015/09/04/1767-MAMA-instant-noodles-shrimp-tom-yum-flavour/"
+    ]
+   ],
+   "altPack": "타이 프레지던트 푸드 마마 똠얌꿍 제품 포장",
+   "altDish": "마마 똠얌꿍의 실물 포장과 조리 예시"
+  },
+  "mama-creamy-tomyum": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2016/02/13/1939-mama-instant-noodles-shrimp-creamy-tom-yum-flavour/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2016/02/13/1939-mama-instant-noodles-shrimp-creamy-tom-yum-flavour/"
+    ]
+   ],
+   "altPack": "타이 프레지던트 푸드 마마 크리미 똠얌꿍 제품 포장",
+   "altDish": "마마 크리미 똠얌꿍의 실물 포장과 조리 예시"
+  },
+  "mama-minced-pork": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2016/02/04/1929-mama-instant-noodles-minced-pork-flavour/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2016/02/04/1929-mama-instant-noodles-minced-pork-flavour/"
+    ]
+   ],
+   "altPack": "타이 프레지던트 푸드 마마 무쌉 제품 포장",
+   "altDish": "마마 무쌉의 실물 포장과 조리 예시"
+  },
+  "mama-pad-kee-mao": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2014/08/28/1468-pad-kee-mao/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2014/08/28/1468-pad-kee-mao/"
+    ]
+   ],
+   "altPack": "타이 프레지던트 푸드 마마 팟키마오 제품 포장",
+   "altDish": "마마 팟키마오의 실물 포장과 조리 예시"
+  },
+  "mama-green-curry": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2014/08/26/1466-green-curry/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2014/08/26/1466-green-curry/"
+    ]
+   ],
+   "altPack": "타이 프레지던트 푸드 마마 그린 커리 제품 포장",
+   "altDish": "마마 그린 커리의 실물 포장과 조리 예시"
+  },
+  "mama-yentafo": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2014/02/04/1302-MAMA-instant-noodles-yentafo-tom-yum-mohfai-flavour/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2014/02/04/1302-MAMA-instant-noodles-yentafo-tom-yum-mohfai-flavour/"
+    ]
+   ],
+   "altPack": "타이 프레지던트 푸드 마마 옌타포 똠얌 모파이 제품 포장",
+   "altDish": "마마 옌타포 똠얌 모파이의 실물 포장과 조리 예시"
+  },
+  "haohao-tom-chua-cay": {
+   "pack": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223320006504"
+    ]
+   ],
+   "dish": [
+    [
+     "pikich89",
+     "https://m.blog.naver.com/pikich89/223320006504"
+    ]
+   ],
+   "altPack": "에이스콕 베트남 하오하오 똠 쭈어 까이 제품 포장",
+   "altDish": "하오하오 똠 쭈어 까이의 실물 포장과 조리 예시"
+  },
+  "haohao-sate": {
+   "pack": [
+    [
+     "icheck-vn",
+     "https://icheck.vn/san-pham/mi-hao-hao-sa-te-hanh-tim-goi-75g-8934563183158"
+    ]
+   ],
+   "dish": [
+    [
+     "www-youtube-com-watch-3",
+     "https://www.youtube.com/watch?v=wDqSpIuAED4"
+    ]
+   ],
+   "altPack": "에이스콕 베트남 하오하오 사떼 하잉띰 제품 포장",
+   "altDish": "하오하오 사떼 하잉띰의 실물 포장과 조리 예시"
+  },
+  "haohao-chay": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2012/09/09/861-vina-acecook-hao-hao-mi-chay-vegetarian-flavour/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2012/09/09/861-vina-acecook-hao-hao-mi-chay-vegetarian-flavour/"
+    ]
+   ],
+   "altPack": "에이스콕 베트남 하오하오 채식 버섯 제품 포장",
+   "altDish": "하오하오 채식 버섯의 실물 포장과 조리 예시"
+  },
+  "omachi-bo-ham": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2024/09/07/4963-omachi-instant-noodles-beef-flavor-vietnam/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2024/09/07/4963-omachi-instant-noodles-beef-flavor-vietnam/"
+    ]
+   ],
+   "altPack": "마산 컨슈머 오마치 소고기 스튜 제품 포장",
+   "altDish": "오마치 소고기 스튜의 실물 포장과 조리 예시"
+  },
+  "luckyme-pancit-canton": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2010/09/29/lucky-me-instant-pancit-canton-chow-mein/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2010/09/29/lucky-me-instant-pancit-canton-chow-mein/"
+    ]
+   ],
+   "altPack": "몬데 닛신 럭키미 판싯 칸톤 오리지널 제품 포장",
+   "altDish": "럭키미 판싯 칸톤 오리지널의 실물 포장과 조리 예시"
+  },
+  "luckyme-chilimansi": {
+   "pack": [
+    [
+     "instantramen-com",
+     "https://instantramen.com/lucky-me-pancit-canton-chilimansi/"
+    ]
+   ],
+   "dish": [
+    [
+     "instantramen-com",
+     "https://instantramen.com/lucky-me-pancit-canton-chilimansi/"
+    ]
+   ],
+   "altPack": "몬데 닛신 럭키미 판싯 칸톤 칠리만시 제품 포장",
+   "altDish": "럭키미 판싯 칸톤 칠리만시의 실물 포장과 조리 예시"
+  },
+  "luckyme-beef-na-beef": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2012/02/09/660-lucky-me-beef-na-beef-instant-noodles-artificial-beef-flavor/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2012/02/09/660-lucky-me-beef-na-beef-instant-noodles-artificial-beef-flavor/"
+    ]
+   ],
+   "altPack": "몬데 닛신 럭키미 비프 나 비프 제품 포장",
+   "altDish": "럭키미 비프 나 비프의 실물 포장과 조리 예시"
+  },
+  "luckyme-la-paz-batchoy": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2011/02/25/310-lucky-me-instant-la-paz-batchoy-la-paz-style-instant-noodles-artificial-beef-flavor/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2011/02/25/310-lucky-me-instant-la-paz-batchoy-la-paz-style-instant-noodles-artificial-beef-flavor/"
+    ]
+   ],
+   "altPack": "몬데 닛신 럭키미 라파스 바초이 제품 포장",
+   "altDish": "럭키미 라파스 바초이의 실물 포장과 조리 예시"
+  },
+  "maggi-masala-india": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2018/02/04/2712-maggi-2-minute-noodle-masala/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2018/02/04/2712-maggi-2-minute-noodle-masala/"
+    ]
+   ],
+   "altPack": "네슬레(매기) 매기 2분 마살라 누들 제품 포장",
+   "altDish": "매기 2분 마살라 누들의 실물 포장과 조리 예시"
+  },
+  "yippee-magic-masala": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2017/10/18/2587-sunfeast-yippee-magic-masala/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2017/10/18/2587-sunfeast-yippee-magic-masala/"
+    ]
+   ],
+   "altPack": "ITC 이피 매직 마살라 제품 포장",
+   "altDish": "이피 매직 마살라의 실물 포장과 조리 예시"
+  },
+  "waiwai-chicken": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2026/03/03/meet-the-manufacturer-5472-cg-wai-wai-instant-noodles-chicken-flavoured-nepal/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2026/03/03/meet-the-manufacturer-5472-cg-wai-wai-instant-noodles-chicken-flavoured-nepal/"
+    ]
+   ],
+   "altPack": "CG푸드 와이와이 치킨 제품 포장",
+   "altDish": "와이와이 치킨의 실물 포장과 조리 예시"
+  },
+  "maruchan-ramen-chicken": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2010/08/10/maruchan-chicken-flavor-ramen-noodle-soup/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2010/08/10/maruchan-chicken-flavor-ramen-noodle-soup/"
+    ]
+   ],
+   "altPack": "도요수산(마루짱) 마루짱 라멘 누들 수프 치킨 제품 포장",
+   "altDish": "마루짱 라멘 누들 수프 치킨의 실물 포장과 조리 예시"
+  },
+  "maruchan-instant-lunch": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2026/10/19/5683-maruchan-instant-lunch-chicken-pac-man-edition-united-states/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2026/10/19/5683-maruchan-instant-lunch-chicken-pac-man-edition-united-states/"
+    ]
+   ],
+   "altPack": "도요수산(마루짱) 마루짱 인스턴트 런치 제품 포장",
+   "altDish": "마루짱 인스턴트 런치의 실물 포장과 조리 예시"
+  },
+  "nissin-top-ramen-chicken": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2011/11/29/re-review-nissin-top-ramen-chicken-flavor-ramen-noodle-soup/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2011/11/29/re-review-nissin-top-ramen-chicken-flavor-ramen-noodle-soup/"
+    ]
+   ],
+   "altPack": "닛신식품 닛신 탑라멘 치킨 제품 포장",
+   "altDish": "닛신 탑라멘 치킨의 실물 포장과 조리 예시"
+  },
+  "momofuku-tingly-chili": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2025/10/05/5328-momofuku-tingly-chili-wavy-noodles-united-states/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2025/10/05/5328-momofuku-tingly-chili-wavy-noodles-united-states/"
+    ]
+   ],
+   "altPack": "모모푸쿠 모모푸쿠 팅글리 칠리 누들 제품 포장",
+   "altDish": "모모푸쿠 팅글리 칠리 누들의 실물 포장과 조리 예시"
+  },
+  "momofuku-soy-scallion": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2025/03/27/5145-momofuku-soy-scallion-noodles-united-states/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2025/03/27/5145-momofuku-soy-scallion-noodles-united-states/"
+    ]
+   ],
+   "altPack": "모모푸쿠 모모푸쿠 소이 앤 스캘리언 누들 제품 포장",
+   "altDish": "모모푸쿠 소이 앤 스캘리언 누들의 실물 포장과 조리 예시"
+  },
+  "immi-black-garlic": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2026/09/21/5664-immi-black-garlic-chicken-flavor-ramen-soup-united-states/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2026/09/21/5664-immi-black-garlic-chicken-flavor-ramen-soup-united-states/"
+    ]
+   ],
+   "altPack": "이미(immi) 이미 블랙 갈릭 치킨 맛 제품 포장",
+   "altDish": "이미 블랙 갈릭 치킨 맛의 실물 포장과 조리 예시"
+  },
+  "pot-noodle-chicken-mushroom": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2012/01/28/649-pot-noodle-chicken-mushroom-flavour/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2012/01/28/649-pot-noodle-chicken-mushroom-flavour/"
+    ]
+   ],
+   "altPack": "유니레버 팟누들 치킨 앤 머시룸 제품 포장",
+   "altDish": "팟누들 치킨 앤 머시룸의 실물 포장과 조리 예시"
+  },
+  "pot-noodle-bombay-bad-boy": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2012/01/05/625-pot-noodle-bombay-bad-boy-flavour/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2012/01/05/625-pot-noodle-bombay-bad-boy-flavour/"
+    ]
+   ],
+   "altPack": "유니레버 팟누들 봄베이 배드 보이 제품 포장",
+   "altDish": "팟누들 봄베이 배드 보이의 실물 포장과 조리 예시"
+  },
+  "nissin-miojo-galinha-caipira": {
+   "pack": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2020/07/03/3547-nissin-miojo-nissin-lamen-sabor-galinha-caipira-brazil/"
+    ]
+   ],
+   "dish": [
+    [
+     "ramenrater",
+     "https://www.theramenrater.com/2020/07/03/3547-nissin-miojo-nissin-lamen-sabor-galinha-caipira-brazil/"
+    ]
+   ],
+   "altPack": "닛신식품 닛신 미오조 갈리냐 카이피라 제품 포장",
+   "altDish": "닛신 미오조 갈리냐 카이피라의 실물 포장과 조리 예시"
+  },
+  "indomie-nigeria-chicken": {
+   "pack": [
+    [
+     "www-ndutoyou-com",
+     "https://www.ndutoyou.com/product/indomie-standard-pack-chicken-single-pack/food-provisions/noodles"
+    ]
+   ],
+   "dish": [
+    [
+     "www-ndutoyou-com",
+     "https://www.ndutoyou.com/product/indomie-standard-pack-chicken-single-pack/food-provisions/noodles"
+    ]
+   ],
+   "altPack": "듀필 프리마 푸드 인도미 치킨 (나이지리아) 제품 포장",
+   "altDish": "인도미 치킨 (나이지리아)의 실물 포장과 조리 예시"
+  }
+ }
+}

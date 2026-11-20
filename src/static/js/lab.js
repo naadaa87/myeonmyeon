@@ -137,7 +137,7 @@
       var round = st.cur.length;
       if (round === 1) { done(st.cur[0]); return; }
       var a = st.cur[st.i], b = st.cur[st.i + 1];
-      var opt = function (r) { return '<button type="button" class="wc-opt" data-w="' + r.s + '"><img src="' + MM.imgOf(r) + '" alt="" width="800" height="800"><b>' + esc(r.n) + '</b><span>' + esc(r.mn) + ' · ' + esc(D.STYLES[r.c]) + '</span></button>'; };
+      var opt = function (r) { return '<button type="button" class="wc-opt" data-w="' + r.s + '"><img src="' + MM.imgOf(r, true) + '" alt="" width="800" height="800"><b>' + esc(r.n) + '</b><span>' + esc(r.mn) + ' · ' + esc(D.STYLES[r.c]) + '</span></button>'; };
       root.innerHTML = '<div class="wc-stage"><div class="wc-meta"><span class="wc-round">' + (ROUND[round] || round + '강') + '</span><span class="muted">' + (st.i / 2 + 1) + ' / ' + (round / 2) + '</span></div>' +
         '<div class="wc-bar"><i style="width:' + ((st.i / 2) / (round / 2) * 100) + '%"></i></div><div class="wc-pair">' + opt(a) + opt(b) + '</div><p class="small muted" style="text-align:center">더 끌리는 쪽을 누르세요</p></div>';
       $$('[data-w]', root).forEach(function (btn) {
@@ -154,7 +154,7 @@
     }
     function done(w) {
       MM.track('worldcup', w.s);
-      root.innerHTML = '<div class="panel wc-win"><p class="kicker">나의 ' + (ROUND[st.size] || '') + ' 우승 라면</p><img src="' + MM.imgOf(w) + '" alt="" width="200" height="200"><h2>' + esc(w.n) + '</h2><p class="muted">' + esc(w.mn) + ' · ' + esc(D.STYLES[w.c]) + '</p>' +
+      root.innerHTML = '<div class="panel wc-win"><p class="kicker">나의 ' + (ROUND[st.size] || '') + ' 우승 라면</p><img src="' + MM.imgOf(w, true) + '" alt="" width="200" height="200"><h2>' + esc(w.n) + '</h2><p class="muted">' + esc(w.mn) + ' · ' + esc(D.STYLES[w.c]) + '</p>' +
         '<p class="row-btns" style="justify-content:center"><a class="btn btn-main" href="/ramen/' + w.s + '/">라면 보러 가기</a><button type="button" class="btn btn-line" data-wshare>' + ico('i-share') + '결과 공유</button><button type="button" class="btn btn-sub" data-wagain>' + ico('i-reset') + '한 번 더</button></p></div><div data-wstats></div>';
       $('[data-wshare]', root).addEventListener('click', function () { MM.share({ title: '나의 라면 월드컵 우승: ' + w.n, text: '면면 라면 월드컵에서 ' + MM.josa(w.n, '이', '가') + ' 우승했어요.', url: location.origin + '/lab/worldcup/' }); });
       $('[data-wagain]', root).addEventListener('click', function () { MM.loadRamen().then(function (d) { root.innerHTML = ''; setup(d); }); });

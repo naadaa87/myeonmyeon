@@ -1502,3 +1502,12 @@ a.pill:hover { background: var(--paper-3); }
 .fact-t { margin: 4px 0 8px; font-size: 15px; line-height: 1.7; color: var(--ink-2); word-break: keep-all; }
 .fact-foot { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 13.5px; }
 .fact-foot a { font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
+
+/* 라면 사진: 포장만 있는 실물 사진 */
+.rhead-pic picture { display: block; }
+.rhead-pic img.is-pack { object-fit: contain; background: #fff; border: 1px solid var(--line); }
+.pic-note a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.pill-ok { background: #E7F3EA; color: #1E6B35; }
+.pill-warn { background: var(--red-soft); color: var(--red-d); }
+.adm-panel details summary { cursor: pointer; color: var(--muted); }
+.adm-panel details a { color: inherit; }

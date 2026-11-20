@@ -2,6 +2,7 @@
 import {
   esc, cfg, SITE_NAME, abs, RAMEN, BY, SORTED, NEWEST, MAKERS, layout, icon, WAVE, img, pageBanner, crumbs, crumbLd, secHead, moreLink,
   ramenCard, ramenGrid, hotChip, statusChip, formText, styleText, yearText, releaseKey, buyLink, DISCLOSURE, josa, readJSON, cho, DOGAM_CHECKED, COUNTRIES, WORLD,
+  ramenHero, picSrc, ramenImg,
 } from './lib.mjs';
 import { STYLES, FORMS, STATUS, HOTS, GROUPS, AXES, RANK_RULE, TASTES, NOODLE_TYPES } from '../server/catalog-data.js';
 import { storyHomeCards } from './pages-story.mjs';
@@ -152,7 +153,7 @@ export const newsItem = (n) => `<li class="news-item"><p class="news-date">${esc
 export function productCard(r, from) {
   if (!r) return '';
   return `<article class="pcard" data-s="${r.s}">
-<a class="pcard-img" href="/ramen/${r.s}/">${img(r.img, '')}${statusChip(r)}</a>
+<a class="pcard-img" href="/ramen/${r.s}/">${ramenImg(r, false, '(min-width: 760px) 240px, 46vw')}${statusChip(r)}</a>
 <div class="pcard-body">
 <p class="rcard-maker">${esc(r.maker)}${r.f ? ` · ${formText(r)}` : ''}</p>
 <h3><a href="/ramen/${r.s}/">${esc(r.n)}</a></h3>
@@ -245,7 +246,7 @@ export function ramenPage(r) {
   const body = `<div class="wrap">
 ${crumbs(items)}
 <article class="rhead" data-ramen="${r.s}" data-name="${esc(r.n)}">
-<div class="rhead-pic">${img(r.img, `${STYLES[r.c]} 라면 예시 그림`, '', true)}${statusChip(r)}<p class="pic-note">그림은 조리 방식을 보여 주는 예시예요.</p></div>
+<div class="rhead-pic">${ramenHero(r)}</div>
 <div class="rhead-text">
 <p class="rhead-maker">${r.co !== 'kr' ? `<a class="rcard-co" href="/world/${r.co}/">${esc(r.coName)}</a>` : ''}<a href="/ramen/?m=${r.m}">${esc(r.maker)}</a>${r.f ? ` · ${formText(r)}` : ''} · ${styleText(r)}</p>
 <h1>${esc(r.n)}</h1>
@@ -312,9 +313,9 @@ ${secHead(`${josa(groupName(g), '과', '와')} 비슷한 라면`, moreLink(`/ram
 ${ramenGrid(similar(r))}
 </section>
 </div>`;
-  const jsonld = [crumbLd(items), { '@context': 'https://schema.org', '@type': 'Product', name: r.n, brand: { '@type': 'Brand', name: r.maker }, category: `${groupName(g)} 라면`, description: r.d, url: abs(path), image: abs(`/assets/img/${r.img}.webp`) }];
+  const jsonld = [crumbLd(items), { '@context': 'https://schema.org', '@type': 'Product', name: r.n, brand: { '@type': 'Brand', name: r.maker }, category: `${groupName(g)} 라면`, description: r.d, url: abs(path), image: abs(r.pic && r.pic.detail ? picSrc(r, 'square') : r.pic ? picSrc(r) : `/assets/img/${r.img}.webp`) }];
   const desc = `${r.maker} ${r.n}${r.y ? `(${yearText(r.y)} 출시)` : ''}. ${r.d}`.slice(0, 155);
-  return layout({ title: `${r.n} 맛 기록과 랭킹 - ${r.maker} | ${SITE_NAME}`, description: desc, path, body, scripts: ['ramen.js'], jsonld, ogType: 'product' });
+  return layout({ title: `${r.n} 맛 기록과 랭킹 - ${r.maker} | ${SITE_NAME}`, description: desc, path, body, scripts: ['ramen.js'], jsonld, ogType: 'product', ogImage: r.pic && r.pic.detail ? picSrc(r, 'square') : '', ogSize: r.pic && r.pic.detail ? [1200, 1200] : null });
 }
 
 // ---------- 한 그릇 기록 ----------

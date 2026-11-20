@@ -302,11 +302,20 @@
       });
     });
   }
-  var imgOf = function (r) { return '/assets/img/' + r.img + '.webp'; };
+  // 라면 그림: 허락받은 실물 사진(pi[0]=2) > AI 조리 예시(1) > 조리 방식 예시 그림. big이 아니면 작은 그림을 써요.
+  var picBase = function (r) { return r.pi[0] === 1 ? '/assets/img/ramen-ai/' : '/assets/img/ramen/'; };
+  var imgOf = function (r, big) {
+    if (!r || !r.pi) return '/assets/img/' + (r && r.img ? r.img : 'broth-spicy') + '.webp';
+    return picBase(r) + (!big && r.pi[2] ? 's' : 'thumb') + '/' + (r.pi[1] || r.s) + '.webp';
+  };
+  var imgTag = function (r, w, h, lazy) {
+    var set = r.pi && r.pi[2] ? ' srcset="' + imgOf(r) + ' 400w, ' + imgOf(r, true) + ' 1000w" sizes="(min-width: 1100px) 260px, (min-width: 760px) 30vw, 46vw"' : '';
+    return '<img src="' + imgOf(r, true) + '"' + set + ' width="' + (r.pi ? 1000 : w) + '" height="' + (r.pi ? 800 : h) + '" alt=""' + (lazy ? ' loading="lazy"' : '') + ' decoding="async">';
+  };
   function cardHTML(r, st) {
     var st2 = r.st && r.st !== 'sale' ? '<span class="chip-st st-' + r.st + '">' + esc((MMD.STATUS || {})[r.st] || '') + (r.ch ? ' · ' + esc(r.ch) : '') + '</span>' : '';
     var hot = r.hot == null ? '' : '<span class="chip-hot hot' + r.hot + '">' + (r.hot === 2 ? ico('i-flame') + ico('i-flame') : r.hot === 1 ? ico('i-flame') : '') + esc(MMD.HOTS[r.hot]) + '</span>';
-    return '<article class="rcard" data-s="' + r.s + '"><a class="rcard-link" href="/ramen/' + r.s + '/"><div class="rcard-img"><img src="' + imgOf(r) + '" width="800" height="800" alt="" loading="lazy">' + st2 + '</div>' +
+    return '<article class="rcard" data-s="' + r.s + '"><a class="rcard-link" href="/ramen/' + r.s + '/"><div class="rcard-img">' + imgTag(r, 800, 800, true) + st2 + '</div>' +
       '<div class="rcard-body"><p class="rcard-maker">' + (r.cn ? '<span class="rcard-co">' + esc(r.cn) + '</span>' : '') + esc(r.mn) + (r.f ? ' · ' + esc(MMD.FORMS[r.f]) : '') + '</p><h3 class="rcard-name">' + esc(r.n) + '</h3>' +
       '<p class="rcard-tags"><span class="chip-style">' + esc(MMD.STYLES[r.c]) + '</span>' + hot + '</p><p class="rcard-stat" data-stat>' + statLine(st) + '</p></div></a>' +
       '<button type="button" class="save-btn" data-save="' + r.s + '" aria-pressed="false" aria-label="' + esc(r.n) + ' 저장">' + ico('i-bookmark') + '</button></article>';
@@ -476,7 +485,7 @@
     $: $, $$: $$, esc: esc, ico: ico, store: store, toast: toast, copyText: copyText, share: share, api: api, track: track,
     ago: ago, kstToday: kstToday, josa: josa, lvChip: lvChip, who: who, starsSVG: starsSVG, scoreHTML: scoreHTML,
     getMe: getMe, setMe: setMe, gain: gain, gainLater: gainLater, toastLater: toastLater, cho: cho, matches: matches,
-    loadRamen: loadRamen, loadStats: loadStats, BY: BY, imgOf: imgOf, cardHTML: cardHTML, paintCards: paintCards, statLine: statLine,
+    loadRamen: loadRamen, loadStats: loadStats, BY: BY, imgOf: imgOf, imgTag: imgTag, cardHTML: cardHTML, paintCards: paintCards, statLine: statLine,
     radar: radar, recipeCard: recipeCard, recipeImg: recipeImg, getSaved: function () { return saved.slice(); }, setSaved: setSaved, paintSaved: paintSaved, syncSaved: syncSaved, D: MMD, G: MMG
   };
 

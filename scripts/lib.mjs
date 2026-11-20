@@ -54,6 +54,36 @@ export const COUNTRIES = Object.fromEntries(WORLD.countries.map((c) => [c.code, 
 export const countryName = (co) => (COUNTRIES[co] ? COUNTRIES[co].name : co);
 export const DOGAM_CHECKED = (() => { const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(RAW.checked || ''); return m ? `${m[1]}년 ${Number(m[2])}월 ${Number(m[3])}일` : ''; })();
 export const problems = [];
+// ---------- 라면 사진 ----------
+// 1) 실물 사진: content/photos.json에서 출처의 allowed(허락 기록)가 적힌 것만 써요. 파일은 src/static/img/ramen/
+// 2) AI 조리 예시: 텍스트로 새로 만든 그림. 파일은 src/static/img/ramen-ai/ (작은 그림 s/ 는 있으면 씀)
+// 3) 둘 다 없으면 조리 방식 예시 그림
+export const PHOTOS = readJSON('content/photos.json');
+const PHOTO_ROOT = path.join(STATIC, 'img', 'ramen');
+const AI_ROOT = path.join(STATIC, 'img', 'ramen-ai');
+const has = (dir, kind, f) => fs.existsSync(path.join(dir, kind, `${f}.webp`));
+const allowedAll = (list) => Array.isArray(list) && list.length > 0 && list.every(([id]) => PHOTOS.sources[id] && String(PHOTOS.sources[id].allowed || '').trim());
+export const PHOTO_PROBLEMS = [];
+function picOf(s) {
+  const p = PHOTOS.photos[s];
+  if (p) {
+    const f = p.file || s;
+    const packOk = allowedAll(p.pack), dishOk = packOk && allowedAll(p.dish);
+    if (packOk && has(PHOTO_ROOT, 'thumb', f)) {
+      const detail = dishOk && has(PHOTO_ROOT, 'square', f) && has(PHOTO_ROOT, 'wide', f);
+      const used = detail ? [...p.pack, ...p.dish] : p.pack;
+      const credits = [];
+      for (const [id, page] of used) if (!credits.some((c) => c.id === id)) credits.push({ id, name: PHOTOS.sources[id].name, url: page || PHOTOS.sources[id].home, license: PHOTOS.sources[id].license || '' });
+      return { kind: 'photo', base: '/assets/img/ramen', f, small: false, detail, alt: p.altPack || '', altBig: detail ? p.altDish || p.altPack || '' : p.altPack || '', credits };
+    }
+    if (has(PHOTO_ROOT, 'thumb', f) && !packOk) PHOTO_PROBLEMS.push(`${s}: 허락 기록이 없는 실물 사진 파일이 올라와 있어요. 화면과 배포 파일에는 넣지 않았어요.`);
+  }
+  if (has(AI_ROOT, 'thumb', s)) {
+    return { kind: 'ai', base: '/assets/img/ramen-ai', f: s, small: has(AI_ROOT, 's', s), detail: has(AI_ROOT, 'square', s) && has(AI_ROOT, 'wide', s), alt: '', altBig: '', credits: [] };
+  }
+  return null;
+}
+
 const slugs = new Set();
 export const RAMEN = RAW.ramen.map((r, i) => {
   const where = `content/ramen.json ${i + 1}번째 라면(${r.n || r.s || '이름 없음'})`;
@@ -71,7 +101,7 @@ export const RAMEN = RAW.ramen.map((r, i) => {
   need(!r.co || COUNTRIES[r.co], `나라(co) ${r.co}가 content/world.json에 없어요.`);
   const groups = GROUPS.filter((g) => inGroup(r, g)).map((g) => g.id);
   const co = r.co || 'kr';
-  return { ...r, co, coName: countryName(co), st: r.st || 'sale', t: r.t || [], k: r.k || [], maker: MAKERS[r.m] || r.m, img: bowlImage(r), groups, ta: tasteIds(r) };
+  return { ...r, co, coName: countryName(co), st: r.st || 'sale', t: r.t || [], k: r.k || [], maker: MAKERS[r.m] || r.m, img: bowlImage(r), pic: picOf(r.s), groups, ta: tasteIds(r) };
 });
 if (problems.length) {
   console.error('\n[원고 점검] 고쳐야 할 곳이 있어요:\n' + problems.map((p) => ' - ' + p).join('\n') + '\n');
@@ -263,7 +293,7 @@ function reportDialog() {
 </dialog>`;
 }
 
-export function layout({ title, description, path: p, body, scripts = [], noindex = false, jsonld = null, bodyClass = '', ogImage = '', ogType = 'website', bare = false }) {
+export function layout({ title, description, path: p, body, scripts = [], noindex = false, jsonld = null, bodyClass = '', ogImage = '', ogSize = null, ogType = 'website', bare = false }) {
   const url = abs(p);
   const lds = [].concat(jsonld || []).map((j) => `<script type="application/ld+json">${JSON.stringify(j).replace(/</g, '\\u003c')}</script>`).join('\n');
   return `<!doctype html>
@@ -282,8 +312,8 @@ ${noindex ? '<meta name="robots" content="noindex, nofollow">' : ''}
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${url}">
 <meta property="og:image" content="${abs(ogImage || '/assets/img/og.png')}">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="${ogSize ? ogSize[0] : 1200}">
+<meta property="og:image:height" content="${ogSize ? ogSize[1] : 630}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#FAF7F3">
 ${cfg.naverSiteVerification ? `<meta name="naver-site-verification" content="${esc(cfg.naverSiteVerification)}">` : ''}
@@ -327,11 +357,32 @@ export const moreLink = (href, label = '모두 보기') => `<a class="more-link"
 export const hotChip = (r) => (r.hot == null ? '' : `<span class="chip-hot hot${r.hot}" title="편집부 분류">${r.hot === 2 ? icon('i-flame') + icon('i-flame') : r.hot === 1 ? icon('i-flame') : ''}${HOTS[r.hot]}</span>`);
 export const statusChip = (r) => (r.st && r.st !== 'sale' ? `<span class="chip-st st-${r.st}">${STATUS[r.st]}${r.ch ? ' · ' + esc(r.ch) : ''}</span>` : '');
 
+// 라면 그림: 허락받은 실물 사진 > AI 조리 예시 > 조리 방식 예시 그림
+export const picSrc = (r, kind = 'thumb') => (r.pic ? `${r.pic.base}/${kind === 's' && !r.pic.small ? 'thumb' : kind}/${r.pic.f}.webp` : `/assets/img/${r.img}.webp`);
+export function ramenImg(r, eager = false, sizes = '(min-width: 1100px) 260px, (min-width: 760px) 30vw, 46vw') {
+  if (!r.pic) return img(r.img, '', '', eager);
+  const set = r.pic.small ? ` srcset="${picSrc(r, 's')} 400w, ${picSrc(r)} 1000w" sizes="${sizes}"` : '';
+  return `<img src="${picSrc(r)}"${set} width="1000" height="800" alt="${esc(r.pic.alt)}" loading="${eager ? 'eager' : 'lazy'}" decoding="async"${eager ? ' fetchpriority="high"' : ''}>`;
+}
+// 라면 페이지 큰 그림과 출처 한 줄
+export function ramenHero(r) {
+  const p = r.pic;
+  if (!p) return `${img(r.img, `${STYLES[r.c]} 라면 예시 그림`, '', true)}${statusChip(r)}<p class="pic-note">그림은 조리 방식을 보여 주는 예시예요.</p>`;
+  const alt = p.kind === 'ai' ? `${r.n} AI 조리 예시 그림` : p.altBig;
+  const pic = p.detail
+    ? `<picture><source media="(min-width: 600px)" srcset="${picSrc(r, 'square')}"><img src="${picSrc(r, 'wide')}" width="1440" height="900" alt="${esc(alt)}" fetchpriority="high" decoding="async"></picture>`
+    : `<img class="is-pack" src="${picSrc(r)}" width="1000" height="800" alt="${esc(alt)}" fetchpriority="high" decoding="async">`;
+  const note = p.kind === 'ai'
+    ? '<p class="pic-note">AI로 새로 만든 조리 예시 그림이에요. 실제 제품의 양, 건더기, 색과 다를 수 있어요.</p>'
+    : `<p class="pic-note">사진 출처 ${p.credits.map((c) => `<a href="${esc(c.url)}" rel="noopener nofollow" target="_blank">${esc(c.name)}</a>${c.license ? ` (${esc(c.license.replace(/\(.*\)/, ''))})` : ''}`).join(', ')} · 허락을 받아 실었어요.</p>`;
+  return `${pic}${statusChip(r)}${note}`;
+}
+
 // 라면 카드 (도감, 처음 화면, 비슷한 라면). 숫자는 화면에서 채워요(data-stat).
 export function ramenCard(r, { eager = false, from = '' } = {}) {
   return `<article class="rcard" data-s="${r.s}" data-g="${r.groups.join(' ')}" data-m="${r.m}" data-f="${r.f || ''}" data-c="${r.c}" data-hot="${r.hot == null ? '' : r.hot}" data-st="${r.st}" data-co="${r.co}" data-ta="${r.ta.join(' ')}" data-nd="${r.noodle || 'oil'}" data-y="${releaseKey(r)}" data-q="${esc((ramenSearchText(r) + ' ' + cho(ramenSearchText(r))).toLowerCase())}">
 <a class="rcard-link" href="/ramen/${r.s}/${from}">
-<div class="rcard-img">${img(r.img, '', '', eager)}${statusChip(r)}</div>
+<div class="rcard-img">${ramenImg(r, eager)}${statusChip(r)}</div>
 <div class="rcard-body">
 <p class="rcard-maker">${r.co !== 'kr' ? `<span class="rcard-co">${esc(r.coName)}</span>` : ''}${esc(r.maker)}${r.f ? ` · ${formText(r)}` : ''}</p>
 <h3 class="rcard-name">${esc(r.n)}</h3>

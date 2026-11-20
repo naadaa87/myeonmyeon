@@ -296,7 +296,7 @@ ${img('archive-card', '라면 사진 카드를 꽂아 둔 나무 서랍', 'about
     '라면 이름, 회사, 출시 시기, 판매처 같은 기본 정보는 제조사 발표와 언론 기사로 확인한 것만 적어요. 확인하지 못한 칸은 비워 두고 ‘확인 중’으로 보여 드려요.',
     '스코빌 지수는 제조사나 판매처가 밝힌 값만 출처와 함께 적어요.',
     '맛 지도와 별점은 회원들이 남긴 기록으로만 계산해요. 편집부가 대신 점수를 매기지 않아요.',
-    '라면 카드의 그릇 사진은 조리 방식을 보여 주는 예시 그림이에요. 제품 포장 사진은 쓰지 않아요.',
+    '라면 그림은 세 가지예요. ‘AI 조리 예시’라고 적힌 그림은 실제 사진 없이 AI로 새로 만든 조리 예시라 실제 제품과 다를 수 있어요. 제품 실물 사진은 권리자에게 허락을 받은 것만 출처와 함께 싣고, 둘 다 없으면 조리 방식을 보여 주는 예시 그림을 써요.',
     `틀린 정보를 보면 페이지 아래 ‘틀린 정보 알려 주기’로 알려 주세요.`,
   ])}</div>
 </section>
@@ -372,11 +372,11 @@ export function adminPage() {
   const NAV = [
     ['', [['home', '대시보드']]],
     ['지표', [['kpi/overview', '한눈에 보기'], ['kpi/content', '페이지·라면'], ['kpi/traffic', '유입 경로'], ['kpi/shop', '구매·전환'], ['kpi/engage', '검색·참여'], ['kpi/live', '실시간']]],
-    ['운영', [['content', '원고 관리'], ['reports', '제보·오류', 'reports'], ['inquiries', '문의함', 'inquiries'], ['community', '커뮤니티', 'flags'], ['demo', '시험 데이터']]],
+    ['운영', [['content', '원고 관리'], ['photos', '라면 사진'], ['reports', '제보·오류', 'reports'], ['inquiries', '문의함', 'inquiries'], ['community', '커뮤니티', 'flags'], ['demo', '시험 데이터']]],
     ['라면몰', [['shop', '쇼핑 링크'], ['coupang', '쿠팡 실적 입력']]],
     ['설정', [['settings', '설정·도움말']]],
   ];
-  const panels = ['home', 'kpi-overview', 'kpi-content', 'kpi-traffic', 'kpi-shop', 'kpi-engage', 'kpi-live', 'content', 'reports', 'inquiries', 'community', 'demo', 'shop', 'coupang', 'settings'];
+  const panels = ['home', 'kpi-overview', 'kpi-content', 'kpi-traffic', 'kpi-shop', 'kpi-engage', 'kpi-live', 'content', 'photos', 'reports', 'inquiries', 'community', 'demo', 'shop', 'coupang', 'settings'];
   const body = `<section class="adm" data-admin data-repo="${esc(cfg.githubRepo || '')}" data-branch="${esc(cfg.githubBranch || 'main')}">
 <div class="adm-login" data-login>
 <p class="brand">${'<span class="brand-mark"><span class="brand-t">' + esc(SITE_NAME) + '</span><i class="brand-dot"></i></span>'}</p>
