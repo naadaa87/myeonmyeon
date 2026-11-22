@@ -3,9 +3,10 @@
  "how": [
   "새 그림은 src/static/img/ramen-ai/thumb(1000×800), square(1200×1200), wide(1440×900) 폴더에 라면 주소 이름(.webp)으로 올리면 화면에 나와요.",
   "작은 그림(s, 400×320)이 없으면 thumb를 대신 써요.",
-  "아래 목록은 드라이브 AI_조리연출_차수별_배포본의 생성 기록(meta/AI_생성기록.csv)에서 옮겼어요."
+  "alias는 그림을 함께 쓰는 라면이에요. 왼쪽 라면에 오른쪽 라면의 그림을 보여 줘요.",
+  "아래 목록은 드라이브 AI_조리연출_차수별_배포본(1~46차)의 생성 기록(meta/AI_생성기록.csv)에서 옮겼어요."
  ],
- "updated": "2026-11-20",
+ "updated": "2026-11-22",
  "images": {
   "baehongdong-makguksu": {
    "batch": 1,
@@ -448,6 +449,13 @@
    "label": "AI 조리 예시",
    "sha256": "c1035d95f6c3ee6b19054e0e7a3e594604cfbbbcb4042dd391a1a5924802e8d7"
   },
+  "ansung-cup": {
+   "batch": 8,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "afd2796bbbd93c1dee1e6bfb168f5ee8fac8917f5b5025662aadc1725a383dec"
+  },
   "ansung-mild": {
    "batch": 8,
    "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
@@ -461,6 +469,27 @@
    "input": "없음",
    "label": "AI 조리 예시",
    "sha256": "b041f8802d4008b0e0f220c1297e857a4cd6ea67be505b1c86637786ef832719"
+  },
+  "gamja-myeon": {
+   "batch": 8,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "a6a7afd0e0feb1076603f08da1e6f4b8984143f801b9e3fdbf4c0fdbfead3e00"
+  },
+  "nongshim-ramyun": {
+   "batch": 8,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "288e9808396865924b22988cfca1baf2803f7d758a422f307fb0cef0cffab990"
+  },
+  "nongshim-ramyun-big-bowl": {
+   "batch": 8,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "3258a21a22e16257176c7eb69236257c8458743d76f2c13892d65b601cdf706f"
   },
   "shin-ramyun-black-sabal": {
    "batch": 8,
@@ -482,6 +511,2550 @@
    "input": "없음",
    "label": "AI 조리 예시",
    "sha256": "aeae6b0680d3d96aca984701d4ec0613f91b0e3122f52be1b43e1f808d9983f4"
+  },
+  "soon-ramyun": {
+   "batch": 8,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "c5005fffd51ab179d6cc29d43a8d726ea47b3ae5f09cc9d3cb5afb56bad87154"
+  },
+  "kimchi-big-bowl": {
+   "batch": 9,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "d353e588743269db72a94be708805a1280708c80d6b7164dad624f15907d4cec"
+  },
+  "kimchi-sabalmyun": {
+   "batch": 9,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "4609176b10e303a6ef2742150932462185cc76fa877d1da7c8b49351ea832a5d"
+  },
+  "ojingeo-jjamppong-cup": {
+   "batch": 9,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "53fc5332181b1ded158214e0138f2537119e3d80d4a976170b867f261c04d760"
+  },
+  "saeutang-big-bowl": {
+   "batch": 9,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "85b1f6e8e32e74dbc8c7352d992f9e15b749eeca4528b2e1c86bd37be3dd09be"
+  },
+  "saeutang-cup": {
+   "batch": 9,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "541b64c1a34b1fe2f717bc88a4b3fdc8b53cb3acf95197530f04a2d444426346"
+  },
+  "saeutang-myeon": {
+   "batch": 9,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "2c4602d43d427e28799d37915e802e067733632c1a01a18e0dae84c2ce7ee7c8"
+  },
+  "sari-gomtang-big-bowl": {
+   "batch": 9,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "bd6b2a930dd64bf9b08b54e7406e85d5eba00ff2b952d5b75f78887493da3757"
+  },
+  "sari-gomtang-cup": {
+   "batch": 9,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "be12be6e5bebb3f06d95183f7b32dac5b287ab52a61542160610240a14632196"
+  },
+  "yukgaejang-big-bowl": {
+   "batch": 9,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "a5cc7214892d67f34f6f08e010176e28ab2ec9b4d1939fd527150d6c7139779b"
+  },
+  "yukgaejang-ramyun": {
+   "batch": 9,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "4702714c2d1ff870bd88eccf21bf6137d03beacbb38408abea337706f25681a7"
+  },
+  "angry-chapaguri-big-bowl": {
+   "batch": 10,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "4c9ea8c9c9f3c53755f5b527c0af23467d42e7391a1b2b2e4b4708a20eacdf19"
+  },
+  "chapagetti-beombeok": {
+   "batch": 10,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "2192584398ab6ed017cef3e6454a6d8c95397fd2f37df314b21972b3d1075483"
+  },
+  "chapagetti-big-bowl": {
+   "batch": 10,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "08d437191de5f5576971016f459cbebf23c35bd3678f5679745a769c217a8c34"
+  },
+  "chapagetti-the-black": {
+   "batch": 10,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "47b353163a9d96f66b2d800ed01202ea5d9da0658d0451888a5afe1e8f904737"
+  },
+  "chapagetti-the-black-sabal": {
+   "batch": 10,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "8b586c924c83460ace0ccef6dc8bc606e9265b818c86105a8396caf38c3d8a6e"
+  },
+  "ojingeo-jjamppong-big-bowl": {
+   "batch": 10,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "adcb73c02c06885f8b343e1d7ea7c0c2584beb1d27b585d031b43248bf149034"
+  },
+  "sacheon-baek-jjamppong": {
+   "batch": 10,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "025104e2d8fe75ba6c0f75594d5aaaeea3665ff6c8c234ebca4b22e5ba59cb4e"
+  },
+  "sacheon-baek-jjamppong-sabal": {
+   "batch": 10,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "f0eca2c525a67b2cfffb48b145b47de68e460568763d894185b519a42b79c8b2"
+  },
+  "sacheon-chapagetti": {
+   "batch": 10,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "97f190a0baf0418e46f2fe2aed2cdaa1dc417accbb745cd06b46c751878118ab"
+  },
+  "sacheon-chapagetti-big-bowl": {
+   "batch": 10,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "dce5dddf2d986f3b659c2fff97adf4f675f828b13aba4934513abdd504501741"
+  },
+  "anchovy-kalguksu-sabal": {
+   "batch": 11,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "7ea4c2f75e39d47c45296b025cd625ea0bf51cbeab0242033b365f5a9c0c99ff"
+  },
+  "baehongdong-jjoljjol": {
+   "batch": 11,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "55cddf75b3c174983c0deb36474de29b5c10d6cbdbc9b40b97c78374372de28a"
+  },
+  "bugle-budae": {
+   "batch": 11,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "bb4b66a50fbf9c39c6d5954f3c623a1245b59f7d0a72cbb0c7eca702865e42f1"
+  },
+  "caguri-big-bowl": {
+   "batch": 11,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "31d71f370d642c1f25f33dedcd809d0b8e80bfd6c4122b6ec7a97d011dbdeb87"
+  },
+  "eolkeun-jang-kalguksu": {
+   "batch": 11,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "96ad6a5d9811dbab1b399915b6fc5b9a2669de653a273f9e5159295157359efe"
+  },
+  "mupama-big-bowl": {
+   "batch": 11,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "cf732ac83e71819de4efebc0e7cf17c26fd908c12a502efd15d4f6ee4b21997c"
+  },
+  "rabbokguri-big-bowl": {
+   "batch": 11,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "4bcc349701df9ffe9881fb4f570036eb7ae6f25c5225fd35fc94ab3c5adc595c"
+  },
+  "ramen-king-kimtongkkae": {
+   "batch": 11,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "1a8c008c132bf2ccdaf2058ea53db68ab5d11fbc0f57654929a84525c981be1b"
+  },
+  "tempura-udon-cup": {
+   "batch": 11,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "d44005db1968f33cc9257a0122b5c6a5534b9bdbe42200e60c992db406c89464"
+  },
+  "ueuktang-big-bowl": {
+   "batch": 11,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "79fe437ad3b6547c614ca00a4832fa96a0f7a2abdb7e8c5c4a3d8f45a84c974e"
+  },
+  "baehongdong-big-bowl": {
+   "batch": 12,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "08fcf519a76b243a6c6321f8974c8533327aaa39d55bd45db28fb814d20f9c9b"
+  },
+  "baehongdong-kalbim": {
+   "batch": 12,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "f5e99aa99d97ee3a1bd14e107ba61570583ba64619bc58d071397b20841ae706"
+  },
+  "cool-memil-soba": {
+   "batch": 12,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "91efd5f857469f042ce728305ffb514170c096f334305d4667fb205f42e89e4a"
+  },
+  "hooroorook-guksu": {
+   "batch": 12,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "97d8ae03eab1039f2c2a4a03300da527cab61ac152d1b304b8b0909926382151"
+  },
+  "hooroorook-kalguksu": {
+   "batch": 12,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "e1ae2a17220d39df971e910a03a5ccf88a3220a43ee3c72d6f599263c83b62ab"
+  },
+  "saengsaeng-napjak-tteokbokki": {
+   "batch": 12,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "06355ead88e0833674c5ef5d08fd698100d94e2ec464041dbc30ba278f668f59"
+  },
+  "saengsaeng-udon": {
+   "batch": 12,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "6c8c2511e06ca9daae066fdc937b1727c2950b0f584047235f8bcedbb4c19071"
+  },
+  "saengsaeng-udon-cup": {
+   "batch": 12,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "351de212e836298ebae49fa2b7265e12f9532df3023d480a7780c8da27a89a40"
+  },
+  "saengsaeng-yaki-udon-hot": {
+   "batch": 12,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "140bbe86f7838db8ab6da46212150ced24804434b2f2d17cb6fc3c98a1258280"
+  },
+  "saengsaeng-yaki-udon-teriyaki": {
+   "batch": 12,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "f6ada21d085815dc846dc23345f922fbaad02995778197c81296a9af8cec0794"
+  },
+  "hooroorook-rice-dakgomtang": {
+   "batch": 13,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "721d5a1430032e19be91edc3e8bd75d456dfd97f58048c0c85291c9db1cbbbfe"
+  },
+  "hooroorook-rice-miyeokguk": {
+   "batch": 13,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "ddf010aff269f21710fa16220149f5e2a3ee31c5f4aefaecd7aa7a307e9d4b20"
+  },
+  "hooroorook-rice-sogogi": {
+   "batch": 13,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "8be81578fc7b9b16308adb0a7cbb15efa7d425d6d4fe75998cbcaa244891e5f3"
+  },
+  "noodlefit-chapaguri": {
+   "batch": 13,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "cb743ea21f4dafa9628ad986265828c84990496aa0a3b9a32c8ebe628ec57e02"
+  },
+  "noodlefit-kimchi": {
+   "batch": 13,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "9a16bcde608fa16235f69bb3270087713bc31bfc89f9da62164e38ff94a7b40c"
+  },
+  "noodlefit-saeutang": {
+   "batch": 13,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "9ac4efd32e080016637698f1e359c0e41de50058fd22acc8a5184c9822569edf"
+  },
+  "noodlefit-tempura-udon": {
+   "batch": 13,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "fdafd65dabdedbf04cef47b8ab568d17cc95b4c6ebe57a2ac5c9c7df611278b0"
+  },
+  "noodlefit-w-gwangdong-jjamppong": {
+   "batch": 13,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "38817c6accb2252db9e26d63212d476eb8187abfccb85ef77e4868f00ed546a3"
+  },
+  "noodlefit-w-sacheon-malatang": {
+   "batch": 13,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "92d0d23efa1c6312e710d64902b6e9c5cd8929ff14c740898d627da94af3eddb"
+  },
+  "noodlefit-yukgaejang": {
+   "batch": 13,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "2d835f2ff9508f9f159c5dcfd2b83a5b03e9d52f9a974e6880b625c709bb6532"
+  },
+  "jin-ramen-hot-bowl": {
+   "batch": 14,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "2d47f66ecfe286a387d251ae4e95cbd2feb26027654c8362ea762524abc03d22"
+  },
+  "jin-ramen-hot-cup": {
+   "batch": 14,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "4f59acabded0bab8b4676a44a1a2787ad5de3e43c5215f8720c8fe73c849f055"
+  },
+  "jin-ramen-medium": {
+   "batch": 14,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "d0fe715a94697dabb566e704ec322008949b81d96752483b7b7637a5c07a1152"
+  },
+  "jin-ramen-medium-bowl": {
+   "batch": 14,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "206cd9b7e15767b89fdc22ffc943ff236c491ccee607073933a5aced553546da"
+  },
+  "jin-ramen-medium-cup": {
+   "batch": 14,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "2f812cbf71dac06d9b1bad40e9ddd76cce564b0c3444f7fab23e45fbea761022"
+  },
+  "jin-ramen-mild-bowl": {
+   "batch": 14,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "ab788201ae93bd9323c890a63a2b8d3bcfea63e2b10afa42ed00bf310171dd38"
+  },
+  "jin-ramen-mild-cup": {
+   "batch": 14,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "85178440507369d0585c292eeac18c3f47db86338a5e214aeee5b3694591d713"
+  },
+  "sesame-ramen-bowl": {
+   "batch": 14,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "8720d2eb2175caaad280e9ef71588a779bc03afe5275b31b647c09474eeee941"
+  },
+  "sesame-ramen-cup": {
+   "batch": 14,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "2c1e1571736bf279af59e1731ab3be13a52c8aba9d50e877499629ebd4c53b2e"
+  },
+  "yeol-ramen-cup": {
+   "batch": 14,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "1aae94b0297005d6a2604dd8532a7d62c7c83ff0988f5183eb7c9a3d64107a66"
+  },
+  "jin-bibimmyeon-bowl": {
+   "batch": 15,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "461207d117e1792f8ec437865bd1b283f47513ec9be7a2d946fb4fc979232287"
+  },
+  "jin-jjajang-bowl": {
+   "batch": 15,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "2d9b70a8ef0cec37f5ff11ee2c11e1d831ad0d993e40e03d0696ec7ab2577e18"
+  },
+  "jin-jjamppong-bowl": {
+   "batch": 15,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "9990381ac24d329480ffd6017d796f27a2b34478b4a2238f2230f874bf442af9"
+  },
+  "jin-jjamppong-cup": {
+   "batch": 15,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "eeb70328a6f2effc8070ce14e2a8b3a6b8b9948de91590273854f4b94691e2a7"
+  },
+  "jjaslang": {
+   "batch": 15,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "8b5c6c45d5d944d1696a816d552945da50f11114c6101c1132f1b996f7ab0475"
+  },
+  "jjaslang-bowl": {
+   "batch": 15,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "39bb9480bb108b3403c09a74467437168a8ebefc3d19f7ccde532ac18503c930"
+  },
+  "odongtong-bowl": {
+   "batch": 15,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "bb230afe64a808fa19a2b30157c9910db1c1dec5f4c37d5d8a884fa5f5ad34fb"
+  },
+  "snack-myeon-bowl": {
+   "batch": 15,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "58ef179b63004222589b0467b4d86a6a8373b5cf7a17af9405552bc50af054b1"
+  },
+  "snack-myeon-cup": {
+   "batch": 15,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "226fec9e957f4fbcd4c9c374bbc49908da243a15cdd5a08529c686c81633dfbd"
+  },
+  "yeol-ramen-bowl": {
+   "batch": 15,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "4114d6ea9c85172846d985c20fced194f780ac7d5e545bedd61da653b8737e05"
+  },
+  "jeju-ttot-ttot": {
+   "batch": 16,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "064023a15d5fd1da9af55bd43da0e2ac42591c4c29f44ec28097b8ebe77429d0"
+  },
+  "kimchi-myeon-bowl": {
+   "batch": 16,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "256e3d8ff0afc9adcf40c86e5844eaa97a0f0adb34bb44e4548809398f738e5b"
+  },
+  "ma-yeol-ramen": {
+   "batch": 16,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "ef185386168a65d2926a4249172f495d37a725eb2dfe6a7d4c0598d7127d46cf"
+  },
+  "ma-yeol-ramen-bowl": {
+   "batch": 16,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "80908d3140529a556c0b2ee9c605b08b72bfd35c047cd1defd58b2b9d8654472"
+  },
+  "ma-yeol-ramen-cup": {
+   "batch": 16,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "c8ee97860115866946ea292be7ca1a2860ecd1e28121311a51ee72ef1b567248"
+  },
+  "ottogi-kimchi-ramen": {
+   "batch": 16,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "02863b26ff83fa59b70d7839d0553ba70b1bd721f1d1b359ce304bc219d4fd0e"
+  },
+  "royal-ramen": {
+   "batch": 16,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "5cc69de08faf9b0f3dc3ee3f92dded7224edf4bdb2dd489ba9bfbef243d6a27b"
+  },
+  "royal-ramen-bowl": {
+   "batch": 16,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "ce680f8bf7ca2cfef0d17e733aa74ad48a2e32edaf2f0cbcd6b652fb47c04f9f"
+  },
+  "the-hot-yeol-ramen": {
+   "batch": 16,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "8b3e57925af4b450d279ddea52793e58df68eaafac38cd56cd30f9bb6a7e9afc"
+  },
+  "the-hot-yeol-ramen-bowl": {
+   "batch": 16,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "db70e024e6f1d8579e45f31208b8f0c6c95f0ba6215e87f95a3f301f8bdcd5f9"
+  },
+  "beef-miyeokguk-ramen": {
+   "batch": 17,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "8aa49ada3bb4d0043db008512be0b93f3035895f43308258e27ead9d4e21c938"
+  },
+  "beef-miyeokguk-ramen-bowl": {
+   "batch": 17,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "b7b7ffe65ebda20eb746820f49b7a3c2596f2987b2f0895f40f33d369baab05b"
+  },
+  "beef-miyeokguk-ramen-cup": {
+   "batch": 17,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "f3a6ca7c65cc76ffee36026dbb4233a2c32c35c41bccdf6a9d75c257e5808128"
+  },
+  "cream-jin-jjamppong": {
+   "batch": 17,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "eb7c91e5c691886ce4533e8b615d0b51812a1f88dcb8f1d5d9337cb73eb18fbb"
+  },
+  "cream-jin-jjamppong-bowl": {
+   "batch": 17,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "e7905a4de104380b32ec0f961e14a7854745b75bd0af5811d61e4a436116fa70"
+  },
+  "gul-jin-jjamppong": {
+   "batch": 17,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "83c9badd641d96b6bd9f27b105a89f4b199f3aa460ca0d21c0c6bd67329a427d"
+  },
+  "gul-jin-jjamppong-bowl": {
+   "batch": 17,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "a83033e7ac1edfbe7a8aa9445a176cfe6daf6084c424c3bede078968cbbfe000"
+  },
+  "jeju-ttot-ttot-bowl": {
+   "batch": 17,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "706053d685b31a7e790740e7a2fa7348123758c4aa115afca3641d8fd541f836"
+  },
+  "memil-bibimmyeon": {
+   "batch": 17,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "208fdf3fc0c2e31328cb37adb032364811cf78ec28a9e8f6c4baaadd72c25966"
+  },
+  "ottogi-spaghetti": {
+   "batch": 17,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "832c5b01f5dc1d62c078cd8d11a2e8a33a9618ecda3c20b63c1bf9dd9ab1162d"
+  },
+  "bugeotguk-ramen": {
+   "batch": 18,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "9a52fc53ae50c482f2084c0e0f897a6cb1eae734f06e105fb5dcfc69ef97f6e8"
+  },
+  "dongdaemun-dakhanmari-kalguksu": {
+   "batch": 18,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "d6bd884b726929b8495231a083c1a67c7d4b6e278eeeb987fb4e20002a398b0d"
+  },
+  "haemul-jjamppong": {
+   "batch": 18,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "df0f778b9d72466e76d8f6f717e9230a0224dbff49e1a506ac40187358952277"
+  },
+  "ottogi-budae-jjigae": {
+   "batch": 18,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "d5f3139a517831bacf234429df8307812c25f1aa52f797cc1586f17a23f23d50"
+  },
+  "ottogi-budae-jjigae-bowl": {
+   "batch": 18,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "0ee6f6b21cdbdc8c0480e06a1969846cee6ac548dd3bee4efc71af9c3cd52aea"
+  },
+  "ottogi-curry-myeon": {
+   "batch": 18,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "f4fdb78af0765137d29ef852c52c4f38daafbd07ccec6a8b3ceeff3fc01a41fa"
+  },
+  "ottogi-curry-myeon-bowl": {
+   "batch": 18,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "f8e3808d310aa8353113e4e6228990c0f7ba3963b2c3061435513bb1d275c964"
+  },
+  "real-cheese-ramen": {
+   "batch": 18,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "3b8ed43435ca1f9f9e6a86e433bff69f01faca16e6ee0251347f8ac724b02548"
+  },
+  "real-cheese-ramen-bowl": {
+   "batch": 18,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "bc841013df5f1f15ed79d42ba55035d517d80bc23b8c724d54d0aa016110b1b7"
+  },
+  "wow-shrimp-jin-jjamppong-cup": {
+   "batch": 18,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "469dca07e052b7fa99d5875c7fc4d71b793c30ddab553e4b4ee553b33bdef6bf"
+  },
+  "hangang-ramen": {
+   "batch": 19,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "1e8b0e4ae8aac138dd371b80ae2e649470bc1976c30bbe5cc733464fbdd560b4"
+  },
+  "hello-veggie-chaehwang": {
+   "batch": 19,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "56792529ed096be38ab6558bedbf0c9c940dbcb83bbd96929dda6fd28c1edb2c"
+  },
+  "jin-jjolmyeon": {
+   "batch": 19,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "6e1b64c645d40793160492223fafe6c0cf16bb31f3e4901b8e588d1706324088"
+  },
+  "naeng-mobil": {
+   "batch": 19,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "6beb8a07717b17331ed93cdf16dfdc2f2155a70700cccf6133b4d3d1411edb65"
+  },
+  "ottogi-tempura-udon-bowl": {
+   "batch": 19,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "084fd6a0389750589632daec6b12273bc6159780f511e3d8dd4b8695b4753e07"
+  },
+  "pat-kalguksu": {
+   "batch": 19,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "6c14a6a2515e92949eee468c9ccbd41aff4e3647ef624b183ea4a41d40199184"
+  },
+  "soon-huchu-hot-bowl": {
+   "batch": 19,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "79e7a4a75a4f295de541ac4a0a5ba17b9112d95bc6eacf888b9e12487ec4780b"
+  },
+  "soon-huchu-sagol-bowl": {
+   "batch": 19,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "3eeb88cc8955ab621ab4f1d5c42baba5bf29acbc62c742b767349f852f795fab"
+  },
+  "yubu-udon-bowl": {
+   "batch": 19,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "c7c1ea500c8dcd7ccc82dbc9ff5acc4eb8f1f1cb3e61e6524ba007bdcc073aca"
+  },
+  "yubu-udon-cup": {
+   "batch": 19,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "ffa2bca3bd8548c28f2ab35905fd8c0fd2f79fa9882fc625e9843bdf5f03289e"
+  },
+  "bodeul-cheese-bokkeum-hot": {
+   "batch": 20,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "2cad1bf4c8f8400ea4b773c8c667260850ac41c832aa2b7cb3e5e18a0c1f0e24"
+  },
+  "kokkok-rabokki": {
+   "batch": 20,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "75e633650e14790f29455496a0bdc94e0967e12a3a753e9d4345db31b2cde96d"
+  },
+  "kokkok-spaghetti": {
+   "batch": 20,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "7803596d833c7d57b8584bbf1c374ea7f752cce13814f484022ad6ae236a1d53"
+  },
+  "ottogi-saeutang-bowl": {
+   "batch": 20,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "88717a328aa388e23c1930b7b5f756b41c5938ed207a7fdc140c0e43d36b2907"
+  },
+  "sesame-ramen-bokkeum-bowl": {
+   "batch": 20,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "e0dcab7862092336178c31eab94f89d3382e6d4a2d01fe9de2fc25249c630490"
+  },
+  "yeol-tempura-udon": {
+   "batch": 20,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "1512c0dfcf4c352648e1154963baa2228acfc99bb8789cbda1b9f7c4928cb408"
+  },
+  "yetnal-rice-noodle-anchovy": {
+   "batch": 20,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "3827deefcc0273be68c5deb1db0c47a5f01515a80f268e3153a48b391d899e17"
+  },
+  "yetnal-rice-noodle-kimchi": {
+   "batch": 20,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "def72fda8ed05e97a5471183540d54bebc11cdab2419a1c444017433a803c9cd"
+  },
+  "yukgaejang-bowl-ottogi": {
+   "batch": 20,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "2b6009ddd7c4b8ce5dac684fa7578be667e851ba44b773a2110ed82a6abd5b42"
+  },
+  "yukgaejang-cup-ottogi": {
+   "batch": 20,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "33a703e0f328db9ab18e5453a807d8ae4068c70e63e54c17adc3870272546dde"
+  },
+  "big-cup-noodle-spicy": {
+   "batch": 21,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "17e281877d21dbebca04c6a5b9e1cadcae70ae3d673722436848138d447e188a"
+  },
+  "big-cup-noodle-udon": {
+   "batch": 21,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "5961eea324b3785e5d943d2e51b8c0b6535610e46f579aeb5b0ccb6122497829"
+  },
+  "cup-noodle-pho": {
+   "batch": 21,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "40c779c6085bb2e545a5cf2fb918f35e38f7e8b432036a8198b191fbd45a39bc"
+  },
+  "cup-noodle-pho-bowl": {
+   "batch": 21,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "13276e0b48619d3f5d44908415ea7eefe190b008da7a60d9d43f2e46a6f540bf"
+  },
+  "cup-noodle-udon": {
+   "batch": 21,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "0f54a8314e0b0ac2a32438d2143f2bd91461d7aa99e8332b23e0c6be2f11d54c"
+  },
+  "kokkok-cheese-bokki": {
+   "batch": 21,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "de9bd0100fe36ec94704f7c5f422d21a7c2b7caf1b9ba9eaf9b4b77f9e199127"
+  },
+  "kokkok-jjajang-cheese-bokki": {
+   "batch": 21,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "42f446169c107544a8cadf935d62c37a72cbd1c8ee3d397a7caed94e92f29b82"
+  },
+  "kokkok-sesame-ranbokki": {
+   "batch": 21,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "8f9ede51dd9857e79a9371ab9a93b8addb0ad0566b6195f7820675f5d8569822"
+  },
+  "yeolgwang-rabokki": {
+   "batch": 21,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "525da95405fa629310cd8e336a706e3bf1fa41b88e88fabbeff7d47b69b9fb82"
+  },
+  "big-cup-noodle-malatang": {
+   "batch": 22,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "120466307d7be68acd5d3b43b0b12c1281496d3919a49c2e78a1d5352ef32881"
+  },
+  "cup-noodle-eolkeun-rice": {
+   "batch": 22,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "07d0f527920a15b8fb24036386b9bb4dd08bb0a1c3e665db8c88b7ba9f5ec766"
+  },
+  "cup-noodle-janchi": {
+   "batch": 22,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "07f8b911e5efa19a1647849a2f4a1c2b9439693af1aad6ac3e64bf0dd7cb1cd8"
+  },
+  "cup-noodle-jin-jjamppong": {
+   "batch": 22,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "abd269455d0edc6deff693d78b562de415f086bd9d0f965e1aaa23925016a598"
+  },
+  "cup-noodle-jjaslang": {
+   "batch": 22,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "8b3f0ecd85f9d549692ad19b7c07ba0242f5c3e2427b00643c902a47959aa79c"
+  },
+  "cup-noodle-kimchi-rice": {
+   "batch": 22,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "2ddabd2a52cbe1d32827bbc17e662569493a033cf638a3ab63121e5dd017fe2b"
+  },
+  "cup-noodle-malatang": {
+   "batch": 22,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "b82b77476876cea3d8ea292afa2532c794d9021ab9a5d1cf1d937f3800a5016c"
+  },
+  "cup-noodle-sesame": {
+   "batch": 22,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "de1230003ed57320c663df94fe682b30e58c630cecd691d842609fd12c6eacf4"
+  },
+  "cup-noodle-tomyum": {
+   "batch": 22,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "e2957fd054b09430c883255ea784fb18953ec4fb08af64c646640ca9b277fd62"
+  },
+  "cup-noodle-yeol-ramen": {
+   "batch": 22,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "86fc8f11cecf0099854b48550c84f7afd3981e8f24c8704229c4a9ea4858c386"
+  },
+  "cup-noodle-jjimdak": {
+   "batch": 23,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "4830252f00ce330e5b73c4e97ce2a07a1fedf12c53abb0021a0935b36c7e7486"
+  },
+  "cup-noodle-lowsugar-jjimdak": {
+   "batch": 23,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "ba981279605eb45303ecb09859b90e755b918b500aa05fd85ba6ce6f9d6ec707"
+  },
+  "cup-noodle-lowsugar-rose": {
+   "batch": 23,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "e30b3a6a236d72606abdddabd7296d52a56a2682f7fc645fd1f7545dfa6842f7"
+  },
+  "cup-noodle-lowsugar-yeoldak": {
+   "batch": 23,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "dfd29f9ee23343f77e4a055a388742a1ae3614fb53d3f6407a0792e7afe3c81a"
+  },
+  "cup-noodle-padthai": {
+   "batch": 23,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "9b8fe999e6f49faa1bb7be0cb014930e3ebb8860cd44a83176a633bf4a2de821"
+  },
+  "cup-noodle-protein-malaxiangguo": {
+   "batch": 23,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "e4c5af1ff933006fe9b609d6443aad5fe66221019f362628f6ef2c511c9791e3"
+  },
+  "cup-noodle-protein-rose": {
+   "batch": 23,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "8ca9846662d8d58e2f9476080931b1bc2fd884384518ada1e6da6b175479ea7f"
+  },
+  "samyang-1963": {
+   "batch": 23,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "af54953d37d5246d62ae6ddbf18bef24b6fbbd8fb635aa052ac59f5a75d5ba9b"
+  },
+  "samyang-1963-bigcup-pagaejang": {
+   "batch": 23,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "04550b932a3a94eef6c993840bdf13739abec1c6a97505c8655f896b5238ca03"
+  },
+  "samyang-ramen-bigcup": {
+   "batch": 23,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "f446cdb6a2463e31e69cec474e04de312677e57d6085d05a1a2c94d5cfeaeeb8"
+  },
+  "buldak-bigcup": {
+   "batch": 24,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "9590211d7364d19ee36f9d9a918478e3609eb878b4b46fbf587a27f977753af0"
+  },
+  "buldak-bokkeum-tangmyun": {
+   "batch": 24,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "957904bc91e5e516ee755fc3ef3b558b50bccada6a5aa621065958f48c44c169"
+  },
+  "buldak-cup": {
+   "batch": 24,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "0ead6dfaba29a3cb3be0824725832dca009adade994cfc85d5e4b7659a4c50f1"
+  },
+  "carbo-buldak-bigcup": {
+   "batch": 24,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "390d43570b73f155e9b47eeb247072b4763f11ce1de8f02d810e430de1a8fa73"
+  },
+  "carbo-buldak-cup": {
+   "batch": 24,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "fa8c3e80f6402982798cda25c28f3fd88098f6408f577034efbbd2d4a02fd2e1"
+  },
+  "rose-buldak": {
+   "batch": 24,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "104e449d4f2a3d8987dd250523d55bed702043db26bab46ce56286a09b4b8784"
+  },
+  "rose-buldak-bigcup": {
+   "batch": 24,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "8b9a57ab18fcd51be76c035dacf4fe9545ace902318a4e18e73a7c0236b4116c"
+  },
+  "samyang-ramen-cup": {
+   "batch": 24,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "5279fa42359ed3a433caef73283c326a392e13a7935d7167d66797c138c7e7ec"
+  },
+  "samyang-ramen-hot": {
+   "batch": 24,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "accdd6f6a10b5df4b31f28f06634489892725bee469241c940ee4b78e254ed0c"
+  },
+  "samyang-ramen-hot-bigcup": {
+   "batch": 24,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "1d3ce0eed8344691bd1d4de32378220afb903618b0cb3014f95a23ba264df74f"
+  },
+  "buldak-bokkeum-tangmyun-bigcup": {
+   "batch": 25,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "9d5aeb890f4215f8b760659cd77aabcd9970643233ca6ea53d70b1fcb417c081"
+  },
+  "cheese-buldak-bigcup": {
+   "batch": 25,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "084e3a5364a424265f721511f4cd689020d7157953dae9a63a0c08c26f2e64e6"
+  },
+  "four-cheese-buldak": {
+   "batch": 25,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "78dfda55d56119c86ba711610dd45b356534f69b63cce4f4cf9e26565d6a0a04"
+  },
+  "four-cheese-buldak-bigcup": {
+   "batch": 25,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "933b03836b95d986e3a93408872891d017566b737d86fa11141213d411ac871b"
+  },
+  "maeptaeng-cheongyang-daepa": {
+   "batch": 25,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "3d83ba4d877cba360694aa8dad6cecbdf593229243e6344e0ded90b6a5cdf83b"
+  },
+  "maeptaeng-cheongyang-daepa-bigcup": {
+   "batch": 25,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "2dc7d8e92caf3c36726216a70cf9a7c755675891f0e07e82f267ce6ac2079cba"
+  },
+  "maeptaeng-garlic-clam": {
+   "batch": 25,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "433e43d4c53f084c509d1881162ef36afafd051ec69e98b2cdb3a4debbffd591"
+  },
+  "maeptaeng-garlic-clam-bigcup": {
+   "batch": 25,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "b08b57aaa22af3377465921e27bfc3240ba001e38374586acc98797223e541fd"
+  },
+  "puphatphong-curry-buldak-bigcup": {
+   "batch": 25,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "a1d7b645a383e71b0b0e2856881a7094915b4f3fc76f48b45bd55d91b05a9f3e"
+  },
+  "yakisoba-buldak-bigcup": {
+   "batch": 25,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "3c2ffb1706730e78dee48bd875ae4631da506556ccc10f0c290efcf21514a277"
+  },
+  "gan-jjamppong": {
+   "batch": 26,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "cb52e7189d9e26ae1deba3d50bba6780a65976c85aa995f66fdafd29cffa6c95"
+  },
+  "gan-jjamppong-bigcup": {
+   "batch": 26,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "9d835c54609d89549112bc02a3a5189e180fcf2e4a8b79a42a776260641b3169"
+  },
+  "jjajjaroni-bigcup": {
+   "batch": 26,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "81ad9e562612b3d552083a618997c48a58fbb4757a883715b7870ef347cfe309"
+  },
+  "maeptaeng-cool-spicy-bibim-kimchi": {
+   "batch": 26,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "1701e14dc936e2e95328fb1b4e864c16cb2c25e0c71abe6fe9a43bf14cfac8e9"
+  },
+  "masinneun-ramen": {
+   "batch": 26,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "335413c5f919e845ee5af1c53a6f87031328b58c0c604ec75c48657b9d1fc094"
+  },
+  "masinneun-ramen-bigcup": {
+   "batch": 26,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "d16c6d87603903ca26536c1f331a3ad956eb46337732799cce7d5ddf57ef932a"
+  },
+  "masinneun-ramen-cup": {
+   "batch": 26,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "af5583e548bffc81fb571e1295efe5d4bf3f9f5f999afa9fa07f4ace9f8030c7"
+  },
+  "nagasaki-jjamppong-bigcup": {
+   "batch": 26,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "8415b26f4825bfe8c9bd89731f28c65f5952cc735d801c638f26b5fb6755c0e0"
+  },
+  "samyang-sogogi-myeon": {
+   "batch": 26,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "2a800469632dd4716aa1c322fd6da817dcc4cd74d1739928cc32938de9dcf4f8"
+  },
+  "udon-sagol-gomtang": {
+   "batch": 26,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "609d67224a6ac3c38b99676395c74595cc1864a1fe8246a2d06473545dd02716"
+  },
+  "namja-ramen": {
+   "batch": 27,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "09ae79e3a8b11910e677bd25057846642b0275376143cd23b75c1740422ed323"
+  },
+  "samyang-yukgaejang": {
+   "batch": 27,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "6a15b22b74b1cd0d8b28a9e6d380e9ca5280cc3028f3f153efb2af139e1d30bb"
+  },
+  "tangle-basil-tomato-protein": {
+   "batch": 27,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "aaab506363dec0c458d076476399310e7e7d58cdc92eeafad3218f822cacee38"
+  },
+  "tangle-basil-tomato-protein-bigcup": {
+   "batch": 27,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "554adc705b358c6b75cd261d677e9658d313af93ef6f231cd64e6e0c2cb1aa16"
+  },
+  "tangle-garlic-oil": {
+   "batch": 27,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "2c2f21e87c387da1de0a0673349f955baf21b0aecd020699069220edae3b0db4"
+  },
+  "tangle-garlic-oil-bigcup": {
+   "batch": 27,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "51e28b23d07bc12066e6e27f0117fe1ba8b220f8e396470f1d1b0bfaae8fea73"
+  },
+  "tangle-garlic-shrimp-protein": {
+   "batch": 27,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "60ad3214e6f1ac4931698737bb72a50b3d652f3c2e67324b6b57356b5e1855c2"
+  },
+  "tangle-garlic-shrimp-protein-bigcup": {
+   "batch": 27,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "df590953ee704fbf0e1f263cdf19254dad6d15407a43b71125889c58256806af"
+  },
+  "tangle-mushroom-cream": {
+   "batch": 27,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "06eb699a03d1a7486b951cd75639790bc173537d47991782b3c92fa5265878c7"
+  },
+  "tangle-mushroom-cream-bigcup": {
+   "batch": 27,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "68d1d982e9254fb3a7ebc3f33eba30fca039f8963e9efa9ab0184e6ec481fc42"
+  },
+  "daewang-lid": {
+   "batch": 28,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "932949a11b1fd11cb96b100dbca60ccf8bd863d04d45323b711af975e4ffcf80"
+  },
+  "jjamppong-king-lid": {
+   "batch": 28,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "cf6b51394855d495e80213d4a0231138b5931e2f53dad1f2b381ed9896f78938"
+  },
+  "kimchi-dosirak": {
+   "batch": 28,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "b0c3b13f95098b61c94f20ac3f24b06a40e339ff74b44b2a71557e7b02153879"
+  },
+  "kimchi-king-lid": {
+   "batch": 28,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "77bd551532d70cd8668e3dc86cd1002086ca040138b8f399d3130d32660a9be7"
+  },
+  "kimchi-kokomyeon-wangcup": {
+   "batch": 28,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "a7b4bf9b45a38c75f2b6c6c5ddd8e67612becda830e7ce4f2373cf2aa5594b7c"
+  },
+  "king-king-lid": {
+   "batch": 28,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "6ec0691390c36efc51268fbeb77cff330f44dbb3c0884c263d747742bf3a5493"
+  },
+  "kokomyeon-wangcup": {
+   "batch": 28,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "bffaca838647443e36c11e441b7032878aea847ebde401626ae6ef33b46da5dc"
+  },
+  "mini-king-lid": {
+   "batch": 28,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "205404823652ba1d60e02c97c5fd6b1ad35b6b16a84d64046f056c9e6e609040"
+  },
+  "namja-ramen-cup": {
+   "batch": 28,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "f9ad40c1b5cbb2c711c341324e55d721ad0c398f94b0c2359ce4affa5510370f"
+  },
+  "sang-namja-ramen": {
+   "batch": 28,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "453ed5fd37db75e7c2e678cab3e9ee62cda7b786ef60e8ef9fd36d95ad110884"
+  },
+  "ilpum-haemul-ramen": {
+   "batch": 29,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "7650a6ffea8670ce67f2948e8e04d103fbc064d5c953060a82756cd14b17f762"
+  },
+  "ilpum-haemul-wangcup": {
+   "batch": 29,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "8df333d85033bbdbf70fcb33f86888e2626579e6224aa7123d6d5150b51fd6bd"
+  },
+  "jinguk-seolleongtang": {
+   "batch": 29,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "21d6edd713e249a86a93172b9a381cab94de7068b9bc3e8b0646e37e172cee18"
+  },
+  "paldo-jjajangmyeon": {
+   "batch": 29,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "a73ce206cff87c7b4193bb548805928f4708f0d541eae06ac7048d01b2793f9d"
+  },
+  "paldo-rabokki": {
+   "batch": 29,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "c7bc1c1a125461231945eab84b173b730cf1a233b828fa735b4d68d0f52aabc1"
+  },
+  "teumsae-entry": {
+   "batch": 29,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "e5c60b46ae58db8d2a537b785cabaff5eb69ca57e11371a8a69b01c1ae4901b4"
+  },
+  "teumsae-gogi-jjamppong": {
+   "batch": 29,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "4e75843b46bc95ff25d88c8a567f7d5301cd979611db3656ea8c3bf5e43a2d60"
+  },
+  "teumsae-gogi-jjamppong-cup": {
+   "batch": 29,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "280faa44b9d8e80001e3457ce860a65d4a3bf12c29a12ef3b25b333532af3ae6"
+  },
+  "teumsae-kimchi": {
+   "batch": 29,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "19a1d7bf732a2b57c4e6eaf929a1e16bd545ae3d0e21cf168d780773f926168c"
+  },
+  "teumsae-kimchi-wangcup": {
+   "batch": 29,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "090a4c9b32718fa72ce132e973cd7fdb642ca51a001937a37b6a7255129e2981"
+  },
+  "ari-modern-bongole": {
+   "batch": 30,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "58e69ba59f3def5d6ab82ab7a3ec657f7e647171d49b143a42643865b713e6f9"
+  },
+  "ari-modern-bongole-cup": {
+   "batch": 30,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "34d7b7e1cbfeef87d498f3790b049b62344543f37fc4ad9e1ba2e023037bd1ba"
+  },
+  "ari-modern-gochujang-butter": {
+   "batch": 30,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "9747259ae924947eb093f76ec858b25e1b4d4a1af13af1d6a3ec72fd6c5b8eef"
+  },
+  "ari-modern-gochujang-butter-cup": {
+   "batch": 30,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "c5e069a44b24de68ffc69caf1bf14a9205634128581e7634424f2eafeab8c280"
+  },
+  "ari-modern-pepper-rabokki": {
+   "batch": 30,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "0fd593e32fc5d151f3f9b928b153932a5cffb6d31bbbd20a1598175cda3b1a99"
+  },
+  "ari-modern-truffle-bulgogi": {
+   "batch": 30,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "399fd14cde2cc5b8eb9531943e7c76e7f551b526b4dc450ea5a2fc82d09911e6"
+  },
+  "ari-modern-truffle-bulgogi-cup": {
+   "batch": 30,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "a19877b539d7e55624f6de9a5627e8437b8245c7457855873cd7ccb3caa0413d"
+  },
+  "paldo-bajirak-jjamppong": {
+   "batch": 30,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "013d16013afd57d4e821f33463bf1650df0594b19f69b2d4d36f86756d4f4ab7"
+  },
+  "paldo-bibimmyeon-cup": {
+   "batch": 30,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "7c65c04c0f3108d401de60d7c53d476f5cb39a698dc55a2862f9ee6a7fc7656e"
+  },
+  "paldo-bibimmyeon-hot": {
+   "batch": 30,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "f2fc906929c3a9e3aa18f640abae4ffdfbbdb547d76327890005d12ed89c0fd3"
+  },
+  "ari-modern-kim-hot": {
+   "batch": 31,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "7e59834bf0f760cc88ff7d6664035f038094bcdb5e84d4e1f2ac2e4b4db9141f"
+  },
+  "ari-modern-kim-hot-cup": {
+   "batch": 31,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "9b64a5c69ac6c2f99d85f26450f926aa95b75a958aeaddf3c715b30944b33342"
+  },
+  "ari-modern-kim-original": {
+   "batch": 31,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "c9fabd72c3b807bf85e5f961ca047cce9cf37392161b8370535be024d25edf27"
+  },
+  "ari-modern-kim-original-cup": {
+   "batch": 31,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "ec5e46a168461989381bdf9cdbbe96d8aa9f914d552987f40f15219195545904"
+  },
+  "ari-modern-pepper-rabokki-cup": {
+   "batch": 31,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "bf1c8e3af7962277aa6a49a12f41666a10c6444d31120805c797c6b3864e0b74"
+  },
+  "ari-modern-soy-butter": {
+   "batch": 31,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "0479049fa797525676bfe6e1d4ffbf6e22c55ac9ab3f00a0bcacfe0d0b7243eb"
+  },
+  "ari-modern-soy-butter-cup": {
+   "batch": 31,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "d9b04d8da11f48f648d9837e7be1bf9181d92aaa8299e622e958ddba409645b6"
+  },
+  "themisik-jangin-maepssa": {
+   "batch": 31,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "f6430c006002ac549e5464dae7ff22978ed22825eceb6edd74c8a9302d2f5025"
+  },
+  "themisik-jangin-mild": {
+   "batch": 31,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "9e36eea952c473578f0af4216c60e295f5865e5f75d17f29de0d5d3db983e2e3"
+  },
+  "themisik-maeum-jangin": {
+   "batch": 31,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "3a847401c76f70d181f92c9416afb8ab6afe6a3120f73a43881b0cd12391f6f5"
+  },
+  "cu-cheatkey-cream-buldak": {
+   "batch": 32,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "a9e8c6a35f94f24386b7c27fb6d7e0b83afd85781610af9faba010743855106b"
+  },
+  "harim-matnamyeon": {
+   "batch": 32,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "bc9ccbd095dcd752221d55c293f55cf297167507752293a93d3cdac05caec44c"
+  },
+  "pulmuone-roasting-jeongmyeon": {
+   "batch": 32,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "92ac810516f89369bc08d343014c22d84bdcc150229cce823f3975b62cc42c35"
+  },
+  "pulmuone-saengmyeon-hot": {
+   "batch": 32,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "b83aa379504eaac6d87faa4ed86d4b10964f3956b4908594c746c6394c04d711"
+  },
+  "pulmuone-saengmyeon-mild": {
+   "batch": 32,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "f9d0db520e3b25a204c83bfc84d13faaf404ab0240f37c5971e74a077446858b"
+  },
+  "themisik-bibimmyeon-maepssak": {
+   "batch": 32,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "b85d1e3cc66835116c01552046dff116eb29b1af6f4456e97dd29181a6ab54f6"
+  },
+  "themisik-jangin-small-cup": {
+   "batch": 32,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "db919e7d11fcadfc0a6881c9e32a305891dd76916afc59560575a2c1e9393cc2"
+  },
+  "themisik-memil-bibimmyeon": {
+   "batch": 32,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "32c956b1ef5f19dfff82e4804ff97546cde305e8fd1f2bb2c8a257d9353f22be"
+  },
+  "themisik-ojingeo-ramen": {
+   "batch": 32,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "6f5055dc60face5b321c907b1797adf795db71727702e3fbc9207dae3a599e46"
+  },
+  "themisik-ojingeo-ramen-cup": {
+   "batch": 32,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "acd319802abc2017b621ec6688ae627a6c01a9440ee711985ea3f9b0dce2c849"
+  },
+  "cu-cheatkey-saeutang": {
+   "batch": 33,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "5aa3c0012bcda1fff4a3d15552d108aa0af452a1bf00f88665329c40c94daf59"
+  },
+  "cu-baek-gogi-jjamppong": {
+   "batch": 34,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "d66fc1a673411cd4a0109f8124c65b8a51df10c15171d7e3410091cd2ab0fc15"
+  },
+  "gs25-gonggangchun": {
+   "batch": 34,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "bed7198d4189bd573e7524a38d678100dac720fdd5bb605e47fccb78a28d4b29"
+  },
+  "gs25-myeonwang": {
+   "batch": 34,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "a8e94e2197c3cbd13241bafd98d6a98af0c8ba1c22b668d3390a99fa21fff651"
+  },
+  "gs25-omori-jumbo-dosirak": {
+   "batch": 34,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "e5e08cda6e814dd6c21fbe9addbe47cd6c6ec69b23a8d7fb769777eb7127410a"
+  },
+  "gs25-omori-kimchi-jjigae-bowl": {
+   "batch": 34,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "fb88de8285b646128400311aec4f6cd5f8d90041c17eb3295e8be903e5253d0a"
+  },
+  "gs25-paldo-jumbo-dosirak": {
+   "batch": 34,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "f698318c41c8418b279e41a179cb43ed50fec5bc041c211a925df365cf4ada12"
+  },
+  "gs25-teumsae-bigim": {
+   "batch": 34,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "7a301e1c6c291954dc7e95a32c0124aed230f3ad5bd4d8cc9992ed16551656e0"
+  },
+  "cu-baek-jjajang-bag": {
+   "batch": 35,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "396a955c81c159d4f0902c647f231b4c6b2c7790f7967f7910a7f4ee509594eb"
+  },
+  "cu-baek-jjajang-cup": {
+   "batch": 35,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "f94cacf0dc873ccb7c1c8a7233e960584a647ba03cf6e70367ba7477e937b386"
+  },
+  "cu-baek-kimchi-jjigae": {
+   "batch": 35,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "87170e3142618eb9b357abb62dd86f88340ce305b3684026adf18370e250b8e8"
+  },
+  "cu-baek-ramen-cup": {
+   "batch": 35,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "3ebfeb57eba2321ac8c38978bb1a7ada185cf88af7f2efd92f224f054a3660ee"
+  },
+  "cu-deuktem-ramen": {
+   "batch": 35,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "d09dbe81aacaa49f156926cfca4e7bd422dbfa4ef4c24678f97f4d81e8b6275c"
+  },
+  "cu-jjanggu-baebulleo": {
+   "batch": 35,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "c8a9e8a44ba154d0101ef933c2ae4f9cd53710cf5ed4ae4f6c48d3a9faba8916"
+  },
+  "cu-jjanggu-chocobi-jjajang": {
+   "batch": 35,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "6c40fc75396098c7ab741f10d912725058db2d39d1cb76deffc910e23cf10e04"
+  },
+  "cu-jjanggu-heendungi": {
+   "batch": 35,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "811c9205d9bd6a4ac059c79fc9fb103b000d23a1313d9103cd057bafda62953e"
+  },
+  "cu-odeng-budae-cup": {
+   "batch": 35,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "def98d25c275c8615298172d6c43db817e4ba54fff130d9e2f56dc13162fa310"
+  },
+  "seven-ibiga-jjamppong-ramen": {
+   "batch": 35,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "a70cec6d43ecca625c31da0a503c1adb42b5ff017c0a1af6c4f21cf1db848b26"
+  },
+  "emart24-churamen": {
+   "batch": 36,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "4e4a13d35de28f5313e1fd9c14aa726b1a615c35da5e47159858f776ae2066ee"
+  },
+  "emart24-daebakgak-bulmat-jjamppong": {
+   "batch": 36,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "202e192d5f41c9e2310a62c3446bc82793abbfc16a0f12717d12a2b04b62248b"
+  },
+  "emart24-daebakgak-gochu-jjajang": {
+   "batch": 36,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "f66e17a4d1fa401c2724897e87457444863526644309380d3a2ac4cc0de98cc0"
+  },
+  "emart24-daepa-yukgaejang": {
+   "batch": 36,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "994aff199a0c9ae8ab12f28dd6cff7e66a5641cecacba265db0f1d7db901e635"
+  },
+  "emart24-dolsagol-saeu": {
+   "batch": 36,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "8db28dc1149de0f8448aa485b2e3ba059368a50946873f8d62d650a18664b40c"
+  },
+  "emart24-minsaeng-ramen": {
+   "batch": 36,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "9591d86d68b8a6b4797d39ec2ac61bd85a8fc9afdbaf955991dbbf7349a98549"
+  },
+  "emart24-ttangs-budae": {
+   "batch": 36,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "3c6f21f7879f6bfb21c11342b12282124271e0cbff058150b63953e6a3b96fe6"
+  },
+  "seven-daepa-yeol-ramen": {
+   "batch": 36,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "c7f0fe83b5a080874400157e854371e01052a11da577caec16a5b5652020b0f0"
+  },
+  "seven-ojingeo-alive": {
+   "batch": 36,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "c51211ae469571f1732f99daeeff145b70a64b3ba89159fc8268fe348f617476"
+  },
+  "seven-yeolpadak-bigcup": {
+   "batch": 36,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "04705ce0a9d2e1e6432e82cafc07770237754b53b9fb6e28af6a3c301934f8e8"
+  },
+  "emart-nobrand-jjajang": {
+   "batch": 37,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "3433ba1ce0e07bb0a29e75b716c254dbaa631bbf4c2ab0e2ccd3289095927a3d"
+  },
+  "emart-nobrand-ramen": {
+   "batch": 37,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "05298608ac7ca4aaef54c86636d42ec9cdc564e9ada86bbc71e6a4823754c725"
+  },
+  "emart-nobrand-ramen-dry": {
+   "batch": 37,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "eea162569072c472bd1f9909452d8d61e61c2aba2a309447a0a3d38add591d8d"
+  },
+  "emart-nobrand-ramen-dry-seafood": {
+   "batch": 37,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "ef6ed7ec1c2062b4ec9c548e46dc7e62a6d8dbc179ba90a2540fd68e27b8ae1b"
+  },
+  "emart-tent-ssamjang": {
+   "batch": 37,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "881a56103e5b1099b8025288e9f9f79af7f76d61fbba51071b835c122738e225"
+  },
+  "emart24-hot-cream-jjamppong-cup": {
+   "batch": 37,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "64c0e0510a3d85522ca671f373930b1a1e65ddd8284f3a9e6668e137355d8896"
+  },
+  "emart24-ttabl-jjajang": {
+   "batch": 37,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "e34860e33014f9f59a55c6e2144b9261580476bc01feaed6c904eca78df87ed0"
+  },
+  "emart24-ttabl-sogogi": {
+   "batch": 37,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "cb6aa7550e9d7fb1b64e78bc7883db8b66c4069ed6f766fbebc502e8572c7b52"
+  },
+  "homeplus-ichunsam": {
+   "batch": 37,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "4fc22482a9ae4c162e5ea6dfe0d37c3d38eaeb2f6d0302b00e13a6e92deeabc6"
+  },
+  "homeplus-ichunsam-dry": {
+   "batch": 37,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "81ec50b4fd845d884bcefd2e9ba892e8b3c7b10cff0a6a9265fec2a7bdd7526f"
+  },
+  "homeplus-ihaebong": {
+   "batch": 38,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "783b1c050e6f4f766ddb6657821e9dd9d6558763db77470015ce8c42a28eb885"
+  },
+  "homeplus-ihaebong-dry": {
+   "batch": 38,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "ab764ce788dd187bc3816ef5c2b869c5c746616e3a43a80ab0669e0fa5cfc474"
+  },
+  "homeplus-ijinguk": {
+   "batch": 38,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "04ed68677f8905b14557e24ace0575d2618924d8a11b8cbdea7a787496189c06"
+  },
+  "lottemart-yorihada-bulmat-jjajang": {
+   "batch": 38,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "53579a109ffecfea6b0e22fcdd3e1a153bc080f2d139d8faea353a9b7555f1de"
+  },
+  "lottemart-yorihada-sogogi": {
+   "batch": 38,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "9f212348c5887a669f890c1ab159f5bcb3897fa7dc6f292045959a9c292fc971"
+  },
+  "demae-iccho": {
+   "batch": 39,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "4e598055592742f8d7c09c31a9c5041b7f8fa723ee182d12a9354438c3d1cb54"
+  },
+  "nissin-chicken-ramen": {
+   "batch": 39,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "b4724fcb927d38ba5d10fd1a04acee6875f4b359d5d184b25cb2c8bf62cec730"
+  },
+  "nissin-cup-noodle": {
+   "batch": 39,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "18467e6aec1167b1b484621f60ff51b951e12d3b937bd1234e4444dab1346c8c"
+  },
+  "nissin-cup-noodle-curry": {
+   "batch": 39,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "860c6b96cac20ec5b698e2a604fd235414d396ffaaa288fc345fee4538f70fad"
+  },
+  "nissin-cup-noodle-seafood": {
+   "batch": 39,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "251581dc44e1160a39f8c39b0841463fd5f4a0f15be01d74df17d514d62d60d5"
+  },
+  "nissin-donbei-kitsune": {
+   "batch": 39,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "4172bc913b68af3da8c9cfaa8a643e7d96c632b2422cf614e512bc6b109c4037"
+  },
+  "nissin-ufo": {
+   "batch": 39,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "0f94eed84fe3723ecd41d873766c863f4437fe7e566403f3432a8b35e82652db"
+  },
+  "nissin-yakisoba": {
+   "batch": 39,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "a89de2fe966f6369394fbc89c88568aab2ba8f3cf5bcc400af19b0d12fabaff8"
+  },
+  "sapporo-ichiban-miso": {
+   "batch": 39,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "02a81e80339c55fb1475d615afc9204b3175a3ac3091066968c469e06dad3d43"
+  },
+  "sapporo-ichiban-shoyu": {
+   "batch": 39,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "7b038c69d09cb318a73eba39e78fb2c284dfb187ce973a9657fcc2a33e755dd2"
+  },
+  "acecook-super-cup-tonkotsu": {
+   "batch": 40,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "e5681bbfa7e80d2907296fb0cb14f54e9b7557173f9b604fee264fd26af8f701"
+  },
+  "maruchan-akai-kitsune": {
+   "batch": 40,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "d486977f586b0269461da78921036ee0d70ac610fb70a9bbb548fc0185549097"
+  },
+  "maruchan-midori-tanuki": {
+   "batch": 40,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "98677f148839e12119719dc2e73eefd7ddbd195dd4d784d03c62629f07a02386"
+  },
+  "maruchan-seimen-shoyu": {
+   "batch": 40,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "da07f2af11d152b68ff3e972988a8aecc7a232787715fe97f1b8b55bde2ee9b2"
+  },
+  "masterkong-hongshao-beef": {
+   "batch": 40,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "88cac5bc971d4c58cfbba39258c2875bc04d086fae7c93f478154993f6169ecf"
+  },
+  "masterkong-laotan-suancai": {
+   "batch": 40,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "08e9c4d0b7680c2ebda8fa00732a6e5611df5ff415b273a8e9b0f038adcf4e05"
+  },
+  "myojo-charumera": {
+   "batch": 40,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "d15bffd08ac381166f8e242fd7d0f2c92f26a83dc95e1a2e643ad515f071bca0"
+  },
+  "myojo-ippeichan-yakisoba": {
+   "batch": 40,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "707d4acf7f045b7f8c4e587357bf46fd34fed7223174c5e22b36ed49cd7cbc7b"
+  },
+  "peyoung-yakisoba": {
+   "batch": 40,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "8b29fbc6612ed610aec7856fbf4cac92af3bb985e0a29c5ce630177aff3f5f15"
+  },
+  "sapporo-ichiban-shio": {
+   "batch": 40,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "099828f82f4058ca0480b9cf1e8280602e06370b4dfe98edaa14d05c165dd03d"
+  },
+  "baixiang-dagu": {
+   "batch": 41,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "d672ecc7bf598d8cd0526db7cdd152d490e0685e7b47a039f26832ab6bcc3a13"
+  },
+  "baixiang-laomuji": {
+   "batch": 41,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "dc0a2359de66f8509bbb9217974cb67618ad50c54010fa304459c9e187f848bf"
+  },
+  "baixiang-xiangcai": {
+   "batch": 41,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "99eb6f04044f917a4fbc6f13787288c40a3884f9d0829fc5e3c594474fd26f1e"
+  },
+  "haohuanluo-luosifen": {
+   "batch": 41,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "34fe9a8e76d7e5bf9438ca8d43cf9c0946e9a253d24b1bdb4cf7bf288d2cd086"
+  },
+  "tw-laiyike-shrimp": {
+   "batch": 41,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "130604c1294bbbaf192d78161fee0ae75cd572260c9275deb13be1599cfb8167"
+  },
+  "tw-manhan-congshao-beef": {
+   "batch": 41,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "446f0d4109f5de4c4761838b30bd9fc55a12889b6bd1cb37a6c472119bbdb472"
+  },
+  "tw-unif-rouzao": {
+   "batch": 41,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "f792a2c556952b48b103dce06032c9a5b7d29560e4f89fa127d77ba78a5a9763"
+  },
+  "tw-weilih-zhajiang": {
+   "batch": 41,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "b77842a7c462b4395323f96b1066f950ea93a12ea4bb6f7460778c3a08a9a234"
+  },
+  "unipresident-laotan-suancai": {
+   "batch": 41,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "ca34d1e250456762cc6c3d8776cb71bf2d39308fe710614511811e8881c3d8a0"
+  },
+  "unipresident-tangdaren-tonkotsu": {
+   "batch": 41,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "67ef367a59ee3d3db69f85c37248c5684daa6782b42bfa935089c98316de2196"
+  },
+  "hk-demae-sesame": {
+   "batch": 42,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "75b4efc5ce680a56290f074b59d05d7a274010a44f75078edd11fff657d1ea44"
+  },
+  "hk-doll-noodle": {
+   "batch": 42,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "9dc63a30651050ccce730ed08fbc70cbd25a36fd3b47d92d07cc8e3f319121b1"
+  },
+  "indomie-ayam-panggang": {
+   "batch": 42,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "ce053461a2d76041808150ed4fd049eb852dd06634b1dc9b6a41476119e7160f"
+  },
+  "indomie-mi-goreng": {
+   "batch": 42,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "38a8dab5b8314bad5f87dfd177829b985fd956d99e3369357cf7a3adeaa39051"
+  },
+  "indomie-mi-goreng-pedas": {
+   "batch": 42,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "5247df5b6260ebc93f13c063240c7f36032bc4ae89fb49bdf187bc51c0a74713"
+  },
+  "indomie-rendang": {
+   "batch": 42,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "19cad7096fe1a842fa5d3925639916983778ffc60ec1ed3524921c2a44717ab4"
+  },
+  "tw-asha-tainan": {
+   "batch": 42,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "117616cb5531c30f9f259249f6a9b2b48604ac582ccc5aab83fa2dac170540b6"
+  },
+  "tw-ttl-huadiao-chicken": {
+   "batch": 42,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "5710971614491509d7ea4118acad76603c1cccdd2eb003c0f91b227457a7f541"
+  },
+  "tw-weiwei-a": {
+   "batch": 42,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "6e9688b3c8022a75e6d4b179f86089316433d0f332f6e7e867afd2c9fdccbe8a"
+  },
+  "tw-yiduzan-kongrou": {
+   "batch": 42,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "62bf66ba570938fd041b2b08c34799478c146e327b6749163e3b739af36a3b54"
+  },
+  "indomie-chicken-soup": {
+   "batch": 43,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "867ba513ca3181078cb12def45bbc8fc13df4eae83b537a51516f33feef3b444"
+  },
+  "indomie-iga-penyet": {
+   "batch": 43,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "437be4ed6e82b2200c51663bc87cd440ec3e98f3a7da0f4432bec2364b10282a"
+  },
+  "indomie-kari-ayam": {
+   "batch": 43,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "b2e5129a099fb358514bd947a06024e865d23eef7a981187caadb8b882afe434"
+  },
+  "indomie-mie-aceh": {
+   "batch": 43,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "d2c433b618a25b72c3475f6f5d9c745c41a434ddc0c5d4753229a32064526186"
+  },
+  "maggi-kari-my": {
+   "batch": 43,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "cf597a6da0433a403e5318c1a3bdb81eac5bac61a8a3bfcd2a2f10fd5799d95e"
+  },
+  "mie-sedaap-goreng": {
+   "batch": 43,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "7f2b0ce469d8346366243d4b8b9fc8ae33aad60680f0f182310b51c8b7117bcd"
+  },
+  "mie-sedaap-soto": {
+   "batch": 43,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "9b182df6e0aec5c904d7ebd15bf80408045519e23827746a6b4cea020bdf6d47"
+  },
+  "mykuali-hokkien-prawn": {
+   "batch": 43,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "8483505718a14bf1d45181356b96779fa7a92c075ab65e72e14ca406ba12c345"
+  },
+  "mykuali-red-tomyum": {
+   "batch": 43,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "708c4d75c8f8babe1679911973b6b6f4f68fd827ec412f42c65d1c3ec5b16575"
+  },
+  "mykuali-white-curry": {
+   "batch": 43,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "75aa9ee0cae503f19d646dfc13742a4f5399b97bcb080d4f9fd3b54f196a7de3"
+  },
+  "haohao-tom-chua-cay": {
+   "batch": 44,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "c587a25a71a6e006d51fbdcb72697fda4dd9daebe1629e04d59bd12bc1d6c6db"
+  },
+  "mama-creamy-tomyum": {
+   "batch": 44,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "1cd9ba94d984d4fad5d999c9d8e14d939a3a0e833ec9fa6d66cd007bb4b615a3"
+  },
+  "mama-green-curry": {
+   "batch": 44,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "833b9c6633e8e18716540e0fa08cd872b29e609650b073218ce64f692b7f9174"
+  },
+  "mama-minced-pork": {
+   "batch": 44,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "b4b6248087c85d804c121ebc8dc864deedb0e66b8c73e7da7bc9d8d086834da4"
+  },
+  "mama-pad-kee-mao": {
+   "batch": 44,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "1e35500645565dd2e4c31b48f2e3a9e9c16dad79c78e6ca6469d2da306d4c715"
+  },
+  "mama-tomyum-shrimp": {
+   "batch": 44,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "40766b6fa93c303bb5d97ba4711fbce97f105028fe6a0d126ae95a8a06a98d05"
+  },
+  "mama-yentafo": {
+   "batch": 44,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "0bf9e175aca8e2723b019945d41351192201061f842c8aeeda07ad7266f8f2ce"
+  },
+  "prima-curry-lamian": {
+   "batch": 44,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "f64170ff6709ebf4867bd8eb568b215fafc876ede3e8914aa774b60259623ae0"
+  },
+  "prima-laksa-lamian": {
+   "batch": 44,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "389864051832daf4b98c32661757437d634f6076d0440b4a048310bfcf7adf59"
+  },
+  "prima-wholegrain-laksa": {
+   "batch": 44,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "5ab64a3796429add768fc38ad68400519ac119e125c819319163eabfc53c3834"
+  },
+  "haohao-chay": {
+   "batch": 45,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "9a74242dacb26830fc190909523e8587bcb4f9fc5326d30b480b0a56f1321347"
+  },
+  "haohao-sate": {
+   "batch": 45,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "07eb0676297fb41835f52a7fb11d022cbcf16c0f9ed519738d52d3d44f5b30b4"
+  },
+  "luckyme-beef-na-beef": {
+   "batch": 45,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "a201397815e2bcad57475af9adc0000c8fb1b93442593c15ca47b00d81bed7ac"
+  },
+  "luckyme-chilimansi": {
+   "batch": 45,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "21ab55d4d5b50cdc964ea0f998bc69c9e6e1316909c1f4715daa2f9d2ca552dd"
+  },
+  "luckyme-la-paz-batchoy": {
+   "batch": 45,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "fe1dd98df0373138b77c66c94b6d36db5c85f6b88c30185637d3fc36d1c12bcc"
+  },
+  "luckyme-pancit-canton": {
+   "batch": 45,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "6167a2c33d450c2208939826f80b33dda9b8c5deccdaf3b597cfdb66cf789176"
+  },
+  "maggi-masala-india": {
+   "batch": 45,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "177d891e6aa19ff77fc7615b7b51be10582de5ad005e5e99ab73c460c63478b9"
+  },
+  "omachi-bo-ham": {
+   "batch": 45,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "f06c247fab5d79b02fad72bb6d46b68a294422d979475704e4cc0a8417938dac"
+  },
+  "waiwai-chicken": {
+   "batch": 45,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "70acdaa464f0dafb4389e6d0dffa55d612a8cd22da723149e4c7a2cce290ad82"
+  },
+  "yippee-magic-masala": {
+   "batch": 45,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "0ef01e442345a5d4c43f04ff7e05f9ce4c591c96c6216457ccfc41faf90f91e2"
+  },
+  "immi-black-garlic": {
+   "batch": 46,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "5b9a6adecc8b5476dd57d5653e2e046395c753397352281ef7636599b286c528"
+  },
+  "indomie-nigeria-chicken": {
+   "batch": 46,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "c8d76944a43afa96014baa41d9ce6884e68c10821e1e561444bb02b54401c0e6"
+  },
+  "maruchan-instant-lunch": {
+   "batch": 46,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "f59c7ba5d514380a4fd5a3d16874b52c896b2fda5d7424d10d5181bfc461512d"
+  },
+  "maruchan-ramen-chicken": {
+   "batch": 46,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "1a947b8291c999d3c6abe737e77cc9b5dc98849624586ede542fec5c030b99b6"
+  },
+  "momofuku-soy-scallion": {
+   "batch": 46,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "4a7f327bfff0d47966419e909560d4af222dbb08b79f94ab8d0090382cb695ff"
+  },
+  "momofuku-tingly-chili": {
+   "batch": 46,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "7954c429d5dd25eeb2bb7be311ca75a725e97c586980e5176a10105c52fc8219"
+  },
+  "nissin-miojo-galinha-caipira": {
+   "batch": 46,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "b0faa16bc6d936ece1d0c77040f1d041b9ed8075ef62b22e36619b5bd3ced880"
+  },
+  "nissin-top-ramen-chicken": {
+   "batch": 46,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "3ff876dda119f0695419e0dc72e9625ae97a504ac2c0a06994276d8a217afd6f"
+  },
+  "pot-noodle-bombay-bad-boy": {
+   "batch": 46,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "de4ecd0248ee8b8dd3b403e05d44b64ce72d34661cc612db2b24fc42f254d0b9"
+  },
+  "pot-noodle-chicken-mushroom": {
+   "batch": 46,
+   "method": "OpenAI 이미지 생성 · 텍스트로 신규 생성",
+   "input": "없음",
+   "label": "AI 조리 예시",
+   "sha256": "661f5ffa23c2578ac956a58e9a66b4f3f2b7e5710eb1a13638496bcdc483c705"
   }
+ },
+ "alias": {
+  "cup-noodle-spicy": "cup-noodle"
  }
 }

@@ -64,6 +64,7 @@ const AI_ROOT = path.join(STATIC, 'img', 'ramen-ai');
 const has = (dir, kind, f) => fs.existsSync(path.join(dir, kind, `${f}.webp`));
 const allowedAll = (list) => Array.isArray(list) && list.length > 0 && list.every(([id]) => PHOTOS.sources[id] && String(PHOTOS.sources[id].allowed || '').trim());
 export const PHOTO_PROBLEMS = [];
+const AI_ALIAS = (fs.existsSync(path.join(ROOT, 'content/ai-images.json')) ? readJSON('content/ai-images.json').alias : null) || {};
 function picOf(s) {
   const p = PHOTOS.photos[s];
   if (p) {
@@ -74,12 +75,13 @@ function picOf(s) {
       const used = detail ? [...p.pack, ...p.dish] : p.pack;
       const credits = [];
       for (const [id, page] of used) if (!credits.some((c) => c.id === id)) credits.push({ id, name: PHOTOS.sources[id].name, url: page || PHOTOS.sources[id].home, license: PHOTOS.sources[id].license || '' });
-      return { kind: 'photo', base: '/assets/img/ramen', f, small: false, detail, alt: p.altPack || '', altBig: detail ? p.altDish || p.altPack || '' : p.altPack || '', credits };
+      return { kind: 'photo', base: '/assets/img/ramen', f, small: false, sq: false, detail, alt: p.altPack || '', altBig: detail ? p.altDish || p.altPack || '' : p.altPack || '', credits };
     }
     if (has(PHOTO_ROOT, 'thumb', f) && !packOk) PHOTO_PROBLEMS.push(`${s}: 허락 기록이 없는 실물 사진 파일이 올라와 있어요. 화면과 배포 파일에는 넣지 않았어요.`);
   }
-  if (has(AI_ROOT, 'thumb', s)) {
-    return { kind: 'ai', base: '/assets/img/ramen-ai', f: s, small: has(AI_ROOT, 's', s), detail: has(AI_ROOT, 'square', s) && has(AI_ROOT, 'wide', s), alt: '', altBig: '', credits: [] };
+  const ai = has(AI_ROOT, 'thumb', s) ? s : AI_ALIAS[s] && has(AI_ROOT, 'thumb', AI_ALIAS[s]) ? AI_ALIAS[s] : '';
+  if (ai) {
+    return { kind: 'ai', base: '/assets/img/ramen-ai', f: ai, small: has(AI_ROOT, 's', ai), sq: has(AI_ROOT, 'q', ai), detail: has(AI_ROOT, 'square', ai) && has(AI_ROOT, 'wide', ai), alt: '', altBig: '', credits: [] };
   }
   return null;
 }
@@ -358,7 +360,17 @@ export const hotChip = (r) => (r.hot == null ? '' : `<span class="chip-hot hot${
 export const statusChip = (r) => (r.st && r.st !== 'sale' ? `<span class="chip-st st-${r.st}">${STATUS[r.st]}${r.ch ? ' · ' + esc(r.ch) : ''}</span>` : '');
 
 // 라면 그림: 허락받은 실물 사진 > AI 조리 예시 > 조리 방식 예시 그림
-export const picSrc = (r, kind = 'thumb') => (r.pic ? `${r.pic.base}/${kind === 's' && !r.pic.small ? 'thumb' : kind}/${r.pic.f}.webp` : `/assets/img/${r.img}.webp`);
+export const picSrc = (r, kind = 'thumb') => {
+  if (!r.pic) return `/assets/img/${r.img}.webp`;
+  if (kind === 'q' && !r.pic.sq) kind = r.pic.small ? 's' : 'thumb';
+  if (kind === 's' && !r.pic.small) kind = 'thumb';
+  return `${r.pic.base}/${kind}/${r.pic.f}.webp`;
+};
+// 정사각 칸(라면몰 카드 등): 띠 없이 그릇만 자른 작은 정사각 그림
+export function ramenImgSq(r) {
+  if (!r.pic || !r.pic.sq) return ramenImg(r, false, '(min-width: 760px) 240px, 46vw');
+  return `<img src="${picSrc(r, 'q')}" width="480" height="480" alt="" loading="lazy" decoding="async">`;
+}
 export function ramenImg(r, eager = false, sizes = '(min-width: 1100px) 260px, (min-width: 760px) 30vw, 46vw') {
   if (!r.pic) return img(r.img, '', '', eager);
   const set = r.pic.small ? ` srcset="${picSrc(r, 's')} 400w, ${picSrc(r)} 1000w" sizes="${sizes}"` : '';

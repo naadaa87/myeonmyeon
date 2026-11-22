@@ -1511,3 +1511,10 @@ a.pill:hover { background: var(--paper-3); }
 .pill-warn { background: var(--red-soft); color: var(--red-d); }
 .adm-panel details summary { cursor: pointer; color: var(--muted); }
 .adm-panel details a { color: inherit; }
+
+/* 정사각으로 자른 AI 조리 예시(라면몰 카드)에 붙이는 작은 표시 */
+.pic-ai { position: absolute; left: 8px; bottom: 8px; padding: 2px 7px; border-radius: 6px; background: rgba(38, 34, 31, .66); color: #fff; font-size: 11px; font-weight: 700; line-height: 1.5; pointer-events: none; }
+.pod-pic { position: relative; display: block; line-height: 0; }
+.pod-pic .pic-ai { display: none; }
+@media (min-width: 760px) { .pod-pic .pic-ai { display: block; } }
+.pod .rnum { z-index: 2; }

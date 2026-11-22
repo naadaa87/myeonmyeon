@@ -118,7 +118,7 @@ write('assets/js/meta.js', meta);
 const compact = RAMEN.map((r) => ({
   s: r.s, n: r.n, m: r.m, mn: r.maker, co: r.co, cn: r.co === 'kr' ? '' : r.coName, ta: r.ta, nd: r.noodle || 'oil', f: r.f || null, c: r.c, hot: r.hot ?? null, st: r.st, ch: r.ch || '', y: r.y || '', yk: releaseKey(r),
   shu: r.shu || null, t: r.t, img: r.img, g: r.groups, q: (ramenSearchText(r) + ' ' + cho(ramenSearchText(r))).toLowerCase(),
-  pi: r.pic ? [r.pic.kind === 'ai' ? 1 : 2, r.pic.f === r.s ? '' : r.pic.f, r.pic.small ? 1 : 0] : null,
+  pi: r.pic ? [r.pic.kind === 'ai' ? 1 : 2, r.pic.f === r.s ? '' : r.pic.f, r.pic.small ? 1 : 0, r.pic.sq ? 1 : 0, r.pic.detail ? 1 : 0] : null,
 }));
 write('data/ramen.json', JSON.stringify({ built: today, ramen: compact }));
 

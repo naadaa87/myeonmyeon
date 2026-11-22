@@ -29,7 +29,7 @@
     var top = j.rank.slice(0, 3), rest = j.rank.slice(3, 6);
     var h = '<div class="podium">' + top.map(function (x, i) {
       var r = MM.BY[x.s];
-      return '<a class="pod" href="/ramen/' + x.s + '/"><span class="rnum n' + (i + 1) + '">' + (i + 1) + '</span><img src="' + MM.imgOf(r, true) + '" alt="" width="800" height="800" loading="lazy"><div><p class="pod-meta">' + esc(r.mn) + ' · ' + esc(D.STYLES[r.c]) + '</p><p class="pod-name">' + esc(r.n) + '</p><p>' + MM.scoreHTML(x.score) + ' <span class="pod-meta">기록 ' + x.n + '개</span> ' + move(x, i + 1) + '</p></div></a>';
+      return '<a class="pod" href="/ramen/' + x.s + '/"><span class="rnum n' + (i + 1) + '">' + (i + 1) + '</span><span class="pod-pic"><img src="' + MM.imgOf(r) + '" alt="" width="480" height="480" loading="lazy">' + (r.pi && r.pi[0] === 1 ? '<span class="pic-ai">AI 조리 예시</span>' : '') + '</span><div><p class="pod-meta">' + esc(r.mn) + ' · ' + esc(D.STYLES[r.c]) + '</p><p class="pod-name">' + esc(r.n) + '</p><p>' + MM.scoreHTML(x.score) + ' <span class="pod-meta">기록 ' + x.n + '개</span> ' + move(x, i + 1) + '</p></div></a>';
     }).join('') + '</div>';
     if (rest.length) {
       h += '<div class="rank-rows">' + rest.map(function (x, k) {

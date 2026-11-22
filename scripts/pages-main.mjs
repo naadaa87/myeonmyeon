@@ -2,7 +2,7 @@
 import {
   esc, cfg, SITE_NAME, abs, RAMEN, BY, SORTED, NEWEST, MAKERS, layout, icon, WAVE, img, pageBanner, crumbs, crumbLd, secHead, moreLink,
   ramenCard, ramenGrid, hotChip, statusChip, formText, styleText, yearText, releaseKey, buyLink, DISCLOSURE, josa, readJSON, cho, DOGAM_CHECKED, COUNTRIES, WORLD,
-  ramenHero, picSrc, ramenImg,
+  ramenHero, picSrc, ramenImg, ramenImgSq,
 } from './lib.mjs';
 import { STYLES, FORMS, STATUS, HOTS, GROUPS, AXES, RANK_RULE, TASTES, NOODLE_TYPES } from '../server/catalog-data.js';
 import { storyHomeCards } from './pages-story.mjs';
@@ -153,7 +153,7 @@ export const newsItem = (n) => `<li class="news-item"><p class="news-date">${esc
 export function productCard(r, from) {
   if (!r) return '';
   return `<article class="pcard" data-s="${r.s}">
-<a class="pcard-img" href="/ramen/${r.s}/">${ramenImg(r, false, '(min-width: 760px) 240px, 46vw')}${statusChip(r)}</a>
+<a class="pcard-img" href="/ramen/${r.s}/">${ramenImgSq(r)}${statusChip(r)}${r.pic && r.pic.kind === 'ai' ? '<span class="pic-ai">AI 조리 예시</span>' : ''}</a>
 <div class="pcard-body">
 <p class="rcard-maker">${esc(r.maker)}${r.f ? ` · ${formText(r)}` : ''}</p>
 <h3><a href="/ramen/${r.s}/">${esc(r.n)}</a></h3>

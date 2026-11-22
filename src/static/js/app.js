@@ -304,12 +304,20 @@
   }
   // 라면 그림: 허락받은 실물 사진(pi[0]=2) > AI 조리 예시(1) > 조리 방식 예시 그림. big이 아니면 작은 그림을 써요.
   var picBase = function (r) { return r.pi[0] === 1 ? '/assets/img/ramen-ai/' : '/assets/img/ramen/'; };
+  // kind: thumb(5:4) · s(작은 5:4) · q(띠 없는 정사각) · square(큰 정사각)
+  var picOf = function (r, kind) {
+    if (kind === 'q' && !r.pi[3]) kind = r.pi[2] ? 's' : 'thumb';
+    if (kind === 's' && !r.pi[2]) kind = 'thumb';
+    if (kind === 'square' && !r.pi[4]) kind = 'thumb';
+    return picBase(r) + kind + '/' + (r.pi[1] || r.s) + '.webp';
+  };
+  // big: true = 카드용 5:4, 'square' = 큰 정사각, 없으면 작은 정사각 칸용
   var imgOf = function (r, big) {
     if (!r || !r.pi) return '/assets/img/' + (r && r.img ? r.img : 'broth-spicy') + '.webp';
-    return picBase(r) + (!big && r.pi[2] ? 's' : 'thumb') + '/' + (r.pi[1] || r.s) + '.webp';
+    return picOf(r, big === true ? 'thumb' : big === 'square' ? 'square' : 'q');
   };
   var imgTag = function (r, w, h, lazy) {
-    var set = r.pi && r.pi[2] ? ' srcset="' + imgOf(r) + ' 400w, ' + imgOf(r, true) + ' 1000w" sizes="(min-width: 1100px) 260px, (min-width: 760px) 30vw, 46vw"' : '';
+    var set = r.pi && r.pi[2] ? ' srcset="' + picOf(r, 's') + ' 400w, ' + picOf(r, 'thumb') + ' 1000w" sizes="(min-width: 1100px) 260px, (min-width: 760px) 30vw, 46vw"' : '';
     return '<img src="' + imgOf(r, true) + '"' + set + ' width="' + (r.pi ? 1000 : w) + '" height="' + (r.pi ? 800 : h) + '" alt=""' + (lazy ? ' loading="lazy"' : '') + ' decoding="async">';
   };
   function cardHTML(r, st) {
