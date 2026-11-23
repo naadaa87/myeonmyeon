@@ -1,4 +1,5 @@
 /*
+  Strict-Transport-Security: max-age=31536000
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
@@ -20,7 +21,8 @@
 /sw.js
   Cache-Control: no-cache
 
-# 대표 주소는 myeonmyeon.com 이에요. pages.dev 주소는 검색에 잡히지 않게 해요
+# 대표 주소는 myeonmyeon.com 이에요. myeonmyeon.pages.dev는 Cloudflare 대량 리디렉션(pagesdev_to_domain)으로 넘어가고,
+# 배포 미리보기 주소(xxxx.myeonmyeon.pages.dev)는 검색에 잡히지 않게 해요
 https://myeonmyeon.pages.dev/*
   X-Robots-Tag: noindex
 
