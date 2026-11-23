@@ -189,6 +189,8 @@ ${urls.map(([u, p]) => `<url><loc>${abs(u)}</loc><lastmod>${modOf[u]}</lastmod><
 `);
 // IndexNow 열쇠 파일 (빙·네이버·얀덱스 등에 바뀐 주소를 바로 알릴 때 써요)
 if (cfg.indexNowKey) write(`${cfg.indexNowKey}.txt`, cfg.indexNowKey);
+// 네이버 서치어드바이저 소유확인 파일 (HTML 파일 업로드 방식)
+if (/^naver[0-9a-f]+\.html$/.test(cfg.naverVerificationFile || '')) write(cfg.naverVerificationFile, `naver-site-verification: ${cfg.naverVerificationFile}`);
 write('robots.txt', `User-agent: *
 Allow: /
 Allow: /api/img/

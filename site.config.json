@@ -1,5 +1,5 @@
 {
-  "_안내": "사이트 기본 설정. siteUrl은 대표 주소(https://myeonmyeon.com)예요. operator(운영자 이름)와 contactEmail은 공개 전에 꼭 채워 주세요. 개인정보처리방침과 바닥글에 들어가요. 검색 등록 소유확인 값: naverSiteVerification(네이버 서치어드바이저 'HTML 태그'의 content 값), googleSiteVerification, bingSiteVerification(msvalidate.01 값), daumWebmasterPin(다음 웹마스터도구 PIN 줄 전체). indexNowKey는 빙·네이버 등에 새 글을 알리는 IndexNow 열쇠로, 공개해도 되는 값이에요. kpiBeacon이 true면 choisijun.com 관리자 '전체 KPI'로 방문 수를 보내요.",
+  "_안내": "사이트 기본 설정. siteUrl은 대표 주소(https://myeonmyeon.com)예요. operator(운영자 이름)와 contactEmail은 공개 전에 꼭 채워 주세요. 개인정보처리방침과 바닥글에 들어가요. 검색 등록 소유확인 값: naverSiteVerification(네이버 서치어드바이저 'HTML 태그'의 content 값), naverVerificationFile(네이버 'HTML 파일 업로드'의 파일 이름, 빌드가 그 파일을 만들어요), googleSiteVerification, bingSiteVerification(msvalidate.01 값), daumWebmasterPin(다음 웹마스터도구 PIN 줄 전체). indexNowKey는 빙·네이버 등에 새 글을 알리는 IndexNow 열쇠로, 공개해도 되는 값이에요. kpiBeacon이 true면 choisijun.com 관리자 '전체 KPI'로 방문 수를 보내요.",
   "siteName": "면면",
   "tagline": "라면 도감, 랭킹, 커뮤니티",
   "siteUrl": "https://myeonmyeon.com",
@@ -9,7 +9,8 @@
   "operator": "",
   "privacyOfficer": "",
   "privacyEmail": "",
-  "naverSiteVerification": "",
+  "naverSiteVerification": "06015daa3bcd6365b5bd16ce03a22bd42b484446",
+  "naverVerificationFile": "naver30eea9191ee7c55d15990d870d582aeb.html",
   "googleSiteVerification": "",
   "bingSiteVerification": "",
   "daumWebmasterPin": "",
