@@ -304,6 +304,8 @@ function reportDialog() {
 export function layout({ title, description, path: p, body, scripts = [], noindex = false, jsonld = null, bodyClass = '', ogImage = '', ogSize = null, ogType = 'website', bare = false }) {
   const url = abs(p);
   if (!noindex) PAGEHASH[p] = crypto.createHash('sha1').update(`${title}\n${description}\n${body}`).digest('hex').slice(0, 12);
+  // 구조화 데이터가 없는 공개 페이지에는 기본 WebPage 표시를 넣어요
+  if (!noindex && !(jsonld && [].concat(jsonld).length)) jsonld = { '@context': 'https://schema.org', '@type': 'WebPage', name: title, url, description, inLanguage: 'ko', isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: abs('/') } };
   const lds = [].concat(jsonld || []).map((j) => `<script type="application/ld+json">${JSON.stringify(j).replace(/</g, '\\u003c')}</script>`).join('\n');
   return `<!doctype html>
 <html lang="ko">
