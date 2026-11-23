@@ -1,6 +1,7 @@
 // 빌드 공통: 설정, 원고 읽기, 글자 다루기, 아이콘, 머리·바닥·틀
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { STYLES, FORMS, STATUS, HOTS, GROUPS, inGroup, bowlImage, tasteIds } from '../server/catalog-data.js';
 
@@ -24,6 +25,10 @@ export const SITE = cfg.siteUrl.replace(/\/$/, '');
 export const abs = (p) => SITE + p;
 export const SITE_NAME = cfg.siteName || '면면';
 export const OPERATOR = cfg.operator || `${SITE_NAME} 운영팀`;
+// choisijun.com 관리자 '전체 KPI' 방문 수집. k1.js 내용 확인값(integrity)은 choisijun 저장소의 k1.js와 같아야 해요
+const K1 = '<script defer src="https://choisijun.com/k1.js" integrity="sha384-E7Xl7wiU1vNu5AUY41kJB1uV52L+UEvqwYRzRj4zdaBGAeyRfCll926ETRo39Jm6" crossorigin="anonymous"></script>';
+// 페이지마다 본문이 바뀌었는지 보는 값 (사이트맵 lastmod와 IndexNow 알림에 써요)
+export const PAGEHASH = {};
 
 // ---------- 글자 ----------
 export const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -241,6 +246,7 @@ function footer() {
 <nav class="foot-nav" aria-label="바닥 메뉴">
 <div><b>둘러보기</b><a href="/ramen/">라면 도감</a><a href="/world/">세계 라면 지도</a><a href="/story/">라면 이야기</a><a href="/rank/">랭킹</a><a href="/new/">신상 레이더</a><a href="/shop/">라면몰</a></div>
 <div><b>함께하기</b><a href="/record/">한 그릇 기록</a><a href="/lab/">취향실험실</a><a href="/club/">후루룩클럽</a><a href="/recipes/">레시피 자랑</a><a href="/me/">내 도감</a></div>
+<div><b>모아 보기</b><a href="/ramen/type/soup/">국물 라면</a><a href="/ramen/type/bibim/">비빔면</a><a href="/ramen/type/jjajang/">짜장라면</a><a href="/ramen/type/cup/">컵라면</a><a href="/ramen/spicy/">매운 라면</a><a href="/ramen/cvs/">편의점 라면</a><a href="/ramen/maker/nongshim/">농심 라면</a><a href="/ramen/maker/ottogi/">오뚜기 라면</a><a href="/ramen/maker/samyang/">삼양 라면</a><a href="/ramen/maker/paldo/">팔도 라면</a></div>
 <div><b>${esc(SITE_NAME)}</b><a href="/about/">${esc(SITE_NAME)} 소개</a><a href="/rank/rules/">평가 기준</a><a href="/contact/">문의하기</a><button type="button" class="link-btn" data-report="">틀린 정보 알려 주기</button></div>
 </nav>
 <nav class="foot-legal" aria-label="약관과 정책">
@@ -248,7 +254,7 @@ function footer() {
 <a href="/privacy/"><b>개인정보처리방침</b></a>
 <a href="/club/rules/">후루룩클럽 이용 규칙</a>
 </nav>
-<p class="foot-note">라면 이름과 상표는 각 제조사의 것이에요. 라면 카드의 그릇 사진은 조리 방식을 보여 주는 예시 그림이고, 실제 제품 사진이 아니에요.</p>
+<p class="foot-note">라면 이름과 상표는 각 제조사의 것이에요. 라면 그림은 AI로 새로 만든 조리 예시나 조리 방식을 보여 주는 예시 그림이고, 실제 제품 사진이 아니에요.</p>
 <p class="foot-note">${esc(SITE_NAME)} 라면몰과 라면 페이지의 구매 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다. 수수료는 랭킹 계산에 들어가지 않아요.</p>
 <p class="foot-copy">© ${new Date().getFullYear()} ${esc(OPERATOR)}</p>
 </div>
@@ -297,6 +303,7 @@ function reportDialog() {
 
 export function layout({ title, description, path: p, body, scripts = [], noindex = false, jsonld = null, bodyClass = '', ogImage = '', ogSize = null, ogType = 'website', bare = false }) {
   const url = abs(p);
+  if (!noindex) PAGEHASH[p] = crypto.createHash('sha1').update(`${title}\n${description}\n${body}`).digest('hex').slice(0, 12);
   const lds = [].concat(jsonld || []).map((j) => `<script type="application/ld+json">${JSON.stringify(j).replace(/</g, '\\u003c')}</script>`).join('\n');
   return `<!doctype html>
 <html lang="ko">
@@ -306,7 +313,7 @@ export function layout({ title, description, path: p, body, scripts = [], noinde
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${url}">
-${noindex ? '<meta name="robots" content="noindex, nofollow">' : ''}
+${noindex ? '<meta name="robots" content="noindex, nofollow">' : '<meta name="robots" content="index, follow, max-image-preview:large">'}
 <meta property="og:type" content="${ogType}">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="${esc(SITE_NAME)}">
@@ -320,6 +327,7 @@ ${noindex ? '<meta name="robots" content="noindex, nofollow">' : ''}
 <meta name="theme-color" content="#FAF7F3">
 ${cfg.naverSiteVerification ? `<meta name="naver-site-verification" content="${esc(cfg.naverSiteVerification)}">` : ''}
 ${cfg.googleSiteVerification ? `<meta name="google-site-verification" content="${esc(cfg.googleSiteVerification)}">` : ''}
+${cfg.bingSiteVerification ? `<meta name="msvalidate.01" content="${esc(cfg.bingSiteVerification)}">` : ''}
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/img/icon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
@@ -346,6 +354,7 @@ ${reportDialog()}
 <script src="/assets/js/meta.js?v=${BUILD}" defer></script>
 <script src="/assets/js/app.js?v=${BUILD}" defer></script>
 ${scripts.map((s) => `<script src="/assets/js/${s}?v=${BUILD}" defer></script>`).join('\n')}
+${cfg.kpiBeacon && !bare ? K1 : ''}
 </body>
 </html>`;
 }
@@ -408,5 +417,5 @@ export function ramenCard(r, { eager = false, from = '' } = {}) {
 export const ramenGrid = (list, opt) => `<div class="rgrid">${list.map((r, i) => ramenCard(r, { ...opt, eager: opt && opt.eagerFirst ? i < 4 : false })).join('')}</div>`;
 
 export const goHref = (id, from) => `/go/${id}${from ? `?from=${from}` : ''}`;
-export const buyLink = (id, from, label = '쿠팡에서 보기', cls = 'btn btn-buy') => `<a class="${cls}" href="${goHref(id, from)}" rel="sponsored nofollow noopener" target="_blank" data-buy="${id}">${icon('i-cart')}${esc(label)}</a>`;
+export const buyLink = (id, from, label = '쿠팡에서 보기', cls = 'btn btn-buy') => `<a class="${cls}" href="${goHref(id, from)}" rel="sponsored nofollow noopener" target="_blank" data-buy="${id}" data-kpi="쿠팡 이동">${icon('i-cart')}${esc(label)}</a>`;
 export const DISCLOSURE = '이 게시물은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.';

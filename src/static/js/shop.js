@@ -19,7 +19,7 @@
       if (!x) return '';
       return '<article class="pcard" data-s="' + s + '" style="position:relative"><span class="rnum' + (i < 3 ? ' n' + (i + 1) : '') + '">' + (i + 1) + '</span><a class="pcard-img" href="/ramen/' + s + '/"><img src="' + MM.imgOf(x) + '" alt="" width="480" height="480" loading="lazy">' + (x.pi && x.pi[0] === 1 ? '<span class="pic-ai">AI 조리 예시</span>' : '') + '</a>' +
         '<div class="pcard-body"><p class="rcard-maker">' + esc(x.mn) + (x.f ? ' · ' + esc(D.FORMS[x.f]) : '') + '</p><h3><a href="/ramen/' + s + '/">' + esc(x.n) + '</a></h3><p class="rcard-stat" data-stat>기록 모으는 중</p>' +
-        '<a class="btn btn-buy btn-sm" href="/go/' + s + '?from=shop-monthly" rel="sponsored nofollow noopener" target="_blank" data-buy="' + s + '">' + ico('i-cart') + '쿠팡에서 보기</a></div></article>';
+        '<a class="btn btn-buy btn-sm" href="/go/' + s + '?from=shop-monthly" rel="sponsored nofollow noopener" target="_blank" data-kpi="쿠팡 이동" data-buy="' + s + '">' + ico('i-cart') + '쿠팡에서 보기</a></div></article>';
     }).join('');
     MM.paintCards(box);
   });

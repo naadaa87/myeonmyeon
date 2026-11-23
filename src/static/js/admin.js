@@ -826,7 +826,7 @@
   var photoData = null;
   var isKo = function (x) { return /[가-힣]/.test(x.name) || /\.kr(\/|$)|naver\.com|tistory\.com|daum\.net/.test(x.home || ''); };
   function askText(x) {
-    var site = location.origin.replace(/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?/, 'https://myeonmyeon.pages.dev');
+    var site = location.origin.replace(/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?/, 'https://myeonmyeon.com');
     var list = x.ramen.map(function (r) { return '- ' + r[1]; }).join('\n');
     var name = x.greet || x.name.replace(/\(네이버 블로그\)$/, '');
     if (!isKo(x)) {

@@ -1,0 +1,32 @@
+# 바뀐 페이지를 검색엔진(빙·네이버·얀덱스 등 IndexNow 참여 검색엔진)에 바로 알려요.
+# - main에 올라온 커밋에서 scripts/lastmod.json이 바뀐 주소만 골라요 (빌드할 때 본문이 바뀐 페이지만 날짜가 바뀌어요)
+# - Cloudflare 배포가 끝나 새 페이지가 열릴 때까지 기다렸다가 알려요
+# - 모든 페이지를 다시 알리고 싶으면 GitHub → Actions → 이 작업 → Run workflow 에서 all 에 yes 를 넣어요
+name: 검색엔진에 바뀐 페이지 알리기 (IndexNow)
+on:
+  push:
+    branches: [main]
+    paths: ['scripts/lastmod.json']
+  workflow_dispatch:
+    inputs:
+      all:
+        description: '모든 페이지를 알리려면 yes'
+        required: false
+        default: ''
+permissions:
+  contents: read
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: 바뀐 주소 알리기
+        env:
+          ALL: ${{ github.event.inputs.all }}
+        run: node scripts/indexnow.mjs

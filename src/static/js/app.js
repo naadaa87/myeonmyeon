@@ -244,8 +244,9 @@
     paint();
     b.addEventListener('click', function () {
       try {
-        if (localStorage.getItem('mm-notrack') === '1') { localStorage.removeItem('mm-notrack'); toast('방문 통계를 다시 켰어요'); }
-        else { localStorage.setItem('mm-notrack', '1'); toast('이 브라우저의 방문 통계를 껐어요'); }
+        // k_off: choisijun.com 통합 방문 집계(k1.js)도 함께 끄고 켜요
+        if (localStorage.getItem('mm-notrack') === '1') { localStorage.removeItem('mm-notrack'); localStorage.removeItem('k_off'); toast('방문 통계를 다시 켰어요'); }
+        else { localStorage.setItem('mm-notrack', '1'); localStorage.setItem('k_off', 'true'); toast('이 브라우저의 방문 통계를 껐어요'); }
       } catch (e) { toast('이 브라우저에서는 설정을 저장할 수 없어요'); }
       paint();
     });

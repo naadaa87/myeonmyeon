@@ -1,8 +1,8 @@
 {
-  "_안내": "사이트 기본 설정. siteUrl은 실제 주소로 바꿔 주세요 (Cloudflare Pages 주소나 연결한 도메인). operator(운영자 이름)와 contactEmail은 공개 전에 꼭 채워 주세요. 개인정보처리방침과 바닥글에 들어가요.",
+  "_안내": "사이트 기본 설정. siteUrl은 대표 주소(https://myeonmyeon.com)예요. operator(운영자 이름)와 contactEmail은 공개 전에 꼭 채워 주세요. 개인정보처리방침과 바닥글에 들어가요. 검색 등록 소유확인 값: naverSiteVerification(네이버 서치어드바이저 'HTML 태그'의 content 값), googleSiteVerification, bingSiteVerification(msvalidate.01 값), daumWebmasterPin(다음 웹마스터도구 PIN 줄 전체). indexNowKey는 빙·네이버 등에 새 글을 알리는 IndexNow 열쇠로, 공개해도 되는 값이에요. kpiBeacon이 true면 choisijun.com 관리자 '전체 KPI'로 방문 수를 보내요.",
   "siteName": "면면",
   "tagline": "라면 도감, 랭킹, 커뮤니티",
-  "siteUrl": "https://myeonmyeon.pages.dev",
+  "siteUrl": "https://myeonmyeon.com",
   "githubRepo": "naadaa87/myeonmyeon",
   "githubBranch": "main",
   "contactEmail": "",
@@ -10,5 +10,9 @@
   "privacyOfficer": "",
   "privacyEmail": "",
   "naverSiteVerification": "",
-  "googleSiteVerification": ""
+  "googleSiteVerification": "",
+  "bingSiteVerification": "",
+  "daumWebmasterPin": "",
+  "indexNowKey": "1d16deca41bbb64e79ab784b1d7e5342",
+  "kpiBeacon": true
 }

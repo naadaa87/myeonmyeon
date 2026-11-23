@@ -42,7 +42,12 @@ ${img(t[3], t[4], 'page-head-img', true)}
 </section>
 <div class="lab" data-lab="${key}">${inner}</div>
 </div>`;
-  return layout({ title: `${title} | ${SITE_NAME} 취향실험실`, description: desc, path: `/lab/${key}/`, body, scripts: script ? [script] : [], jsonld: crumbLd([['/', SITE_NAME], ['/lab/', '취향실험실'], [`/lab/${key}/`, title]]) });
+  const seoTitle = {
+    heat: '매운 라면 순위 - 스코빌 지수로 본 맵기 사다리', timer: '라면 타이머 - 라면 끓이는 시간 맞추기', water: '라면 물 양 계산기 - 여러 봉지 끓일 때 물 양',
+    match: '라면 추천 - 나에게 맞는 라면 찾기', worldcup: '라면 월드컵 - 최애 라면 고르기', pick: '오늘의 라면 뽑기 - 라면 랜덤 추천', quiz: '라면 퀴즈 - 라면 상식 10문제',
+    compare: '라면 비교 - 라면 맛 나란히 보기', map: '라면 맛 지도 - 맵기와 진하기로 본 라면', quest: '라면 도전 과제 - 먹어 보며 채우는 라면 목록', chosung: '라면 초성 퀴즈 - 초성으로 라면 이름 맞히기',
+  }[key];
+  return layout({ title: `${seoTitle || title} | ${SITE_NAME}`, description: desc, path: `/lab/${key}/`, body, scripts: script ? [script] : [], jsonld: crumbLd([['/', SITE_NAME], ['/lab/', '취향실험실'], [`/lab/${key}/`, title]]) });
 }
 
 export const labPages = () => [
@@ -337,6 +342,7 @@ export function privacyPage() {
 </tbody></table>
 <p>사진은 올리기 전에 브라우저에서 크기를 줄이고, 찍은 위치와 기기 정보(EXIF)를 지운 뒤 저장해요.</p>
 <p>IP 주소는 하루마다 바뀌는 값으로 바꿔 짧은 시간의 반복 요청을 막는 데만 쓰고, 원래 주소는 저장하지 않아요.</p>
+${cfg.kpiBeacon ? '<p>방문 통계 일부는 운영자가 함께 운영하는 사이트들의 통합 방문 집계(choisijun.com)로도 보내요. 본 페이지 주소, 들어온 사이트, 머문 시간, 구매 버튼을 누른 횟수만 보내고 이름, 연락처, 입력한 내용, IP 주소, 쿠키는 보내지 않아요. 아래 버튼으로 방문 통계를 끄면 함께 꺼져요.</p>' : ''}
 <p><button type="button" class="btn btn-line" data-notrack>이 브라우저의 방문 통계 끄기</button></p>`],
     ['2. 다른 곳에 주는 정보', '<p>받은 정보를 다른 회사에 팔거나 주지 않아요. 라면몰의 구매 버튼을 누르면 쿠팡으로 이동하고, 그 뒤의 정보 처리는 쿠팡의 방침을 따라요.</p>'],
     ['3. 맡겨서 처리하는 일', ul(['Cloudflare: 사이트 운영과 데이터·사진 저장 (Cloudflare Pages, D1, R2)'])],

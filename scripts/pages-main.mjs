@@ -6,6 +6,8 @@ import {
 } from './lib.mjs';
 import { STYLES, FORMS, STATUS, HOTS, GROUPS, AXES, RANK_RULE, TASTES, NOODLE_TYPES } from '../server/catalog-data.js';
 import { storyHomeCards } from './pages-story.mjs';
+import { MAKER_PAGES, TYPE_PAGES } from './pages-lists.mjs';
+const makerHref = (m) => (MAKER_PAGES.includes(m) ? `/ramen/maker/${m}/` : `/ramen/?m=${m}`);
 
 // 처음 화면 ‘라면 한 줄 상식’: 퀴즈 해설에서 가져와요
 const FACTS = readJSON('content/quiz.json').questions.map((x) => [x.q, x.why, x.link]);
@@ -144,7 +146,7 @@ ${promisesHTML()}
     { '@context': 'https://schema.org', '@type': 'WebSite', name: SITE_NAME, url: abs('/'), potentialAction: { '@type': 'SearchAction', target: abs('/ramen/?q={q}'), 'query-input': 'required name=q' } },
     { '@context': 'https://schema.org', '@type': 'Organization', name: SITE_NAME, url: abs('/'), logo: abs('/assets/img/icon-512.png') },
   ];
-  return layout({ title: `${SITE_NAME} | ${cfg.tagline}`, description: `국내 라면 ${RAMEN.length}가지를 한곳에 모은 라면 도감. 먹어 본 사람들의 한 그릇 기록으로 맛 지도와 라면 랭킹을 만들어요.`, path: '/', body, scripts: ['home.js'], jsonld, bodyClass: 'page-home' });
+  return layout({ title: `${SITE_NAME} - 라면 순위와 라면 도감, 한국·세계 라면 ${RAMEN.length}가지`, description: `신라면, 불닭볶음면부터 편의점 라면, 해외 라면까지 ${RAMEN.length}가지를 모은 라면 도감. 먹어 본 사람들의 기록으로 매긴 라면 순위, 매운 라면 스코빌 순위, 라면 레시피를 한곳에서 봐요.`, path: '/', body, scripts: ['home.js'], jsonld, bodyClass: 'page-home' });
 }
 
 export const newsItem = (n) => `<li class="news-item"><p class="news-date">${esc(n.date.replace(/-/g, '.'))}</p><div><h3>${esc(n.title)}</h3><p>${esc(n.body)}</p><p class="news-meta">${n.ramen.filter((s) => BY[s]).map((s) => `<a class="pill" href="/ramen/${s}/">${esc(BY[s].n)}</a>`).join('')}${n.url ? `<a class="news-src" href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.src || '출처')} ${icon('i-ext')}</a>` : ''}</p></div></li>`;
@@ -186,6 +188,7 @@ export function dogamPage() {
 <div class="wrap" data-dogam>
 <nav class="sub-tabs" aria-label="도감 둘러보기"><a href="/ramen/" aria-current="page">라면 도감</a><a href="/world/">세계 라면 지도</a><a href="/new/">신상 레이더</a></nav>
 ${groupTiles()}
+<nav class="pill-links" aria-label="라면 모아 보기"><span class="pill-links-h">모아 보기</span>${Object.entries(TYPE_PAGES).map(([k, t]) => `<a class="pill" href="/ramen/type/${k}/">${esc(t.h)}</a>`).join('')}<a class="pill" href="/ramen/spicy/">매운 라면</a><a class="pill" href="/ramen/cvs/">편의점 라면</a>${MAKER_PAGES.filter((m) => !RETAILERS.includes(m)).map((m) => `<a class="pill" href="/ramen/maker/${m}/">${esc(MAKERS[m].replace(/\(.*\)$/, ''))}</a>`).join('')}</nav>
 <form class="filter-bar dfilter" data-filter role="search" onsubmit="return false">
 <label class="search-box">${icon('i-search')}<input type="search" name="q" placeholder="라면 이름, 회사, 나라, 초성 (예: ㅈㅍㄱㅌ)" aria-label="라면 찾기" autocomplete="off"></label>
 <div class="dfilter-top">
@@ -211,7 +214,7 @@ ${fgroup('nd', '면', Object.entries(NOODLE_TYPES).filter(([k]) => k === 'oil' |
 <p class="more-wrap"><button type="button" class="btn btn-line" data-more hidden>더 보기</button></p>
 <div class="empty" data-empty hidden><p>조건에 맞는 라면이 없어요.</p><p><button type="button" class="btn btn-sub" data-reset>조건 지우기</button> <button type="button" class="btn btn-line" data-report="">새 라면 제보하기</button></p></div>
 <p class="note">맵기 표시(${icon('i-flame')})와 맛 분류는 이름과 제조사 설명을 보고 편집부가 나눈 거예요. 실제로 먹어 본 사람들이 느낀 맛은 라면 페이지의 맛 지도에서 볼 수 있어요.</p>
-<p class="note">수록 기준: 한국 라면은 농심·오뚜기·삼양식품·팔도·하림·풀무원의 공식 홈페이지와 공식 쇼핑몰 제품 목록을 따랐어요. 편의점(GS25·CU·세븐일레븐·이마트24)과 대형마트(이마트·홈플러스·롯데마트)의 자체 라면과 단독 라면은 각 회사 상품 안내와 발표, 기사로 확인한 것만 실었어요. 해외 라면은 나라마다 시장을 이끄는 회사의 대표 제품과 오래 팔린 제품, 세계 라면 평가에서 이름난 제품을 골라 실었고, 나라 이야기는 <a href="/world/">세계 라면 지도</a>에 정리했어요(${esc(DOGAM_CHECKED)} 확인). 해외 라면은 국내 판매 여부와 값이 수입 사정에 따라 달라요. 같은 맛이라도 봉지·컵·큰컵은 맛과 양이 달라 따로 실었어요. 빠진 라면이 있으면 <button type="button" class="link-btn" data-report="">제보</button>해 주세요. <a href="/ramen/?st=exclusive">편의점·마트 라면만 모아 보기</a></p>
+<p class="note">수록 기준: 한국 라면은 농심·오뚜기·삼양식품·팔도·하림·풀무원의 공식 홈페이지와 공식 쇼핑몰 제품 목록을 따랐어요. 편의점(GS25·CU·세븐일레븐·이마트24)과 대형마트(이마트·홈플러스·롯데마트)의 자체 라면과 단독 라면은 각 회사 상품 안내와 발표, 기사로 확인한 것만 실었어요. 해외 라면은 나라마다 시장을 이끄는 회사의 대표 제품과 오래 팔린 제품, 세계 라면 평가에서 이름난 제품을 골라 실었고, 나라 이야기는 <a href="/world/">세계 라면 지도</a>에 정리했어요(${esc(DOGAM_CHECKED)} 확인). 해외 라면은 국내 판매 여부와 값이 수입 사정에 따라 달라요. 같은 맛이라도 봉지·컵·큰컵은 맛과 양이 달라 따로 실었어요. 빠진 라면이 있으면 <button type="button" class="link-btn" data-report="">제보</button>해 주세요. <a href="/ramen/cvs/">편의점·마트 라면만 모아 보기</a></p>
 </div>`;
   const jsonld = [crumbLd([['/', SITE_NAME], ['/ramen/', '라면 도감']]), { '@context': 'https://schema.org', '@type': 'ItemList', name: `${SITE_NAME} 라면 도감`, numberOfItems: RAMEN.length, itemListElement: SORTED.map((r, i) => ({ '@type': 'ListItem', position: i + 1, url: abs(`/ramen/${r.s}/`), name: r.n })) }];
   return layout({ title: `라면 도감 - 한국과 세계 라면 ${RAMEN.length}가지 | ${SITE_NAME}`, description: `신라면, 불닭볶음면, 짜파게티부터 닛신 컵누들, 인도미 미고렝, 마마 똠얌꿍까지 ${RAMEN.length}가지. 나라·맵기·맛·조리 방식으로 골라 보고 초성으로 찾아요.`, path: '/ramen/', body, scripts: ['dogam.js'], jsonld });
@@ -229,12 +232,12 @@ const NOODLES = { dry: '건면 (기름에 튀기지 않고 말린 면)', fresh: 
 export function ramenPage(r) {
   const g = r.groups[0];
   const path = `/ramen/${r.s}/`;
-  const items = [['/', SITE_NAME], ['/ramen/', '라면 도감'], [`/ramen/?g=${g}`, groupName(g)], [path, r.n]];
+  const items = [['/', SITE_NAME], ['/ramen/', '라면 도감'], ...(g ? [[`/ramen/type/${g}/`, groupName(g)]] : []), [path, r.n]];
   const news = NEWS.filter((n) => n.ramen.includes(r.s));
   const facts = [
     r.co !== 'kr' ? ['나라', `<a href="/world/${r.co}/">${esc(r.coName)}</a>`] : null,
     r.on ? ['원래 이름', `<span lang="${r.co === 'jp' ? 'ja' : r.co === 'cn' || r.co === 'tw' || r.co === 'hk' ? 'zh' : 'en'}">${esc(r.on)}</span>`] : null,
-    ['회사', `<a href="/ramen/?m=${r.m}">${esc(r.maker)}</a>`],
+    ['회사', `<a href="${makerHref(r.m)}">${esc(r.maker)}</a>`],
     ['형태', r.f ? FORMS[r.f] : '<span class="muted">확인 중</span>'],
     ['조리 방식', STYLES[r.c]],
     r.noodle && r.noodle !== 'unk' ? ['면', NOODLES[r.noodle] || ''] : null,
@@ -248,7 +251,7 @@ ${crumbs(items)}
 <article class="rhead" data-ramen="${r.s}" data-name="${esc(r.n)}">
 <div class="rhead-pic">${ramenHero(r)}</div>
 <div class="rhead-text">
-<p class="rhead-maker">${r.co !== 'kr' ? `<a class="rcard-co" href="/world/${r.co}/">${esc(r.coName)}</a>` : ''}<a href="/ramen/?m=${r.m}">${esc(r.maker)}</a>${r.f ? ` · ${formText(r)}` : ''} · ${styleText(r)}</p>
+<p class="rhead-maker">${r.co !== 'kr' ? `<a class="rcard-co" href="/world/${r.co}/">${esc(r.coName)}</a>` : ''}<a href="${makerHref(r.m)}">${esc(r.maker)}</a>${r.f ? ` · ${formText(r)}` : ''} · ${styleText(r)}</p>
 <h1>${esc(r.n)}</h1>
 <p class="rcard-tags">${hotChip(r)}${r.t.map((t) => `<span class="pill pill-sm">${esc(t)}</span>`).join('')}</p>
 <p class="rhead-desc">${esc(r.d)}</p>
@@ -309,11 +312,17 @@ ${news.length ? `<section class="side-box"><h2 class="side-title">관련 소식<
 </div>
 
 <section class="sec" aria-labelledby="h-sim">
-${secHead(`${josa(groupName(g), '과', '와')} 비슷한 라면`, moreLink(`/ramen/?g=${g}`, `${groupName(g)} 모두`), 'h-sim')}
+${secHead(g ? `${josa(groupName(g), '과', '와')} 비슷한 라면` : '비슷한 라면', (g ? moreLink(`/ramen/type/${g}/`, `${groupName(g)} 모두`) : moreLink('/ramen/', '라면 도감')), 'h-sim')}
 ${ramenGrid(similar(r))}
 </section>
 </div>`;
-  const jsonld = [crumbLd(items), { '@context': 'https://schema.org', '@type': 'Product', name: r.n, brand: { '@type': 'Brand', name: r.maker }, category: `${groupName(g)} 라면`, description: r.d, url: abs(path), image: abs(r.pic && r.pic.detail ? picSrc(r, 'square') : r.pic ? picSrc(r) : `/assets/img/${r.img}.webp`) }];
+  // 값·후기 없는 Product 표시는 구글이 '오류'로 잡아서, 라면을 설명하는 페이지(WebPage)로 표시해요
+  const jsonld = [crumbLd(items), {
+    '@context': 'https://schema.org', '@type': 'WebPage', name: `${r.n} - ${r.maker}`, url: abs(path), description: r.d, inLanguage: 'ko',
+    isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: abs('/') },
+    primaryImageOfPage: { '@type': 'ImageObject', url: abs(r.pic && r.pic.detail ? picSrc(r, 'square') : r.pic ? picSrc(r) : `/assets/img/${r.img}.webp`), caption: r.pic && r.pic.kind === 'ai' ? `${r.n} AI 조리 예시 그림` : `${r.n} 그림` },
+    about: { '@type': 'Thing', name: r.n, alternateName: r.k.filter((k) => k !== r.n).slice(0, 4), description: `${r.maker}의 ${STYLES[r.c]} 라면${r.y ? ` (${yearText(r.y)} 출시)` : ''}` },
+  }];
   const desc = `${r.maker} ${r.n}${r.y ? `(${yearText(r.y)} 출시)` : ''}. ${r.d}`.slice(0, 155);
   return layout({ title: `${r.n} 맛 기록과 랭킹 - ${r.maker} | ${SITE_NAME}`, description: desc, path, body, scripts: ['ramen.js'], jsonld, ogType: 'product', ogImage: r.pic && r.pic.detail ? picSrc(r, 'square') : '', ogSize: r.pic && r.pic.detail ? [1200, 1200] : null });
 }
@@ -348,7 +357,7 @@ export function rankPage() {
 <div data-list><p class="muted">불러오는 중이에요</p></div>
 </div>
 </div>`;
-  return layout({ title: `라면 랭킹 - 종합, 종류별, 급상승, 신상 | ${SITE_NAME}`, description: '먹어 본 사람들의 한 그릇 기록으로 매긴 라면 랭킹. 종합, 국물면·비빔면·짜장면·볶음면·컵라면 종류별, 급상승, 신상, 맵기 기준, 매니아 픽 순위.', path: '/rank/', body, scripts: ['rank.js'] });
+  return layout({ title: `라면 순위 - 먹어 본 사람들이 매긴 라면 랭킹 | ${SITE_NAME}`, description: '먹어 본 사람들의 한 그릇 기록으로 매긴 라면 랭킹. 종합, 국물면·비빔면·짜장면·볶음면·컵라면 종류별, 급상승, 신상, 맵기 기준, 매니아 픽 순위.', path: '/rank/', body, scripts: ['rank.js'] });
 }
 
 export function rankRulesPage() {

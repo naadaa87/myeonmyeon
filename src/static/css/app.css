@@ -837,7 +837,8 @@ a.pill:hover { background: var(--paper-3); }
 .foot-grid { display: grid; gap: 22px; }
 .foot-tag { font-weight: 800; margin-top: 8px; }
 .foot-lead { color: var(--muted); font-size: 14px; }
-.foot-nav { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.foot-nav { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px 16px; }
+@media (min-width: 760px) { .foot-nav { grid-template-columns: repeat(4, 1fr); } }
 .foot-nav div { display: grid; gap: 8px; align-content: start; font-size: 14.5px; }
 .foot-nav b { font-size: 13px; color: var(--muted); }
 .foot-nav a, .foot-nav .link-btn { text-decoration: none; color: var(--ink-2); font-size: 14.5px; text-align: left; }
@@ -1518,3 +1519,9 @@ a.pill:hover { background: var(--paper-3); }
 .pod-pic .pic-ai { display: none; }
 @media (min-width: 760px) { .pod-pic .pic-ai { display: block; } }
 .pod .rnum { z-index: 2; }
+
+/* 모아 보기 링크 줄 */
+.pill-links { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 14px 0 6px; }
+.pill-links .pill { text-decoration: none; }
+.pill-links .pill small { color: var(--muted); font-weight: 600; margin-left: 2px; }
+.pill-links-h { font-size: 13px; font-weight: 700; color: var(--muted); margin-right: 2px; }

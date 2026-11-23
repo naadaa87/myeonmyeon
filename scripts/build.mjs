@@ -3,10 +3,11 @@
 // 실행: npm run build  (Cloudflare Pages 빌드 명령도 같아요)
 import fs from 'node:fs';
 import path from 'node:path';
-import { ROOT, OUT, STATIC, BUILD, cfg, SITE, abs, SITE_NAME, RAMEN, BY, MAKERS, cho, ramenSearchText, releaseKey, today, readJSON, esc, PHOTOS, PHOTO_PROBLEMS } from './lib.mjs';
+import { ROOT, OUT, STATIC, BUILD, cfg, SITE, abs, SITE_NAME, RAMEN, BY, MAKERS, cho, ramenSearchText, releaseKey, today, readJSON, esc, PHOTOS, PHOTO_PROBLEMS, PAGEHASH } from './lib.mjs';
 import { homePage, dogamPage, ramenPage, recordPage, rankPage, rankRulesPage, newPage, shopPage } from './pages-main.mjs';
 import { storyHubPage, storyPage, timelinePage, wordsPage, STORIES } from './pages-story.mjs';
 import { recipeListPage, recipeWritePage, recipeViewPage } from './pages-recipes.mjs';
+import { listPages, LIST_URLS, TYPE_PAGES } from './pages-lists.mjs';
 import { worldHubPage, worldCountryPage, WORLD_PAGES, worldTimelinePage, worldBrandsPage, worldBestPage } from './pages-world.mjs';
 import { labHubPage, labPages, clubPages, levelsPage, clubRulesPage, mePage, aboutPage, termsPage, privacyPage, contactPage, adminPage, notFoundPage, offlinePage } from './pages-more.mjs';
 import * as CD from '../server/catalog-data.js';
@@ -40,6 +41,7 @@ fs.mkdirSync(OUT, { recursive: true });
 page('', homePage());
 page('ramen', dogamPage());
 for (const r of RAMEN) page(`ramen/${r.s}`, ramenPage(r));
+for (const [dir, html] of listPages()) page(dir, html);
 page('story', storyHubPage());
 for (const s of STORIES) page(`story/${s.s}`, storyPage(s));
 page('story/timeline', timelinePage());
@@ -159,7 +161,7 @@ write('manifest.webmanifest', JSON.stringify({
 
 // 검색 엔진
 const urls = [
-  ['/', '1.0'], ['/ramen/', '0.9'], ['/rank/', '0.9'], ['/rank/rules/', '0.5'], ['/new/', '0.7'], ['/shop/', '0.6'],
+  ['/', '1.0'], ['/ramen/', '0.9'], ...LIST_URLS().map((u) => [u, '0.8']), ['/rank/', '0.9'], ['/rank/rules/', '0.5'], ['/new/', '0.7'], ['/shop/', '0.6'],
   ['/world/', '0.8'], ['/world/best/', '0.7'], ['/world/timeline/', '0.7'], ['/world/brands/', '0.6'], ...WORLD_PAGES.map((c) => [`/world/${c.code}/`, '0.7']),
   ['/story/', '0.8'], ['/story/timeline/', '0.7'], ['/story/words/', '0.7'], ...STORIES.map((s) => [`/story/${s.s}/`, '0.7']),
   ['/lab/', '0.6'], ['/lab/map/', '0.6'], ['/lab/compare/', '0.6'], ['/lab/worldcup/', '0.6'], ['/lab/timer/', '0.6'], ['/lab/water/', '0.5'], ['/lab/heat/', '0.6'], ['/lab/pick/', '0.5'], ['/lab/quiz/', '0.5'], ['/lab/match/', '0.6'], ['/lab/quest/', '0.6'], ['/lab/chosung/', '0.5'],
@@ -167,11 +169,26 @@ const urls = [
   ['/about/', '0.4'], ['/contact/', '0.3'], ['/terms/', '0.2'], ['/privacy/', '0.2'],
   ...RAMEN.map((r) => [`/ramen/${r.s}/`, '0.8']),
 ];
+// 페이지 본문이 바뀐 날만 lastmod로 적어요. 바뀐 날은 scripts/lastmod.json에 남겨요
+// (내 컴퓨터에서 빌드할 때만 이 파일을 고쳐 써요. Cloudflare 빌드에서는 읽기만 해요)
+const LASTMOD_FILE = path.join(ROOT, 'scripts/lastmod.json');
+const lastmod = fs.existsSync(LASTMOD_FILE) ? JSON.parse(fs.readFileSync(LASTMOD_FILE, 'utf8')) : {};
+const modOf = {};
+for (const [u] of urls) {
+  const h = PAGEHASH[u] || '';
+  const was = lastmod[u];
+  modOf[u] = was && was[0] === h ? was[1] : today;
+  lastmod[u] = [h, modOf[u]];
+}
+if (process.env.CF_PAGES !== '1') fs.writeFileSync(LASTMOD_FILE, JSON.stringify(Object.fromEntries(Object.entries(lastmod).filter(([u]) => modOf[u]).sort()), null, 0).replace(/\],"/g, '],\n"') + '\n');
+write('data/pagehash.json', JSON.stringify({ built: today, pages: Object.fromEntries(urls.map(([u]) => [u, PAGEHASH[u] || ''])) }));
 write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(([u, p]) => `<url><loc>${abs(u)}</loc><lastmod>${today}</lastmod><priority>${p}</priority></url>`).join('\n')}
+${urls.map(([u, p]) => `<url><loc>${abs(u)}</loc><lastmod>${modOf[u]}</lastmod><priority>${p}</priority></url>`).join('\n')}
 </urlset>
 `);
+// IndexNow 열쇠 파일 (빙·네이버·얀덱스 등에 바뀐 주소를 바로 알릴 때 써요)
+if (cfg.indexNowKey) write(`${cfg.indexNowKey}.txt`, cfg.indexNowKey);
 write('robots.txt', `User-agent: *
 Allow: /
 Allow: /api/img/
@@ -182,18 +199,43 @@ Disallow: /me/
 Disallow: /record/
 
 Sitemap: ${abs('/sitemap.xml')}
-`);
+${cfg.daumWebmasterPin ? `\n${cfg.daumWebmasterPin.startsWith('#') ? cfg.daumWebmasterPin : `#DaumWebMasterTool:${cfg.daumWebmasterPin}`}\n` : ''}`);
 const xesc = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const rssDate = (d) => new Date(`${(d.length === 7 ? d + '-01' : d)}T09:00:00+09:00`).toUTCString();
 write('rss.xml', `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0"><channel>
-<title>${xesc(SITE_NAME)} | ${xesc(cfg.tagline)}</title>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>
+<title>${xesc(SITE_NAME)} | 라면 도감과 신상 라면 소식</title>
 <link>${abs('/')}</link>
+<atom:link href="${abs('/rss.xml')}" rel="self" type="application/rss+xml"/>
 <description>${xesc(`${SITE_NAME} 라면 도감과 신상 라면 소식`)}</description>
 <language>ko</language>
 ${NEWS.map((n) => `<item><title>${xesc(n.title)}</title><link>${abs(n.ramen[0] && BY[n.ramen[0]] ? `/ramen/${n.ramen[0]}/` : '/new/')}</link><guid isPermaLink="false">news-${xesc(n.date)}-${xesc(n.title.slice(0, 20))}</guid><pubDate>${rssDate(n.date)}</pubDate><description>${xesc(n.body)}</description></item>`).join('\n')}
-${RAMEN.map((r) => `<item><title>${xesc(`${r.n} - ${r.maker}`)}</title><link>${abs(`/ramen/${r.s}/`)}</link><guid>${abs(`/ramen/${r.s}/`)}</guid><description>${xesc(r.d)}</description></item>`).join('\n')}
+${RAMEN.map((r) => `<item><title>${xesc(`${r.n} - ${r.maker}`)}</title><link>${abs(`/ramen/${r.s}/`)}</link><guid>${abs(`/ramen/${r.s}/`)}</guid><pubDate>${rssDate(modOf[`/ramen/${r.s}/`] || today)}</pubDate><description>${xesc(r.d)}</description></item>`).join('\n')}
 </channel></rss>
+`);
+
+// AI 검색용 사이트 요약
+write('llms.txt', `# ${SITE_NAME}
+
+> ${SITE_NAME}(${abs('/')})은 한국과 세계 라면 ${RAMEN.length}가지를 모은 라면 도감이에요. 먹어 본 사람들의 한 그릇 기록으로 맛 지도와 라면 랭킹을 만들고, 라면의 역사와 나라별 라면 문화를 자료와 함께 정리해요.
+
+- 라면 정보(회사, 형태, 조리 방식, 출시, 판매 상태)는 제조사 발표와 기사로 확인한 것만 실어요. 확인하지 못한 칸은 비워 둬요.
+- 맵기 분류는 편집부가 나눈 것이고, 스코빌 지수는 회사가 밝힌 숫자만 적어요.
+- 별점과 맛 지도는 회원 기록으로만 계산하고, 순위는 팔지 않아요.
+- 라면 그림은 AI로 새로 만든 조리 예시나 예시 그림이에요. 실제 제품 사진이 아니에요.
+- 구매 링크는 쿠팡 파트너스 링크예요.
+
+## 주요 페이지
+
+- [라면 도감](${abs('/ramen/')}): 라면 ${RAMEN.length}가지, 나라·맵기·맛·조리 방식으로 찾기
+- [라면 랭킹](${abs('/rank/')}): 회원 기록으로 매긴 순위와 [계산 기준](${abs('/rank/rules/')})
+- [매운 라면](${abs('/ramen/spicy/')}), [맵기 사다리(스코빌 지수 순위)](${abs('/lab/heat/')})
+- [편의점 라면](${abs('/ramen/cvs/')})
+${Object.entries(TYPE_PAGES).map(([g, t]) => `- [${t.h} 종류](${abs(`/ramen/type/${g}/`)})`).join('\n')}
+- [세계 라면 지도](${abs('/world/')}), [세계가 뽑은 라면 TOP 10](${abs('/world/best/')})
+- [라면 이야기](${abs('/story/')}): 라면의 기원, 한국 라면 역사, 만드는 법
+- [라면 용어 사전](${abs('/story/words/')})
+- [사이트맵](${abs('/sitemap.xml')})
 `);
 
 // 사이트맵에 들어간 페이지 수와 빌드 정보

@@ -19,3 +19,10 @@
 
 /sw.js
   Cache-Control: no-cache
+
+# 대표 주소는 myeonmyeon.com 이에요. pages.dev 주소는 검색에 잡히지 않게 해요
+https://myeonmyeon.pages.dev/*
+  X-Robots-Tag: noindex
+
+https://:version.myeonmyeon.pages.dev/*
+  X-Robots-Tag: noindex
