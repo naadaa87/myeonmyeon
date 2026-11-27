@@ -34,7 +34,7 @@ function moreLists(cur) {
     ['/ramen/spicy/', '매운 라면'], ['/ramen/cvs/', '편의점 라면'],
     ...MAKER_PAGES.filter((m) => !RETAILERS.includes(m)).map((m) => [`/ramen/maker/${m}/`, `${shortMaker(m)} 라면`]),
   ].filter(([h]) => h !== cur);
-  return `<nav class="pill-links" aria-label="다른 라면 모아 보기">${links.map(([h, l]) => `<a class="pill" href="${h}">${esc(l)}</a>`).join('')}<a class="pill" href="/world/">나라별 라면</a></nav>`;
+  return `<nav class="pill-links" aria-label="다른 라면 모아 보기">${links.map(([h, l]) => `<a class="pill" href="${h}">${esc(l)}</a>`).join('')}<a class="pill" href="/world/">나라별 라면</a><a class="pill" href="/guide/">라면 상식 Q&amp;A</a></nav>`;
 }
 
 // 숫자로 쓰는 소개 문장 (원고에 있는 사실만 써요)

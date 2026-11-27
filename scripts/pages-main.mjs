@@ -7,6 +7,7 @@ import {
 import { STYLES, FORMS, STATUS, HOTS, GROUPS, AXES, RANK_RULE, TASTES, NOODLE_TYPES } from '../server/catalog-data.js';
 import { storyHomeCards } from './pages-story.mjs';
 import { MAKER_PAGES, TYPE_PAGES } from './pages-lists.mjs';
+import { COOK, guideCards, guideLinks } from './pages-guide.mjs';
 const makerHref = (m) => (MAKER_PAGES.includes(m) ? `/ramen/maker/${m}/` : `/ramen/?m=${m}`);
 
 // 처음 화면 ‘라면 한 줄 상식’: 퀴즈 해설에서 가져와요
@@ -126,6 +127,11 @@ ${secHead('라면 매니아 코너', '', 'h-mania')}
   ].map(([h, ic, t, d]) => `<a class="mania-tile" href="${h}"><span class="mania-ico">${icon(ic)}</span><b>${t}</b><span>${d}</span></a>`).join('')}</div>
 </section>
 
+<section class="sec" aria-labelledby="h-guide">
+${secHead('라면 상식', moreLink('/guide/', '질문 모두 보기'), 'h-guide')}
+<div class="sgrid sgrid-home">${guideCards(3)}</div>
+${guideLinks()}
+</section>
 <section class="sec" aria-labelledby="h-story">
 ${secHead('라면 이야기', moreLink('/story/', '읽을거리 모두 보기'), 'h-story')}
 <div class="sgrid sgrid-home">${storyHomeCards(3)}</div>
@@ -229,6 +235,54 @@ function similar(r) {
 const collatorCmp = (a, b) => a.n.localeCompare(b.n, 'ko');
 const NOODLES = { dry: '건면 (기름에 튀기지 않고 말린 면)', fresh: '생면', cooked: '숙면 (익혀서 살균 포장한 면)', rice: '쌀국수 면', glass: '당면' };
 
+// ---------- 라면 페이지의 '한눈에 보기'와 '자주 묻는 질문' (검색·AI 답변용, 원고에 있는 사실로만 만들어요) ----------
+const SHOPS = ['gs25', 'cu', 'seven', 'emart24', 'emart', 'homeplus', 'lottemart'];
+const HOT_WORD = { 0: '순한 편', 1: '매콤한 편', 2: '아주 매운 편' };
+const kindWord = (r) => [r.f ? FORMS[r.f] : '', r.c === 'etc' ? '' : `${STYLES[r.c]}`].filter(Boolean).join(' ');
+const num = (n) => n.toLocaleString('ko-KR');
+function ramenSummary(r) {
+  const kind = kindWord(r);
+  const lines = [];
+  lines.push(r.y
+    ? `${josa(r.n, '은', '는')} ${josa(r.maker, '이', '가')} ${yearText(r.y)}에 내놓은 ${kind ? `${kind} ` : ''}라면이에요.`
+    : `${josa(r.n, '은', '는')} ${r.maker}의 ${kind ? `${kind} ` : ''}라면이에요.`);
+  if (r.co !== 'kr') lines.push(`${r.coName} 라면이에요${r.on ? `(현지 이름 ${r.on})` : ''}.`);
+  const taste = r.t.length ? `맛은 ${r.t.join('·')} 계열로 나눠 두었고` : '';
+  const heat = r.hot != null ? `맵기는 편집부 분류로 ${HOT_WORD[r.hot]}이에요.` : '';
+  if (taste && heat) lines.push(`${taste}, ${heat}`); else if (taste) lines.push(`${taste.replace(/고$/, '어요')}.`); else if (heat) lines.push(heat);
+  if (r.shu) lines.push(`알려진 스코빌 지수는 ${num(r.shu.v)} SHU예요(${r.shu.src}).`);
+  if (r.noodle === 'dry') lines.push('면은 기름에 튀기지 않고 말린 건면이에요.');
+  if (r.st === 'exclusive' && r.ch) lines.push(`${r.ch}에서만 파는 단독 상품이에요.`);
+  if (r.st === 'limited') lines.push('한정판으로 나온 제품이에요.');
+  if (r.st === 'off') lines.push('지금은 단종된 제품이에요.');
+  return lines;
+}
+function cookAnswer(r) {
+  if (COOK[r.s]) return COOK[r.s].how;
+  if (!r.f || r.c === 'etc') return '';
+  const cup = r.f === 'cup' || r.f === 'bigcup';
+  if (cup && (r.c === 'fried' || r.c === 'jjajang')) return '끓는 물을 용기 안쪽 표시선까지 부어 면을 익힌 뒤 물을 따라 버리고 소스를 넣어 비벼요. 기다리는 시간은 용기에 적힌 조리법을 확인해 주세요.';
+  if (cup) return '스프를 넣고 끓는 물을 용기 안쪽 표시선까지 부은 뒤 뚜껑을 덮어 기다려요. 기다리는 시간은 용기에 적힌 조리법을 확인해 주세요.';
+  if (r.c === 'fried' || r.c === 'jjajang') return '물을 끓여 면을 삶은 뒤 물을 조금만 남기고 버리고, 소스를 넣어 비비거나 볶아요. 물 양과 남길 양은 봉지에 적힌 조리법을 따라 주세요.';
+  if (r.c === 'bibim') return '면을 삶아 찬물에 여러 번 헹군 뒤 물기를 빼고 비빔장을 넣어 비벼요. 삶는 시간은 봉지에 적힌 조리법을 따라 주세요.';
+  if (r.c === 'cold') return '면을 삶아 찬물에 여러 번 헹군 뒤 물기를 빼고, 제품에 따라 육수를 붓거나 비빔장을 넣어요. 삶는 시간은 봉지에 적힌 조리법을 따라 주세요.';
+  return '물을 먼저 끓인 뒤 면과 스프를 넣고 봉지에 적힌 시간만큼 끓여요. 물 양과 시간은 제품마다 달라 봉지 뒷면 조리법을 확인해 주세요.';
+}
+function ramenFaq(r, sim) {
+  const q = [];
+  const shop = SHOPS.includes(r.m);
+  q.push([`${josa(r.n, '은', '는')} 어느 회사 라면인가요?`, shop ? `${josa(r.maker, '이', '가')} 파는 자체 라면이에요.` : `${r.maker}${r.co !== 'kr' ? `(${r.coName})` : ''}에서 만든 라면이에요${r.on ? `(현지 이름 ${r.on})` : ''}.`]);
+  if (r.y) q.push([`${josa(r.n, '은', '는')} 언제 나왔나요?`, `${yearText(r.y)}에 나왔어요.`]);
+  if (r.shu || r.hot != null) q.push([`${josa(r.n, '은', '는')} 얼마나 매운가요?`, `${r.shu ? `알려진 스코빌 지수는 ${num(r.shu.v)} SHU예요(${r.shu.src}). ` : ''}${r.hot != null ? `편집부 분류로는 ${HOT_WORD[r.hot]}이에요.` : ''} 다른 라면과의 비교는 면면 맵기 사다리에서 볼 수 있어요.`.replace(/\s+/g, ' ').trim()]);
+  const ca = cookAnswer(r);
+  if (ca) q.push([`${r.n} 어떻게 끓이나요?`, ca]);
+  if (r.st === 'exclusive' && r.ch) q.push([`${r.n} 어디서 살 수 있나요?`, `${r.ch}에서만 파는 단독 상품이에요. 한정판이나 행사 상품은 매장에 따라 없을 수 있어요.`]);
+  else if (r.co !== 'kr') q.push([`${r.n} 한국에서도 살 수 있나요?`, `수입 사정에 따라 달라요. 수입 식품점이나 온라인몰에서 ${r.on ? `원래 이름(${r.on})이나 ` : ''}제품 이름으로 찾아보세요.`]);
+  if (sim.length) q.push([`${josa(r.n, '과', '와')} 비슷한 라면은 뭐가 있나요?`, `${sim.slice(0, 3).map((x) => x.n).join(', ')} 같은 라면이 조리 방식과 맛 계열이 비슷해요.`]);
+  return q;
+}
+
+
 export function ramenPage(r) {
   const g = r.groups[0];
   const path = `/ramen/${r.s}/`;
@@ -245,7 +299,13 @@ export function ramenPage(r) {
     r.y ? ['출시', yearText(r.y)] : null,
     ['판매', `${STATUS[r.st]}${r.ch ? ` · ${esc(r.ch)}` : ''}`],
     r.shu ? ['스코빌 지수', `${r.shu.v.toLocaleString('ko-KR')} SHU <small class="muted">(${esc(r.shu.src)})</small>`] : null,
+    COOK[r.s] ? ['물 양', `${esc(COOK[r.s].water)}${COOK[r.s].time ? ` · ${esc(COOK[r.s].time)}` : ''}`] : null,
+    ['정보 고친 날', '<time datetime="%%MOD%%">%%MODKO%%</time>'],
   ].filter(Boolean);
+  const sim = similar(r);
+  const summary = ramenSummary(r);
+  const cook = COOK[r.s];
+  const faq = ramenFaq(r, sim);
   const body = `<div class="wrap">
 ${crumbs(items)}
 <article class="rhead" data-ramen="${r.s}" data-name="${esc(r.n)}">
@@ -268,6 +328,18 @@ ${crumbs(items)}
 
 <div class="rbody">
 <div class="rmain">
+<section class="sec rsum" aria-labelledby="h-sum">
+${secHead(`${r.n} 한눈에 보기`, '', 'h-sum')}
+<p class="rsum-text">${esc(summary.join(' '))}</p>
+</section>
+${cook ? `<section class="sec" aria-labelledby="h-cook">
+${secHead(`${r.n} 끓이는 법`, moreLink('/guide/water-time/', '라면 물 양 총정리'), 'h-cook')}
+<div class="cook-box">
+<dl class="cook-facts"><div><dt>물</dt><dd>${esc(cook.water)}</dd></div>${cook.time ? `<div><dt>시간</dt><dd>${esc(cook.time)}</dd></div>` : ''}</dl>
+<p>${esc(cook.how)}</p>
+<p class="small muted">제조사 조리법 기준(<a href="${esc(cook.src.u)}" target="_blank" rel="noopener">${esc(cook.src.t)}</a>). 손에 든 포장의 조리법이 다르면 포장을 따라 주세요. <a href="/guide/how-to-cook/">라면 맛있게 끓이는 법</a></p>
+</div>
+</section>` : ''}
 <section class="sec" aria-labelledby="h-taste">
 ${secHead('맛 지도', `<a class="more-link" href="/lab/compare/?r=${r.s}">다른 라면과 비교${icon('i-chev')}</a>`, 'h-taste')}
 <p class="sec-lead">먹어 본 사람들이 여덟 칸에 남긴 점수의 평균이에요. 칸마다 적은 사람 수가 달라요.</p>
@@ -293,6 +365,12 @@ ${secHead('한 그릇 기록', '', 'h-bowls')}
 ${secHead('후루룩클럽 이야기', `<a class="more-link" href="/club/write/?ramen=${r.s}">이 라면으로 글쓰기${icon('i-chev')}</a>`, 'h-posts')}
 <ul class="post-list" data-posts></ul>
 </section>
+
+<section class="sec faq" aria-labelledby="h-faq">
+${secHead(`${r.n} 자주 묻는 질문`, '', 'h-faq')}
+${faq.map(([q, a]) => `<div class="faq-item"><h3>${esc(q)}</h3><p>${esc(a).replace('면면 맵기 사다리', '<a href="/lab/heat/">면면 맵기 사다리</a>')}</p></div>`).join('')}
+<p class="small muted">${cook ? '' : '끓이는 법은 조리 방식에 따른 일반적인 방법이에요. '}정보는 제조사 발표와 포장·판매처 표기로 확인한 것만 적었어요. 더 궁금한 건 <a href="/guide/">라면 상식</a>에서 찾아보세요.</p>
+</section>
 </div>
 
 <aside class="rside">
@@ -313,7 +391,7 @@ ${news.length ? `<section class="side-box"><h2 class="side-title">관련 소식<
 
 <section class="sec" aria-labelledby="h-sim">
 ${secHead(g ? `${josa(groupName(g), '과', '와')} 비슷한 라면` : '비슷한 라면', (g ? moreLink(`/ramen/type/${g}/`, `${groupName(g)} 모두`) : moreLink('/ramen/', '라면 도감')), 'h-sim')}
-${ramenGrid(similar(r))}
+${ramenGrid(sim)}
 </section>
 </div>`;
   // 값·후기 없는 Product 표시는 구글이 '오류'로 잡아서, 라면을 설명하는 페이지(WebPage)로 표시해요
@@ -322,9 +400,17 @@ ${ramenGrid(similar(r))}
     isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: abs('/') },
     primaryImageOfPage: { '@type': 'ImageObject', url: abs(r.pic && r.pic.detail ? picSrc(r, 'square') : r.pic ? picSrc(r) : `/assets/img/${r.img}.webp`), caption: r.pic && r.pic.kind === 'ai' ? `${r.n} AI 조리 예시 그림` : `${r.n} 그림` },
     about: { '@type': 'Thing', name: r.n, alternateName: r.k.filter((k) => k !== r.n).slice(0, 4), description: `${r.maker}의 ${STYLES[r.c]} 라면${r.y ? ` (${yearText(r.y)} 출시)` : ''}` },
+    abstract: summary.join(' '), dateModified: '%%MOD%%',
+    publisher: { '@type': 'Organization', name: SITE_NAME, url: abs('/') },
+  }, {
+    '@context': 'https://schema.org', '@type': 'FAQPage',
+    mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
   }];
-  const desc = `${r.maker} ${r.n}${r.y ? `(${yearText(r.y)} 출시)` : ''}. ${r.d}`.slice(0, 155);
-  return layout({ title: `${r.n} 맛 기록과 랭킹 - ${r.maker} | ${SITE_NAME}`, description: desc, path, body, scripts: ['ramen.js'], jsonld, ogType: 'product', ogImage: r.pic && r.pic.detail ? picSrc(r, 'square') : '', ogSize: r.pic && r.pic.detail ? [1200, 1200] : null });
+  const kw = r.c === 'etc' ? '라면' : `${STYLES[r.c].split('·')[0]}라면`;
+  const desc = `${r.maker} ${r.n}${r.y && !r.d.includes(String(r.y).slice(0, 4)) ? `(${yearText(r.y)} 출시)` : ''}: ${r.d} ${cook ? `물 ${cook.water}${cook.time ? `·${cook.time}` : ''}. ` : ''}맵기, 끓이는 법, 비슷한 라면을 정리했어요.`.replace(/\s+/g, ' ').slice(0, 160);
+  const title = [`${r.n} - ${r.maker} ${kw} 정보와 맵기, 끓이는 법`, `${r.n} - ${kw} 맵기와 끓이는 법`, `${r.n} - ${r.maker} ${kw}`, r.n]
+    .find((t) => t.length <= 38) || r.n;
+  return layout({ title: `${title} | ${SITE_NAME}`, description: desc, path, body, scripts: ['ramen.js'], jsonld, ogType: 'product', ogImage: r.pic && r.pic.detail ? picSrc(r, 'square') : '', ogSize: r.pic && r.pic.detail ? [1200, 1200] : null });
 }
 
 // ---------- 한 그릇 기록 ----------

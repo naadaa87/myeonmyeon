@@ -1525,3 +1525,30 @@ a.pill:hover { background: var(--paper-3); }
 .pill-links .pill { text-decoration: none; }
 .pill-links .pill small { color: var(--muted); font-weight: 600; margin-left: 2px; }
 .pill-links-h { font-size: 13px; font-weight: 700; color: var(--muted); margin-right: 2px; }
+
+/* 라면 상식: 짧은 답, 순서, 자주 묻는 질문 */
+.answer-box { margin: 16px 0 6px; padding: 16px 18px; background: #fff; border: 1px solid var(--line); border-left: 5px solid var(--red); border-radius: var(--r-s); }
+.answer-label { margin: 0 0 4px; font-size: 13px; font-weight: 800; color: var(--red); letter-spacing: .02em; }
+.answer-text { margin: 0; font-size: 16.5px; line-height: 1.7; color: var(--ink); }
+.gsteps { list-style: none; margin: 8px 0 4px; padding: 0; display: grid; gap: 12px; }
+.gsteps li { display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; background: var(--card); border: 1px solid var(--line); border-radius: var(--r-s); padding: 14px; }
+.gstep-n { width: 34px; height: 34px; border-radius: 50%; background: var(--ink); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 15px; }
+.gsteps h3 { margin: 4px 0 4px; font-size: 16px; }
+.gsteps p { margin: 0; color: var(--ink-2); line-height: 1.7; }
+.faq .faq-item { padding: 14px 0; border-top: 1px solid var(--line); }
+.faq .faq-item:last-of-type { border-bottom: 1px solid var(--line); }
+.faq .faq-item h3 { margin: 0 0 6px; font-size: 16px; line-height: 1.5; }
+.faq .faq-item h3::before { content: 'Q. '; color: var(--red); font-weight: 900; }
+.faq .faq-item p { margin: 0; color: var(--ink-2); line-height: 1.75; }
+.faq-hub .faq-item p a { font-weight: 700; white-space: nowrap; }
+.guide .story-head h1 { margin-bottom: 4px; }
+/* 라면 페이지: 한눈에 보기, 끓이는 법 */
+.rsum-text { font-size: 16px; line-height: 1.8; margin: 4px 0 0; }
+.cook-box { background: #fff; border: 1px solid var(--line); border-radius: var(--r-s); padding: 14px 16px; }
+.cook-box p { margin: 8px 0 0; line-height: 1.7; }
+.cook-facts { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; }
+.cook-facts div { background: var(--paper, #FAF7F3); border-radius: 10px; padding: 8px 14px; min-width: 110px; }
+.cook-facts dt { font-size: 12.5px; color: var(--muted); font-weight: 700; }
+.cook-facts dd { margin: 2px 0 0; font-size: 18px; font-weight: 900; letter-spacing: -0.02em; }
+.guide .stable td:nth-child(2), .guide .stable td:nth-child(3) { white-space: nowrap; }
+@media (max-width: 599px) { .guide .stable { font-size: 13.5px; } .guide .stable th, .guide .stable td { padding: 8px 7px; } .guide .stable tbody th { min-width: 5.5em; } .guide .stable td:nth-child(2) { white-space: normal; min-width: 4.5em; } }

@@ -76,6 +76,11 @@ ${secHead('읽을거리', '', 'h-stories')}
 <article class="scard scard-tl"><a class="scard-link" href="/story/timeline/"><div class="scard-img">${img('broth-spicy', '')}</div><div class="scard-body"><p class="scard-cat">연표</p><h3>한국 라면 연표</h3><p class="scard-short">1958년 치킨라멘부터 2026년 신라면 40주년까지, 흐름을 바꾼 ${TIMELINE.length}개 장면을 한 줄로 이었어요.</p><p class="scard-meta">${icon('i-cal')}1958~2026</p></div></a></article>
 </div>
 </section>
+<section class="sec" aria-labelledby="h-gd">
+${secHead('라면 상식', moreLink('/guide/', '모두 보기'), 'h-gd')}
+<p class="sec-lead">끓이는 법, 제품별 물 양, 소비기한, 나트륨처럼 자주 묻는 질문은 짧은 답부터 정리해 두었어요.</p>
+<nav class="pill-links" aria-label="라면 상식"><a class="pill" href="/guide/how-to-cook/">라면 맛있게 끓이는 법</a><a class="pill" href="/guide/water-time/">라면 물 양과 시간</a><a class="pill" href="/guide/jjapaguri/">짜파구리 만드는 법</a><a class="pill" href="/guide/expiry/">라면 소비기한</a><a class="pill" href="/guide/sodium/">라면 나트륨과 칼로리</a><a class="pill" href="/guide/cup-microwave/">컵라면 전자레인지</a></nav>
+</section>
 <section class="sec" aria-labelledby="h-tl">
 ${secHead('한국 라면 연표', moreLink('/story/timeline/', `${TIMELINE.length}개 장면 모두 보기`), 'h-tl')}
 ${timelineList(picks, true)}

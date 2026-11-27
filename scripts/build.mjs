@@ -3,11 +3,12 @@
 // 실행: npm run build  (Cloudflare Pages 빌드 명령도 같아요)
 import fs from 'node:fs';
 import path from 'node:path';
-import { ROOT, OUT, STATIC, BUILD, cfg, SITE, abs, SITE_NAME, RAMEN, BY, MAKERS, cho, ramenSearchText, releaseKey, today, readJSON, esc, PHOTOS, PHOTO_PROBLEMS, PAGEHASH } from './lib.mjs';
+import { ROOT, OUT, STATIC, BUILD, cfg, SITE, abs, SITE_NAME, RAMEN, BY, MAKERS, cho, ramenSearchText, releaseKey, today, readJSON, esc, PHOTOS, PHOTO_PROBLEMS, PAGEHASH, yearText } from './lib.mjs';
 import { homePage, dogamPage, ramenPage, recordPage, rankPage, rankRulesPage, newPage, shopPage } from './pages-main.mjs';
 import { storyHubPage, storyPage, timelinePage, wordsPage, STORIES } from './pages-story.mjs';
 import { recipeListPage, recipeWritePage, recipeViewPage } from './pages-recipes.mjs';
-import { listPages, LIST_URLS, TYPE_PAGES } from './pages-lists.mjs';
+import { listPages, LIST_URLS, TYPE_PAGES, MAKER_PAGES } from './pages-lists.mjs';
+import { guideHubPage, guidePage, GUIDES, GUIDE_URLS, COOK } from './pages-guide.mjs';
 import { worldHubPage, worldCountryPage, WORLD_PAGES, worldTimelinePage, worldBrandsPage, worldBestPage } from './pages-world.mjs';
 import { labHubPage, labPages, clubPages, levelsPage, clubRulesPage, mePage, aboutPage, termsPage, privacyPage, contactPage, adminPage, notFoundPage, offlinePage } from './pages-more.mjs';
 import * as CD from '../server/catalog-data.js';
@@ -42,6 +43,8 @@ page('', homePage());
 page('ramen', dogamPage());
 for (const r of RAMEN) page(`ramen/${r.s}`, ramenPage(r));
 for (const [dir, html] of listPages()) page(dir, html);
+page('guide', guideHubPage());
+for (const g of GUIDES) page(`guide/${g.s}`, guidePage(g));
 page('story', storyHubPage());
 for (const s of STORIES) page(`story/${s.s}`, storyPage(s));
 page('story/timeline', timelinePage());
@@ -163,6 +166,7 @@ write('manifest.webmanifest', JSON.stringify({
 const urls = [
   ['/', '1.0'], ['/ramen/', '0.9'], ...LIST_URLS().map((u) => [u, '0.8']), ['/rank/', '0.9'], ['/rank/rules/', '0.5'], ['/new/', '0.7'], ['/shop/', '0.6'],
   ['/world/', '0.8'], ['/world/best/', '0.7'], ['/world/timeline/', '0.7'], ['/world/brands/', '0.6'], ...WORLD_PAGES.map((c) => [`/world/${c.code}/`, '0.7']),
+  ...GUIDE_URLS().map((u) => [u, '0.8']),
   ['/story/', '0.8'], ['/story/timeline/', '0.7'], ['/story/words/', '0.7'], ...STORIES.map((s) => [`/story/${s.s}/`, '0.7']),
   ['/lab/', '0.6'], ['/lab/map/', '0.6'], ['/lab/compare/', '0.6'], ['/lab/worldcup/', '0.6'], ['/lab/timer/', '0.6'], ['/lab/water/', '0.5'], ['/lab/heat/', '0.6'], ['/lab/pick/', '0.5'], ['/lab/quiz/', '0.5'], ['/lab/match/', '0.6'], ['/lab/quest/', '0.6'], ['/lab/chosung/', '0.5'],
   ['/club/', '0.6'], ['/club/board/', '0.6'], ['/recipes/', '0.7'], ['/club/feed/', '0.5'], ['/club/events/', '0.5'], ['/club/people/', '0.4'], ['/club/levels/', '0.4'], ['/club/rules/', '0.3'],
@@ -181,6 +185,14 @@ for (const [u] of urls) {
   lastmod[u] = [h, modOf[u]];
 }
 if (process.env.CF_PAGES !== '1') fs.writeFileSync(LASTMOD_FILE, JSON.stringify(Object.fromEntries(Object.entries(lastmod).filter(([u]) => modOf[u]).sort()), null, 0).replace(/\],"/g, '],\n"') + '\n');
+// 페이지에 넣어 둔 고친 날짜 자리(%%MOD%%, %%MODKO%%)를 실제 날짜로 바꿔요 (본문 비교값에는 영향 없음)
+const koDate = (d) => { const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(d); return m ? `${m[1]}년 ${Number(m[2])}월 ${Number(m[3])}일` : d; };
+for (const [u] of urls) {
+  const f = path.join(OUT, u === '/' ? 'index.html' : `${u.slice(1)}index.html`);
+  if (!fs.existsSync(f)) continue;
+  const html = fs.readFileSync(f, 'utf8');
+  if (html.includes('%%MOD')) fs.writeFileSync(f, html.replaceAll('%%MODKO%%', koDate(modOf[u])).replaceAll('%%MOD%%', modOf[u]));
+}
 write('data/pagehash.json', JSON.stringify({ built: today, pages: Object.fromEntries(urls.map(([u]) => [u, PAGEHASH[u] || ''])) }));
 write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -212,32 +224,76 @@ write('rss.xml', `<?xml version="1.0" encoding="UTF-8"?>
 <description>${xesc(`${SITE_NAME} 라면 도감과 신상 라면 소식`)}</description>
 <language>ko</language>
 ${NEWS.map((n) => `<item><title>${xesc(n.title)}</title><link>${abs(n.ramen[0] && BY[n.ramen[0]] ? `/ramen/${n.ramen[0]}/` : '/new/')}</link><guid isPermaLink="false">news-${xesc(n.date)}-${xesc(n.title.slice(0, 20))}</guid><pubDate>${rssDate(n.date)}</pubDate><description>${xesc(n.body)}</description></item>`).join('\n')}
+${GUIDES.map((g) => `<item><title>${xesc(g.h1 || g.title)}</title><link>${abs(`/guide/${g.s}/`)}</link><guid>${abs(`/guide/${g.s}/`)}</guid><pubDate>${rssDate(modOf[`/guide/${g.s}/`] || today)}</pubDate><description>${xesc(g.answer)}</description></item>`).join('\n')}
+${STORIES.map((x) => `<item><title>${xesc(x.title)}</title><link>${abs(`/story/${x.s}/`)}</link><guid>${abs(`/story/${x.s}/`)}</guid><pubDate>${rssDate(modOf[`/story/${x.s}/`] || today)}</pubDate><description>${xesc(x.short)}</description></item>`).join('\n')}
 ${RAMEN.map((r) => `<item><title>${xesc(`${r.n} - ${r.maker}`)}</title><link>${abs(`/ramen/${r.s}/`)}</link><guid>${abs(`/ramen/${r.s}/`)}</guid><pubDate>${rssDate(modOf[`/ramen/${r.s}/`] || today)}</pubDate><description>${xesc(r.d)}</description></item>`).join('\n')}
 </channel></rss>
 `);
 
-// AI 검색용 사이트 요약
+// AI 검색(GEO)용 사이트 요약: llms.txt(요약·길잡이)와 llms-full.txt(라면 도감 전체와 상식 글 본문)
+const md = (t) => String(t || '').replace(/\[\[[a-z]+:[^|\]]+\|([^\]]+)\]\]/g, '$1');
+const ramenLine = (r) => {
+  const bits = [r.maker, r.co !== 'kr' ? r.coName : '한국', r.f ? CD.FORMS[r.f] : '', `${CD.STYLES[r.c]}`, r.y ? `${yearText(r.y)} 출시` : '', r.hot != null ? `맵기 ${CD.HOTS[r.hot]}` : '', r.shu ? `스코빌 ${r.shu.v.toLocaleString('ko-KR')} SHU` : '', CD.STATUS[r.st] + (r.ch ? `(${r.ch})` : '')].filter(Boolean);
+  return `- [${r.n}](${abs(`/ramen/${r.s}/`)}): ${bits.join(', ')}. ${r.d}${COOK[r.s] ? ` 조리법: ${COOK[r.s].how}` : ''}`;
+};
 write('llms.txt', `# ${SITE_NAME}
 
-> ${SITE_NAME}(${abs('/')})은 한국과 세계 라면 ${RAMEN.length}가지를 모은 라면 도감이에요. 먹어 본 사람들의 한 그릇 기록으로 맛 지도와 라면 랭킹을 만들고, 라면의 역사와 나라별 라면 문화를 자료와 함께 정리해요.
+> ${SITE_NAME}(${abs('/')})은 한국과 세계 라면 ${RAMEN.length}가지를 모은 라면 도감이자 라면 정보 사이트예요. 라면마다 회사, 형태, 조리 방식, 출시 연도, 맵기, 판매 상태를 정리하고, 라면 끓이는 법·물 양·소비기한·나트륨 같은 질문에는 자료를 밝힌 '라면 상식' 글로 답해요. 별점과 순위는 먹어 본 회원의 기록으로만 계산해요.
 
-- 라면 정보(회사, 형태, 조리 방식, 출시, 판매 상태)는 제조사 발표와 기사로 확인한 것만 실어요. 확인하지 못한 칸은 비워 둬요.
-- 맵기 분류는 편집부가 나눈 것이고, 스코빌 지수는 회사가 밝힌 숫자만 적어요.
+이 사이트의 정보 원칙:
+- 라면 정보는 제조사 발표, 포장·판매처 표기, 언론 보도로 확인한 것만 실어요. 확인하지 못한 칸은 비워 둬요.
+- 맵기 분류(순한 편, 매콤, 아주 매운 편)는 편집부가 이름과 제조사 설명을 보고 나눈 것이고, 스코빌 지수는 회사 발표나 언론에 실린 숫자만 출처와 함께 적어요.
 - 별점과 맛 지도는 회원 기록으로만 계산하고, 순위는 팔지 않아요.
 - 라면 그림은 AI로 새로 만든 조리 예시나 예시 그림이에요. 실제 제품 사진이 아니에요.
 - 구매 링크는 쿠팡 파트너스 링크예요.
+- 인용할 때는 페이지 주소를 함께 밝혀 주세요. 라면 도감 전체와 상식 글 본문은 [llms-full.txt](${abs('/llms-full.txt')})에 있어요.
 
-## 주요 페이지
+## 라면 상식 (질문과 짧은 답)
 
-- [라면 도감](${abs('/ramen/')}): 라면 ${RAMEN.length}가지, 나라·맵기·맛·조리 방식으로 찾기
-- [라면 랭킹](${abs('/rank/')}): 회원 기록으로 매긴 순위와 [계산 기준](${abs('/rank/rules/')})
-- [매운 라면](${abs('/ramen/spicy/')}), [맵기 사다리(스코빌 지수 순위)](${abs('/lab/heat/')})
-- [편의점 라면](${abs('/ramen/cvs/')})
-${Object.entries(TYPE_PAGES).map(([g, t]) => `- [${t.h} 종류](${abs(`/ramen/type/${g}/`)})`).join('\n')}
-- [세계 라면 지도](${abs('/world/')}), [세계가 뽑은 라면 TOP 10](${abs('/world/best/')})
-- [라면 이야기](${abs('/story/')}): 라면의 기원, 한국 라면 역사, 만드는 법
-- [라면 용어 사전](${abs('/story/words/')})
-- [사이트맵](${abs('/sitemap.xml')})
+${GUIDES.map((g) => `- [${g.h1 || g.title}](${abs(`/guide/${g.s}/`)}): ${g.answer}`).join('\n')}
+
+## 라면 모아 보기
+
+- [라면 도감 전체](${abs('/ramen/')}): ${RAMEN.length}가지, 나라·맵기·맛·조리 방식으로 찾기
+${Object.entries(TYPE_PAGES).map(([g, t]) => `- [${t.kw}](${abs(`/ramen/type/${g}/`)})`).join('\n')}
+- [매운 라면 종류](${abs('/ramen/spicy/')}), [매운 라면 순위(스코빌 지수 맵기 사다리)](${abs('/lab/heat/')})
+- [편의점 라면(단독 판매)](${abs('/ramen/cvs/')})
+${MAKER_PAGES.map((m) => `- [${MAKERS[m]} 라면 종류](${abs(`/ramen/maker/${m}/`)})`).join('\n')}
+
+## 랭킹과 도구
+
+- [라면 순위](${abs('/rank/')}): 회원 기록으로 매긴 종합·종류별·급상승 순위, [계산 기준](${abs('/rank/rules/')})
+- [나에게 맞는 라면 찾기](${abs('/lab/match/')}), [라면 물 양 계산기](${abs('/lab/water/')}), [라면 타이머](${abs('/lab/timer/')}), [라면 비교](${abs('/lab/compare/')})
+
+## 세계 라면과 라면 이야기
+
+- [세계 라면 지도](${abs('/world/')}): ${WORLD_PAGES.length}개 나라 페이지, [세계가 뽑은 라면 TOP 10](${abs('/world/best/')}), [세계 라면 연표](${abs('/world/timeline/')})
+${STORIES.map((x) => `- [${x.title}](${abs(`/story/${x.s}/`)}): ${x.short}`).join('\n')}
+- [한국 라면 연표](${abs('/story/timeline/')}), [라면 용어 사전](${abs('/story/words/')})
+
+## 선택
+
+- [사이트맵](${abs('/sitemap.xml')}), [RSS](${abs('/rss.xml')})
+`);
+write('llms-full.txt', `# ${SITE_NAME} 전체 자료
+
+> ${abs('/')} 의 라면 상식 글 본문과 라면 도감 ${RAMEN.length}가지를 한 파일에 모았어요. ${today} 빌드 기준이에요. 각 항목의 주소가 원문이에요.
+
+${GUIDES.map((g) => `## ${g.h1 || g.title}
+
+주소: ${abs(`/guide/${g.s}/`)}
+
+짧은 답: ${g.answer}
+
+${g.steps ? g.steps.map((x, k) => `${k + 1}. ${x.t}: ${md(x.d)}`).join('\n') + '\n\n' : ''}${g.table ? `${g.table.caption}\n\n| ${g.table.head.join(' | ')} |\n|${g.table.head.map(() => '---').join('|')}|\n${g.table.rows.map((r) => `| ${r.join(' | ')} |`).join('\n')}\n\n` : ''}${(g.sections || []).map((x) => `### ${x.h}\n\n${x.p.map(md).join('\n\n')}`).join('\n\n')}
+
+${g.faq ? `### 자주 묻는 질문\n\n${g.faq.map(([q, a]) => `- ${q} ${a}`).join('\n')}\n\n` : ''}참고한 자료: ${g.sources.map((x) => `${x.t} (${x.u})`).join('; ')}
+`).join('\n')}
+## 라면 도감 (${RAMEN.length}가지)
+
+형식: 이름(주소): 회사, 나라, 형태, 조리 방식, 출시, 맵기(편집부 분류), 스코빌(회사 공개값), 판매 상태. 설명.
+
+${RAMEN.map(ramenLine).join('\n')}
 `);
 
 // 사이트맵에 들어간 페이지 수와 빌드 정보
